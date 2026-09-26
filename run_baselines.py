@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Re-run the four programmatic baselines. Frontend inspection is separate."""
+"""Re-run the v0.1 legacy reference suite. v0.2 uses scripts/extreme.py."""
 import json
 import platform
 import subprocess
