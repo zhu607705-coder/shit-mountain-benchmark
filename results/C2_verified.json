@@ -11,7 +11,7 @@
     "benchmark": "C2",
     "version": "0.1.0",
     "seed": 2026092602,
-    "measured_at_utc": "2026-09-26T05:24:14.517948+00:00",
+    "measured_at_utc": "2026-09-26T06:19:40.789635+00:00",
     "suite_sha256": "7663baa5c254890edd6389fd779c7aa36db0116b1c0eeddcf1e2dafd53a9144d",
     "valid": true,
     "critical_case_names": [
@@ -26,21 +26,21 @@
     ],
     "submission": "repository/baseline",
     "submission_sha256": "ac1c3398dd34e290a229b9e3ec490f0ad8004917fc13cfa0d8c0338d34e153b6",
-    "raw_score": 92.023074,
+    "raw_score": 93.157593,
     "correctness": {
       "passed": 57,
       "total": 57,
       "rate": 1.0
     },
     "performance": {
-      "median_seconds": 0.03465237296768464,
+      "median_seconds": 0.02171870690654032,
       "samples_seconds": [
-        0.03465237296768464,
-        0.036102126992773265,
-        0.034049916081130505
+        0.02135954104596749,
+        0.02171870690654032,
+        0.021731084008933976
       ],
       "peak_traced_bytes": 3282632,
-      "speed_utility": 0.3659493433492043,
+      "speed_utility": 0.4794012442620689,
       "memory_utility": 0.8363580820751981,
       "within_budget": true,
       "resource_bonus_eligible": true
@@ -284,7 +284,7 @@
   "environment_result": {
     "benchmark": "C2-repository",
     "version": "0.2.0",
-    "measured_at_utc": "2026-09-26T05:24:20.649084+00:00",
+    "measured_at_utc": "2026-09-26T06:19:46.041630+00:00",
     "suite_sha256": "ac0a276c1609eb66b76adf4e03a44c5c76cb3dba41258b4133c89994c708c70c",
     "submission_sha256": "ac1c3398dd34e290a229b9e3ec490f0ad8004917fc13cfa0d8c0338d34e153b6",
     "environment": {
@@ -309,57 +309,57 @@
       {
         "name": "default_business_flow",
         "passed": true,
-        "seconds": 0.3701
+        "seconds": 0.2899
       },
       {
         "name": "configured_base_path",
         "passed": true,
-        "seconds": 0.3447
+        "seconds": 0.2839
       },
       {
         "name": "different_process_workdirs",
         "passed": true,
-        "seconds": 0.3539
+        "seconds": 0.2752
       },
       {
         "name": "unicode_data_directory",
         "passed": true,
-        "seconds": 0.3439
+        "seconds": 0.2775
       },
       {
         "name": "project_isolation",
         "passed": true,
-        "seconds": 0.4538
+        "seconds": 0.3974
       },
       {
         "name": "cancel_running_then_retry",
         "passed": true,
-        "seconds": 0.6287
+        "seconds": 0.6009
       },
       {
         "name": "dependency_failure_then_repair",
         "passed": true,
-        "seconds": 0.4851
+        "seconds": 0.4094
       },
       {
         "name": "enqueue_snapshot_isolation",
         "passed": true,
-        "seconds": 1.0409
+        "seconds": 0.9277
       },
       {
         "name": "server_restart_persistence",
         "passed": true,
-        "seconds": 0.764
+        "seconds": 0.5984
       },
       {
         "name": "worker_crash_recovery",
         "passed": true,
-        "seconds": 0.6713
+        "seconds": 0.6511
       },
       {
         "name": "legacy_schema_migration",
         "passed": true,
-        "seconds": 0.4879
+        "seconds": 0.4112
       }
     ],
     "process_model": "real HTTP server and worker subprocesses; temporary SQLite DBs; no fixed ports; automatic cleanup",

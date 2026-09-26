@@ -39,6 +39,14 @@ const ArenaUI = (() => {
       return value;
     };
   }
+  function jobProgress(job) {
+    if (!job) return {fraction:null,label:''};
+    const p=job.progress||{},total=p.case_count,current=p.case_index;
+    if (job.status==='completed') return {fraction:1,label:Number.isInteger(total)&&total>0?`${total} / ${total} 组检验结束`:'检验结束'};
+    if (activeJob(job)&&Number.isInteger(total)&&total>0&&Number.isInteger(current)&&current>=1&&current<=total)
+      return {fraction:(current-1)/total,label:`正在执行第 ${current} / ${total} 组`};
+    return {fraction:null,label:activeJob(job)?'等待检验进度':job.status==='cancelled'?'检验已停止':'检验未完成'};
+  }
   function boot() {
     const $=id=>document.getElementById(id);
     const state={csrf:'',tasks:[],tiers:[],selectedTask:null,selectedTier:null,track:'all',manualTask:null,drawRequest:0,matches:[],match:null,reports:[],board:null,busy:false,poll:null,renderedId:null,readme:'',readmeName:'README.md',matchRequest:0,resultsKey:null};
@@ -49,8 +57,10 @@ const ArenaUI = (() => {
     function badge(text,tone){return el('span',text,'badge '+tone);}
     function announce(text,tone='error'){const node=$('notice');const dialogs=[...document.querySelectorAll('dialog[open]')];(dialogs.at(-1)||$('draw-stage')).append(node);node.textContent=text;node.className='notice'+(tone==='success'?' success':'');node.hidden=!text;}
     function motion(){return typeof ArenaMotion!=='undefined'?ArenaMotion:null;}
-    function syncPanels(){document.body.classList.toggle('panel-open',!!document.querySelector('dialog[open]'));motion()?.reset();}
-    function openPanel(id){if(state.busy)return;const dialog=$(id);if(!dialog.open)dialog.showModal();syncPanels();}
+    function room(){return typeof ArenaRoom!=='undefined'?ArenaRoom:null;}
+    function renderRoom(){if(state.match)room()?.render({match:state.match,reports:state.reports,board:state.board});}
+    function syncPanels(){document.body.classList.toggle('panel-open',!!document.querySelector('dialog[open]'));motion()?.reset();if(!$('work-dialog').open)room()?.close();}
+    function openPanel(id){if(state.busy)return;const dialog=$(id);if(!dialog.open)dialog.showModal();syncPanels();if(id==='work-dialog'){renderRoom();room()?.open();}}
     function closePanel(id){$(id).close();syncPanels();}
     function renderTicket(){if(!state.match)return;const pub=scopeOf(state.match),task=pub.task_id||state.match.task_id;
       $('selected-code').textContent=task;$('draw-heading').textContent=pub.title||state.match.title||task;
@@ -101,7 +111,7 @@ const ArenaUI = (() => {
     }
     function renderJob(){
       const job=state.match?.job;const submissions=list(state.match?.submissions);const label=job?({queued:'等待检验',running:'检验中',completed:'检验已结束',failed:'检验未完成',cancelled:'已停止'}[job.status]||job.status):submissions.length?'已封存':'未提交';$('job-state').textContent=label;$('job-state').className='badge '+(activeJob(job)?'running':job?.status==='failed'?'fail':'neutral');$('job-empty').hidden=!!job;$('job-content').hidden=!job;
-      if(!job)return;const progress=typeof job.progress==='object'?job.progress:{};$('job-message').textContent=(job.diagnostic?'诊断复验 · ':'')+(progress.message||job.error?.message||job.error||label);$('job-elapsed').textContent=`${Math.max(0,Number(job.elapsed_seconds)||0).toFixed(1)} 秒`;const total=Number(progress.case_count),current=Number(progress.case_index);const fraction=total>0&&Number.isFinite(current)?Math.max(0,Math.min(1,current/total)):job.status==='completed'?1:0;$('progress-fill').style.width=`${fraction*100}%`;$('progress-fill').parentElement.classList.toggle('indeterminate',!!activeJob(job)&&!(total>0));$('job-detail').textContent=total>0?`案例 ${Math.min(current||0,total)} / ${total}`:progress.phase||'';$('cancel-job').hidden=!activeJob(job);
+      if(!job)return;const progress=typeof job.progress==='object'?job.progress:{};$('job-message').textContent=(job.diagnostic?'诊断复验 · ':'')+(progress.message||job.error?.message||job.error||label);$('job-elapsed').textContent=`${Math.max(0,Number(job.elapsed_seconds)||0).toFixed(1)} 秒`;const meter=jobProgress(job);$('progress-fill').style.width=`${(meter.fraction??0)*100}%`;const track=$('progress-fill').parentElement;track.classList.toggle('indeterminate',!!activeJob(job)&&meter.fraction===null);if(meter.fraction===null)track.removeAttribute('aria-valuenow');else track.setAttribute('aria-valuenow',String(Math.round(meter.fraction*100)));track.setAttribute('aria-valuetext',meter.label);$('job-detail').textContent=meter.label;$('cancel-job').hidden=!activeJob(job);
     }
     function renderResults(){
       const pub=scopeOf(state.match);const subs=list(state.match?.submissions),reports=state.reports,entries=list(state.board?.entries);const signature=JSON.stringify({id:state.match.id,subs,reports,entries,board:state.board});if(signature===state.resultsKey)return;state.resultsKey=signature;const opened=new Set([...$('case-details').querySelectorAll('details[open]')].map(node=>node.dataset.submissionId));const active=document.activeElement;const focusedId=active?.closest?.('[data-submission-id]')?.dataset.submissionId;const focusedKind=active?.tagName==='SUMMARY'?'summary':active?.dataset?.resultAction;const byId=new Map(reports.map(row=>[row.submission_id||row.id,row]));const leaderboard=new Map(entries.map(row=>[row.submission_id||row.id,row]));$('result-rows').replaceChildren();$('case-details').replaceChildren();$('results-empty').hidden=!!subs.length;$('results-table-wrap').hidden=!subs.length;
@@ -110,23 +120,25 @@ const ArenaUI = (() => {
       }
       if(focusedId){const target=[...document.querySelectorAll('[data-submission-id]')].find(node=>node.dataset.submissionId===focusedId&&(focusedKind==='summary'?node.tagName==='DETAILS':node.dataset.resultAction===focusedKind));(focusedKind==='summary'?target?.querySelector('summary'):target)?.focus({preventScroll:true});}
       const champion=subs.find(sub=>sub.id===state.board?.champion);$('leaderboard-note').textContent=state.board?.all_invalid&&subs.length?'本场尚无有效解，未生成相对满分。':champion?(state.board?.champion_scope==='semantic_only'?`语义领先：${champion.participant}。完整 UI 评阅待定。`:`自动成绩领先：${champion.participant}`):(pub.task_id||state.match.task_id||'').startsWith('F')&&subs.length?'当前仅列语义分，完整 UI 评阅待定。':'';
+      renderRoom();
     }
     function renderMatch(){
       if(!state.match)return;$('match-section').hidden=false;const pub=scopeOf(state.match);$('match-kicker').textContent=`场次 #${String(state.match.id).slice(-8)}`;$('match-heading').textContent=`${pub.task_id||state.match.task_id} · ${pub.title||state.match.title||'挑战实例'}`;$('match-description').textContent=`${pub.tier_name||tierNames[pub.tier||state.match.tier]||''} · ${formatScope(pub.scope)}`;$('commitment').textContent=pub.commitment||state.match.commitment||'尚未提供';$('download-package').href=endpoint('download');$('download-grading').href=endpoint('grading-request');
       if(state.renderedId!==state.match.id){state.renderedId=state.match.id;renderStages();$('entrypoint').value=(pub.task_id||state.match.task_id||'').startsWith('C')?'.':(pub.task_id||state.match.task_id||'').startsWith('F')?'adapter.py':'policy.py';$('submit-feedback').textContent='';}
-      renderJob();renderResults();renderMatches();renderTicket();
+      renderJob();renderResults();renderMatches();renderTicket();renderRoom();
     }
     function schedulePoll(){clearTimeout(state.poll);if(!state.match||state.busy)return;state.poll=setTimeout(async()=>{try{await loadMatch(state.match.id,false,true);}catch(error){$('connection-label').textContent='连接中断';$('connection-dot').className='dot error';schedulePoll();}},document.hidden?10000:activeJob(state.match.job)?1400:4000);}
     async function refreshResults(requestVersion=state.matchRequest){if(!state.match)return;const id=state.match.id;const answers=await Promise.allSettled([api(endpoint('report')),api(endpoint('leaderboard'))]);if(state.match?.id!==id||requestVersion!==state.matchRequest)return;const [reports,board]=answers;if(reports.status==='fulfilled')state.reports=list(reports.value.reports||reports.value);if(board.status==='fulfilled')state.board=board.value;renderResults();}
     async function loadMatch(id,reveal=false,quiet=false){
-      if(state.busy&&quiet)return;const requestVersion=++state.matchRequest;
+      if(quiet&&(state.busy||state.loadingMatch))return;clearTimeout(state.poll);const requestVersion=++state.matchRequest;state.loadingMatch=requestVersion;
       try {const result=await api(`/api/matches/${encodeURIComponent(id)}/status`);if(requestVersion!==state.matchRequest)return;const match=result.match||result;const changed=state.match?.id!==match.id;if(changed){state.reports=[];state.board=null;}state.match=match;
         renderMatch();await refreshResults(requestVersion);if(requestVersion!==state.matchRequest)return;$('connection-label').textContent='本机已连接';$('connection-dot').className='dot online';
         if(reveal){await motion()?.reveal(scopeOf(match).task_id||match.task_id);if(requestVersion!==state.matchRequest)return;$('start-challenge').hidden=false;}
         schedulePoll();
       }catch(error){if(requestVersion!==state.matchRequest)return;if(!quiet)announce(error.message);throw error;}
+      finally{if(state.loadingMatch===requestVersion)state.loadingMatch=null;}
     }
-    async function startGrade(submissionId){try{announce('');await api(endpoint('grade'),{submission_id:submissionId});await loadMatch(state.match.id);$('submit-feedback').textContent='答案已封存，后台检验已开始。';}catch(error){announce(error.message);$('submit-feedback').textContent='答案仍已封存，可稍后重新开始检验。';await loadMatch(state.match.id,false,true).catch(()=>{});}}
+    async function startGrade(submissionId){const mid=state.match?.id;if(!mid)return;try{announce('');const job=await api(`/api/matches/${encodeURIComponent(mid)}/grade`,{submission_id:submissionId});if(state.match?.id!==mid)return;room()?.watchJob(job.id);await loadMatch(mid);if(state.match?.id===mid)$('submit-feedback').textContent='答案已封存，检验已启动。';}catch(error){if(state.match?.id!==mid)return;announce(error.message);$('submit-feedback').textContent='答案仍已封存，可稍后重新开始检验。';await loadMatch(mid,false,true).catch(()=>{});}}
     async function initialize(){
       try{const data=await api('/api/bootstrap');state.csrf=data.csrf||'';state.tasks=list(data.tasks||data.catalog?.tasks);state.tiers=list(data.tiers||data.catalog?.tiers);state.selectedTask=state.selectedTask||state.tasks[0]?.id;state.selectedTier=state.selectedTier||(state.tiers.some(tier=>tier.id==='bronze')?'bronze':state.tiers[0]?.id);state.matches=list(data.matches);renderTasks();renderTiers();renderSelection();renderMatches();$('connection-label').textContent='本机已连接';$('connection-dot').className='dot online';announce('');await refreshMatches();}catch(error){$('connection-label').textContent='服务未连接';$('connection-dot').className='dot error';announce(error.message);$('task-grid').replaceChildren(el('p','题库读取失败，请重新连接。','empty'));}}
     document.querySelectorAll('#track-tabs button[data-track]').forEach(button=>button.addEventListener('click',()=>{if(state.busy)return;state.track=button.dataset.track;state.manualTask=null;renderTasks();renderSelection();}));
@@ -145,15 +157,15 @@ const ArenaUI = (() => {
       catch(error){motion()?.fail(!!state.match);announce(error.message);}
       finally{state.busy=false;$('draw-label').textContent=state.match?'再抽一道':'抽一道';renderSelection();schedulePoll();}
     });
-    $('submission-form').addEventListener('submit',async event=>{event.preventDefault();if(!state.match)return;const participant=$('participant').value.trim(),source_path=$('source-path').value.trim(),entrypoint=$('entrypoint').value.trim(),metrics_path=$('metrics-path').value.trim();if(!participant||!source_path||!entrypoint){announce('请填写选手、答案路径和裁判入口。');return;}$('submit-button').disabled=true;$('submit-feedback').textContent='正在封存…';try{announce('');const payload={participant,source_path,entrypoint};if(metrics_path)payload.metrics_path=metrics_path;const result=await api(endpoint('submit'),payload);const sub=result.submission||result;if(!sub.id)throw new Error('服务端未返回提交编号，请刷新确认封存状态。');await loadMatch(state.match.id);await startGrade(sub.id);}catch(error){announce(error.message);$('submit-feedback').textContent='未完成提交，请核对路径与服务端提示。';}finally{$('submit-button').disabled=false;}});
+    $('submission-form').addEventListener('submit',async event=>{event.preventDefault();const mid=state.match?.id;if(!mid)return;const participant=$('participant').value.trim(),source_path=$('source-path').value.trim(),entrypoint=$('entrypoint').value.trim(),metrics_path=$('metrics-path').value.trim();if(!participant||!source_path||!entrypoint){announce('请填写选手、答案路径和裁判入口。');return;}$('submit-button').disabled=true;$('submit-feedback').textContent='正在封存…';try{announce('');const payload={participant,source_path,entrypoint};if(metrics_path)payload.metrics_path=metrics_path;const result=await api(`/api/matches/${encodeURIComponent(mid)}/submit`,payload);if(state.match?.id!==mid)return;const sub=result.submission||result;if(!sub.id)throw new Error('服务端未返回提交编号，请刷新确认封存状态。');await loadMatch(mid);if(state.match?.id===mid)await startGrade(sub.id);}catch(error){if(state.match?.id!==mid)return;announce(error.message);$('submit-feedback').textContent='未完成提交，请核对路径与服务端提示。';}finally{$('submit-button').disabled=false;}});
     $('cancel-job').addEventListener('click',async()=>{if(!state.match?.job)return;try{await api(endpoint('cancel'),{job_id:state.match.job.id});await loadMatch(state.match.id);}catch(error){announce(error.message);}});
     $('open-readme').addEventListener('click',()=>state.match&&showReadme(allMarkdown(),'Agent 任务 README'));
     $('close-readme').addEventListener('click',()=>$('readme-dialog').close());$('readme-dialog').addEventListener('click',event=>{if(event.target===$('readme-dialog')){const bounds=event.target.getBoundingClientRect();if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)event.target.close();}});
     $('copy-readme').addEventListener('click',()=>copy(state.readme,$('copy-status')));$('copy-commitment').addEventListener('click',()=>copy(scopeOf(state.match).commitment||state.match.commitment||''));$('download-readme').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([state.readme],{type:'text/markdown;charset=utf-8'}));const link=el('a');link.href=url;link.download=state.readmeName;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);});
     document.addEventListener('visibilitychange',()=>{if(!document.hidden&&state.match)loadMatch(state.match.id,false,true).catch(()=>{});});
-    setIcon('reload-app','refresh-cw');setIcon('close-readme','circle-x');document.querySelectorAll('[data-icon]').forEach(node=>node.replaceChildren(icon(node.dataset.icon)));initialize();
+    setIcon('reload-app','refresh-cw');setIcon('close-readme','circle-x');document.querySelectorAll('[data-icon]').forEach(node=>node.replaceChildren(icon(node.dataset.icon)));room()?.boot();initialize();
   }
-  return {boot,createApi,submissionState,caseState,scoreText,duration,tokens,scopeOf,activeJob};
+  return {boot,createApi,submissionState,caseState,scoreText,duration,tokens,scopeOf,activeJob,jobProgress};
 })();
 if(typeof module!=='undefined'&&module.exports)module.exports=ArenaUI;
 if(typeof document!=='undefined'&&document.getElementById('arena-app'))ArenaUI.boot();

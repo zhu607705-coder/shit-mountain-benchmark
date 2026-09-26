@@ -1,6 +1,6 @@
 {
   "name": "shit-mountain-benchmark",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "tasks": [
     {
       "id": "R1",
@@ -176,5 +176,6 @@
       "release": "v0.1.0",
       "runner": "run_baselines.py"
     }
-  }
+  },
+  "task_contract_version": "0.2.0"
 }
