@@ -1,0 +1,69 @@
+{
+  "task_id": "C3",
+  "valid": true,
+  "raw_score": null,
+  "details": {
+    "checks_passed": 12,
+    "checks_total": 12,
+    "checks": [
+      {
+        "name": "basic",
+        "pass": true
+      },
+      {
+        "name": "immutable_snapshot",
+        "pass": true
+      },
+      {
+        "name": "atomic_validation",
+        "pass": true
+      },
+      {
+        "name": "idempotency_after_compact",
+        "pass": true
+      },
+      {
+        "name": "delete_no_resurrection",
+        "pass": true
+      },
+      {
+        "name": "single_writer",
+        "pass": true
+      },
+      {
+        "name": "single_writer_subprocess",
+        "pass": true
+      },
+      {
+        "name": "relative_path_after_cwd_change",
+        "pass": true
+      },
+      {
+        "name": "random_model_200_transactions",
+        "pass": true
+      },
+      {
+        "name": "sigkill_atomicity_4_windows",
+        "pass": true
+      },
+      {
+        "name": "acknowledged_process_exit",
+        "pass": true
+      },
+      {
+        "name": "closed_handle",
+        "pass": true
+      }
+    ],
+    "baseline_internal_format_checks": [
+      true,
+      true,
+      true
+    ],
+    "transactions_per_second_500": 29951.478033884236,
+    "timing_seconds": 0.0166936669847928,
+    "timing_note": "single local run; not power-loss proof or formal leaderboard"
+  },
+  "note": "Behavior checks verified. Formal performance workload and quality weights are not calibrated; full raw quality remains pending.",
+  "execution": "same-process trusted local evaluator; not an untrusted-code sandbox"
+}

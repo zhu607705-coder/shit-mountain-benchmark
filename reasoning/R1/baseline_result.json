@@ -1,0 +1,6434 @@
+{
+  "valid": true,
+  "feasible": true,
+  "raw_score": 212.870434383,
+  "metrics": {
+    "mean_coverage": 0.3023341429819167,
+    "worst_20pct_coverage": 0.20400951554119726,
+    "mean_min_region_coverage": 0.22569916206488663,
+    "cost": 446,
+    "budget": 450,
+    "selected_tasks": 38,
+    "total_tasks": 48,
+    "available_total_value": 2903
+  },
+  "score_formula": "max(0, 1000*(0.55*mean_coverage + 0.25*worst_20pct_coverage + 0.20*mean_min_region_coverage) - 50*cost/budget)",
+  "scenarios": [
+    {
+      "scenario": "S001",
+      "weight": 1,
+      "coverage": 0.19251511256224943,
+      "min_region_coverage": 0.13927575426061492,
+      "region_coverage": {
+        "G1": 0.22697585930388858,
+        "G2": 0.2103839330526369,
+        "G3": 0.13927575426061492,
+        "G4": 0.18921502099574475
+      },
+      "completed": 24,
+      "unscheduled": 14,
+      "late": 15,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 7,
+          "quality": 0.672,
+          "earned_value": 29.568
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 8,
+          "quality": 0.7776,
+          "earned_value": 34.2144
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.7776,
+          "earned_value": 38.1024
+        },
+        {
+          "task": "P7T1",
+          "start": 8,
+          "end": 19,
+          "quality": 0.8928,
+          "earned_value": 48.2112
+        },
+        {
+          "task": "P2T1",
+          "start": 19,
+          "end": 29,
+          "quality": 0.8928,
+          "earned_value": 29.4624
+        },
+        {
+          "task": "P6T1",
+          "start": 7,
+          "end": 17,
+          "quality": 0.8928,
+          "earned_value": 27.6768
+        },
+        {
+          "task": "P5T1",
+          "start": 6,
+          "end": 15,
+          "quality": 0.8928,
+          "earned_value": 34.8192
+        },
+        {
+          "task": "P1T1",
+          "start": 19,
+          "end": 29,
+          "quality": 0.8928,
+          "earned_value": 35.712
+        },
+        {
+          "task": "P3T2",
+          "start": 17,
+          "end": 22,
+          "quality": 0.599962,
+          "earned_value": 31.198003
+        },
+        {
+          "task": "P6T2",
+          "start": 22,
+          "end": 29,
+          "quality": 0.694241,
+          "earned_value": 32.62934
+        },
+        {
+          "task": "P3T3",
+          "start": 29,
+          "end": 36,
+          "quality": 0.535646,
+          "earned_value": 35.352617
+        },
+        {
+          "task": "P3T4",
+          "start": 36,
+          "end": 45,
+          "quality": 0.478224,
+          "earned_value": 31.031456
+        },
+        {
+          "task": "P8T2",
+          "start": 29,
+          "end": 34,
+          "quality": 0.522547,
+          "earned_value": 17.273088
+        },
+        {
+          "task": "P1T2",
+          "start": 29,
+          "end": 37,
+          "quality": 0.797092,
+          "earned_value": 28.518175
+        },
+        {
+          "task": "P8T3",
+          "start": 34,
+          "end": 41,
+          "quality": 0.46653,
+          "earned_value": 15.965698
+        },
+        {
+          "task": "P8T4",
+          "start": 41,
+          "end": 51,
+          "quality": 0.416518,
+          "earned_value": 17.817719
+        },
+        {
+          "task": "P1T3",
+          "start": 37,
+          "end": 44,
+          "quality": 0.619819,
+          "earned_value": 25.619169
+        },
+        {
+          "task": "P1T4",
+          "start": 44,
+          "end": 54,
+          "quality": 0.553374,
+          "earned_value": 15.002586
+        },
+        {
+          "task": "P6T3",
+          "start": 55,
+          "end": 65,
+          "quality": 0.619819,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T4",
+          "start": 65,
+          "end": 72,
+          "quality": 0.553374,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T5",
+          "start": 56,
+          "end": 63,
+          "quality": 0.494052,
+          "earned_value": 17.785885
+        },
+        {
+          "task": "P4T2",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P1T6",
+          "start": 63,
+          "end": 69,
+          "quality": 0.332003,
+          "earned_value": 12.911235
+        },
+        {
+          "task": "P2T2",
+          "start": 51,
+          "end": 58,
+          "quality": 0.797092,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P3T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P3T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T2",
+          "start": 58,
+          "end": 65,
+          "quality": 0.797092,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P6T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        }
+      ]
+    },
+    {
+      "scenario": "S002",
+      "weight": 1,
+      "coverage": 0.35561351416462256,
+      "min_region_coverage": 0.22152209865276715,
+      "region_coverage": {
+        "G1": 0.44340233520496747,
+        "G2": 0.4577957031311186,
+        "G3": 0.22152209865276715,
+        "G4": 0.2859003254056198
+      },
+      "completed": 32,
+      "unscheduled": 6,
+      "late": 12,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 47.04
+        },
+        {
+          "task": "P7T1",
+          "start": 5,
+          "end": 16,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 4,
+          "end": 11,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P6T1",
+          "start": 6,
+          "end": 15,
+          "quality": 0.7392,
+          "earned_value": 22.9152
+        },
+        {
+          "task": "P5T1",
+          "start": 11,
+          "end": 17,
+          "quality": 0.96,
+          "earned_value": 37.44
+        },
+        {
+          "task": "P1T1",
+          "start": 16,
+          "end": 23,
+          "quality": 0.96,
+          "earned_value": 46.08
+        },
+        {
+          "task": "P3T2",
+          "start": 15,
+          "end": 19,
+          "quality": 0.9216,
+          "earned_value": 47.9232
+        },
+        {
+          "task": "P6T2",
+          "start": 19,
+          "end": 23,
+          "quality": 0.709632,
+          "earned_value": 33.352704
+        },
+        {
+          "task": "P3T3",
+          "start": 23,
+          "end": 29,
+          "quality": 0.884736,
+          "earned_value": 58.392576
+        },
+        {
+          "task": "P3T4",
+          "start": 29,
+          "end": 36,
+          "quality": 0.849347,
+          "earned_value": 62.002299
+        },
+        {
+          "task": "P8T2",
+          "start": 17,
+          "end": 21,
+          "quality": 0.811008,
+          "earned_value": 28.38528
+        },
+        {
+          "task": "P1T2",
+          "start": 23,
+          "end": 29,
+          "quality": 0.9216,
+          "earned_value": 42.3936
+        },
+        {
+          "task": "P8T3",
+          "start": 21,
+          "end": 28,
+          "quality": 0.778568,
+          "earned_value": 34.256978
+        },
+        {
+          "task": "P8T4",
+          "start": 28,
+          "end": 37,
+          "quality": 0.657734,
+          "earned_value": 46.041378
+        },
+        {
+          "task": "P1T3",
+          "start": 29,
+          "end": 33,
+          "quality": 0.884736,
+          "earned_value": 54.853632
+        },
+        {
+          "task": "P1T4",
+          "start": 33,
+          "end": 40,
+          "quality": 0.747425,
+          "earned_value": 45.592923
+        },
+        {
+          "task": "P6T3",
+          "start": 36,
+          "end": 43,
+          "quality": 0.681247,
+          "earned_value": 24.979046
+        },
+        {
+          "task": "P6T4",
+          "start": 43,
+          "end": 49,
+          "quality": 0.575517,
+          "earned_value": 32.612643
+        },
+        {
+          "task": "P1T5",
+          "start": 40,
+          "end": 46,
+          "quality": 0.552497,
+          "earned_value": 39.779751
+        },
+        {
+          "task": "P4T2",
+          "start": 46,
+          "end": 55,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 55,
+          "end": 59,
+          "quality": 0.530397,
+          "earned_value": 37.127767
+        },
+        {
+          "task": "P2T2",
+          "start": 40,
+          "end": 48,
+          "quality": 0.811008,
+          "earned_value": 4.685824
+        },
+        {
+          "task": "P3T5",
+          "start": 49,
+          "end": 56,
+          "quality": 0.68514,
+          "earned_value": 52.984126
+        },
+        {
+          "task": "P3T6",
+          "start": 56,
+          "end": 62,
+          "quality": 0.657734,
+          "earned_value": 45.347104
+        },
+        {
+          "task": "P5T2",
+          "start": 48,
+          "end": 54,
+          "quality": 0.709632,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 62,
+          "end": 68,
+          "quality": 0.425422,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T3",
+          "start": 54,
+          "end": 59,
+          "quality": 0.52456,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 59,
+          "end": 66,
+          "quality": 0.778568,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "start": 66,
+          "end": 72,
+          "quality": 0.747425,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "start": 59,
+          "end": 69,
+          "quality": 0.778568,
+          "earned_value": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "S003",
+      "weight": 1,
+      "coverage": 0.3262445889283892,
+      "min_region_coverage": 0.2499467503883668,
+      "region_coverage": {
+        "G1": 0.37999885969773645,
+        "G2": 0.4038253469508278,
+        "G3": 0.2499467503883668,
+        "G4": 0.2622330565183471
+      },
+      "completed": 32,
+      "unscheduled": 6,
+      "late": 11,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 47.04
+        },
+        {
+          "task": "P7T1",
+          "start": 6,
+          "end": 17,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 4,
+          "end": 11,
+          "quality": 0.7392,
+          "earned_value": 39.9168
+        },
+        {
+          "task": "P6T1",
+          "start": 4,
+          "end": 13,
+          "quality": 0.8448,
+          "earned_value": 26.1888
+        },
+        {
+          "task": "P5T1",
+          "start": 11,
+          "end": 17,
+          "quality": 0.7392,
+          "earned_value": 28.8288
+        },
+        {
+          "task": "P1T1",
+          "start": 17,
+          "end": 27,
+          "quality": 0.8448,
+          "earned_value": 38.2976
+        },
+        {
+          "task": "P3T2",
+          "start": 13,
+          "end": 18,
+          "quality": 0.9216,
+          "earned_value": 47.9232
+        },
+        {
+          "task": "P6T2",
+          "start": 18,
+          "end": 22,
+          "quality": 0.624476,
+          "earned_value": 29.35038
+        },
+        {
+          "task": "P3T3",
+          "start": 22,
+          "end": 26,
+          "quality": 0.884736,
+          "earned_value": 58.392576
+        },
+        {
+          "task": "P3T4",
+          "start": 26,
+          "end": 33,
+          "quality": 0.849347,
+          "earned_value": 62.002299
+        },
+        {
+          "task": "P8T2",
+          "start": 17,
+          "end": 22,
+          "quality": 0.709632,
+          "earned_value": 24.83712
+        },
+        {
+          "task": "P1T2",
+          "start": 27,
+          "end": 32,
+          "quality": 0.811008,
+          "earned_value": 37.306368
+        },
+        {
+          "task": "P8T3",
+          "start": 22,
+          "end": 28,
+          "quality": 0.599497,
+          "earned_value": 26.377873
+        },
+        {
+          "task": "P8T4",
+          "start": 30,
+          "end": 37,
+          "quality": 0.575517,
+          "earned_value": 40.286206
+        },
+        {
+          "task": "P1T3",
+          "start": 32,
+          "end": 37,
+          "quality": 0.778568,
+          "earned_value": 48.271196
+        },
+        {
+          "task": "P1T4",
+          "start": 37,
+          "end": 46,
+          "quality": 0.747425,
+          "earned_value": 40.527043
+        },
+        {
+          "task": "P6T3",
+          "start": 34,
+          "end": 40,
+          "quality": 0.599497,
+          "earned_value": 26.377873
+        },
+        {
+          "task": "P6T4",
+          "start": 40,
+          "end": 45,
+          "quality": 0.575517,
+          "earned_value": 34.531034
+        },
+        {
+          "task": "P1T5",
+          "start": 46,
+          "end": 54,
+          "quality": 0.552497,
+          "earned_value": 39.779751
+        },
+        {
+          "task": "P4T2",
+          "start": 54,
+          "end": 63,
+          "quality": 0.811008,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 63,
+          "end": 68,
+          "quality": 0.530397,
+          "earned_value": 22.689191
+        },
+        {
+          "task": "P2T2",
+          "start": 37,
+          "end": 44,
+          "quality": 0.546417,
+          "earned_value": 9.471222
+        },
+        {
+          "task": "P3T5",
+          "start": 45,
+          "end": 53,
+          "quality": 0.403911,
+          "earned_value": 35.140273
+        },
+        {
+          "task": "P3T6",
+          "start": 53,
+          "end": 57,
+          "quality": 0.298571,
+          "earned_value": 21.795694
+        },
+        {
+          "task": "P5T2",
+          "start": 44,
+          "end": 50,
+          "quality": 0.709632,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 57,
+          "end": 63,
+          "quality": 0.486197,
+          "earned_value": 9.048666
+        },
+        {
+          "task": "P6T6",
+          "start": 63,
+          "end": 67,
+          "quality": 0.466749,
+          "earned_value": 16.388079
+        },
+        {
+          "task": "P5T3",
+          "start": 50,
+          "end": 55,
+          "quality": 0.681247,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 55,
+          "end": 62,
+          "quality": 0.52456,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "start": 62,
+          "end": 69,
+          "quality": 0.575517,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        }
+      ]
+    },
+    {
+      "scenario": "S004",
+      "weight": 1,
+      "coverage": 0.3354844041429495,
+      "min_region_coverage": 0.2780293581101125,
+      "region_coverage": {
+        "G1": 0.3820634791500325,
+        "G2": 0.3608062335015672,
+        "G3": 0.2780293581101125,
+        "G4": 0.3161413818181818
+      },
+      "completed": 32,
+      "unscheduled": 6,
+      "late": 11,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.8448,
+          "earned_value": 37.1712
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.8448,
+          "earned_value": 37.1712
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 47.04
+        },
+        {
+          "task": "P7T1",
+          "start": 5,
+          "end": 15,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 4,
+          "end": 13,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P6T1",
+          "start": 4,
+          "end": 14,
+          "quality": 0.96,
+          "earned_value": 29.76
+        },
+        {
+          "task": "P5T1",
+          "start": 13,
+          "end": 19,
+          "quality": 0.8448,
+          "earned_value": 32.9472
+        },
+        {
+          "task": "P1T1",
+          "start": 15,
+          "end": 24,
+          "quality": 0.96,
+          "earned_value": 46.08
+        },
+        {
+          "task": "P3T2",
+          "start": 14,
+          "end": 19,
+          "quality": 0.811008,
+          "earned_value": 42.172416
+        },
+        {
+          "task": "P6T2",
+          "start": 19,
+          "end": 23,
+          "quality": 0.9216,
+          "earned_value": 43.3152
+        },
+        {
+          "task": "P3T3",
+          "start": 23,
+          "end": 28,
+          "quality": 0.778568,
+          "earned_value": 51.385467
+        },
+        {
+          "task": "P3T4",
+          "start": 28,
+          "end": 35,
+          "quality": 0.575517,
+          "earned_value": 42.012758
+        },
+        {
+          "task": "P8T2",
+          "start": 19,
+          "end": 23,
+          "quality": 0.9216,
+          "earned_value": 32.256
+        },
+        {
+          "task": "P1T2",
+          "start": 24,
+          "end": 31,
+          "quality": 0.709632,
+          "earned_value": 32.643072
+        },
+        {
+          "task": "P8T3",
+          "start": 23,
+          "end": 29,
+          "quality": 0.884736,
+          "earned_value": 38.928384
+        },
+        {
+          "task": "P8T4",
+          "start": 29,
+          "end": 39,
+          "quality": 0.849347,
+          "earned_value": 59.454259
+        },
+        {
+          "task": "P1T3",
+          "start": 31,
+          "end": 37,
+          "quality": 0.681247,
+          "earned_value": 42.237297
+        },
+        {
+          "task": "P1T4",
+          "start": 38,
+          "end": 45,
+          "quality": 0.575517,
+          "earned_value": 33.156187
+        },
+        {
+          "task": "P6T3",
+          "start": 35,
+          "end": 41,
+          "quality": 0.681247,
+          "earned_value": 28.309586
+        },
+        {
+          "task": "P6T4",
+          "start": 41,
+          "end": 45,
+          "quality": 0.653997,
+          "earned_value": 39.239811
+        },
+        {
+          "task": "P1T5",
+          "start": 45,
+          "end": 53,
+          "quality": 0.552497,
+          "earned_value": 39.779751
+        },
+        {
+          "task": "P4T2",
+          "start": 53,
+          "end": 60,
+          "quality": 0.811008,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 60,
+          "end": 64,
+          "quality": 0.408405,
+          "earned_value": 23.823651
+        },
+        {
+          "task": "P2T2",
+          "start": 39,
+          "end": 46,
+          "quality": 0.709632,
+          "earned_value": 8.200192
+        },
+        {
+          "task": "P3T5",
+          "start": 46,
+          "end": 52,
+          "quality": 0.425422,
+          "earned_value": 37.011743
+        },
+        {
+          "task": "P3T6",
+          "start": 52,
+          "end": 57,
+          "quality": 0.408405,
+          "earned_value": 29.813597
+        },
+        {
+          "task": "P5T2",
+          "start": 46,
+          "end": 54,
+          "quality": 0.713687,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 57,
+          "end": 65,
+          "quality": 0.627837,
+          "earned_value": 7.010846
+        },
+        {
+          "task": "P6T6",
+          "start": 65,
+          "end": 71,
+          "quality": 0.530397,
+          "earned_value": 9.311408
+        },
+        {
+          "task": "P5T3",
+          "start": 54,
+          "end": 59,
+          "quality": 0.68514,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 59,
+          "end": 65,
+          "quality": 0.52456,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "start": 65,
+          "end": 70,
+          "quality": 0.506455,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        }
+      ]
+    },
+    {
+      "scenario": "S005",
+      "weight": 1,
+      "coverage": 0.3121880076091516,
+      "min_region_coverage": 0.18136622474715267,
+      "region_coverage": {
+        "G1": 0.3250986026328774,
+        "G2": 0.4422051306505345,
+        "G3": 0.18136622474715267,
+        "G4": 0.2849733268099173
+      },
+      "completed": 31,
+      "unscheduled": 7,
+      "late": 12,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.96,
+          "earned_value": 47.04
+        },
+        {
+          "task": "P7T1",
+          "start": 6,
+          "end": 14,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 6,
+          "end": 15,
+          "quality": 0.8448,
+          "earned_value": 45.6192
+        },
+        {
+          "task": "P6T1",
+          "start": 4,
+          "end": 13,
+          "quality": 0.7392,
+          "earned_value": 22.9152
+        },
+        {
+          "task": "P5T1",
+          "start": 15,
+          "end": 21,
+          "quality": 0.96,
+          "earned_value": 37.44
+        },
+        {
+          "task": "P1T1",
+          "start": 14,
+          "end": 21,
+          "quality": 0.7392,
+          "earned_value": 35.4816
+        },
+        {
+          "task": "P3T2",
+          "start": 13,
+          "end": 17,
+          "quality": 0.9216,
+          "earned_value": 47.9232
+        },
+        {
+          "task": "P6T2",
+          "start": 17,
+          "end": 21,
+          "quality": 0.624476,
+          "earned_value": 29.35038
+        },
+        {
+          "task": "P3T3",
+          "start": 21,
+          "end": 26,
+          "quality": 0.884736,
+          "earned_value": 58.392576
+        },
+        {
+          "task": "P3T4",
+          "start": 26,
+          "end": 33,
+          "quality": 0.849347,
+          "earned_value": 62.002299
+        },
+        {
+          "task": "P8T2",
+          "start": 21,
+          "end": 25,
+          "quality": 0.9216,
+          "earned_value": 32.256
+        },
+        {
+          "task": "P1T2",
+          "start": 21,
+          "end": 28,
+          "quality": 0.709632,
+          "earned_value": 32.643072
+        },
+        {
+          "task": "P8T3",
+          "start": 25,
+          "end": 31,
+          "quality": 0.681247,
+          "earned_value": 29.974856
+        },
+        {
+          "task": "P8T4",
+          "start": 31,
+          "end": 38,
+          "quality": 0.653997,
+          "earned_value": 45.77978
+        },
+        {
+          "task": "P1T3",
+          "start": 28,
+          "end": 34,
+          "quality": 0.52456,
+          "earned_value": 32.522718
+        },
+        {
+          "task": "P1T4",
+          "start": 34,
+          "end": 43,
+          "quality": 0.503578,
+          "earned_value": 30.718232
+        },
+        {
+          "task": "P6T3",
+          "start": 37,
+          "end": 45,
+          "quality": 0.461613,
+          "earned_value": 14.669028
+        },
+        {
+          "task": "P6T4",
+          "start": 45,
+          "end": 51,
+          "quality": 0.38997,
+          "earned_value": 19.498524
+        },
+        {
+          "task": "P1T5",
+          "start": 43,
+          "end": 50,
+          "quality": 0.372245,
+          "earned_value": 26.801607
+        },
+        {
+          "task": "P4T2",
+          "start": 50,
+          "end": 59,
+          "quality": 0.811008,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 59,
+          "end": 64,
+          "quality": 0.357355,
+          "earned_value": 20.845694
+        },
+        {
+          "task": "P2T2",
+          "start": 38,
+          "end": 45,
+          "quality": 0.811008,
+          "earned_value": 11.71456
+        },
+        {
+          "task": "P3T5",
+          "start": 51,
+          "end": 58,
+          "quality": 0.68514,
+          "earned_value": 46.36111
+        },
+        {
+          "task": "P3T6",
+          "start": 58,
+          "end": 64,
+          "quality": 0.657734,
+          "earned_value": 40.01215
+        },
+        {
+          "task": "P5T2",
+          "start": 45,
+          "end": 53,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 64,
+          "end": 70,
+          "quality": 0.374372,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T3",
+          "start": 53,
+          "end": 60,
+          "quality": 0.884736,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 60,
+          "end": 67,
+          "quality": 0.68514,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "start": 64,
+          "end": 71,
+          "quality": 0.778568,
+          "earned_value": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "S006",
+      "weight": 1,
+      "coverage": 0.23057569484672288,
+      "min_region_coverage": 0.18181102096965715,
+      "region_coverage": {
+        "G1": 0.27041648528981765,
+        "G2": 0.24955169795050045,
+        "G3": 0.18181102096965715,
+        "G4": 0.21650878468874576
+      },
+      "completed": 26,
+      "unscheduled": 12,
+      "late": 16,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 7,
+          "quality": 0.7776,
+          "earned_value": 34.2144
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 8,
+          "quality": 0.672,
+          "earned_value": 29.568
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.8928,
+          "earned_value": 43.7472
+        },
+        {
+          "task": "P7T1",
+          "start": 8,
+          "end": 19,
+          "quality": 0.672,
+          "earned_value": 36.288
+        },
+        {
+          "task": "P2T1",
+          "start": 16,
+          "end": 28,
+          "quality": 0.8928,
+          "earned_value": 32.1408
+        },
+        {
+          "task": "P6T1",
+          "start": 7,
+          "end": 17,
+          "quality": 0.8928,
+          "earned_value": 27.6768
+        },
+        {
+          "task": "P5T1",
+          "start": 6,
+          "end": 16,
+          "quality": 0.8928,
+          "earned_value": 34.8192
+        },
+        {
+          "task": "P1T1",
+          "start": 19,
+          "end": 29,
+          "quality": 0.8928,
+          "earned_value": 35.712
+        },
+        {
+          "task": "P3T2",
+          "start": 18,
+          "end": 23,
+          "quality": 0.694241,
+          "earned_value": 36.100547
+        },
+        {
+          "task": "P6T2",
+          "start": 23,
+          "end": 28,
+          "quality": 0.694241,
+          "earned_value": 32.62934
+        },
+        {
+          "task": "P3T3",
+          "start": 28,
+          "end": 33,
+          "quality": 0.619819,
+          "earned_value": 40.908029
+        },
+        {
+          "task": "P3T4",
+          "start": 33,
+          "end": 42,
+          "quality": 0.416518,
+          "earned_value": 30.405822
+        },
+        {
+          "task": "P8T2",
+          "start": 29,
+          "end": 34,
+          "quality": 0.797092,
+          "earned_value": 26.348314
+        },
+        {
+          "task": "P1T2",
+          "start": 29,
+          "end": 35,
+          "quality": 0.797092,
+          "earned_value": 32.5922
+        },
+        {
+          "task": "P8T3",
+          "start": 34,
+          "end": 40,
+          "quality": 0.711644,
+          "earned_value": 26.093598
+        },
+        {
+          "task": "P8T4",
+          "start": 40,
+          "end": 52,
+          "quality": 0.635355,
+          "earned_value": 24.708266
+        },
+        {
+          "task": "P1T3",
+          "start": 35,
+          "end": 42,
+          "quality": 0.711644,
+          "earned_value": 34.317036
+        },
+        {
+          "task": "P1T4",
+          "start": 42,
+          "end": 51,
+          "quality": 0.635355,
+          "earned_value": 23.684637
+        },
+        {
+          "task": "P6T3",
+          "start": 42,
+          "end": 51,
+          "quality": 0.619819,
+          "earned_value": 10.605785
+        },
+        {
+          "task": "P6T4",
+          "start": 51,
+          "end": 56,
+          "quality": 0.553374,
+          "earned_value": 18.445802
+        },
+        {
+          "task": "P1T5",
+          "start": 56,
+          "end": 63,
+          "quality": 0.567245,
+          "earned_value": 20.420831
+        },
+        {
+          "task": "P4T2",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P1T6",
+          "start": 63,
+          "end": 70,
+          "quality": 0.506437,
+          "earned_value": 17.725281
+        },
+        {
+          "task": "P2T2",
+          "start": 52,
+          "end": 59,
+          "quality": 0.599962,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P3T5",
+          "start": 59,
+          "end": 66,
+          "quality": 0.371867,
+          "earned_value": 10.784154
+        },
+        {
+          "task": "P3T6",
+          "start": 66,
+          "end": 72,
+          "quality": 0.332003,
+          "earned_value": 9.425202
+        },
+        {
+          "task": "P5T2",
+          "start": 59,
+          "end": 66,
+          "quality": 0.797092,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P6T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        }
+      ]
+    },
+    {
+      "scenario": "S007",
+      "weight": 1,
+      "coverage": 0.20721053396410452,
+      "min_region_coverage": 0.13927575426061492,
+      "region_coverage": {
+        "G1": 0.21741970696771493,
+        "G2": 0.26138331368454565,
+        "G3": 0.13927575426061492,
+        "G4": 0.2036662691132509
+      },
+      "completed": 24,
+      "unscheduled": 14,
+      "late": 14,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.8928,
+          "earned_value": 39.2832
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 8,
+          "quality": 0.8928,
+          "earned_value": 39.2832
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.8928,
+          "earned_value": 43.7472
+        },
+        {
+          "task": "P7T1",
+          "start": 8,
+          "end": 21,
+          "quality": 0.8928,
+          "earned_value": 48.2112
+        },
+        {
+          "task": "P2T1",
+          "start": 5,
+          "end": 15,
+          "quality": 0.7776,
+          "earned_value": 41.9904
+        },
+        {
+          "task": "P6T1",
+          "start": 5,
+          "end": 17,
+          "quality": 0.8928,
+          "earned_value": 27.6768
+        },
+        {
+          "task": "P5T1",
+          "start": 15,
+          "end": 25,
+          "quality": 0.8928,
+          "earned_value": 34.8192
+        },
+        {
+          "task": "P1T1",
+          "start": 21,
+          "end": 31,
+          "quality": 0.8928,
+          "earned_value": 30.9504
+        },
+        {
+          "task": "P3T2",
+          "start": 17,
+          "end": 24,
+          "quality": 0.797092,
+          "earned_value": 41.448776
+        },
+        {
+          "task": "P6T2",
+          "start": 24,
+          "end": 29,
+          "quality": 0.694241,
+          "earned_value": 32.62934
+        },
+        {
+          "task": "P3T3",
+          "start": 29,
+          "end": 36,
+          "quality": 0.711644,
+          "earned_value": 46.968477
+        },
+        {
+          "task": "P3T4",
+          "start": 36,
+          "end": 48,
+          "quality": 0.635355,
+          "earned_value": 33.497349
+        },
+        {
+          "task": "P8T2",
+          "start": 29,
+          "end": 36,
+          "quality": 0.797092,
+          "earned_value": 23.248512
+        },
+        {
+          "task": "P1T2",
+          "start": 31,
+          "end": 39,
+          "quality": 0.694241,
+          "earned_value": 21.290066
+        },
+        {
+          "task": "P8T3",
+          "start": 36,
+          "end": 42,
+          "quality": 0.619819,
+          "earned_value": 19.696458
+        },
+        {
+          "task": "P8T4",
+          "start": 42,
+          "end": 54,
+          "quality": 0.416518,
+          "earned_value": 12.958341
+        },
+        {
+          "task": "P1T3",
+          "start": 39,
+          "end": 46,
+          "quality": 0.619819,
+          "earned_value": 21.349308
+        },
+        {
+          "task": "P1T4",
+          "start": 46,
+          "end": 56,
+          "quality": 0.553374,
+          "earned_value": 11.251939
+        },
+        {
+          "task": "P6T3",
+          "start": 60,
+          "end": 67,
+          "quality": 0.619819,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T4",
+          "start": 67,
+          "end": 72,
+          "quality": 0.553374,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T5",
+          "start": 56,
+          "end": 63,
+          "quality": 0.494052,
+          "earned_value": 17.785885
+        },
+        {
+          "task": "P4T2",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P1T6",
+          "start": 63,
+          "end": 70,
+          "quality": 0.384175,
+          "earned_value": 13.446129
+        },
+        {
+          "task": "P2T2",
+          "start": 54,
+          "end": 61,
+          "quality": 0.694241,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P3T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P3T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T2",
+          "start": 61,
+          "end": 70,
+          "quality": 0.797092,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P6T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        }
+      ]
+    },
+    {
+      "scenario": "S008",
+      "weight": 1,
+      "coverage": 0.3040956526280917,
+      "min_region_coverage": 0.22761506732730047,
+      "region_coverage": {
+        "G1": 0.29919316023588033,
+        "G2": 0.4030577911855528,
+        "G3": 0.22761506732730047,
+        "G4": 0.276404731768595
+      },
+      "completed": 31,
+      "unscheduled": 7,
+      "late": 14,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 47.04
+        },
+        {
+          "task": "P7T1",
+          "start": 6,
+          "end": 17,
+          "quality": 0.8448,
+          "earned_value": 45.6192
+        },
+        {
+          "task": "P2T1",
+          "start": 4,
+          "end": 13,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P6T1",
+          "start": 4,
+          "end": 13,
+          "quality": 0.7392,
+          "earned_value": 22.9152
+        },
+        {
+          "task": "P5T1",
+          "start": 13,
+          "end": 19,
+          "quality": 0.7392,
+          "earned_value": 28.8288
+        },
+        {
+          "task": "P1T1",
+          "start": 17,
+          "end": 26,
+          "quality": 0.8448,
+          "earned_value": 40.5504
+        },
+        {
+          "task": "P3T2",
+          "start": 13,
+          "end": 18,
+          "quality": 0.9216,
+          "earned_value": 47.9232
+        },
+        {
+          "task": "P6T2",
+          "start": 18,
+          "end": 22,
+          "quality": 0.709632,
+          "earned_value": 33.352704
+        },
+        {
+          "task": "P3T3",
+          "start": 22,
+          "end": 26,
+          "quality": 0.681247,
+          "earned_value": 44.962284
+        },
+        {
+          "task": "P3T4",
+          "start": 26,
+          "end": 36,
+          "quality": 0.653997,
+          "earned_value": 47.74177
+        },
+        {
+          "task": "P8T2",
+          "start": 19,
+          "end": 25,
+          "quality": 0.9216,
+          "earned_value": 32.256
+        },
+        {
+          "task": "P1T2",
+          "start": 26,
+          "end": 32,
+          "quality": 0.624476,
+          "earned_value": 28.725903
+        },
+        {
+          "task": "P8T3",
+          "start": 25,
+          "end": 32,
+          "quality": 0.681247,
+          "earned_value": 29.974856
+        },
+        {
+          "task": "P8T4",
+          "start": 32,
+          "end": 42,
+          "quality": 0.653997,
+          "earned_value": 45.77978
+        },
+        {
+          "task": "P1T3",
+          "start": 36,
+          "end": 40,
+          "quality": 0.599497,
+          "earned_value": 33.038952
+        },
+        {
+          "task": "P1T4",
+          "start": 40,
+          "end": 47,
+          "quality": 0.443148,
+          "earned_value": 22.526704
+        },
+        {
+          "task": "P6T3",
+          "start": 36,
+          "end": 43,
+          "quality": 0.681247,
+          "earned_value": 24.979046
+        },
+        {
+          "task": "P6T4",
+          "start": 43,
+          "end": 47,
+          "quality": 0.653997,
+          "earned_value": 39.239811
+        },
+        {
+          "task": "P1T5",
+          "start": 47,
+          "end": 55,
+          "quality": 0.374372,
+          "earned_value": 25.457273
+        },
+        {
+          "task": "P4T2",
+          "start": 55,
+          "end": 62,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 62,
+          "end": 68,
+          "quality": 0.359397,
+          "earned_value": 15.374196
+        },
+        {
+          "task": "P2T2",
+          "start": 42,
+          "end": 50,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P3T5",
+          "start": 50,
+          "end": 58,
+          "quality": 0.627837,
+          "earned_value": 42.483635
+        },
+        {
+          "task": "P3T6",
+          "start": 58,
+          "end": 62,
+          "quality": 0.602723,
+          "earned_value": 41.554437
+        },
+        {
+          "task": "P5T2",
+          "start": 50,
+          "end": 57,
+          "quality": 0.709632,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 62,
+          "end": 68,
+          "quality": 0.552497,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T6",
+          "start": 68,
+          "end": 72,
+          "quality": 0.466749,
+          "earned_value": 6.14553
+        },
+        {
+          "task": "P5T3",
+          "start": 57,
+          "end": 64,
+          "quality": 0.681247,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 64,
+          "end": 71,
+          "quality": 0.778568,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        }
+      ]
+    },
+    {
+      "scenario": "S009",
+      "weight": 1,
+      "coverage": 0.1959640292709334,
+      "min_region_coverage": 0.16576909332342063,
+      "region_coverage": {
+        "G1": 0.19063671425444204,
+        "G2": 0.19826589151090962,
+        "G3": 0.16576909332342063,
+        "G4": 0.22727335562228146
+      },
+      "completed": 26,
+      "unscheduled": 12,
+      "late": 16,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.672,
+          "earned_value": 29.568
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.7776,
+          "earned_value": 34.2144
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.8928,
+          "earned_value": 43.7472
+        },
+        {
+          "task": "P7T1",
+          "start": 6,
+          "end": 19,
+          "quality": 0.8928,
+          "earned_value": 48.2112
+        },
+        {
+          "task": "P2T1",
+          "start": 6,
+          "end": 18,
+          "quality": 0.8928,
+          "earned_value": 48.2112
+        },
+        {
+          "task": "P6T1",
+          "start": 6,
+          "end": 16,
+          "quality": 0.8928,
+          "earned_value": 27.6768
+        },
+        {
+          "task": "P5T1",
+          "start": 18,
+          "end": 28,
+          "quality": 0.672,
+          "earned_value": 23.296
+        },
+        {
+          "task": "P1T1",
+          "start": 19,
+          "end": 29,
+          "quality": 0.8928,
+          "earned_value": 35.712
+        },
+        {
+          "task": "P3T2",
+          "start": 16,
+          "end": 21,
+          "quality": 0.451584,
+          "earned_value": 23.482368
+        },
+        {
+          "task": "P6T2",
+          "start": 21,
+          "end": 27,
+          "quality": 0.797092,
+          "earned_value": 37.463316
+        },
+        {
+          "task": "P3T3",
+          "start": 27,
+          "end": 33,
+          "quality": 0.403174,
+          "earned_value": 26.609497
+        },
+        {
+          "task": "P3T4",
+          "start": 33,
+          "end": 43,
+          "quality": 0.313508,
+          "earned_value": 22.886103
+        },
+        {
+          "task": "P8T2",
+          "start": 29,
+          "end": 36,
+          "quality": 0.797092,
+          "earned_value": 23.248512
+        },
+        {
+          "task": "P1T2",
+          "start": 31,
+          "end": 38,
+          "quality": 0.694241,
+          "earned_value": 23.064238
+        },
+        {
+          "task": "P8T3",
+          "start": 36,
+          "end": 42,
+          "quality": 0.711644,
+          "earned_value": 22.614452
+        },
+        {
+          "task": "P8T4",
+          "start": 42,
+          "end": 51,
+          "quality": 0.635355,
+          "earned_value": 27.179092
+        },
+        {
+          "task": "P1T3",
+          "start": 39,
+          "end": 45,
+          "quality": 0.619819,
+          "earned_value": 23.484239
+        },
+        {
+          "task": "P1T4",
+          "start": 47,
+          "end": 59,
+          "quality": 0.416518,
+          "earned_value": 4.234601
+        },
+        {
+          "task": "P6T3",
+          "start": 43,
+          "end": 52,
+          "quality": 0.711644,
+          "earned_value": 10.437439
+        },
+        {
+          "task": "P6T4",
+          "start": 52,
+          "end": 57,
+          "quality": 0.478224,
+          "earned_value": 14.346735
+        },
+        {
+          "task": "P1T5",
+          "start": 59,
+          "end": 69,
+          "quality": 0.323884,
+          "earned_value": 3.886614
+        },
+        {
+          "task": "P4T2",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P1T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T2",
+          "start": 51,
+          "end": 58,
+          "quality": 0.797092,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P3T5",
+          "start": 58,
+          "end": 65,
+          "quality": 0.243784,
+          "earned_value": 8.248026
+        },
+        {
+          "task": "P3T6",
+          "start": 65,
+          "end": 71,
+          "quality": 0.21765,
+          "earned_value": 7.061545
+        },
+        {
+          "task": "P5T2",
+          "start": 58,
+          "end": 65,
+          "quality": 0.599962,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P6T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T3",
+          "start": 65,
+          "end": 71,
+          "quality": 0.535646,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        }
+      ]
+    },
+    {
+      "scenario": "S010",
+      "weight": 1,
+      "coverage": 0.34721712000247235,
+      "min_region_coverage": 0.2795735927326735,
+      "region_coverage": {
+        "G1": 0.46140483142668665,
+        "G2": 0.3581363596082922,
+        "G3": 0.2795735927326735,
+        "G4": 0.2849733268099173
+      },
+      "completed": 33,
+      "unscheduled": 5,
+      "late": 13,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.7392,
+          "earned_value": 32.5248
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.96,
+          "earned_value": 47.04
+        },
+        {
+          "task": "P7T1",
+          "start": 5,
+          "end": 13,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 6,
+          "end": 13,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P6T1",
+          "start": 4,
+          "end": 11,
+          "quality": 0.96,
+          "earned_value": 29.76
+        },
+        {
+          "task": "P5T1",
+          "start": 13,
+          "end": 19,
+          "quality": 0.7392,
+          "earned_value": 28.8288
+        },
+        {
+          "task": "P1T1",
+          "start": 13,
+          "end": 23,
+          "quality": 0.96,
+          "earned_value": 46.08
+        },
+        {
+          "task": "P3T2",
+          "start": 11,
+          "end": 17,
+          "quality": 0.709632,
+          "earned_value": 36.900864
+        },
+        {
+          "task": "P6T2",
+          "start": 17,
+          "end": 23,
+          "quality": 0.9216,
+          "earned_value": 43.3152
+        },
+        {
+          "task": "P3T3",
+          "start": 23,
+          "end": 28,
+          "quality": 0.599497,
+          "earned_value": 39.566809
+        },
+        {
+          "task": "P3T4",
+          "start": 28,
+          "end": 38,
+          "quality": 0.575517,
+          "earned_value": 42.012758
+        },
+        {
+          "task": "P8T2",
+          "start": 19,
+          "end": 23,
+          "quality": 0.9216,
+          "earned_value": 32.256
+        },
+        {
+          "task": "P1T2",
+          "start": 23,
+          "end": 28,
+          "quality": 0.9216,
+          "earned_value": 42.3936
+        },
+        {
+          "task": "P8T3",
+          "start": 23,
+          "end": 28,
+          "quality": 0.681247,
+          "earned_value": 29.974856
+        },
+        {
+          "task": "P8T4",
+          "start": 28,
+          "end": 35,
+          "quality": 0.653997,
+          "earned_value": 45.77978
+        },
+        {
+          "task": "P1T3",
+          "start": 28,
+          "end": 33,
+          "quality": 0.884736,
+          "earned_value": 54.853632
+        },
+        {
+          "task": "P1T4",
+          "start": 33,
+          "end": 43,
+          "quality": 0.747425,
+          "earned_value": 45.592923
+        },
+        {
+          "task": "P6T3",
+          "start": 38,
+          "end": 44,
+          "quality": 0.884736,
+          "earned_value": 30.277632
+        },
+        {
+          "task": "P6T4",
+          "start": 44,
+          "end": 49,
+          "quality": 0.849347,
+          "earned_value": 48.129638
+        },
+        {
+          "task": "P1T5",
+          "start": 43,
+          "end": 50,
+          "quality": 0.552497,
+          "earned_value": 39.779751
+        },
+        {
+          "task": "P4T2",
+          "start": 50,
+          "end": 60,
+          "quality": 0.709632,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 60,
+          "end": 64,
+          "quality": 0.530397,
+          "earned_value": 30.939806
+        },
+        {
+          "task": "P2T2",
+          "start": 35,
+          "end": 41,
+          "quality": 0.9216,
+          "earned_value": 23.9616
+        },
+        {
+          "task": "P3T5",
+          "start": 49,
+          "end": 56,
+          "quality": 0.552497,
+          "earned_value": 42.726399
+        },
+        {
+          "task": "P3T6",
+          "start": 56,
+          "end": 61,
+          "quality": 0.530397,
+          "earned_value": 38.718958
+        },
+        {
+          "task": "P5T2",
+          "start": 41,
+          "end": 47,
+          "quality": 0.546417,
+          "earned_value": 4.007055
+        },
+        {
+          "task": "P6T5",
+          "start": 61,
+          "end": 68,
+          "quality": 0.52456,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T6",
+          "start": 68,
+          "end": 72,
+          "quality": 0.503578,
+          "earned_value": 6.630438
+        },
+        {
+          "task": "P5T3",
+          "start": 50,
+          "end": 55,
+          "quality": 0.52456,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 55,
+          "end": 61,
+          "quality": 0.884736,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "start": 61,
+          "end": 68,
+          "quality": 0.443148,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "start": 64,
+          "end": 71,
+          "quality": 0.599497,
+          "earned_value": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "S011",
+      "weight": 1,
+      "coverage": 0.32721626150915495,
+      "min_region_coverage": 0.26411162585551085,
+      "region_coverage": {
+        "G1": 0.37108022248318245,
+        "G2": 0.3616181393226719,
+        "G3": 0.26411162585551085,
+        "G4": 0.30631423153719006
+      },
+      "completed": 32,
+      "unscheduled": 6,
+      "late": 11,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.8448,
+          "earned_value": 37.1712
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.96,
+          "earned_value": 47.04
+        },
+        {
+          "task": "P7T1",
+          "start": 6,
+          "end": 16,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 5,
+          "end": 12,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P6T1",
+          "start": 5,
+          "end": 12,
+          "quality": 0.96,
+          "earned_value": 29.76
+        },
+        {
+          "task": "P5T1",
+          "start": 12,
+          "end": 18,
+          "quality": 0.7392,
+          "earned_value": 28.8288
+        },
+        {
+          "task": "P1T1",
+          "start": 16,
+          "end": 26,
+          "quality": 0.8448,
+          "earned_value": 40.5504
+        },
+        {
+          "task": "P3T2",
+          "start": 12,
+          "end": 17,
+          "quality": 0.709632,
+          "earned_value": 36.900864
+        },
+        {
+          "task": "P6T2",
+          "start": 17,
+          "end": 21,
+          "quality": 0.709632,
+          "earned_value": 33.352704
+        },
+        {
+          "task": "P3T3",
+          "start": 21,
+          "end": 26,
+          "quality": 0.599497,
+          "earned_value": 39.566809
+        },
+        {
+          "task": "P3T4",
+          "start": 26,
+          "end": 33,
+          "quality": 0.575517,
+          "earned_value": 42.012758
+        },
+        {
+          "task": "P8T2",
+          "start": 22,
+          "end": 26,
+          "quality": 0.9216,
+          "earned_value": 32.256
+        },
+        {
+          "task": "P1T2",
+          "start": 26,
+          "end": 32,
+          "quality": 0.811008,
+          "earned_value": 37.306368
+        },
+        {
+          "task": "P8T3",
+          "start": 26,
+          "end": 32,
+          "quality": 0.884736,
+          "earned_value": 38.928384
+        },
+        {
+          "task": "P8T4",
+          "start": 32,
+          "end": 39,
+          "quality": 0.747425,
+          "earned_value": 52.319748
+        },
+        {
+          "task": "P1T3",
+          "start": 32,
+          "end": 38,
+          "quality": 0.599497,
+          "earned_value": 37.168821
+        },
+        {
+          "task": "P1T4",
+          "start": 38,
+          "end": 45,
+          "quality": 0.575517,
+          "earned_value": 33.156187
+        },
+        {
+          "task": "P6T3",
+          "start": 33,
+          "end": 39,
+          "quality": 0.681247,
+          "earned_value": 29.974856
+        },
+        {
+          "task": "P6T4",
+          "start": 39,
+          "end": 44,
+          "quality": 0.653997,
+          "earned_value": 39.239811
+        },
+        {
+          "task": "P1T5",
+          "start": 45,
+          "end": 51,
+          "quality": 0.552497,
+          "earned_value": 39.779751
+        },
+        {
+          "task": "P4T2",
+          "start": 51,
+          "end": 60,
+          "quality": 0.811008,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 60,
+          "end": 64,
+          "quality": 0.408405,
+          "earned_value": 23.823651
+        },
+        {
+          "task": "P2T2",
+          "start": 39,
+          "end": 47,
+          "quality": 0.709632,
+          "earned_value": 6.150144
+        },
+        {
+          "task": "P3T5",
+          "start": 47,
+          "end": 55,
+          "quality": 0.552497,
+          "earned_value": 45.396799
+        },
+        {
+          "task": "P3T6",
+          "start": 55,
+          "end": 59,
+          "quality": 0.466749,
+          "earned_value": 34.072683
+        },
+        {
+          "task": "P5T2",
+          "start": 47,
+          "end": 54,
+          "quality": 0.709632,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 59,
+          "end": 65,
+          "quality": 0.627837,
+          "earned_value": 7.010846
+        },
+        {
+          "task": "P6T6",
+          "start": 65,
+          "end": 69,
+          "quality": 0.464097,
+          "earned_value": 12.221223
+        },
+        {
+          "task": "P5T3",
+          "start": 54,
+          "end": 59,
+          "quality": 0.681247,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 59,
+          "end": 65,
+          "quality": 0.599497,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "start": 65,
+          "end": 72,
+          "quality": 0.575517,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        }
+      ]
+    },
+    {
+      "scenario": "S012",
+      "weight": 1,
+      "coverage": 0.199095442923081,
+      "min_region_coverage": 0.13147860997157482,
+      "region_coverage": {
+        "G1": 0.21187935713790979,
+        "G2": 0.2408748051619516,
+        "G3": 0.13147860997157482,
+        "G4": 0.20576709641410643
+      },
+      "completed": 25,
+      "unscheduled": 13,
+      "late": 15,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.8928,
+          "earned_value": 39.2832
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 7,
+          "quality": 0.8928,
+          "earned_value": 39.2832
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.8928,
+          "earned_value": 43.7472
+        },
+        {
+          "task": "P7T1",
+          "start": 7,
+          "end": 20,
+          "quality": 0.7776,
+          "earned_value": 41.9904
+        },
+        {
+          "task": "P2T1",
+          "start": 8,
+          "end": 20,
+          "quality": 0.8928,
+          "earned_value": 48.2112
+        },
+        {
+          "task": "P6T1",
+          "start": 6,
+          "end": 16,
+          "quality": 0.8928,
+          "earned_value": 27.6768
+        },
+        {
+          "task": "P5T1",
+          "start": 20,
+          "end": 29,
+          "quality": 0.8928,
+          "earned_value": 29.016
+        },
+        {
+          "task": "P1T1",
+          "start": 20,
+          "end": 32,
+          "quality": 0.7776,
+          "earned_value": 24.8832
+        },
+        {
+          "task": "P3T2",
+          "start": 16,
+          "end": 21,
+          "quality": 0.797092,
+          "earned_value": 41.448776
+        },
+        {
+          "task": "P6T2",
+          "start": 21,
+          "end": 28,
+          "quality": 0.599962,
+          "earned_value": 28.198195
+        },
+        {
+          "task": "P3T3",
+          "start": 28,
+          "end": 33,
+          "quality": 0.535646,
+          "earned_value": 35.352617
+        },
+        {
+          "task": "P3T4",
+          "start": 33,
+          "end": 43,
+          "quality": 0.359954,
+          "earned_value": 26.276636
+        },
+        {
+          "task": "P8T2",
+          "start": 29,
+          "end": 34,
+          "quality": 0.599962,
+          "earned_value": 19.832064
+        },
+        {
+          "task": "P1T2",
+          "start": 32,
+          "end": 38,
+          "quality": 0.694241,
+          "earned_value": 23.064238
+        },
+        {
+          "task": "P8T3",
+          "start": 34,
+          "end": 40,
+          "quality": 0.535646,
+          "earned_value": 19.640343
+        },
+        {
+          "task": "P8T4",
+          "start": 40,
+          "end": 49,
+          "quality": 0.478224,
+          "earned_value": 24.176905
+        },
+        {
+          "task": "P1T3",
+          "start": 38,
+          "end": 44,
+          "quality": 0.619819,
+          "earned_value": 25.619169
+        },
+        {
+          "task": "P1T4",
+          "start": 44,
+          "end": 56,
+          "quality": 0.481971,
+          "earned_value": 9.800076
+        },
+        {
+          "task": "P6T3",
+          "start": 47,
+          "end": 57,
+          "quality": 0.535646,
+          "earned_value": 1.309356
+        },
+        {
+          "task": "P6T4",
+          "start": 57,
+          "end": 63,
+          "quality": 0.359954,
+          "earned_value": 3.599539
+        },
+        {
+          "task": "P1T5",
+          "start": 56,
+          "end": 65,
+          "quality": 0.430304,
+          "earned_value": 12.048503
+        },
+        {
+          "task": "P4T2",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P1T6",
+          "start": 65,
+          "end": 71,
+          "quality": 0.334604,
+          "earned_value": 10.409906
+        },
+        {
+          "task": "P2T2",
+          "start": 49,
+          "end": 59,
+          "quality": 0.797092,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P3T5",
+          "start": 63,
+          "end": 70,
+          "quality": 0.321367,
+          "earned_value": 3.106546
+        },
+        {
+          "task": "P3T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T2",
+          "start": 59,
+          "end": 69,
+          "quality": 0.694241,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P6T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        }
+      ]
+    },
+    {
+      "scenario": "S013",
+      "weight": 1,
+      "coverage": 0.2965404972386434,
+      "min_region_coverage": 0.23561684071449485,
+      "region_coverage": {
+        "G1": 0.30736032402965835,
+        "G2": 0.38337425090250343,
+        "G3": 0.23561684071449485,
+        "G4": 0.2512834094545454
+      },
+      "completed": 31,
+      "unscheduled": 7,
+      "late": 15,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.7392,
+          "earned_value": 36.2208
+        },
+        {
+          "task": "P7T1",
+          "start": 5,
+          "end": 13,
+          "quality": 0.8448,
+          "earned_value": 45.6192
+        },
+        {
+          "task": "P2T1",
+          "start": 5,
+          "end": 12,
+          "quality": 0.7392,
+          "earned_value": 39.9168
+        },
+        {
+          "task": "P6T1",
+          "start": 6,
+          "end": 16,
+          "quality": 0.96,
+          "earned_value": 29.76
+        },
+        {
+          "task": "P5T1",
+          "start": 12,
+          "end": 20,
+          "quality": 0.96,
+          "earned_value": 37.44
+        },
+        {
+          "task": "P1T1",
+          "start": 13,
+          "end": 22,
+          "quality": 0.96,
+          "earned_value": 46.08
+        },
+        {
+          "task": "P3T2",
+          "start": 16,
+          "end": 22,
+          "quality": 0.811008,
+          "earned_value": 42.172416
+        },
+        {
+          "task": "P6T2",
+          "start": 22,
+          "end": 26,
+          "quality": 0.709632,
+          "earned_value": 33.352704
+        },
+        {
+          "task": "P3T3",
+          "start": 26,
+          "end": 30,
+          "quality": 0.68514,
+          "earned_value": 45.219211
+        },
+        {
+          "task": "P3T4",
+          "start": 30,
+          "end": 37,
+          "quality": 0.578806,
+          "earned_value": 42.252831
+        },
+        {
+          "task": "P8T2",
+          "start": 20,
+          "end": 24,
+          "quality": 0.709632,
+          "earned_value": 24.83712
+        },
+        {
+          "task": "P1T2",
+          "start": 30,
+          "end": 37,
+          "quality": 0.709632,
+          "earned_value": 25.389056
+        },
+        {
+          "task": "P8T3",
+          "start": 24,
+          "end": 30,
+          "quality": 0.681247,
+          "earned_value": 29.974856
+        },
+        {
+          "task": "P8T4",
+          "start": 30,
+          "end": 39,
+          "quality": 0.653997,
+          "earned_value": 45.77978
+        },
+        {
+          "task": "P1T3",
+          "start": 37,
+          "end": 43,
+          "quality": 0.599497,
+          "earned_value": 26.844149
+        },
+        {
+          "task": "P1T4",
+          "start": 43,
+          "end": 50,
+          "quality": 0.575517,
+          "earned_value": 23.404367
+        },
+        {
+          "task": "P6T3",
+          "start": 37,
+          "end": 44,
+          "quality": 0.681247,
+          "earned_value": 23.313777
+        },
+        {
+          "task": "P6T4",
+          "start": 44,
+          "end": 49,
+          "quality": 0.653997,
+          "earned_value": 37.059822
+        },
+        {
+          "task": "P1T5",
+          "start": 50,
+          "end": 58,
+          "quality": 0.552497,
+          "earned_value": 30.939806
+        },
+        {
+          "task": "P4T2",
+          "start": 58,
+          "end": 65,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 65,
+          "end": 69,
+          "quality": 0.530397,
+          "earned_value": 20.626537
+        },
+        {
+          "task": "P2T2",
+          "start": 39,
+          "end": 45,
+          "quality": 0.709632,
+          "earned_value": 10.25024
+        },
+        {
+          "task": "P3T5",
+          "start": 49,
+          "end": 55,
+          "quality": 0.555654,
+          "earned_value": 45.656209
+        },
+        {
+          "task": "P3T6",
+          "start": 55,
+          "end": 61,
+          "quality": 0.469416,
+          "earned_value": 34.267384
+        },
+        {
+          "task": "P5T2",
+          "start": 45,
+          "end": 51,
+          "quality": 0.709632,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 61,
+          "end": 69,
+          "quality": 0.627837,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T3",
+          "start": 51,
+          "end": 56,
+          "quality": 0.681247,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 56,
+          "end": 63,
+          "quality": 0.599497,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "start": 63,
+          "end": 70,
+          "quality": 0.653997,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        }
+      ]
+    },
+    {
+      "scenario": "S014",
+      "weight": 1,
+      "coverage": 0.30650162737804365,
+      "min_region_coverage": 0.2395875897919471,
+      "region_coverage": {
+        "G1": 0.3819279608587963,
+        "G2": 0.34496463555822976,
+        "G3": 0.2541495330483162,
+        "G4": 0.2395875897919471
+      },
+      "completed": 31,
+      "unscheduled": 7,
+      "late": 11,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.7392,
+          "earned_value": 32.5248
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.96,
+          "earned_value": 47.04
+        },
+        {
+          "task": "P7T1",
+          "start": 5,
+          "end": 13,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 6,
+          "end": 13,
+          "quality": 0.8448,
+          "earned_value": 45.6192
+        },
+        {
+          "task": "P6T1",
+          "start": 5,
+          "end": 15,
+          "quality": 0.96,
+          "earned_value": 29.76
+        },
+        {
+          "task": "P5T1",
+          "start": 13,
+          "end": 20,
+          "quality": 0.7392,
+          "earned_value": 28.8288
+        },
+        {
+          "task": "P1T1",
+          "start": 13,
+          "end": 23,
+          "quality": 0.96,
+          "earned_value": 46.08
+        },
+        {
+          "task": "P3T2",
+          "start": 15,
+          "end": 20,
+          "quality": 0.9216,
+          "earned_value": 47.9232
+        },
+        {
+          "task": "P6T2",
+          "start": 20,
+          "end": 25,
+          "quality": 0.9216,
+          "earned_value": 43.3152
+        },
+        {
+          "task": "P3T3",
+          "start": 25,
+          "end": 29,
+          "quality": 0.884736,
+          "earned_value": 58.392576
+        },
+        {
+          "task": "P3T4",
+          "start": 29,
+          "end": 36,
+          "quality": 0.849347,
+          "earned_value": 62.002299
+        },
+        {
+          "task": "P8T2",
+          "start": 20,
+          "end": 24,
+          "quality": 0.709632,
+          "earned_value": 24.83712
+        },
+        {
+          "task": "P1T2",
+          "start": 23,
+          "end": 28,
+          "quality": 0.811008,
+          "earned_value": 37.306368
+        },
+        {
+          "task": "P8T3",
+          "start": 24,
+          "end": 29,
+          "quality": 0.52456,
+          "earned_value": 23.080639
+        },
+        {
+          "task": "P8T4",
+          "start": 29,
+          "end": 36,
+          "quality": 0.387755,
+          "earned_value": 27.142831
+        },
+        {
+          "task": "P1T3",
+          "start": 28,
+          "end": 34,
+          "quality": 0.778568,
+          "earned_value": 48.271196
+        },
+        {
+          "task": "P1T4",
+          "start": 34,
+          "end": 44,
+          "quality": 0.575517,
+          "earned_value": 35.106551
+        },
+        {
+          "task": "P6T3",
+          "start": 36,
+          "end": 43,
+          "quality": 0.884736,
+          "earned_value": 32.44032
+        },
+        {
+          "task": "P6T4",
+          "start": 43,
+          "end": 47,
+          "quality": 0.653997,
+          "earned_value": 39.239811
+        },
+        {
+          "task": "P1T5",
+          "start": 44,
+          "end": 50,
+          "quality": 0.425422,
+          "earned_value": 30.630408
+        },
+        {
+          "task": "P4T2",
+          "start": 50,
+          "end": 60,
+          "quality": 0.546417,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 60,
+          "end": 64,
+          "quality": 0.408405,
+          "earned_value": 23.823651
+        },
+        {
+          "task": "P2T2",
+          "start": 36,
+          "end": 44,
+          "quality": 0.624476,
+          "earned_value": 10.824253
+        },
+        {
+          "task": "P3T5",
+          "start": 60,
+          "end": 68,
+          "quality": 0.461613,
+          "earned_value": 8.924514
+        },
+        {
+          "task": "P3T6",
+          "start": 68,
+          "end": 72,
+          "quality": 0.443148,
+          "earned_value": 12.580487
+        },
+        {
+          "task": "P5T2",
+          "start": 44,
+          "end": 52,
+          "quality": 0.624476,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P6T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T3",
+          "start": 52,
+          "end": 59,
+          "quality": 0.461613,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 59,
+          "end": 65,
+          "quality": 0.461613,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "start": 65,
+          "end": 70,
+          "quality": 0.443148,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "start": 64,
+          "end": 71,
+          "quality": 0.52456,
+          "earned_value": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "S015",
+      "weight": 1,
+      "coverage": 0.31065706019230455,
+      "min_region_coverage": 0.23678017349818178,
+      "region_coverage": {
+        "G1": 0.36624759807021484,
+        "G2": 0.3841376734499269,
+        "G3": 0.24749552041792092,
+        "G4": 0.23678017349818178
+      },
+      "completed": 29,
+      "unscheduled": 9,
+      "late": 9,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.7392,
+          "earned_value": 36.2208
+        },
+        {
+          "task": "P7T1",
+          "start": 6,
+          "end": 16,
+          "quality": 0.8448,
+          "earned_value": 45.6192
+        },
+        {
+          "task": "P2T1",
+          "start": 4,
+          "end": 13,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P6T1",
+          "start": 5,
+          "end": 12,
+          "quality": 0.96,
+          "earned_value": 29.76
+        },
+        {
+          "task": "P5T1",
+          "start": 13,
+          "end": 21,
+          "quality": 0.96,
+          "earned_value": 37.44
+        },
+        {
+          "task": "P1T1",
+          "start": 16,
+          "end": 25,
+          "quality": 0.96,
+          "earned_value": 46.08
+        },
+        {
+          "task": "P3T2",
+          "start": 12,
+          "end": 16,
+          "quality": 0.811008,
+          "earned_value": 42.172416
+        },
+        {
+          "task": "P6T2",
+          "start": 16,
+          "end": 21,
+          "quality": 0.9216,
+          "earned_value": 43.3152
+        },
+        {
+          "task": "P3T3",
+          "start": 21,
+          "end": 26,
+          "quality": 0.778568,
+          "earned_value": 51.385467
+        },
+        {
+          "task": "P3T4",
+          "start": 26,
+          "end": 35,
+          "quality": 0.657734,
+          "earned_value": 48.01458
+        },
+        {
+          "task": "P8T2",
+          "start": 21,
+          "end": 27,
+          "quality": 0.709632,
+          "earned_value": 24.83712
+        },
+        {
+          "task": "P1T2",
+          "start": 25,
+          "end": 31,
+          "quality": 0.9216,
+          "earned_value": 42.3936
+        },
+        {
+          "task": "P8T3",
+          "start": 27,
+          "end": 34,
+          "quality": 0.681247,
+          "earned_value": 29.974856
+        },
+        {
+          "task": "P8T4",
+          "start": 34,
+          "end": 41,
+          "quality": 0.503578,
+          "earned_value": 35.25043
+        },
+        {
+          "task": "P1T3",
+          "start": 31,
+          "end": 35,
+          "quality": 0.681247,
+          "earned_value": 42.237297
+        },
+        {
+          "task": "P1T4",
+          "start": 35,
+          "end": 44,
+          "quality": 0.503578,
+          "earned_value": 30.718232
+        },
+        {
+          "task": "P6T3",
+          "start": 35,
+          "end": 41,
+          "quality": 0.681247,
+          "earned_value": 28.309586
+        },
+        {
+          "task": "P6T4",
+          "start": 41,
+          "end": 45,
+          "quality": 0.503578,
+          "earned_value": 30.214655
+        },
+        {
+          "task": "P1T5",
+          "start": 44,
+          "end": 50,
+          "quality": 0.425422,
+          "earned_value": 30.630408
+        },
+        {
+          "task": "P4T2",
+          "start": 50,
+          "end": 57,
+          "quality": 0.709632,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 57,
+          "end": 63,
+          "quality": 0.359397,
+          "earned_value": 22.362467
+        },
+        {
+          "task": "P2T2",
+          "start": 47,
+          "end": 54,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P3T5",
+          "start": 54,
+          "end": 60,
+          "quality": 0.631425,
+          "earned_value": 36.622628
+        },
+        {
+          "task": "P3T6",
+          "start": 60,
+          "end": 66,
+          "quality": 0.606168,
+          "earned_value": 31.958505
+        },
+        {
+          "task": "P5T2",
+          "start": 54,
+          "end": 62,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P6T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T3",
+          "start": 62,
+          "end": 67,
+          "quality": 0.778568,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "start": 63,
+          "end": 70,
+          "quality": 0.681247,
+          "earned_value": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "S016",
+      "weight": 1,
+      "coverage": 0.3453304343137045,
+      "min_region_coverage": 0.3102666584441815,
+      "region_coverage": {
+        "G1": 0.3791425284287599,
+        "G2": 0.3721341091624508,
+        "G3": 0.3102666584441815,
+        "G4": 0.3161413818181818
+      },
+      "completed": 32,
+      "unscheduled": 6,
+      "late": 10,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 7,
+          "quality": 0.7392,
+          "earned_value": 32.5248
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 47.04
+        },
+        {
+          "task": "P7T1",
+          "start": 7,
+          "end": 15,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 4,
+          "end": 14,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P6T1",
+          "start": 4,
+          "end": 11,
+          "quality": 0.96,
+          "earned_value": 29.76
+        },
+        {
+          "task": "P5T1",
+          "start": 14,
+          "end": 20,
+          "quality": 0.7392,
+          "earned_value": 28.8288
+        },
+        {
+          "task": "P1T1",
+          "start": 15,
+          "end": 22,
+          "quality": 0.96,
+          "earned_value": 46.08
+        },
+        {
+          "task": "P3T2",
+          "start": 11,
+          "end": 16,
+          "quality": 0.709632,
+          "earned_value": 36.900864
+        },
+        {
+          "task": "P6T2",
+          "start": 16,
+          "end": 20,
+          "quality": 0.9216,
+          "earned_value": 43.3152
+        },
+        {
+          "task": "P3T3",
+          "start": 20,
+          "end": 25,
+          "quality": 0.681247,
+          "earned_value": 44.962284
+        },
+        {
+          "task": "P3T4",
+          "start": 25,
+          "end": 35,
+          "quality": 0.575517,
+          "earned_value": 42.012758
+        },
+        {
+          "task": "P8T2",
+          "start": 20,
+          "end": 25,
+          "quality": 0.9216,
+          "earned_value": 32.256
+        },
+        {
+          "task": "P1T2",
+          "start": 22,
+          "end": 27,
+          "quality": 0.9216,
+          "earned_value": 42.3936
+        },
+        {
+          "task": "P8T3",
+          "start": 25,
+          "end": 32,
+          "quality": 0.884736,
+          "earned_value": 38.928384
+        },
+        {
+          "task": "P8T4",
+          "start": 32,
+          "end": 41,
+          "quality": 0.849347,
+          "earned_value": 59.454259
+        },
+        {
+          "task": "P1T3",
+          "start": 27,
+          "end": 31,
+          "quality": 0.681247,
+          "earned_value": 42.237297
+        },
+        {
+          "task": "P1T4",
+          "start": 31,
+          "end": 41,
+          "quality": 0.503578,
+          "earned_value": 30.718232
+        },
+        {
+          "task": "P6T3",
+          "start": 35,
+          "end": 43,
+          "quality": 0.884736,
+          "earned_value": 32.44032
+        },
+        {
+          "task": "P6T4",
+          "start": 43,
+          "end": 47,
+          "quality": 0.849347,
+          "earned_value": 50.960794
+        },
+        {
+          "task": "P1T5",
+          "start": 44,
+          "end": 52,
+          "quality": 0.483434,
+          "earned_value": 34.807282
+        },
+        {
+          "task": "P4T2",
+          "start": 52,
+          "end": 59,
+          "quality": 0.709632,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 59,
+          "end": 63,
+          "quality": 0.357355,
+          "earned_value": 22.235407
+        },
+        {
+          "task": "P2T2",
+          "start": 41,
+          "end": 48,
+          "quality": 0.9216,
+          "earned_value": 5.3248
+        },
+        {
+          "task": "P3T5",
+          "start": 48,
+          "end": 54,
+          "quality": 0.552497,
+          "earned_value": 48.067199
+        },
+        {
+          "task": "P3T6",
+          "start": 54,
+          "end": 58,
+          "quality": 0.530397,
+          "earned_value": 38.718958
+        },
+        {
+          "task": "P5T2",
+          "start": 48,
+          "end": 54,
+          "quality": 0.624476,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 58,
+          "end": 64,
+          "quality": 0.599497,
+          "earned_value": 8.925846
+        },
+        {
+          "task": "P6T6",
+          "start": 64,
+          "end": 68,
+          "quality": 0.575517,
+          "earned_value": 17.681168
+        },
+        {
+          "task": "P5T3",
+          "start": 54,
+          "end": 60,
+          "quality": 0.527557,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 60,
+          "end": 66,
+          "quality": 0.884736,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "start": 66,
+          "end": 71,
+          "quality": 0.506455,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        }
+      ]
+    },
+    {
+      "scenario": "S017",
+      "weight": 1,
+      "coverage": 0.3426459131962873,
+      "min_region_coverage": 0.2222827179795041,
+      "region_coverage": {
+        "G1": 0.3599937259177456,
+        "G2": 0.45307065201232766,
+        "G3": 0.3281159647438443,
+        "G4": 0.2222827179795041
+      },
+      "completed": 31,
+      "unscheduled": 7,
+      "late": 10,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.7392,
+          "earned_value": 36.2208
+        },
+        {
+          "task": "P7T1",
+          "start": 6,
+          "end": 16,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 4,
+          "end": 11,
+          "quality": 0.8448,
+          "earned_value": 45.6192
+        },
+        {
+          "task": "P6T1",
+          "start": 4,
+          "end": 14,
+          "quality": 0.96,
+          "earned_value": 29.76
+        },
+        {
+          "task": "P5T1",
+          "start": 11,
+          "end": 19,
+          "quality": 0.96,
+          "earned_value": 37.44
+        },
+        {
+          "task": "P1T1",
+          "start": 16,
+          "end": 23,
+          "quality": 0.96,
+          "earned_value": 46.08
+        },
+        {
+          "task": "P3T2",
+          "start": 14,
+          "end": 18,
+          "quality": 0.9216,
+          "earned_value": 47.9232
+        },
+        {
+          "task": "P6T2",
+          "start": 18,
+          "end": 22,
+          "quality": 0.9216,
+          "earned_value": 43.3152
+        },
+        {
+          "task": "P3T3",
+          "start": 22,
+          "end": 27,
+          "quality": 0.884736,
+          "earned_value": 58.392576
+        },
+        {
+          "task": "P3T4",
+          "start": 27,
+          "end": 34,
+          "quality": 0.849347,
+          "earned_value": 62.002299
+        },
+        {
+          "task": "P8T2",
+          "start": 19,
+          "end": 23,
+          "quality": 0.709632,
+          "earned_value": 24.83712
+        },
+        {
+          "task": "P1T2",
+          "start": 23,
+          "end": 29,
+          "quality": 0.709632,
+          "earned_value": 32.643072
+        },
+        {
+          "task": "P8T3",
+          "start": 35,
+          "end": 40,
+          "quality": 0.681247,
+          "earned_value": 24.979046
+        },
+        {
+          "task": "P8T4",
+          "start": 40,
+          "end": 50,
+          "quality": 0.503578,
+          "earned_value": 23.500287
+        },
+        {
+          "task": "P1T3",
+          "start": 29,
+          "end": 34,
+          "quality": 0.52456,
+          "earned_value": 32.522718
+        },
+        {
+          "task": "P1T4",
+          "start": 34,
+          "end": 44,
+          "quality": 0.443148,
+          "earned_value": 27.032044
+        },
+        {
+          "task": "P6T3",
+          "start": 34,
+          "end": 41,
+          "quality": 0.884736,
+          "earned_value": 36.765696
+        },
+        {
+          "task": "P6T4",
+          "start": 41,
+          "end": 45,
+          "quality": 0.747425,
+          "earned_value": 44.845498
+        },
+        {
+          "task": "P1T5",
+          "start": 44,
+          "end": 51,
+          "quality": 0.327575,
+          "earned_value": 23.585414
+        },
+        {
+          "task": "P4T2",
+          "start": 51,
+          "end": 61,
+          "quality": 0.709632,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 61,
+          "end": 65,
+          "quality": 0.314472,
+          "earned_value": 17.121264
+        },
+        {
+          "task": "P2T2",
+          "start": 23,
+          "end": 30,
+          "quality": 0.713687,
+          "earned_value": 37.111726
+        },
+        {
+          "task": "P3T5",
+          "start": 45,
+          "end": 53,
+          "quality": 0.602923,
+          "earned_value": 52.454285
+        },
+        {
+          "task": "P3T6",
+          "start": 53,
+          "end": 57,
+          "quality": 0.578806,
+          "earned_value": 42.252831
+        },
+        {
+          "task": "P5T2",
+          "start": 50,
+          "end": 57,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 57,
+          "end": 63,
+          "quality": 0.717528,
+          "earned_value": 13.353993
+        },
+        {
+          "task": "P6T6",
+          "start": 63,
+          "end": 68,
+          "quality": 0.606168,
+          "earned_value": 18.622817
+        },
+        {
+          "task": "P5T3",
+          "start": 57,
+          "end": 63,
+          "quality": 0.778568,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 63,
+          "end": 69,
+          "quality": 0.602923,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        }
+      ]
+    },
+    {
+      "scenario": "S018",
+      "weight": 1,
+      "coverage": 0.36231872078284416,
+      "min_region_coverage": 0.2406717001491041,
+      "region_coverage": {
+        "G1": 0.48408309602470206,
+        "G2": 0.4337764703284067,
+        "G3": 0.281769587953881,
+        "G4": 0.2406717001491041
+      },
+      "completed": 32,
+      "unscheduled": 6,
+      "late": 9,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.7392,
+          "earned_value": 36.2208
+        },
+        {
+          "task": "P7T1",
+          "start": 6,
+          "end": 14,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 4,
+          "end": 13,
+          "quality": 0.7392,
+          "earned_value": 39.9168
+        },
+        {
+          "task": "P6T1",
+          "start": 4,
+          "end": 11,
+          "quality": 0.96,
+          "earned_value": 29.76
+        },
+        {
+          "task": "P5T1",
+          "start": 13,
+          "end": 19,
+          "quality": 0.96,
+          "earned_value": 37.44
+        },
+        {
+          "task": "P1T1",
+          "start": 14,
+          "end": 21,
+          "quality": 0.96,
+          "earned_value": 46.08
+        },
+        {
+          "task": "P3T2",
+          "start": 11,
+          "end": 17,
+          "quality": 0.9216,
+          "earned_value": 47.9232
+        },
+        {
+          "task": "P6T2",
+          "start": 17,
+          "end": 22,
+          "quality": 0.709632,
+          "earned_value": 33.352704
+        },
+        {
+          "task": "P3T3",
+          "start": 22,
+          "end": 26,
+          "quality": 0.884736,
+          "earned_value": 58.392576
+        },
+        {
+          "task": "P3T4",
+          "start": 26,
+          "end": 33,
+          "quality": 0.653997,
+          "earned_value": 47.74177
+        },
+        {
+          "task": "P8T2",
+          "start": 19,
+          "end": 24,
+          "quality": 0.709632,
+          "earned_value": 24.83712
+        },
+        {
+          "task": "P1T2",
+          "start": 21,
+          "end": 26,
+          "quality": 0.9216,
+          "earned_value": 42.3936
+        },
+        {
+          "task": "P8T3",
+          "start": 24,
+          "end": 29,
+          "quality": 0.599497,
+          "earned_value": 26.377873
+        },
+        {
+          "task": "P8T4",
+          "start": 29,
+          "end": 36,
+          "quality": 0.506455,
+          "earned_value": 35.451861
+        },
+        {
+          "task": "P1T3",
+          "start": 26,
+          "end": 32,
+          "quality": 0.884736,
+          "earned_value": 54.853632
+        },
+        {
+          "task": "P1T4",
+          "start": 32,
+          "end": 39,
+          "quality": 0.849347,
+          "earned_value": 51.81014
+        },
+        {
+          "task": "P6T3",
+          "start": 33,
+          "end": 39,
+          "quality": 0.52456,
+          "earned_value": 23.080639
+        },
+        {
+          "task": "P6T4",
+          "start": 39,
+          "end": 43,
+          "quality": 0.503578,
+          "earned_value": 30.214655
+        },
+        {
+          "task": "P1T5",
+          "start": 43,
+          "end": 49,
+          "quality": 0.815373,
+          "earned_value": 58.706834
+        },
+        {
+          "task": "P4T2",
+          "start": 49,
+          "end": 56,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 56,
+          "end": 62,
+          "quality": 0.688827,
+          "earned_value": 45.539109
+        },
+        {
+          "task": "P2T2",
+          "start": 36,
+          "end": 43,
+          "quality": 0.624476,
+          "earned_value": 12.628296
+        },
+        {
+          "task": "P3T5",
+          "start": 43,
+          "end": 49,
+          "quality": 0.599497,
+          "earned_value": 52.156249
+        },
+        {
+          "task": "P3T6",
+          "start": 49,
+          "end": 53,
+          "quality": 0.575517,
+          "earned_value": 42.012758
+        },
+        {
+          "task": "P5T2",
+          "start": 46,
+          "end": 53,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 53,
+          "end": 59,
+          "quality": 0.483434,
+          "earned_value": 16.195055
+        },
+        {
+          "task": "P6T6",
+          "start": 59,
+          "end": 64,
+          "quality": 0.464097,
+          "earned_value": 22.405576
+        },
+        {
+          "task": "P5T3",
+          "start": 53,
+          "end": 59,
+          "quality": 0.884736,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 59,
+          "end": 67,
+          "quality": 0.527557,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "start": 62,
+          "end": 69,
+          "quality": 0.884736,
+          "earned_value": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "S019",
+      "weight": 1,
+      "coverage": 0.2992836204770169,
+      "min_region_coverage": 0.1876714751043801,
+      "region_coverage": {
+        "G1": 0.3461968641508531,
+        "G2": 0.3641880690049783,
+        "G3": 0.1876714751043801,
+        "G4": 0.2887374154049587
+      },
+      "completed": 31,
+      "unscheduled": 7,
+      "late": 9,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 47.04
+        },
+        {
+          "task": "P7T1",
+          "start": 5,
+          "end": 15,
+          "quality": 0.8448,
+          "earned_value": 45.6192
+        },
+        {
+          "task": "P2T1",
+          "start": 4,
+          "end": 14,
+          "quality": 0.7392,
+          "earned_value": 39.9168
+        },
+        {
+          "task": "P6T1",
+          "start": 4,
+          "end": 14,
+          "quality": 0.7392,
+          "earned_value": 22.9152
+        },
+        {
+          "task": "P5T1",
+          "start": 14,
+          "end": 20,
+          "quality": 0.8448,
+          "earned_value": 32.9472
+        },
+        {
+          "task": "P1T1",
+          "start": 15,
+          "end": 22,
+          "quality": 0.96,
+          "earned_value": 46.08
+        },
+        {
+          "task": "P3T2",
+          "start": 14,
+          "end": 18,
+          "quality": 0.709632,
+          "earned_value": 36.900864
+        },
+        {
+          "task": "P6T2",
+          "start": 18,
+          "end": 23,
+          "quality": 0.546417,
+          "earned_value": 25.681582
+        },
+        {
+          "task": "P3T3",
+          "start": 23,
+          "end": 27,
+          "quality": 0.599497,
+          "earned_value": 39.566809
+        },
+        {
+          "task": "P3T4",
+          "start": 27,
+          "end": 36,
+          "quality": 0.575517,
+          "earned_value": 42.012758
+        },
+        {
+          "task": "P8T2",
+          "start": 20,
+          "end": 26,
+          "quality": 0.9216,
+          "earned_value": 32.256
+        },
+        {
+          "task": "P1T2",
+          "start": 22,
+          "end": 29,
+          "quality": 0.709632,
+          "earned_value": 32.643072
+        },
+        {
+          "task": "P8T3",
+          "start": 26,
+          "end": 31,
+          "quality": 0.884736,
+          "earned_value": 38.928384
+        },
+        {
+          "task": "P8T4",
+          "start": 31,
+          "end": 40,
+          "quality": 0.653997,
+          "earned_value": 45.77978
+        },
+        {
+          "task": "P1T3",
+          "start": 29,
+          "end": 33,
+          "quality": 0.681247,
+          "earned_value": 42.237297
+        },
+        {
+          "task": "P1T4",
+          "start": 33,
+          "end": 42,
+          "quality": 0.503578,
+          "earned_value": 30.718232
+        },
+        {
+          "task": "P6T3",
+          "start": 36,
+          "end": 42,
+          "quality": 0.403911,
+          "earned_value": 15.797415
+        },
+        {
+          "task": "P6T4",
+          "start": 42,
+          "end": 47,
+          "quality": 0.341224,
+          "earned_value": 20.47345
+        },
+        {
+          "task": "P1T5",
+          "start": 42,
+          "end": 50,
+          "quality": 0.483434,
+          "earned_value": 34.807282
+        },
+        {
+          "task": "P4T2",
+          "start": 50,
+          "end": 60,
+          "quality": 0.811008,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 60,
+          "end": 66,
+          "quality": 0.357355,
+          "earned_value": 18.066269
+        },
+        {
+          "task": "P2T2",
+          "start": 40,
+          "end": 46,
+          "quality": 0.624476,
+          "earned_value": 7.216169
+        },
+        {
+          "task": "P3T5",
+          "start": 47,
+          "end": 53,
+          "quality": 0.486197,
+          "earned_value": 42.299135
+        },
+        {
+          "task": "P3T6",
+          "start": 53,
+          "end": 57,
+          "quality": 0.466749,
+          "earned_value": 34.072683
+        },
+        {
+          "task": "P5T2",
+          "start": 46,
+          "end": 52,
+          "quality": 0.713687,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 57,
+          "end": 64,
+          "quality": 0.288266,
+          "earned_value": 4.291963
+        },
+        {
+          "task": "P6T6",
+          "start": 64,
+          "end": 70,
+          "quality": 0.276736,
+          "earned_value": 6.072807
+        },
+        {
+          "task": "P5T3",
+          "start": 52,
+          "end": 59,
+          "quality": 0.68514,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 59,
+          "end": 67,
+          "quality": 0.599497,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "status": "unscheduled",
+          "earned_value": 0
+        }
+      ]
+    },
+    {
+      "scenario": "S020",
+      "weight": 1,
+      "coverage": 0.34067222482364096,
+      "min_region_coverage": 0.2692952081991215,
+      "region_coverage": {
+        "G1": 0.3826977952159797,
+        "G2": 0.42428224592841257,
+        "G3": 0.2692952081991215,
+        "G4": 0.2774064210935537
+      },
+      "completed": 31,
+      "unscheduled": 7,
+      "late": 12,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 7,
+          "quality": 0.7392,
+          "earned_value": 32.5248
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.96,
+          "earned_value": 47.04
+        },
+        {
+          "task": "P7T1",
+          "start": 7,
+          "end": 18,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 4,
+          "end": 11,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P6T1",
+          "start": 4,
+          "end": 14,
+          "quality": 0.96,
+          "earned_value": 29.76
+        },
+        {
+          "task": "P5T1",
+          "start": 11,
+          "end": 18,
+          "quality": 0.96,
+          "earned_value": 37.44
+        },
+        {
+          "task": "P1T1",
+          "start": 18,
+          "end": 25,
+          "quality": 0.96,
+          "earned_value": 46.08
+        },
+        {
+          "task": "P3T2",
+          "start": 14,
+          "end": 20,
+          "quality": 0.9216,
+          "earned_value": 47.9232
+        },
+        {
+          "task": "P6T2",
+          "start": 20,
+          "end": 25,
+          "quality": 0.9216,
+          "earned_value": 43.3152
+        },
+        {
+          "task": "P3T3",
+          "start": 25,
+          "end": 29,
+          "quality": 0.884736,
+          "earned_value": 58.392576
+        },
+        {
+          "task": "P3T4",
+          "start": 29,
+          "end": 39,
+          "quality": 0.747425,
+          "earned_value": 54.562023
+        },
+        {
+          "task": "P8T2",
+          "start": 23,
+          "end": 29,
+          "quality": 0.9216,
+          "earned_value": 32.256
+        },
+        {
+          "task": "P1T2",
+          "start": 25,
+          "end": 30,
+          "quality": 0.811008,
+          "earned_value": 37.306368
+        },
+        {
+          "task": "P8T3",
+          "start": 29,
+          "end": 36,
+          "quality": 0.681247,
+          "earned_value": 29.974856
+        },
+        {
+          "task": "P8T4",
+          "start": 36,
+          "end": 43,
+          "quality": 0.575517,
+          "earned_value": 40.286206
+        },
+        {
+          "task": "P1T3",
+          "start": 30,
+          "end": 34,
+          "quality": 0.599497,
+          "earned_value": 37.168821
+        },
+        {
+          "task": "P1T4",
+          "start": 34,
+          "end": 44,
+          "quality": 0.575517,
+          "earned_value": 35.106551
+        },
+        {
+          "task": "P6T3",
+          "start": 39,
+          "end": 45,
+          "quality": 0.884736,
+          "earned_value": 28.114944
+        },
+        {
+          "task": "P6T4",
+          "start": 45,
+          "end": 50,
+          "quality": 0.849347,
+          "earned_value": 45.298483
+        },
+        {
+          "task": "P1T5",
+          "start": 44,
+          "end": 50,
+          "quality": 0.552497,
+          "earned_value": 39.779751
+        },
+        {
+          "task": "P4T2",
+          "start": 50,
+          "end": 60,
+          "quality": 0.709632,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 60,
+          "end": 64,
+          "quality": 0.530397,
+          "earned_value": 30.939806
+        },
+        {
+          "task": "P2T2",
+          "start": 43,
+          "end": 51,
+          "quality": 0.811008,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P3T5",
+          "start": 51,
+          "end": 59,
+          "quality": 0.717528,
+          "earned_value": 45.084674
+        },
+        {
+          "task": "P3T6",
+          "start": 59,
+          "end": 63,
+          "quality": 0.688827,
+          "earned_value": 44.697209
+        },
+        {
+          "task": "P5T2",
+          "start": 51,
+          "end": 57,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 63,
+          "end": 69,
+          "quality": 0.815373,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T3",
+          "start": 57,
+          "end": 64,
+          "quality": 0.778568,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 64,
+          "end": 71,
+          "quality": 0.599497,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "start": 64,
+          "end": 71,
+          "quality": 0.681247,
+          "earned_value": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "S021",
+      "weight": 1,
+      "coverage": 0.3267714070385648,
+      "min_region_coverage": 0.2414535563077818,
+      "region_coverage": {
+        "G1": 0.3904648009231418,
+        "G2": 0.3624239323107953,
+        "G3": 0.3096267150805271,
+        "G4": 0.2414535563077818
+      },
+      "completed": 33,
+      "unscheduled": 5,
+      "late": 12,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.7392,
+          "earned_value": 32.5248
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.8448,
+          "earned_value": 41.3952
+        },
+        {
+          "task": "P7T1",
+          "start": 5,
+          "end": 13,
+          "quality": 0.7392,
+          "earned_value": 39.9168
+        },
+        {
+          "task": "P2T1",
+          "start": 5,
+          "end": 12,
+          "quality": 0.7392,
+          "earned_value": 39.9168
+        },
+        {
+          "task": "P6T1",
+          "start": 4,
+          "end": 13,
+          "quality": 0.96,
+          "earned_value": 29.76
+        },
+        {
+          "task": "P5T1",
+          "start": 12,
+          "end": 18,
+          "quality": 0.96,
+          "earned_value": 37.44
+        },
+        {
+          "task": "P1T1",
+          "start": 13,
+          "end": 20,
+          "quality": 0.96,
+          "earned_value": 46.08
+        },
+        {
+          "task": "P3T2",
+          "start": 13,
+          "end": 18,
+          "quality": 0.624476,
+          "earned_value": 32.47276
+        },
+        {
+          "task": "P6T2",
+          "start": 18,
+          "end": 24,
+          "quality": 0.9216,
+          "earned_value": 43.3152
+        },
+        {
+          "task": "P3T3",
+          "start": 24,
+          "end": 30,
+          "quality": 0.599497,
+          "earned_value": 39.566809
+        },
+        {
+          "task": "P3T4",
+          "start": 30,
+          "end": 37,
+          "quality": 0.575517,
+          "earned_value": 42.012758
+        },
+        {
+          "task": "P8T2",
+          "start": 18,
+          "end": 22,
+          "quality": 0.811008,
+          "earned_value": 28.38528
+        },
+        {
+          "task": "P1T2",
+          "start": 20,
+          "end": 25,
+          "quality": 0.709632,
+          "earned_value": 32.643072
+        },
+        {
+          "task": "P8T3",
+          "start": 22,
+          "end": 27,
+          "quality": 0.68514,
+          "earned_value": 30.146141
+        },
+        {
+          "task": "P8T4",
+          "start": 27,
+          "end": 34,
+          "quality": 0.506455,
+          "earned_value": 35.451861
+        },
+        {
+          "task": "P1T3",
+          "start": 25,
+          "end": 29,
+          "quality": 0.599497,
+          "earned_value": 37.168821
+        },
+        {
+          "task": "P1T4",
+          "start": 29,
+          "end": 36,
+          "quality": 0.575517,
+          "earned_value": 35.106551
+        },
+        {
+          "task": "P6T3",
+          "start": 37,
+          "end": 45,
+          "quality": 0.884736,
+          "earned_value": 28.114944
+        },
+        {
+          "task": "P6T4",
+          "start": 45,
+          "end": 49,
+          "quality": 0.849347,
+          "earned_value": 48.129638
+        },
+        {
+          "task": "P1T5",
+          "start": 36,
+          "end": 42,
+          "quality": 0.552497,
+          "earned_value": 39.779751
+        },
+        {
+          "task": "P4T2",
+          "start": 42,
+          "end": 49,
+          "quality": 0.709632,
+          "earned_value": 5.046272
+        },
+        {
+          "task": "P1T6",
+          "start": 49,
+          "end": 54,
+          "quality": 0.466749,
+          "earned_value": 32.672435
+        },
+        {
+          "task": "P2T2",
+          "start": 34,
+          "end": 40,
+          "quality": 0.709632,
+          "earned_value": 20.50048
+        },
+        {
+          "task": "P3T5",
+          "start": 49,
+          "end": 55,
+          "quality": 0.552497,
+          "earned_value": 45.396799
+        },
+        {
+          "task": "P3T6",
+          "start": 55,
+          "end": 61,
+          "quality": 0.530397,
+          "earned_value": 38.718958
+        },
+        {
+          "task": "P5T2",
+          "start": 40,
+          "end": 46,
+          "quality": 0.9216,
+          "earned_value": 9.0112
+        },
+        {
+          "task": "P6T5",
+          "start": 61,
+          "end": 68,
+          "quality": 0.717528,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T3",
+          "start": 46,
+          "end": 51,
+          "quality": 0.884736,
+          "earned_value": 10.027008
+        },
+        {
+          "task": "P2T3",
+          "start": 51,
+          "end": 59,
+          "quality": 0.681247,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "start": 59,
+          "end": 64,
+          "quality": 0.849347,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T5",
+          "start": 64,
+          "end": 69,
+          "quality": 0.681247,
+          "earned_value": 5.677056
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "start": 54,
+          "end": 64,
+          "quality": 0.681247,
+          "earned_value": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "S022",
+      "weight": 1,
+      "coverage": 0.3132802074149977,
+      "min_region_coverage": 0.25886086347096504,
+      "region_coverage": {
+        "G1": 0.4337767419384985,
+        "G2": 0.25886086347096504,
+        "G3": 0.27799602415856484,
+        "G4": 0.2833046610935537
+      },
+      "completed": 32,
+      "unscheduled": 6,
+      "late": 9,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.7392,
+          "earned_value": 32.5248
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.96,
+          "earned_value": 47.04
+        },
+        {
+          "task": "P7T1",
+          "start": 5,
+          "end": 13,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 5,
+          "end": 12,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P6T1",
+          "start": 4,
+          "end": 11,
+          "quality": 0.8448,
+          "earned_value": 26.1888
+        },
+        {
+          "task": "P5T1",
+          "start": 12,
+          "end": 20,
+          "quality": 0.8448,
+          "earned_value": 32.9472
+        },
+        {
+          "task": "P1T1",
+          "start": 13,
+          "end": 22,
+          "quality": 0.8448,
+          "earned_value": 40.5504
+        },
+        {
+          "task": "P3T2",
+          "start": 11,
+          "end": 16,
+          "quality": 0.546417,
+          "earned_value": 28.413665
+        },
+        {
+          "task": "P6T2",
+          "start": 16,
+          "end": 21,
+          "quality": 0.811008,
+          "earned_value": 38.117376
+        },
+        {
+          "task": "P3T3",
+          "start": 21,
+          "end": 25,
+          "quality": 0.403911,
+          "earned_value": 26.658138
+        },
+        {
+          "task": "P3T4",
+          "start": 25,
+          "end": 35,
+          "quality": 0.387755,
+          "earned_value": 28.306096
+        },
+        {
+          "task": "P8T2",
+          "start": 20,
+          "end": 26,
+          "quality": 0.9216,
+          "earned_value": 32.256
+        },
+        {
+          "task": "P1T2",
+          "start": 22,
+          "end": 27,
+          "quality": 0.811008,
+          "earned_value": 37.306368
+        },
+        {
+          "task": "P8T3",
+          "start": 26,
+          "end": 32,
+          "quality": 0.778568,
+          "earned_value": 34.256978
+        },
+        {
+          "task": "P8T4",
+          "start": 32,
+          "end": 39,
+          "quality": 0.575517,
+          "earned_value": 40.286206
+        },
+        {
+          "task": "P1T3",
+          "start": 27,
+          "end": 31,
+          "quality": 0.778568,
+          "earned_value": 48.271196
+        },
+        {
+          "task": "P1T4",
+          "start": 31,
+          "end": 41,
+          "quality": 0.657734,
+          "earned_value": 40.121773
+        },
+        {
+          "task": "P6T3",
+          "start": 35,
+          "end": 42,
+          "quality": 0.778568,
+          "earned_value": 30.450647
+        },
+        {
+          "task": "P6T4",
+          "start": 42,
+          "end": 46,
+          "quality": 0.657734,
+          "earned_value": 39.464039
+        },
+        {
+          "task": "P1T5",
+          "start": 41,
+          "end": 47,
+          "quality": 0.631425,
+          "earned_value": 45.462572
+        },
+        {
+          "task": "P4T2",
+          "start": 47,
+          "end": 54,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 54,
+          "end": 60,
+          "quality": 0.606168,
+          "earned_value": 42.431734
+        },
+        {
+          "task": "P2T2",
+          "start": 39,
+          "end": 46,
+          "quality": 0.811008,
+          "earned_value": 9.371648
+        },
+        {
+          "task": "P3T5",
+          "start": 46,
+          "end": 52,
+          "quality": 0.286628,
+          "earned_value": 24.936662
+        },
+        {
+          "task": "P3T6",
+          "start": 52,
+          "end": 56,
+          "quality": 0.211876,
+          "earned_value": 15.466922
+        },
+        {
+          "task": "P5T2",
+          "start": 46,
+          "end": 53,
+          "quality": 0.811008,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 56,
+          "end": 64,
+          "quality": 0.631425,
+          "earned_value": 9.401211
+        },
+        {
+          "task": "P6T6",
+          "start": 64,
+          "end": 70,
+          "quality": 0.606168,
+          "earned_value": 13.302012
+        },
+        {
+          "task": "P5T3",
+          "start": 53,
+          "end": 60,
+          "quality": 0.599497,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 60,
+          "end": 67,
+          "quality": 0.778568,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "start": 60,
+          "end": 69,
+          "quality": 0.778568,
+          "earned_value": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "S023",
+      "weight": 1,
+      "coverage": 0.3492125519784757,
+      "min_region_coverage": 0.2671875781183471,
+      "region_coverage": {
+        "G1": 0.38979378093413364,
+        "G2": 0.39141302043435716,
+        "G3": 0.3458155069799824,
+        "G4": 0.2671875781183471
+      },
+      "completed": 32,
+      "unscheduled": 6,
+      "late": 9,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 6,
+          "quality": 0.8448,
+          "earned_value": 37.1712
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.7392,
+          "earned_value": 32.5248
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.96,
+          "earned_value": 47.04
+        },
+        {
+          "task": "P7T1",
+          "start": 5,
+          "end": 13,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 5,
+          "end": 12,
+          "quality": 0.7392,
+          "earned_value": 39.9168
+        },
+        {
+          "task": "P6T1",
+          "start": 6,
+          "end": 13,
+          "quality": 0.96,
+          "earned_value": 29.76
+        },
+        {
+          "task": "P5T1",
+          "start": 12,
+          "end": 20,
+          "quality": 0.96,
+          "earned_value": 37.44
+        },
+        {
+          "task": "P1T1",
+          "start": 13,
+          "end": 22,
+          "quality": 0.8448,
+          "earned_value": 40.5504
+        },
+        {
+          "task": "P3T2",
+          "start": 13,
+          "end": 17,
+          "quality": 0.811008,
+          "earned_value": 42.172416
+        },
+        {
+          "task": "P6T2",
+          "start": 17,
+          "end": 21,
+          "quality": 0.9216,
+          "earned_value": 43.3152
+        },
+        {
+          "task": "P3T3",
+          "start": 21,
+          "end": 25,
+          "quality": 0.778568,
+          "earned_value": 51.385467
+        },
+        {
+          "task": "P3T4",
+          "start": 25,
+          "end": 32,
+          "quality": 0.747425,
+          "earned_value": 54.562023
+        },
+        {
+          "task": "P8T2",
+          "start": 20,
+          "end": 24,
+          "quality": 0.709632,
+          "earned_value": 24.83712
+        },
+        {
+          "task": "P1T2",
+          "start": 22,
+          "end": 27,
+          "quality": 0.811008,
+          "earned_value": 37.306368
+        },
+        {
+          "task": "P8T3",
+          "start": 24,
+          "end": 31,
+          "quality": 0.681247,
+          "earned_value": 29.974856
+        },
+        {
+          "task": "P8T4",
+          "start": 31,
+          "end": 38,
+          "quality": 0.575517,
+          "earned_value": 40.286206
+        },
+        {
+          "task": "P1T3",
+          "start": 27,
+          "end": 33,
+          "quality": 0.778568,
+          "earned_value": 48.271196
+        },
+        {
+          "task": "P1T4",
+          "start": 35,
+          "end": 42,
+          "quality": 0.747425,
+          "earned_value": 45.592923
+        },
+        {
+          "task": "P6T3",
+          "start": 32,
+          "end": 38,
+          "quality": 0.884736,
+          "earned_value": 38.928384
+        },
+        {
+          "task": "P6T4",
+          "start": 38,
+          "end": 42,
+          "quality": 0.849347,
+          "earned_value": 50.960794
+        },
+        {
+          "task": "P1T5",
+          "start": 42,
+          "end": 49,
+          "quality": 0.552497,
+          "earned_value": 39.779751
+        },
+        {
+          "task": "P4T2",
+          "start": 49,
+          "end": 58,
+          "quality": 0.709632,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 58,
+          "end": 64,
+          "quality": 0.466749,
+          "earned_value": 27.227029
+        },
+        {
+          "task": "P2T2",
+          "start": 39,
+          "end": 47,
+          "quality": 0.546417,
+          "earned_value": 4.735611
+        },
+        {
+          "task": "P3T5",
+          "start": 47,
+          "end": 53,
+          "quality": 0.52456,
+          "earned_value": 45.636718
+        },
+        {
+          "task": "P3T6",
+          "start": 53,
+          "end": 57,
+          "quality": 0.503578,
+          "earned_value": 36.761163
+        },
+        {
+          "task": "P5T2",
+          "start": 47,
+          "end": 55,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "start": 57,
+          "end": 63,
+          "quality": 0.815373,
+          "earned_value": 15.174992
+        },
+        {
+          "task": "P6T6",
+          "start": 63,
+          "end": 69,
+          "quality": 0.782758,
+          "earned_value": 20.612622
+        },
+        {
+          "task": "P5T3",
+          "start": 55,
+          "end": 61,
+          "quality": 0.681247,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 61,
+          "end": 68,
+          "quality": 0.52456,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "start": 64,
+          "end": 71,
+          "quality": 0.681247,
+          "earned_value": 0.0
+        }
+      ]
+    },
+    {
+      "scenario": "S024",
+      "weight": 1,
+      "coverage": 0.329384804179554,
+      "min_region_coverage": 0.24733057717950413,
+      "region_coverage": {
+        "G1": 0.44417333452013474,
+        "G2": 0.3572336460922912,
+        "G3": 0.263147681920937,
+        "G4": 0.24733057717950413
+      },
+      "completed": 31,
+      "unscheduled": 7,
+      "late": 10,
+      "schedule": [
+        {
+          "task": "P3T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P4T1",
+          "start": 0,
+          "end": 5,
+          "quality": 0.96,
+          "earned_value": 42.24
+        },
+        {
+          "task": "P8T1",
+          "start": 0,
+          "end": 4,
+          "quality": 0.7392,
+          "earned_value": 36.2208
+        },
+        {
+          "task": "P7T1",
+          "start": 5,
+          "end": 13,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P2T1",
+          "start": 4,
+          "end": 13,
+          "quality": 0.96,
+          "earned_value": 51.84
+        },
+        {
+          "task": "P6T1",
+          "start": 5,
+          "end": 15,
+          "quality": 0.96,
+          "earned_value": 29.76
+        },
+        {
+          "task": "P5T1",
+          "start": 13,
+          "end": 19,
+          "quality": 0.96,
+          "earned_value": 37.44
+        },
+        {
+          "task": "P1T1",
+          "start": 13,
+          "end": 22,
+          "quality": 0.96,
+          "earned_value": 46.08
+        },
+        {
+          "task": "P3T2",
+          "start": 15,
+          "end": 19,
+          "quality": 0.9216,
+          "earned_value": 47.9232
+        },
+        {
+          "task": "P6T2",
+          "start": 19,
+          "end": 23,
+          "quality": 0.9216,
+          "earned_value": 43.3152
+        },
+        {
+          "task": "P3T3",
+          "start": 23,
+          "end": 27,
+          "quality": 0.681247,
+          "earned_value": 44.962284
+        },
+        {
+          "task": "P3T4",
+          "start": 27,
+          "end": 34,
+          "quality": 0.653997,
+          "earned_value": 47.74177
+        },
+        {
+          "task": "P8T2",
+          "start": 19,
+          "end": 23,
+          "quality": 0.709632,
+          "earned_value": 24.83712
+        },
+        {
+          "task": "P1T2",
+          "start": 22,
+          "end": 27,
+          "quality": 0.9216,
+          "earned_value": 42.3936
+        },
+        {
+          "task": "P8T3",
+          "start": 23,
+          "end": 29,
+          "quality": 0.599497,
+          "earned_value": 26.377873
+        },
+        {
+          "task": "P8T4",
+          "start": 29,
+          "end": 39,
+          "quality": 0.575517,
+          "earned_value": 40.286206
+        },
+        {
+          "task": "P1T3",
+          "start": 27,
+          "end": 32,
+          "quality": 0.884736,
+          "earned_value": 54.853632
+        },
+        {
+          "task": "P1T4",
+          "start": 32,
+          "end": 41,
+          "quality": 0.747425,
+          "earned_value": 45.592923
+        },
+        {
+          "task": "P6T3",
+          "start": 34,
+          "end": 40,
+          "quality": 0.681247,
+          "earned_value": 29.974856
+        },
+        {
+          "task": "P6T4",
+          "start": 40,
+          "end": 44,
+          "quality": 0.653997,
+          "earned_value": 39.239811
+        },
+        {
+          "task": "P1T5",
+          "start": 41,
+          "end": 47,
+          "quality": 0.552497,
+          "earned_value": 39.779751
+        },
+        {
+          "task": "P4T2",
+          "start": 47,
+          "end": 57,
+          "quality": 0.811008,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P1T6",
+          "start": 57,
+          "end": 63,
+          "quality": 0.530397,
+          "earned_value": 33.00246
+        },
+        {
+          "task": "P2T2",
+          "start": 39,
+          "end": 46,
+          "quality": 0.811008,
+          "earned_value": 9.371648
+        },
+        {
+          "task": "P3T5",
+          "start": 55,
+          "end": 61,
+          "quality": 0.483434,
+          "earned_value": 25.702599
+        },
+        {
+          "task": "P3T6",
+          "start": 61,
+          "end": 65,
+          "quality": 0.408405,
+          "earned_value": 23.188353
+        },
+        {
+          "task": "P5T2",
+          "start": 46,
+          "end": 52,
+          "quality": 0.9216,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P6T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P6T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T3",
+          "start": 52,
+          "end": 59,
+          "quality": 0.681247,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P2T3",
+          "start": 59,
+          "end": 65,
+          "quality": 0.778568,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T4",
+          "start": 65,
+          "end": 71,
+          "quality": 0.653997,
+          "earned_value": 0.0
+        },
+        {
+          "task": "P5T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P5T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T4",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T5",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P2T6",
+          "status": "unscheduled",
+          "earned_value": 0
+        },
+        {
+          "task": "P4T3",
+          "start": 63,
+          "end": 72,
+          "quality": 0.599497,
+          "earned_value": 0.0
+        }
+      ]
+    }
+  ]
+}

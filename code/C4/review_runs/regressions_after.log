@@ -1,0 +1,8 @@
+test_corrupt_incomplete_cache_is_a_miss (test_review.CacheBoundaryTests.test_corrupt_incomplete_cache_is_a_miss) ... ok
+test_invalid_utf8_text_operator_reports_build_error (test_review.CacheBoundaryTests.test_invalid_utf8_text_operator_reports_build_error) ... ok
+test_relative_cache_location_survives_cwd_change (test_review.CacheBoundaryTests.test_relative_cache_location_survives_cwd_change) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+OK

@@ -1,0 +1,65 @@
+{
+  "environment": "about:blank DOM + explicit memory storage/navigation/download adapter; NOT native-origin e2e",
+  "checks_passed": 13,
+  "checks_total": 13,
+  "checks": [
+    {
+      "name": "50k_records",
+      "pass": true
+    },
+    {
+      "name": "bounded_dom",
+      "pass": true
+    },
+    {
+      "name": "search_and_select",
+      "pass": true
+    },
+    {
+      "name": "stable_id_and_stale_rejection",
+      "pass": true
+    },
+    {
+      "name": "pause_resume",
+      "pass": true
+    },
+    {
+      "name": "tombstone_no_resurrection",
+      "pass": true
+    },
+    {
+      "name": "untrusted_title_is_text",
+      "pass": true
+    },
+    {
+      "name": "csv_formula_neutralization",
+      "pass": true
+    },
+    {
+      "name": "keyboard_selection",
+      "pass": true
+    },
+    {
+      "name": "url_filter_reload",
+      "pass": true
+    },
+    {
+      "name": "reflow_320px",
+      "pass": true
+    },
+    {
+      "name": "reflow_768px",
+      "pass": true
+    },
+    {
+      "name": "no_browser_uncaught_errors",
+      "pass": true
+    }
+  ],
+  "browser": "144.0.7559.96",
+  "measurements": {
+    "batch_200_to_two_animation_frames_ms_median": 31.29999999998836,
+    "batch_200_to_two_animation_frames_ms_p95": 32,
+    "dom_rows": 18
+  }
+}

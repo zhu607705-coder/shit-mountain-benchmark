@@ -1,0 +1,84 @@
+{
+  "task_id": "C4",
+  "valid": true,
+  "raw_score": null,
+  "details": {
+    "checks_passed": 17,
+    "checks_total": 17,
+    "checks": [
+      {
+        "name": "existing_ascii_upper_regression",
+        "pass": true
+      },
+      {
+        "name": "dependency_order_and_prefix",
+        "pass": true
+      },
+      {
+        "name": "same_mtime_same_size_change",
+        "pass": true
+      },
+      {
+        "name": "transitive_recipe_change",
+        "pass": true
+      },
+      {
+        "name": "environment_change",
+        "pass": true
+      },
+      {
+        "name": "deleted_source",
+        "pass": true
+      },
+      {
+        "name": "reachable_cycle",
+        "pass": true
+      },
+      {
+        "name": "irrelevant_cycle",
+        "pass": true
+      },
+      {
+        "name": "symlink_escape",
+        "pass": true
+      },
+      {
+        "name": "unicode_codepoint_reverse",
+        "pass": true
+      },
+      {
+        "name": "shared_cache_multiple_roots",
+        "pass": true
+      },
+      {
+        "name": "warm_cache_reuse",
+        "pass": true
+      },
+      {
+        "name": "corrupt_cache_recomputed",
+        "pass": true
+      },
+      {
+        "name": "invalid_utf8_build_error",
+        "pass": true
+      },
+      {
+        "name": "relative_cache_after_cwd_change",
+        "pass": true
+      },
+      {
+        "name": "six_process_publish",
+        "pass": true
+      },
+      {
+        "name": "random_mutations_100",
+        "pass": true
+      }
+    ],
+    "cold_ms": 0.4952909948769957,
+    "warm_mean_ms_100": 0.11304791987640783,
+    "timing_note": "tiny pilot DAG; not the 5000-node tournament workload"
+  },
+  "note": "Behavior checks verified. Formal performance workload and quality weights are not calibrated; full raw quality remains pending.",
+  "execution": "same-process trusted local evaluator; not an untrusted-code sandbox"
+}

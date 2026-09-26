@@ -1,0 +1,210 @@
+{
+  "episodes": 20,
+  "valid_episodes": 20,
+  "mean_completed": 52.5,
+  "mean_loss": 84.38164820848095,
+  "worst_decile_mean_loss": 124.95904804862985,
+  "objective_loss": 92.49712817651074,
+  "episodes_detail": [
+    {
+      "objective_loss": 62.62438095238095,
+      "completed": 55,
+      "jobs": 60,
+      "weighted_tardiness": 15303,
+      "energy": 2711,
+      "starts": 67,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 62.37620437956205,
+      "completed": 54,
+      "jobs": 60,
+      "weighted_tardiness": 14275,
+      "energy": 2710,
+      "starts": 66,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 111.83461398176291,
+      "completed": 50,
+      "jobs": 60,
+      "weighted_tardiness": 32283,
+      "energy": 2836,
+      "starts": 62,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 56.656596273291925,
+      "completed": 58,
+      "jobs": 60,
+      "weighted_tardiness": 15271,
+      "energy": 2871,
+      "starts": 67,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 89.99078419452887,
+      "completed": 49,
+      "jobs": 60,
+      "weighted_tardiness": 25513,
+      "energy": 2696,
+      "starts": 57,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 85.85029370629371,
+      "completed": 52,
+      "jobs": 60,
+      "weighted_tardiness": 21013,
+      "energy": 2822,
+      "starts": 64,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 108.82704347826088,
+      "completed": 48,
+      "jobs": 60,
+      "weighted_tardiness": 28451,
+      "energy": 2832,
+      "starts": 61,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 83.79787301587302,
+      "completed": 54,
+      "jobs": 60,
+      "weighted_tardiness": 23002,
+      "energy": 2866,
+      "starts": 69,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 89.06296551724138,
+      "completed": 51,
+      "jobs": 60,
+      "weighted_tardiness": 22254,
+      "energy": 2697,
+      "starts": 64,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 135.8158289962825,
+      "completed": 43,
+      "jobs": 60,
+      "weighted_tardiness": 32206,
+      "energy": 2841,
+      "starts": 58,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 94.78939792387543,
+      "completed": 54,
+      "jobs": 60,
+      "weighted_tardiness": 24102,
+      "energy": 2787,
+      "starts": 65,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 76.12846808510638,
+      "completed": 54,
+      "jobs": 60,
+      "weighted_tardiness": 18380,
+      "energy": 2777,
+      "starts": 64,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 41.918323432343236,
+      "completed": 57,
+      "jobs": 60,
+      "weighted_tardiness": 10396,
+      "energy": 2717,
+      "starts": 65,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 67.91053416149069,
+      "completed": 56,
+      "jobs": 60,
+      "weighted_tardiness": 18144,
+      "energy": 2793,
+      "starts": 69,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 71.18053003533569,
+      "completed": 54,
+      "jobs": 60,
+      "weighted_tardiness": 17221,
+      "energy": 2740,
+      "starts": 63,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 71.11390243902439,
+      "completed": 55,
+      "jobs": 60,
+      "weighted_tardiness": 20110,
+      "energy": 2810,
+      "starts": 66,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 107.85125239616615,
+      "completed": 51,
+      "jobs": 60,
+      "weighted_tardiness": 29841,
+      "energy": 2817,
+      "starts": 64,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 114.10226710097719,
+      "completed": 47,
+      "jobs": 60,
+      "weighted_tardiness": 30883,
+      "energy": 2714,
+      "starts": 60,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 82.15193939393939,
+      "completed": 53,
+      "jobs": 60,
+      "weighted_tardiness": 20752,
+      "energy": 2754,
+      "starts": 65,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 73.64976470588236,
+      "completed": 55,
+      "jobs": 60,
+      "weighted_tardiness": 21444,
+      "energy": 2819,
+      "starts": 68,
+      "invalid_actions": 0,
+      "valid": true
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "checks_passed": 14,
+  "checks_total": 14,
+  "checks": [
+    {
+      "name": "existing_ascii_upper_regression",
+      "pass": true
+    },
+    {
+      "name": "dependency_order_and_prefix",
+      "pass": true
+    },
+    {
+      "name": "same_mtime_same_size_change",
+      "pass": true
+    },
+    {
+      "name": "transitive_recipe_change",
+      "pass": true
+    },
+    {
+      "name": "environment_change",
+      "pass": true
+    },
+    {
+      "name": "deleted_source",
+      "pass": true
+    },
+    {
+      "name": "reachable_cycle",
+      "pass": true
+    },
+    {
+      "name": "irrelevant_cycle",
+      "pass": true
+    },
+    {
+      "name": "symlink_escape",
+      "pass": true
+    },
+    {
+      "name": "unicode_codepoint_reverse",
+      "pass": true
+    },
+    {
+      "name": "shared_cache_multiple_roots",
+      "pass": true
+    },
+    {
+      "name": "warm_cache_reuse",
+      "pass": true
+    },
+    {
+      "name": "six_process_publish",
+      "pass": true
+    },
+    {
+      "name": "random_mutations_100",
+      "pass": true
+    }
+  ],
+  "cold_ms": 0.40116600575856864,
+  "warm_mean_ms_100": 0.11122374999104068,
+  "timing_note": "tiny pilot DAG; not the 5000-node tournament workload",
+  "review_origin": "current independent local execution, not upstream bundled claim",
+  "implementation": "baseline",
+  "task": "C2_cache",
+  "wall_seconds": 0.12818066700128838,
+  "python": "3.14.4",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+}

@@ -1,0 +1,65 @@
+{
+  "scope": "Independent UI smoke and edge-case verification, not a full rubric or blind review",
+  "browser": "Codex In-app Browser",
+  "viewport_checks": [
+    {
+      "width": 1280,
+      "type": "desktop"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "type": "mobile"
+    }
+  ],
+  "human_visual_score": null,
+  "machine_score": null,
+  "raw_score": null,
+  "F1": {
+    "verified_observations": [
+      "Initial 10000 events; visible virtual-list DOM 10 rows",
+      "EVT-00004 exact search returns one matching record and URL state",
+      "Acknowledgment retained after reload",
+      "P3 combined with EVT-00004 yields 0 and clears misleading detail; clear restores 10000",
+      "End selects EVT-10000 and Home selects EVT-00001",
+      "Incident Trace search yields 6 events; causal navigation selects EVT-00003",
+      "Back/forward restores EVT-00004/EVT-00005 selection and headings with matching URL",
+      "Literal [ search returns zero without error; EVT-00043 HTML-like content rendered as visible text",
+      "390px viewport has document scrollWidth=390",
+      "10 rounds of two pages confirming distinct IDs EVT-00101 through EVT-00120; both acknowledged after each reload",
+      "No captured console errors in tested paths"
+    ],
+    "pending": [
+      "Complete F02 independent-ID comparison",
+      "Full XSS/network assertion",
+      "Quota exception injection",
+      "30-cycle stress",
+      "All required viewports, zoom, screen reader, contrast, touch",
+      "Independent blind review"
+    ],
+    "source_sha256": "25c23f0ee028433594d6d50723a0e1433e4f09265134510f441b0d946647dfce"
+  },
+  "F2": {
+    "verified_observations": [
+      "12 tasks; initial 5 conflict messages; independent logic checker confirms 5",
+      "Offline T04 +15 minutes, undo, redo, reload retains 11:05 start and offline mode",
+      "T05 changed to 12:00, offline remote update, online then sync shows base11:50/local12:00/remote12:15",
+      "Explicit keep-local and sync followed by reload preserves12:00 and merges nonconflicting remote note",
+      "Dependency T05->T10 cycle refused with visible message, original T04 dependency retained",
+      "Deferred conflict and later local edit to13:00 shown in reopened resolver; keep-local preserves13:00",
+      "Zero-conflict banner hidden after correction",
+      "Desktop1280 and mobile390 document widths equal viewport",
+      "Two pages concurrently save T03.note and T09.start: first persists; second pauses shared writes and preserves independent recovery copy",
+      "Both pages reloaded: T03 note retained in shared page; T09 13:20 retained in blocked recovery page, including additional reload",
+      "No captured console errors in tested paths"
+    ],
+    "pending": [
+      "Full 20-cycle stress",
+      "Quota exception and downloaded JSON content validation",
+      "Restore from backup action and no-Web-Locks fallback",
+      "All required viewports, zoom, screen reader, contrast, touch",
+      "Independent blind review"
+    ],
+    "source_sha256": "0757ebb24a3687ce1334a5c4e72a3b9925c284aa1dea6cd845c4ade44b906f76"
+  }
+}

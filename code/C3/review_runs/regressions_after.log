@@ -1,0 +1,8 @@
+test_compaction_post_replace_failure_cannot_ack_to_unlinked_wal (test_review.DurabilityFailureTests.test_compaction_post_replace_failure_cannot_ack_to_unlinked_wal) ... ok
+test_open_handle_path_survives_cwd_change (test_review.DurabilityFailureTests.test_open_handle_path_survives_cwd_change) ... ok
+test_partial_wal_write_failure_cannot_ack_behind_bad_tail (test_review.DurabilityFailureTests.test_partial_wal_write_failure_cannot_ack_behind_bad_tail) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.017s
+
+OK

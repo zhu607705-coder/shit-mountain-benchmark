@@ -1,0 +1,9 @@
+{
+  "alias": "my-model",
+  "base_url": "https://api.example.com/v1",
+  "model": "replace-with-provider-model-id",
+  "api_key_env": "BENCHMARK_API_KEY",
+  "timeout": 120,
+  "max_tokens": 16384,
+  "temperature": 0
+}

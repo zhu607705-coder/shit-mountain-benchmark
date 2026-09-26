@@ -1,0 +1,75 @@
+{
+  "environment": "about:blank DOM + explicit memory storage/navigation/download adapter; NOT native-origin e2e",
+  "checks_passed": 16,
+  "checks_total": 16,
+  "checks": [
+    {
+      "name": "initial_12_tasks",
+      "pass": true
+    },
+    {
+      "name": "edit_and_safe_text",
+      "pass": true
+    },
+    {
+      "name": "undo_redo",
+      "pass": true
+    },
+    {
+      "name": "invalid_range_rejected",
+      "pass": true
+    },
+    {
+      "name": "two_window_disjoint_field_merge",
+      "pass": true
+    },
+    {
+      "name": "stale_form_conflict",
+      "pass": true
+    },
+    {
+      "name": "offline_merge",
+      "pass": true
+    },
+    {
+      "name": "undo_does_not_overwrite_remote",
+      "pass": true
+    },
+    {
+      "name": "duplicate_import_idempotency",
+      "pass": true
+    },
+    {
+      "name": "keyboard_alternative_to_drag",
+      "pass": true
+    },
+    {
+      "name": "delete_tombstone_late_patch",
+      "pass": true
+    },
+    {
+      "name": "exported_document",
+      "pass": true
+    },
+    {
+      "name": "persistent_reload",
+      "pass": true
+    },
+    {
+      "name": "reflow_320px",
+      "pass": true
+    },
+    {
+      "name": "reflow_768px",
+      "pass": true
+    },
+    {
+      "name": "no_browser_uncaught_errors",
+      "pass": true
+    }
+  ],
+  "browser": "144.0.7559.96",
+  "measurements": {
+    "notes": "No subjective design score or full accessibility conformance asserted."
+  }
+}

@@ -1,0 +1,5073 @@
+{
+  "task": "R1",
+  "adapted": false,
+  "evaluation_kind": "public fixed-seed reproducibility run; not hidden generalization",
+  "evaluator_sha256": "50f0d972929e8fd6e982b45d9349e16e9d7a29a66197310fc1ace27d66995c65",
+  "baseline_sha256": "423c807986a6eb4c03941856067b8e51bb61c8fa42825196458424cb8be526fc",
+  "control_definition": "Prior-optimal terminal repair without any probes",
+  "baseline": {
+    "episodes": 90,
+    "valid_episodes": 90,
+    "exact_diagnosis_rate": 0.24444444444444444,
+    "mean_queries": 6.111111111111111,
+    "mean_loss": 27.769444444444446,
+    "worst_decile_mean_loss": 67.47555555555556,
+    "objective_loss": 35.71066666666667,
+    "episodes_detail": [
+      {
+        "loss": 13.65,
+        "cost": 6.6499999999999995,
+        "queries": 6,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 2,
+            "positive": false
+          },
+          {
+            "test": 8,
+            "positive": true
+          },
+          {
+            "test": 2,
+            "positive": false
+          }
+        ],
+        "repair": [
+          4,
+          8
+        ],
+        "truth": [
+          4
+        ]
+      },
+      {
+        "loss": 42.4,
+        "cost": 7.400000000000001,
+        "queries": 6,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 18,
+            "positive": false
+          }
+        ],
+        "repair": [
+          6,
+          8
+        ],
+        "truth": [
+          1,
+          8
+        ]
+      },
+      {
+        "loss": 11.94,
+        "cost": 8.940000000000001,
+        "queries": 8,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 18,
+            "positive": true
+          },
+          {
+            "test": 6,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": true
+          }
+        ],
+        "repair": [
+          1,
+          6
+        ],
+        "truth": [
+          1,
+          6
+        ]
+      },
+      {
+        "loss": 14.4,
+        "cost": 7.400000000000001,
+        "queries": 6,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 18,
+            "positive": false
+          }
+        ],
+        "repair": [
+          6,
+          8
+        ],
+        "truth": [
+          8
+        ]
+      },
+      {
+        "loss": 39.07,
+        "cost": 7.069999999999999,
+        "queries": 6,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 8,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": true
+          }
+        ],
+        "repair": [
+          5,
+          8
+        ],
+        "truth": [
+          2,
+          5
+        ]
+      },
+      {
+        "loss": 42.77,
+        "cost": 7.7700000000000005,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 2,
+            "positive": true
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          }
+        ],
+        "repair": [
+          2,
+          8
+        ],
+        "truth": [
+          1,
+          8
+        ]
+      },
+      {
+        "loss": 51.87,
+        "cost": 8.87,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 17,
+            "positive": false
+          },
+          {
+            "test": 18,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          }
+        ],
+        "repair": [
+          3,
+          9
+        ],
+        "truth": [
+          7,
+          9
+        ]
+      },
+      {
+        "loss": 15.87,
+        "cost": 8.87,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 17,
+            "positive": false
+          },
+          {
+            "test": 18,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          }
+        ],
+        "repair": [
+          3,
+          9
+        ],
+        "truth": [
+          9
+        ]
+      },
+      {
+        "loss": 14.4,
+        "cost": 7.400000000000001,
+        "queries": 6,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 18,
+            "positive": false
+          }
+        ],
+        "repair": [
+          6,
+          8
+        ],
+        "truth": [
+          8
+        ]
+      },
+      {
+        "loss": 49.87,
+        "cost": 8.87,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 17,
+            "positive": false
+          },
+          {
+            "test": 18,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          }
+        ],
+        "repair": [
+          3,
+          9
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 15.87,
+        "cost": 8.87,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 17,
+            "positive": false
+          },
+          {
+            "test": 18,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          }
+        ],
+        "repair": [
+          3,
+          9
+        ],
+        "truth": [
+          9
+        ]
+      },
+      {
+        "loss": 61.23,
+        "cost": 7.73,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 14,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 2,
+            "positive": false
+          }
+        ],
+        "repair": [
+          7
+        ],
+        "truth": [
+          2,
+          3
+        ]
+      },
+      {
+        "loss": 18.4,
+        "cost": 7.400000000000001,
+        "queries": 6,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 18,
+            "positive": false
+          }
+        ],
+        "repair": [
+          6,
+          8
+        ],
+        "truth": []
+      },
+      {
+        "loss": 11.92,
+        "cost": 8.92,
+        "queries": 7,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": true
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": true
+          },
+          {
+            "test": 8,
+            "positive": false
+          }
+        ],
+        "repair": [
+          6,
+          7
+        ],
+        "truth": [
+          6,
+          7
+        ]
+      },
+      {
+        "loss": 51.95,
+        "cost": 8.95,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 17,
+            "positive": true
+          },
+          {
+            "test": 8,
+            "positive": false
+          }
+        ],
+        "repair": [
+          0,
+          9
+        ],
+        "truth": [
+          0,
+          7
+        ]
+      },
+      {
+        "loss": 7.63,
+        "cost": 4.63,
+        "queries": 4,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": true
+          }
+        ],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          4,
+          5
+        ]
+      },
+      {
+        "loss": 15.81,
+        "cost": 8.81,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          }
+        ],
+        "repair": [
+          5,
+          9
+        ],
+        "truth": [
+          9
+        ]
+      },
+      {
+        "loss": 67.95,
+        "cost": 8.95,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 17,
+            "positive": true
+          },
+          {
+            "test": 8,
+            "positive": false
+          }
+        ],
+        "repair": [
+          0,
+          9
+        ],
+        "truth": [
+          2,
+          3
+        ]
+      },
+      {
+        "loss": 11.05,
+        "cost": 8.049999999999999,
+        "queries": 7,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 17,
+            "positive": false
+          },
+          {
+            "test": 18,
+            "positive": true
+          }
+        ],
+        "repair": [
+          1,
+          9
+        ],
+        "truth": [
+          1,
+          9
+        ]
+      },
+      {
+        "loss": 57.63,
+        "cost": 4.63,
+        "queries": 4,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          }
+        ],
+        "repair": [
+          3,
+          4
+        ],
+        "truth": [
+          4,
+          8
+        ]
+      },
+      {
+        "loss": 15.84,
+        "cost": 8.840000000000002,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": true
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 18,
+            "positive": false
+          }
+        ],
+        "repair": [
+          4,
+          8
+        ],
+        "truth": [
+          8
+        ]
+      },
+      {
+        "loss": 10.77,
+        "cost": 7.7700000000000005,
+        "queries": 8,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 2,
+            "positive": true
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          }
+        ],
+        "repair": [
+          2,
+          8
+        ],
+        "truth": [
+          2,
+          8
+        ]
+      },
+      {
+        "loss": 11.29,
+        "cost": 8.29,
+        "queries": 8,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 2,
+            "positive": false
+          },
+          {
+            "test": 8,
+            "positive": true
+          },
+          {
+            "test": 2,
+            "positive": true
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          }
+        ],
+        "repair": [
+          2,
+          8
+        ],
+        "truth": [
+          2,
+          8
+        ]
+      },
+      {
+        "loss": 61.95,
+        "cost": 8.95,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 17,
+            "positive": true
+          },
+          {
+            "test": 8,
+            "positive": false
+          }
+        ],
+        "repair": [
+          0,
+          9
+        ],
+        "truth": [
+          0,
+          8
+        ]
+      },
+      {
+        "loss": 61.32,
+        "cost": 8.32,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 8,
+            "positive": false
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 2,
+            "positive": false
+          }
+        ],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          4,
+          5
+        ]
+      },
+      {
+        "loss": 38.28,
+        "cost": 8.28,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 4,
+            "positive": false
+          }
+        ],
+        "repair": [
+          5,
+          9
+        ],
+        "truth": [
+          3,
+          5
+        ]
+      },
+      {
+        "loss": 14.73,
+        "cost": 7.73,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 14,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 2,
+            "positive": true
+          }
+        ],
+        "repair": [
+          2,
+          7
+        ],
+        "truth": [
+          2
+        ]
+      },
+      {
+        "loss": 13.2,
+        "cost": 6.2,
+        "queries": 5,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": true
+          }
+        ],
+        "repair": [
+          0,
+          4
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 15.95,
+        "cost": 8.95,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 17,
+            "positive": true
+          },
+          {
+            "test": 8,
+            "positive": false
+          }
+        ],
+        "repair": [
+          0,
+          9
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 8.35,
+        "cost": 5.35,
+        "queries": 5,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 11,
+            "positive": true
+          },
+          {
+            "test": 14,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": true
+          }
+        ],
+        "repair": [
+          5,
+          6
+        ],
+        "truth": [
+          5,
+          6
+        ]
+      },
+      {
+        "loss": 9.07,
+        "cost": 2.07,
+        "queries": 1,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": true
+          }
+        ],
+        "repair": [
+          0,
+          8
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 31.37,
+        "cost": 5.369999999999999,
+        "queries": 4,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          }
+        ],
+        "repair": [],
+        "truth": [
+          4
+        ]
+      },
+      {
+        "loss": 75.07,
+        "cost": 2.07,
+        "queries": 1,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": true
+          }
+        ],
+        "repair": [
+          0,
+          8
+        ],
+        "truth": [
+          3,
+          9
+        ]
+      },
+      {
+        "loss": 13.76,
+        "cost": 6.759999999999999,
+        "queries": 5,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 8,
+            "positive": false
+          }
+        ],
+        "repair": [
+          1,
+          6
+        ],
+        "truth": [
+          6
+        ]
+      },
+      {
+        "loss": 40.22,
+        "cost": 8.219999999999999,
+        "queries": 6,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": true
+          },
+          {
+            "test": 4,
+            "positive": true
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          }
+        ],
+        "repair": [
+          3,
+          7
+        ],
+        "truth": [
+          6,
+          7
+        ]
+      },
+      {
+        "loss": 64.84,
+        "cost": 7.84,
+        "queries": 6,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": true
+          },
+          {
+            "test": 2,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": true
+          }
+        ],
+        "repair": [
+          3,
+          6
+        ],
+        "truth": [
+          1,
+          5
+        ]
+      },
+      {
+        "loss": 50.07,
+        "cost": 2.07,
+        "queries": 1,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": true
+          }
+        ],
+        "repair": [
+          0,
+          8
+        ],
+        "truth": [
+          3,
+          8
+        ]
+      },
+      {
+        "loss": 9.07,
+        "cost": 2.07,
+        "queries": 1,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": true
+          }
+        ],
+        "repair": [
+          0,
+          8
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 36.71,
+        "cost": 8.709999999999999,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 0,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 19,
+            "positive": false
+          }
+        ],
+        "repair": [
+          3,
+          6
+        ],
+        "truth": [
+          1,
+          3
+        ]
+      },
+      {
+        "loss": 38.09,
+        "cost": 6.09,
+        "queries": 5,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": true
+          },
+          {
+            "test": 2,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": true
+          }
+        ],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          5,
+          6
+        ]
+      },
+      {
+        "loss": 77.2,
+        "cost": 7.199999999999999,
+        "queries": 5,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": true
+          },
+          {
+            "test": 4,
+            "positive": true
+          },
+          {
+            "test": 4,
+            "positive": true
+          }
+        ],
+        "repair": [
+          4,
+          7
+        ],
+        "truth": [
+          0,
+          1
+        ]
+      },
+      {
+        "loss": 15.69,
+        "cost": 8.69,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": true
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 2,
+            "positive": false
+          }
+        ],
+        "repair": [
+          4,
+          9
+        ],
+        "truth": [
+          4
+        ]
+      },
+      {
+        "loss": 40.22,
+        "cost": 8.219999999999999,
+        "queries": 6,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": true
+          },
+          {
+            "test": 4,
+            "positive": true
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          }
+        ],
+        "repair": [
+          3,
+          7
+        ],
+        "truth": [
+          5,
+          7
+        ]
+      },
+      {
+        "loss": 13.76,
+        "cost": 6.759999999999999,
+        "queries": 5,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 8,
+            "positive": false
+          }
+        ],
+        "repair": [
+          1,
+          6
+        ],
+        "truth": [
+          1
+        ]
+      },
+      {
+        "loss": 13.76,
+        "cost": 6.759999999999999,
+        "queries": 5,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 8,
+            "positive": false
+          }
+        ],
+        "repair": [
+          1,
+          6
+        ],
+        "truth": [
+          1
+        ]
+      },
+      {
+        "loss": 27.37,
+        "cost": 5.369999999999999,
+        "queries": 4,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          }
+        ],
+        "repair": [],
+        "truth": [
+          7
+        ]
+      },
+      {
+        "loss": 67.71,
+        "cost": 8.709999999999999,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 0,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": true
+          }
+        ],
+        "repair": [
+          5,
+          9
+        ],
+        "truth": [
+          4,
+          7
+        ]
+      },
+      {
+        "loss": 13.76,
+        "cost": 6.759999999999999,
+        "queries": 5,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 8,
+            "positive": false
+          }
+        ],
+        "repair": [
+          1,
+          6
+        ],
+        "truth": [
+          1
+        ]
+      },
+      {
+        "loss": 56.07,
+        "cost": 2.07,
+        "queries": 1,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": true
+          }
+        ],
+        "repair": [
+          0,
+          8
+        ],
+        "truth": [
+          2,
+          5
+        ]
+      },
+      {
+        "loss": 11.83,
+        "cost": 8.829999999999998,
+        "queries": 7,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": true
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": true
+          }
+        ],
+        "repair": [
+          5,
+          7
+        ],
+        "truth": [
+          5,
+          7
+        ]
+      },
+      {
+        "loss": 19.71,
+        "cost": 8.709999999999999,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 0,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 19,
+            "positive": false
+          }
+        ],
+        "repair": [
+          3,
+          6
+        ],
+        "truth": []
+      },
+      {
+        "loss": 17.09,
+        "cost": 6.09,
+        "queries": 5,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": true
+          },
+          {
+            "test": 2,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": true
+          }
+        ],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": []
+      },
+      {
+        "loss": 11.71,
+        "cost": 8.709999999999999,
+        "queries": 7,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 0,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": true
+          }
+        ],
+        "repair": [
+          5,
+          9
+        ],
+        "truth": [
+          5,
+          9
+        ]
+      },
+      {
+        "loss": 38.76,
+        "cost": 6.759999999999999,
+        "queries": 5,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 8,
+            "positive": false
+          }
+        ],
+        "repair": [
+          1,
+          6
+        ],
+        "truth": [
+          5,
+          6
+        ]
+      },
+      {
+        "loss": 50.07,
+        "cost": 2.07,
+        "queries": 1,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": true
+          }
+        ],
+        "repair": [
+          0,
+          8
+        ],
+        "truth": [
+          0,
+          3
+        ]
+      },
+      {
+        "loss": 13.76,
+        "cost": 6.759999999999999,
+        "queries": 5,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 8,
+            "positive": false
+          }
+        ],
+        "repair": [
+          1,
+          6
+        ],
+        "truth": [
+          6
+        ]
+      },
+      {
+        "loss": 36.29,
+        "cost": 8.29,
+        "queries": 6,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": true
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 16,
+            "positive": false
+          }
+        ],
+        "repair": [
+          4,
+          6
+        ],
+        "truth": [
+          1,
+          4
+        ]
+      },
+      {
+        "loss": 50.07,
+        "cost": 2.07,
+        "queries": 1,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": true
+          }
+        ],
+        "repair": [
+          0,
+          8
+        ],
+        "truth": [
+          0,
+          3
+        ]
+      },
+      {
+        "loss": 10.21,
+        "cost": 8.709999999999999,
+        "queries": 7,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": true
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 0,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          }
+        ],
+        "repair": [
+          9
+        ],
+        "truth": [
+          9
+        ]
+      },
+      {
+        "loss": 26.37,
+        "cost": 5.369999999999999,
+        "queries": 4,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 19,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          }
+        ],
+        "repair": [],
+        "truth": [
+          1
+        ]
+      },
+      {
+        "loss": 34.75,
+        "cost": 5.75,
+        "queries": 6,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": true
+          },
+          {
+            "test": 2,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": true
+          }
+        ],
+        "repair": [
+          0,
+          2
+        ],
+        "truth": [
+          2,
+          4
+        ]
+      },
+      {
+        "loss": 13.36,
+        "cost": 6.359999999999999,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": true
+          }
+        ],
+        "repair": [
+          4,
+          8
+        ],
+        "truth": [
+          4
+        ]
+      },
+      {
+        "loss": 8.51,
+        "cost": 5.510000000000001,
+        "queries": 6,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 9,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 7,
+            "positive": true
+          }
+        ],
+        "repair": [
+          7,
+          9
+        ],
+        "truth": [
+          7,
+          9
+        ]
+      },
+      {
+        "loss": 14.22,
+        "cost": 7.220000000000001,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": true
+          },
+          {
+            "test": 3,
+            "positive": true
+          }
+        ],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          3
+        ]
+      },
+      {
+        "loss": 66.81,
+        "cost": 7.8100000000000005,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": true
+          },
+          {
+            "test": 2,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          }
+        ],
+        "repair": [
+          1,
+          8
+        ],
+        "truth": [
+          5
+        ]
+      },
+      {
+        "loss": 9.03,
+        "cost": 6.03,
+        "queries": 6,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 9,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 2,
+            "positive": true
+          }
+        ],
+        "repair": [
+          2,
+          7
+        ],
+        "truth": [
+          2,
+          7
+        ]
+      },
+      {
+        "loss": 13.36,
+        "cost": 6.359999999999999,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": true
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          }
+        ],
+        "repair": [
+          6,
+          8
+        ],
+        "truth": [
+          6
+        ]
+      },
+      {
+        "loss": 8.38,
+        "cost": 5.38,
+        "queries": 6,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": true
+          },
+          {
+            "test": 3,
+            "positive": true
+          }
+        ],
+        "repair": [
+          3,
+          4
+        ],
+        "truth": [
+          3,
+          4
+        ]
+      },
+      {
+        "loss": 47.97,
+        "cost": 7.470000000000001,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": false
+          }
+        ],
+        "repair": [
+          1
+        ],
+        "truth": [
+          1,
+          8
+        ]
+      },
+      {
+        "loss": 14.88,
+        "cost": 7.880000000000001,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": true
+          },
+          {
+            "test": 2,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": true
+          }
+        ],
+        "repair": [
+          0,
+          6
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 13.56,
+        "cost": 6.56,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": true
+          },
+          {
+            "test": 9,
+            "positive": true
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": true
+          },
+          {
+            "test": 9,
+            "positive": false
+          }
+        ],
+        "repair": [
+          5,
+          8
+        ],
+        "truth": [
+          8
+        ]
+      },
+      {
+        "loss": 57.36,
+        "cost": 6.359999999999999,
+        "queries": 7,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": true
+          }
+        ],
+        "repair": [
+          4,
+          8
+        ],
+        "truth": [
+          2
+        ]
+      },
+      {
+        "loss": 64.43,
+        "cost": 4.43,
+        "queries": 5,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": true
+          },
+          {
+            "test": 3,
+            "positive": true
+          }
+        ],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          1,
+          4
+        ]
+      },
+      {
+        "loss": 42.36,
+        "cost": 6.36,
+        "queries": 6,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 9,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 2,
+            "positive": true
+          }
+        ],
+        "repair": [
+          2,
+          9
+        ],
+        "truth": [
+          2,
+          7
+        ]
+      },
+      {
+        "loss": 9.29,
+        "cost": 7.790000000000001,
+        "queries": 8,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 9,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 2,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          }
+        ],
+        "repair": [
+          7
+        ],
+        "truth": [
+          7
+        ]
+      },
+      {
+        "loss": 14.77,
+        "cost": 7.77,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 9,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 2,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          }
+        ],
+        "repair": [
+          1,
+          7
+        ],
+        "truth": [
+          7
+        ]
+      },
+      {
+        "loss": 15.23,
+        "cost": 8.23,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": true
+          },
+          {
+            "test": 2,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": true
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": true
+          }
+        ],
+        "repair": [
+          0,
+          6
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 7.73,
+        "cost": 4.73,
+        "queries": 5,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 9,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 7,
+            "positive": true
+          }
+        ],
+        "repair": [
+          7,
+          9
+        ],
+        "truth": [
+          7,
+          9
+        ]
+      },
+      {
+        "loss": 7.73,
+        "cost": 4.73,
+        "queries": 5,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 9,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 7,
+            "positive": true
+          }
+        ],
+        "repair": [
+          7,
+          9
+        ],
+        "truth": [
+          7,
+          9
+        ]
+      },
+      {
+        "loss": 8.84,
+        "cost": 7.34,
+        "queries": 8,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          }
+        ],
+        "repair": [
+          8
+        ],
+        "truth": [
+          8
+        ]
+      },
+      {
+        "loss": 11.73,
+        "cost": 4.73,
+        "queries": 5,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 9,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 7,
+            "positive": true
+          }
+        ],
+        "repair": [
+          7,
+          9
+        ],
+        "truth": [
+          9
+        ]
+      },
+      {
+        "loss": 7.22,
+        "cost": 7.220000000000001,
+        "queries": 8,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          }
+        ],
+        "repair": [],
+        "truth": []
+      },
+      {
+        "loss": 15.71,
+        "cost": 8.71,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": true
+          },
+          {
+            "test": 1,
+            "positive": true
+          }
+        ],
+        "repair": [
+          1,
+          2
+        ],
+        "truth": [
+          2
+        ]
+      },
+      {
+        "loss": 54.71,
+        "cost": 8.71,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": true
+          },
+          {
+            "test": 1,
+            "positive": true
+          }
+        ],
+        "repair": [
+          1,
+          2
+        ],
+        "truth": [
+          2,
+          8
+        ]
+      },
+      {
+        "loss": 38.92,
+        "cost": 4.92,
+        "queries": 5,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": true
+          },
+          {
+            "test": 2,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": true
+          }
+        ],
+        "repair": [
+          0,
+          2
+        ],
+        "truth": [
+          0,
+          1
+        ]
+      },
+      {
+        "loss": 10.0,
+        "cost": 7.000000000000001,
+        "queries": 8,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": true
+          },
+          {
+            "test": 9,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": true
+          }
+        ],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          3,
+          8
+        ]
+      },
+      {
+        "loss": 10.04,
+        "cost": 8.540000000000001,
+        "queries": 8,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 10,
+            "positive": true
+          },
+          {
+            "test": 9,
+            "positive": true
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 7,
+            "positive": false
+          },
+          {
+            "test": 2,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          }
+        ],
+        "repair": [
+          9
+        ],
+        "truth": [
+          9
+        ]
+      },
+      {
+        "loss": 7.22,
+        "cost": 7.220000000000001,
+        "queries": 8,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          }
+        ],
+        "repair": [],
+        "truth": []
+      },
+      {
+        "loss": 8.38,
+        "cost": 5.38,
+        "queries": 6,
+        "exact": true,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": false
+          },
+          {
+            "test": 12,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 4,
+            "positive": true
+          },
+          {
+            "test": 3,
+            "positive": true
+          }
+        ],
+        "repair": [
+          3,
+          4
+        ],
+        "truth": [
+          3,
+          4
+        ]
+      },
+      {
+        "loss": 15.71,
+        "cost": 8.71,
+        "queries": 8,
+        "exact": false,
+        "valid": true,
+        "history": [
+          {
+            "test": 10,
+            "positive": false
+          },
+          {
+            "test": 13,
+            "positive": true
+          },
+          {
+            "test": 0,
+            "positive": false
+          },
+          {
+            "test": 5,
+            "positive": false
+          },
+          {
+            "test": 3,
+            "positive": false
+          },
+          {
+            "test": 6,
+            "positive": false
+          },
+          {
+            "test": 16,
+            "positive": true
+          },
+          {
+            "test": 1,
+            "positive": false
+          }
+        ],
+        "repair": [
+          2,
+          8
+        ],
+        "truth": [
+          2
+        ]
+      }
+    ]
+  },
+  "control": {
+    "episodes": 90,
+    "valid_episodes": 90,
+    "exact_diagnosis_rate": 0.03333333333333333,
+    "mean_queries": 0.0,
+    "mean_loss": 47.93333333333333,
+    "worst_decile_mean_loss": 84.22222222222223,
+    "objective_loss": 55.19111111111111,
+    "episodes_detail": [
+      {
+        "loss": 7.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          4
+        ]
+      },
+      {
+        "loss": 85.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          1,
+          8
+        ]
+      },
+      {
+        "loss": 69.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          1,
+          6
+        ]
+      },
+      {
+        "loss": 57.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          8
+        ]
+      },
+      {
+        "loss": 32.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          2,
+          5
+        ]
+      },
+      {
+        "loss": 85.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          1,
+          8
+        ]
+      },
+      {
+        "loss": 87.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          7,
+          9
+        ]
+      },
+      {
+        "loss": 51.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          9
+        ]
+      },
+      {
+        "loss": 57.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          8
+        ]
+      },
+      {
+        "loss": 41.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 51.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          9
+        ]
+      },
+      {
+        "loss": 59.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          2,
+          3
+        ]
+      },
+      {
+        "loss": 11.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": []
+      },
+      {
+        "loss": 77.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          6,
+          7
+        ]
+      },
+      {
+        "loss": 77.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          0,
+          7
+        ]
+      },
+      {
+        "loss": 3.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": true,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          4,
+          5
+        ]
+      },
+      {
+        "loss": 51.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          9
+        ]
+      },
+      {
+        "loss": 59.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          2,
+          3
+        ]
+      },
+      {
+        "loss": 79.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          1,
+          9
+        ]
+      },
+      {
+        "loss": 53.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          4,
+          8
+        ]
+      },
+      {
+        "loss": 57.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          8
+        ]
+      },
+      {
+        "loss": 82.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          2,
+          8
+        ]
+      },
+      {
+        "loss": 82.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          2,
+          8
+        ]
+      },
+      {
+        "loss": 87.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          0,
+          8
+        ]
+      },
+      {
+        "loss": 3.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": true,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          4,
+          5
+        ]
+      },
+      {
+        "loss": 30.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          3,
+          5
+        ]
+      },
+      {
+        "loss": 36.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          2
+        ]
+      },
+      {
+        "loss": 41.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 41.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 37.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          4,
+          5
+        ],
+        "truth": [
+          5,
+          6
+        ]
+      },
+      {
+        "loss": 49.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 37.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          4
+        ]
+      },
+      {
+        "loss": 28.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          3,
+          9
+        ]
+      },
+      {
+        "loss": 36.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          6
+        ]
+      },
+      {
+        "loss": 58.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          6,
+          7
+        ]
+      },
+      {
+        "loss": 57.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          1,
+          5
+        ]
+      },
+      {
+        "loss": 3.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": true,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          3,
+          8
+        ]
+      },
+      {
+        "loss": 49.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 28.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          1,
+          3
+        ]
+      },
+      {
+        "loss": 61.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          5,
+          6
+        ]
+      },
+      {
+        "loss": 70.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          0,
+          1
+        ]
+      },
+      {
+        "loss": 37.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          4
+        ]
+      },
+      {
+        "loss": 58.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          5,
+          7
+        ]
+      },
+      {
+        "loss": 32.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          1
+        ]
+      },
+      {
+        "loss": 32.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          1
+        ]
+      },
+      {
+        "loss": 33.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          7
+        ]
+      },
+      {
+        "loss": 59.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          4,
+          7
+        ]
+      },
+      {
+        "loss": 32.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          1
+        ]
+      },
+      {
+        "loss": 54.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          2,
+          5
+        ]
+      },
+      {
+        "loss": 58.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          5,
+          7
+        ]
+      },
+      {
+        "loss": 11.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": []
+      },
+      {
+        "loss": 11.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": []
+      },
+      {
+        "loss": 57.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          5,
+          9
+        ]
+      },
+      {
+        "loss": 61.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          5,
+          6
+        ]
+      },
+      {
+        "loss": 45.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          0,
+          3
+        ]
+      },
+      {
+        "loss": 36.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          6
+        ]
+      },
+      {
+        "loss": 58.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          1,
+          4
+        ]
+      },
+      {
+        "loss": 45.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          0,
+          3
+        ]
+      },
+      {
+        "loss": 32.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          9
+        ]
+      },
+      {
+        "loss": 32.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          8
+        ],
+        "truth": [
+          1
+        ]
+      },
+      {
+        "loss": 73.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          2,
+          4
+        ]
+      },
+      {
+        "loss": 33.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          4
+        ]
+      },
+      {
+        "loss": 80.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          7,
+          9
+        ]
+      },
+      {
+        "loss": 7.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          3
+        ]
+      },
+      {
+        "loss": 7.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          5
+        ]
+      },
+      {
+        "loss": 80.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          2,
+          7
+        ]
+      },
+      {
+        "loss": 43.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          6
+        ]
+      },
+      {
+        "loss": 29.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          3,
+          4
+        ]
+      },
+      {
+        "loss": 77.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          1,
+          8
+        ]
+      },
+      {
+        "loss": 30.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 50.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          8
+        ]
+      },
+      {
+        "loss": 51.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          2
+        ]
+      },
+      {
+        "loss": 60.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          1,
+          4
+        ]
+      },
+      {
+        "loss": 80.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          2,
+          7
+        ]
+      },
+      {
+        "loss": 40.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          7
+        ]
+      },
+      {
+        "loss": 40.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          7
+        ]
+      },
+      {
+        "loss": 30.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          0
+        ]
+      },
+      {
+        "loss": 80.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          7,
+          9
+        ]
+      },
+      {
+        "loss": 80.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          7,
+          9
+        ]
+      },
+      {
+        "loss": 50.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          8
+        ]
+      },
+      {
+        "loss": 51.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          9
+        ]
+      },
+      {
+        "loss": 11.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": []
+      },
+      {
+        "loss": 51.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          2
+        ]
+      },
+      {
+        "loss": 90.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          2,
+          8
+        ]
+      },
+      {
+        "loss": 57.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          0,
+          1
+        ]
+      },
+      {
+        "loss": 46.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          3,
+          8
+        ]
+      },
+      {
+        "loss": 51.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          9
+        ]
+      },
+      {
+        "loss": 11.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": []
+      },
+      {
+        "loss": 29.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          3,
+          4
+        ]
+      },
+      {
+        "loss": 51.0,
+        "cost": 0.0,
+        "queries": 0,
+        "exact": false,
+        "valid": true,
+        "history": [],
+        "repair": [
+          3,
+          5
+        ],
+        "truth": [
+          2
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "checks_passed": 5,
+  "checks_total": 10,
+  "checks": [
+    {
+      "name": "basic",
+      "pass": true
+    },
+    {
+      "name": "immutable_snapshot",
+      "pass": false,
+      "error": "AssertionError()"
+    },
+    {
+      "name": "atomic_validation",
+      "pass": false,
+      "error": "AssertionError()"
+    },
+    {
+      "name": "idempotency_after_compact",
+      "pass": false,
+      "error": "AssertionError()"
+    },
+    {
+      "name": "delete_no_resurrection",
+      "pass": true
+    },
+    {
+      "name": "single_writer",
+      "pass": false,
+      "error": "AssertionError('two writers')"
+    },
+    {
+      "name": "random_model_200_transactions",
+      "pass": true
+    },
+    {
+      "name": "sigkill_atomicity_4_windows",
+      "pass": true
+    },
+    {
+      "name": "acknowledged_process_exit",
+      "pass": true
+    },
+    {
+      "name": "closed_handle",
+      "pass": false,
+      "error": "AssertionError('write after close')"
+    }
+  ],
+  "baseline_internal_format_checks": [],
+  "transactions_per_second_500": 5191.797943611536,
+  "timing_seconds": 0.09630575100004535,
+  "timing_note": "single local run; not power-loss proof or formal leaderboard"
+}

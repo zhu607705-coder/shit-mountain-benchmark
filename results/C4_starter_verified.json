@@ -1,0 +1,100 @@
+{
+  "task_id": "C4",
+  "valid": false,
+  "raw_score": null,
+  "details": {
+    "checks_passed": 1,
+    "checks_total": 17,
+    "checks": [
+      {
+        "name": "existing_ascii_upper_regression",
+        "pass": true
+      },
+      {
+        "name": "dependency_order_and_prefix",
+        "pass": false,
+        "error": "AssertionError()"
+      },
+      {
+        "name": "same_mtime_same_size_change",
+        "pass": false,
+        "error": "AssertionError()"
+      },
+      {
+        "name": "transitive_recipe_change",
+        "pass": false,
+        "error": "AssertionError()"
+      },
+      {
+        "name": "environment_change",
+        "pass": false,
+        "error": "AssertionError()"
+      },
+      {
+        "name": "deleted_source",
+        "pass": false,
+        "error": "AssertionError('deleted source was hidden by cache')"
+      },
+      {
+        "name": "reachable_cycle",
+        "pass": false,
+        "error": "RecursionError('maximum recursion depth exceeded')"
+      },
+      {
+        "name": "irrelevant_cycle",
+        "pass": false,
+        "error": "AssertionError()"
+      },
+      {
+        "name": "symlink_escape",
+        "pass": false,
+        "error": "AssertionError('outside-root source read')"
+      },
+      {
+        "name": "unicode_codepoint_reverse",
+        "pass": false,
+        "error": "AssertionError()"
+      },
+      {
+        "name": "shared_cache_multiple_roots",
+        "pass": false,
+        "error": "AssertionError()"
+      },
+      {
+        "name": "warm_cache_reuse",
+        "pass": false,
+        "error": "AssertionError()"
+      },
+      {
+        "name": "corrupt_cache_recomputed",
+        "pass": false,
+        "error": "AssertionError()"
+      },
+      {
+        "name": "invalid_utf8_build_error",
+        "pass": false,
+        "error": "AssertionError('invalid UTF-8 text operation accepted')"
+      },
+      {
+        "name": "relative_cache_after_cwd_change",
+        "pass": false,
+        "error": "AssertionError()"
+      },
+      {
+        "name": "six_process_publish",
+        "pass": false,
+        "error": "AssertionError('Traceback (most recent call last):\\n  File \"<string>\", line 5, in <module>\\n    spec=json.load(open(sys.argv[4]));b=m.Builder(sys.argv[2],sys.argv[3]);assert b.build(spec,\"out\",{\"MODE\":\"live\"})==b\">beta|alphalive\"\\n                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nAssertionError\\n')"
+      },
+      {
+        "name": "random_mutations_100",
+        "pass": false,
+        "error": "AssertionError()"
+      }
+    ],
+    "cold_ms": 0.1759579754434526,
+    "warm_mean_ms_100": 0.0002804200630635023,
+    "timing_note": "tiny pilot DAG; not the 5000-node tournament workload"
+  },
+  "note": "Behavior checks verified. Formal performance workload and quality weights are not calibrated; full raw quality remains pending.",
+  "execution": "same-process trusted local evaluator; not an untrusted-code sandbox"
+}

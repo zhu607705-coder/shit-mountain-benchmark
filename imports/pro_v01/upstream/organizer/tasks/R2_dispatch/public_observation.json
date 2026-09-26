@@ -1,0 +1,390 @@
+{
+  "time": 50,
+  "jobs": [
+    {
+      "id": "J007",
+      "release": 8,
+      "deadline": 54,
+      "duration": 27,
+      "weight": 7,
+      "power": 1,
+      "eligible": [
+        1,
+        4,
+        0,
+        2
+      ],
+      "deps": [],
+      "family": 0,
+      "state": "waiting"
+    },
+    {
+      "id": "J008",
+      "release": 45,
+      "deadline": 98,
+      "duration": 7,
+      "weight": 7,
+      "power": 3,
+      "eligible": [
+        2,
+        4,
+        0,
+        5
+      ],
+      "deps": [],
+      "family": 1,
+      "state": "waiting"
+    },
+    {
+      "id": "J011",
+      "release": 10,
+      "deadline": 42,
+      "duration": 17,
+      "weight": 9,
+      "power": 2,
+      "eligible": [
+        2
+      ],
+      "deps": [],
+      "family": 2,
+      "state": "waiting"
+    },
+    {
+      "id": "J013",
+      "release": 11,
+      "deadline": 94,
+      "duration": 26,
+      "weight": 8,
+      "power": 2,
+      "eligible": [
+        2,
+        4,
+        5,
+        0,
+        3,
+        1
+      ],
+      "deps": [],
+      "family": 0,
+      "state": "waiting"
+    },
+    {
+      "id": "J016",
+      "release": 39,
+      "deadline": 110,
+      "duration": 23,
+      "weight": 4,
+      "power": 4,
+      "eligible": [
+        5
+      ],
+      "deps": [
+        "J007",
+        "J013"
+      ],
+      "family": 1,
+      "state": "waiting"
+    },
+    {
+      "id": "J017",
+      "release": 48,
+      "deadline": 135,
+      "duration": 21,
+      "weight": 2,
+      "power": 2,
+      "eligible": [
+        4,
+        3,
+        1,
+        0,
+        5
+      ],
+      "deps": [],
+      "family": 1,
+      "state": "waiting"
+    },
+    {
+      "id": "J019",
+      "release": 45,
+      "deadline": 125,
+      "duration": 25,
+      "weight": 8,
+      "power": 4,
+      "eligible": [
+        0,
+        4
+      ],
+      "deps": [],
+      "family": 1,
+      "state": "waiting"
+    },
+    {
+      "id": "J023",
+      "release": 27,
+      "deadline": 84,
+      "duration": 17,
+      "weight": 1,
+      "power": 3,
+      "eligible": [
+        2,
+        5,
+        1,
+        0
+      ],
+      "deps": [],
+      "family": 1,
+      "state": "waiting"
+    },
+    {
+      "id": "J028",
+      "release": 50,
+      "deadline": 105,
+      "duration": 12,
+      "weight": 3,
+      "power": 3,
+      "eligible": [
+        0,
+        4,
+        5,
+        1,
+        2
+      ],
+      "deps": [],
+      "family": 2,
+      "state": "waiting"
+    },
+    {
+      "id": "J032",
+      "release": 14,
+      "deadline": 35,
+      "duration": 9,
+      "weight": 1,
+      "power": 2,
+      "eligible": [
+        3,
+        1,
+        5,
+        4,
+        2
+      ],
+      "deps": [
+        "J007"
+      ],
+      "family": 2,
+      "state": "waiting"
+    },
+    {
+      "id": "J034",
+      "release": 36,
+      "deadline": 116,
+      "duration": 25,
+      "weight": 3,
+      "power": 3,
+      "eligible": [
+        1
+      ],
+      "deps": [],
+      "family": 0,
+      "state": "waiting"
+    },
+    {
+      "id": "J035",
+      "release": 31,
+      "deadline": 92,
+      "duration": 18,
+      "weight": 6,
+      "power": 3,
+      "eligible": [
+        3,
+        5,
+        2,
+        0,
+        1
+      ],
+      "deps": [],
+      "family": 0,
+      "state": "waiting"
+    },
+    {
+      "id": "J041",
+      "release": 46,
+      "deadline": 103,
+      "duration": 20,
+      "weight": 3,
+      "power": 4,
+      "eligible": [
+        3,
+        5,
+        4,
+        1
+      ],
+      "deps": [],
+      "family": 1,
+      "state": "waiting"
+    },
+    {
+      "id": "J042",
+      "release": 50,
+      "deadline": 135,
+      "duration": 21,
+      "weight": 9,
+      "power": 3,
+      "eligible": [
+        3,
+        2,
+        1
+      ],
+      "deps": [],
+      "family": 0,
+      "state": "waiting"
+    },
+    {
+      "id": "J043",
+      "release": 19,
+      "deadline": 86,
+      "duration": 27,
+      "weight": 5,
+      "power": 4,
+      "eligible": [
+        5,
+        4
+      ],
+      "deps": [
+        "J013"
+      ],
+      "family": 1,
+      "state": "waiting"
+    },
+    {
+      "id": "J049",
+      "release": 36,
+      "deadline": 63,
+      "duration": 22,
+      "weight": 5,
+      "power": 3,
+      "eligible": [
+        2,
+        3
+      ],
+      "deps": [],
+      "family": 1,
+      "state": "waiting"
+    },
+    {
+      "id": "J051",
+      "release": 36,
+      "deadline": 73,
+      "duration": 10,
+      "weight": 9,
+      "power": 2,
+      "eligible": [
+        4,
+        2
+      ],
+      "deps": [],
+      "family": 0,
+      "state": "waiting"
+    },
+    {
+      "id": "J055",
+      "release": 14,
+      "deadline": 58,
+      "duration": 9,
+      "weight": 2,
+      "power": 1,
+      "eligible": [
+        1,
+        3,
+        2,
+        5,
+        0
+      ],
+      "deps": [
+        "J011",
+        "J013"
+      ],
+      "family": 1,
+      "state": "waiting"
+    },
+    {
+      "id": "J057",
+      "release": 24,
+      "deadline": 62,
+      "duration": 22,
+      "weight": 4,
+      "power": 4,
+      "eligible": [
+        3,
+        2,
+        1,
+        4,
+        0
+      ],
+      "deps": [
+        "J032"
+      ],
+      "family": 2,
+      "state": "waiting"
+    },
+    {
+      "id": "J058",
+      "release": 43,
+      "deadline": 118,
+      "duration": 10,
+      "weight": 2,
+      "power": 2,
+      "eligible": [
+        3,
+        1,
+        4,
+        5,
+        0,
+        2
+      ],
+      "deps": [],
+      "family": 1,
+      "state": "waiting"
+    }
+  ],
+  "done": [],
+  "horizon": 300,
+  "free_power": 10,
+  "machines": [
+    {
+      "id": 0,
+      "speed": 1.0962899214510557,
+      "family": null,
+      "available": true
+    },
+    {
+      "id": 1,
+      "speed": 0.800489149428161,
+      "family": null,
+      "available": true
+    },
+    {
+      "id": 2,
+      "speed": 1.1708090551211474,
+      "family": null,
+      "available": true
+    },
+    {
+      "id": 3,
+      "speed": 1.1839647993041957,
+      "family": null,
+      "available": true
+    },
+    {
+      "id": 4,
+      "speed": 1.1256726470012064,
+      "family": null,
+      "available": true
+    },
+    {
+      "id": 5,
+      "speed": 1.1477224908926702,
+      "family": null,
+      "available": true
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "name": "shit-mountain-benchmark",
+  "version": "0.1.0",
+  "tasks": [
+    {
+      "id": "R1",
+      "track": "reasoning",
+      "adapter": "decision-json",
+      "directory": "reasoning/R1",
+      "prompt": "PROMPT.md",
+      "input": "input.json"
+    },
+    {
+      "id": "R2",
+      "track": "reasoning",
+      "adapter": "decision-json",
+      "directory": "reasoning/R2",
+      "prompt": "PROMPT.md",
+      "input": "input.json"
+    },
+    {
+      "id": "R3",
+      "track": "reasoning",
+      "directory": "reasoning/R3",
+      "prompt": "PROMPT.md",
+      "adapter": "policy-agent",
+      "status": "pilot"
+    },
+    {
+      "id": "R4",
+      "track": "reasoning",
+      "directory": "reasoning/R4",
+      "prompt": "PROMPT.md",
+      "adapter": "policy-agent",
+      "status": "pilot"
+    },
+    {
+      "id": "C1",
+      "track": "code",
+      "adapter": "repository-agent",
+      "directory": "code/C1",
+      "prompt": "PROMPT.md",
+      "starter": "repository/buggy"
+    },
+    {
+      "id": "C2",
+      "track": "code",
+      "adapter": "repository-agent",
+      "directory": "code/C2",
+      "prompt": "PROMPT.md",
+      "starter": "repository/buggy"
+    },
+    {
+      "id": "C3",
+      "track": "code",
+      "directory": "code/C3",
+      "prompt": "PROMPT.md",
+      "adapter": "repository-agent",
+      "status": "pilot"
+    },
+    {
+      "id": "C4",
+      "track": "code",
+      "directory": "code/C4",
+      "prompt": "PROMPT.md",
+      "adapter": "repository-agent",
+      "status": "pilot"
+    },
+    {
+      "id": "F1",
+      "track": "frontend",
+      "adapter": "browser-agent",
+      "directory": "frontend/F1",
+      "prompt": "PROMPT.md",
+      "starter": "starter.html",
+      "input": "data.json"
+    },
+    {
+      "id": "F2",
+      "track": "frontend",
+      "adapter": "browser-agent",
+      "directory": "frontend/F2",
+      "prompt": "PROMPT.md",
+      "starter": "starter.html",
+      "input": "data.json"
+    },
+    {
+      "id": "F3",
+      "track": "frontend",
+      "directory": "frontend/F3",
+      "prompt": "PROMPT.md",
+      "adapter": "browser-agent",
+      "status": "pilot"
+    },
+    {
+      "id": "F4",
+      "track": "frontend",
+      "directory": "frontend/F4",
+      "prompt": "PROMPT.md",
+      "adapter": "browser-agent",
+      "status": "pilot"
+    }
+  ],
+  "entrypoints": {
+    "test": "./scripts/test.sh",
+    "baseline": "python3 run_baselines.py",
+    "integrations": "python3 integrations/cli.py --help",
+    "leaderboard": "python3 organizer/leaderboard.py results/baseline_records.json"
+  }
+}

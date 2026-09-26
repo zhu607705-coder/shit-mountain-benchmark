@@ -1,0 +1,118 @@
+{
+  "benchmark": "C1_repository",
+  "version": "0.2.0",
+  "submission": "repository/baseline",
+  "measured_at_utc": "2026-09-26T01:54:37.060227+00:00",
+  "environment": {
+    "python": "3.14.4",
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+  },
+  "suite_sha256": "75d48a19fb33242b6e8d36cd86a645c0aed8172a3caefca6bc148242b2b54b44",
+  "submission_sha256": "169402f79cbd5387370aaa1ae667100638841810a438f812e183fd666a3a5ef0",
+  "valid": true,
+  "raw_score": 100.0,
+  "environment_score": 70,
+  "environment_passed": 7,
+  "environment_total": 7,
+  "core_score": 20.0,
+  "selftest_score": 10,
+  "critical_case_names": [
+    "default_flow",
+    "concurrent_isolation",
+    "restart_persistence"
+  ],
+  "environment_matrix": [
+    {
+      "name": "default_flow",
+      "passed": true
+    },
+    {
+      "name": "legacy_schema",
+      "passed": true
+    },
+    {
+      "name": "unicode_workdir",
+      "passed": true
+    },
+    {
+      "name": "interrupted_worker",
+      "passed": true
+    },
+    {
+      "name": "duplicates_reordering",
+      "passed": true
+    },
+    {
+      "name": "concurrent_isolation",
+      "passed": true
+    },
+    {
+      "name": "restart_persistence",
+      "passed": true
+    }
+  ],
+  "core_correctness": {
+    "passed": 63,
+    "total": 63,
+    "rate": 1.0
+  },
+  "selftest_assessment": {
+    "selftest_score": 10,
+    "clean_passed": true,
+    "mutants_killed": [
+      "tenant_job_leak",
+      "cwd_dependent_path",
+      "abandoned_job_never_reclaimed",
+      "mixed_tenant_batch_accepted",
+      "migration_drops_history"
+    ],
+    "mutants_total": 5,
+    "test_origin": "test_submission.py inside the submitted repository; not host-supplied tests",
+    "reports": [
+      {
+        "name": "clean",
+        "tests": 5,
+        "passed": true,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "tenant_job_leak",
+        "tests": 5,
+        "passed": false,
+        "failures": 1,
+        "errors": 0
+      },
+      {
+        "name": "cwd_dependent_path",
+        "tests": 5,
+        "passed": false,
+        "failures": 1,
+        "errors": 0
+      },
+      {
+        "name": "abandoned_job_never_reclaimed",
+        "tests": 5,
+        "passed": false,
+        "failures": 1,
+        "errors": 0
+      },
+      {
+        "name": "mixed_tenant_batch_accepted",
+        "tests": 5,
+        "passed": false,
+        "failures": 1,
+        "errors": 0
+      },
+      {
+        "name": "migration_drops_history",
+        "tests": 5,
+        "passed": false,
+        "failures": 1,
+        "errors": 0
+      }
+    ]
+  },
+  "wall_seconds": 2.0680083750048652,
+  "security": "real local processes and temporary SQLite; trusted code only, not a sandbox"
+}

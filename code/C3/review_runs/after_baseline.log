@@ -1,0 +1,72 @@
+{
+  "checks_passed": 12,
+  "checks_total": 12,
+  "checks": [
+    {
+      "name": "basic",
+      "pass": true
+    },
+    {
+      "name": "immutable_snapshot",
+      "pass": true
+    },
+    {
+      "name": "atomic_validation",
+      "pass": true
+    },
+    {
+      "name": "idempotency_after_compact",
+      "pass": true
+    },
+    {
+      "name": "delete_no_resurrection",
+      "pass": true
+    },
+    {
+      "name": "single_writer",
+      "pass": true
+    },
+    {
+      "name": "single_writer_subprocess",
+      "pass": true
+    },
+    {
+      "name": "relative_path_after_cwd_change",
+      "pass": true
+    },
+    {
+      "name": "random_model_200_transactions",
+      "pass": true
+    },
+    {
+      "name": "sigkill_atomicity_4_windows",
+      "pass": true
+    },
+    {
+      "name": "acknowledged_process_exit",
+      "pass": true
+    },
+    {
+      "name": "closed_handle",
+      "pass": true
+    }
+  ],
+  "baseline_internal_format_checks": [
+    true,
+    true,
+    true
+  ],
+  "transactions_per_second_500": 35049.38878806888,
+  "timing_seconds": 0.014265584002714604,
+  "timing_note": "single local run; not power-loss proof or formal leaderboard",
+  "source_sha256": "ddcb6bdab5e6b2b0d3160957c8fb8080da976d3acb13c51dcb0a4d9325128397",
+  "measured_at_utc": "2026-09-26T02:08:07.836002+00:00",
+  "review_origin": "current independent local execution, not upstream bundled claim",
+  "implementation": "baseline",
+  "task": "C1_crashkv",
+  "wall_seconds": 0.26114466701983474,
+  "python": "3.14.4",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+}
+
+STDERR:

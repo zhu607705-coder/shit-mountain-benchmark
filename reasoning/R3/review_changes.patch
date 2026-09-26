@@ -1,0 +1,183 @@
+--- imports/pro_v01/upstream/organizer/organizer/r1.py
++++ packs/pro_v01/organizer/r1.py
+@@ -1,5 +1,5 @@
+ from __future__ import annotations
+-import itertools,random,math,json,hashlib,importlib.util
++import itertools,random,math,json,hashlib,importlib.util,copy
+ from pathlib import Path
+ 
+ 
+@@ -26,20 +26,30 @@
+ 
+ 
+ def run_case(model, policy, seed):
++    # Policy observations are values, never writable aliases of simulator state.
++    model=copy.deepcopy(model)
+     r=random.Random(seed)
+     h=r.choices(range(len(model['hypotheses'])),weights=model['prior'])[0]
+     history=[]; spent=0.; query_counts={}; invalid=None
+     for turn in range(model['max_queries']+1):
+-        action=policy.act(model,history,model['budget']-spent)
++        try:
++            action=policy.act(copy.deepcopy(model),copy.deepcopy(history),model['budget']-spent)
++        except Exception as exc:
++            invalid='policy exception: '+type(exc).__name__+': '+str(exc)[:200];break
++        if type(action) is not dict or set(action) not in ({'repair'},{'test'}):
++            invalid='action must contain exactly repair or test';break
+         if 'repair' in action:
+-            a=sorted(action['repair'])
+-            if a not in model['actions']: invalid='invalid repair';break
++            repair=action['repair']
++            if type(repair) is not list or any(type(i) is not int for i in repair):
++                invalid='repair must be a list of integer component indices';break
++            a=sorted(repair)
++            if len(a)!=len(set(a)) or a not in model['actions']: invalid='invalid repair';break
+             j=model['actions'].index(a)
+             return {'loss':round(spent+model['terminal_losses'][j][h],6),'cost':spent,
+                     'queries':len(history),'exact':a==model['hypotheses'][h], 'valid':True,
+                     'history':history,'repair':a,'truth':model['hypotheses'][h]}
+-        j=action.get('test',-1)
+-        if not isinstance(j,int) or j<0 or j>=len(model['tests']) or turn>=model['max_queries']:
++        j=action['test']
++        if type(j) is not int or j<0 or j>=len(model['tests']) or turn>=model['max_queries']:
+             invalid='invalid/excess query';break
+         test=model['tests'][j]
+         if spent+test['cost']>model['budget']+1e-9: invalid='over budget';break
+@@ -48,18 +58,29 @@
+         key=f'{seed}:{j}:{k}'.encode(); u=int.from_bytes(hashlib.sha256(key).digest()[:8],'big')/2**64
+         positive=u<test['probability'][h]
+         spent+=test['cost'];history.append({'test':j,'positive':positive})
+-    return {'loss':200.,'valid':False,'error':invalid,'queries':len(history),'exact':False}
++    return {'loss':200.,'valid':False,'error':invalid,'queries':len(history),'exact':False,'history':history}
+ 
+ 
+-def evaluate(policy,models=3,episodes=30):
++def _upper_tail(values,mass=.1):
++    remaining=len(values)*mass;denominator=remaining;total=0.
++    for value in sorted(values,reverse=True):
++        take=min(1.,remaining);total+=take*value;remaining-=take
++        if remaining<=1e-12:break
++    return total/denominator
++
++
++def evaluate(policy,models=3,episodes=30,*,model_seed=41,episode_seed=90000):
++    if type(models) is not int or models<1 or type(episodes) is not int or not 1<=episodes<=10000:
++        raise ValueError('positive model count and 1..10000 episodes per model required')
++    if type(model_seed) is not int or type(episode_seed) is not int:raise ValueError('integer seeds required')
+     rows=[]
+     for m in range(models):
+-        model=make_model(41+m)
+-        for k in range(episodes):rows.append(run_case(model,policy,90000+m*10000+k))
+-    ls=sorted(x['loss'] for x in rows)
+-    tail=ls[-max(1,math.ceil(.1*len(ls))):]
+-    mean=sum(ls)/len(ls); cvar=sum(tail)/len(tail)
+-    return {'episodes':len(rows),'valid_episodes':sum(x['valid'] for x in rows),
++        model=make_model(model_seed+m)
++        for k in range(episodes):rows.append(run_case(model,policy,episode_seed+m*10000+k))
++    losses=[x['loss'] for x in rows];mean=sum(losses)/len(losses);cvar=_upper_tail(losses)
++    valid_count=sum(x['valid'] for x in rows)
++    return {'episodes':len(rows),'valid':valid_count==len(rows),'valid_episodes':valid_count,
++            'sampling':{'model_seed':model_seed,'episode_seed':episode_seed,'models':models,'episodes_per_model':episodes,'public_default_seeds':model_seed==41 and episode_seed==90000},
+             'exact_diagnosis_rate':sum(x['exact'] for x in rows)/len(rows),
+             'mean_queries':sum(x['queries'] for x in rows)/len(rows),
+             'mean_loss':mean,'worst_decile_mean_loss':cvar,
+--- imports/pro_v01/upstream/organizer/organizer/r2.py
++++ packs/pro_v01/organizer/r2.py
+@@ -1,5 +1,5 @@
+ from __future__ import annotations
+-import random,math,hashlib
++import random,math,hashlib,copy
+ 
+ 
+ def generate(seed,n=60,m=6,horizon=300):
+@@ -32,10 +32,22 @@
+         used_power=sum(index[x['job']]['power'] for x in run.values())
+         obs={'time':t,'jobs':visible,'done':list(done),'horizon':H,'free_power':10-used_power,
+              'machines':[dict(m,available=(m['id'] not in run and m['id'] not in down)) for m in ms]}
+-        acts=policy.act(obs)
++        try:
++            acts=policy.act(copy.deepcopy(obs))
++        except Exception as exc:
++            invalid.append('policy exception: '+type(exc).__name__+': '+str(exc)[:200]);break
++        if type(acts) is not list:
++            invalid.append('actions must be a list');break
++        if len(acts)>len(ms):
++            invalid.append('more actions than machines');break
+         for a in acts:
+-            jid=a.get('job');mid=a.get('machine');j=index.get(jid)
+-            if not j or not isinstance(mid,int) or not 0<=mid<len(ms):invalid.append('unknown action');continue
++            if type(a) is not dict or set(a)!={'job','machine'}:
++                invalid.append('action must contain exactly job and machine');continue
++            jid=a['job'];mid=a['machine']
++            if type(jid) is not str or type(mid) is not int:
++                invalid.append('job must be string and machine must be integer');continue
++            j=index.get(jid)
++            if not j or not 0<=mid<len(ms):invalid.append('unknown action');continue
+             if j['release']>t or j['state']!='waiting' or mid in run or mid in down or mid not in j['eligible'] or not all(d in done for d in j['deps']) or used_power+j['power']>10:
+                 invalid.append('infeasible action');continue
+             # Exogenous duration realization shared across policies for job/machine.
+@@ -49,13 +61,24 @@
+     denom=sum(j['weight'] for j in jobs)
+     loss=late/denom+40*unfinished/denom+.002*energy+.25*max(0,starts-len(jobs))
+     return {'objective_loss':loss,'completed':len(done),'jobs':len(jobs),'weighted_tardiness':late,
+-            'energy':energy,'starts':starts,'invalid_actions':len(invalid),'valid':not invalid}
++            'energy':energy,'starts':starts,'invalid_actions':len(invalid),'valid':not invalid,'errors':invalid}
+ 
+ 
+-def evaluate(policy,episodes=20):
+-    rows=[run_case(policy,72000+i) for i in range(episodes)]
+-    vals=sorted(x['objective_loss'] for x in rows); tail=vals[-max(1,math.ceil(.1*len(vals))):]
+-    return {'episodes':episodes,'valid_episodes':sum(x['valid'] for x in rows),
++def _upper_tail(values,mass=.1):
++    remaining=len(values)*mass;denominator=remaining;total=0.
++    for value in sorted(values,reverse=True):
++        take=min(1.,remaining);total+=take*value;remaining-=take
++        if remaining<=1e-12:break
++    return total/denominator
++
++
++def evaluate(policy,episodes=20,*,seed_base=72000):
++    if type(episodes) is not int or episodes<1 or type(seed_base) is not int:raise ValueError('positive integer episodes and integer seed_base required')
++    rows=[run_case(policy,seed_base+i) for i in range(episodes)]
++    values=[x['objective_loss'] for x in rows];mean=sum(values)/episodes;tail=_upper_tail(values)
++    valid_count=sum(x['valid'] for x in rows)
++    return {'episodes':episodes,'valid':valid_count==episodes,'valid_episodes':valid_count,
++            'sampling':{'seed_base':seed_base,'episodes':episodes,'public_default_seeds':seed_base==72000},
+             'mean_completed':sum(x['completed'] for x in rows)/episodes,
+-            'mean_loss':sum(vals)/episodes,'worst_decile_mean_loss':sum(tail)/len(tail),
+-            'objective_loss':.8*sum(vals)/episodes+.2*sum(tail)/len(tail),'episodes_detail':rows}
++            'mean_loss':mean,'worst_decile_mean_loss':tail,
++            'objective_loss':.8*mean+.2*tail,'episodes_detail':rows}
+--- imports/pro_v01/upstream/organizer/organizer/scoring.py
++++ packs/pro_v01/organizer/scoring.py
+@@ -2,8 +2,14 @@
+ from __future__ import annotations
+ import math
+ 
++def _finite_number(value):
++    if type(value) not in (int,float):return False
++    try:return math.isfinite(value)
++    except (OverflowError,ValueError):return False
++
++
+ def quality_from_loss(loss: float, scale: float=10.0) -> float:
+-    if not math.isfinite(loss) or loss<0 or not math.isfinite(scale) or scale<=0:
++    if not _finite_number(loss) or loss<0 or not _finite_number(scale) or scale<=0:
+         raise ValueError('finite nonnegative loss and positive scale required')
+     return 1/(1+loss/scale)
+ 
+@@ -11,8 +17,13 @@
+     """Row fields: name, quality [0,1], eligible (real bool).
+     Ineligible rows get 0. No valid positive quality means no winner.
+     """
++    if type(rows) is not list:raise ValueError('result rows must be a list')
++    seen=set()
+     for r in rows:
+-        if type(r['eligible']) is not bool or not math.isfinite(r['quality']) or not 0<=r['quality']<=1:
++        if type(r) is not dict or not {'name','quality','eligible'}<=set(r):raise ValueError('invalid trusted result row')
++        if type(r['name']) is not str or not r['name'] or r['name'] in seen:raise ValueError('unique nonempty result names required')
++        seen.add(r['name'])
++        if type(r['eligible']) is not bool or not _finite_number(r['quality']) or not 0<=r['quality']<=1:
+             raise ValueError('invalid trusted result row')
+     best=max((r['quality'] for r in rows if r['eligible']),default=0)
+     return [dict(r,relative_score=(100*r['quality']/best if best>0 and r['eligible'] else 0),

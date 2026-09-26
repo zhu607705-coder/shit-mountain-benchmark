@@ -1,0 +1,43 @@
+test_compaction_post_replace_failure_cannot_ack_to_unlinked_wal (test_review.DurabilityFailureTests.test_compaction_post_replace_failure_cannot_ack_to_unlinked_wal) ... FAIL
+test_open_handle_path_survives_cwd_change (test_review.DurabilityFailureTests.test_open_handle_path_survives_cwd_change) ... ERROR
+test_partial_wal_write_failure_cannot_ack_behind_bad_tail (test_review.DurabilityFailureTests.test_partial_wal_write_failure_cannot_ack_behind_bad_tail) ... FAIL
+
+======================================================================
+ERROR: test_open_handle_path_survives_cwd_change (test_review.DurabilityFailureTests.test_open_handle_path_survives_cwd_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/packs/pro_v01/tasks/C1_crashkv/test_review.py", line 56, in test_open_handle_path_survives_cwd_change
+    store.compact()
+    ~~~~~~~~~~~~~^^
+  File "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/packs/pro_v01/tasks/C1_crashkv/baseline.py", line 122, in compact
+    fd=os.open(tmp,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '数据库 空格/.compact-9090fd26d36d404a96df2d26baa1f373'
+
+======================================================================
+FAIL: test_compaction_post_replace_failure_cannot_ack_to_unlinked_wal (test_review.DurabilityFailureTests.test_compaction_post_replace_failure_cannot_ack_to_unlinked_wal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/packs/pro_v01/tasks/C1_crashkv/test_review.py", line 32, in test_compaction_post_replace_failure_cannot_ack_to_unlinked_wal
+    self.check_acknowledged_followup(store, directory)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/packs/pro_v01/tasks/C1_crashkv/test_review.py", line 23, in check_acknowledged_followup
+    self.assertEqual(reopened.get("after"), "must-survive")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'must-survive'
+
+======================================================================
+FAIL: test_partial_wal_write_failure_cannot_ack_behind_bad_tail (test_review.DurabilityFailureTests.test_partial_wal_write_failure_cannot_ack_behind_bad_tail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/packs/pro_v01/tasks/C1_crashkv/test_review.py", line 44, in test_partial_wal_write_failure_cannot_ack_behind_bad_tail
+    self.check_acknowledged_followup(store, directory)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/packs/pro_v01/tasks/C1_crashkv/test_review.py", line 23, in check_acknowledged_followup
+    self.assertEqual(reopened.get("after"), "must-survive")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None != 'must-survive'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+FAILED (failures=2, errors=1)

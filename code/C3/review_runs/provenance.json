@@ -1,0 +1,14 @@
+{
+  "baseline": {
+    "before_source": "imports/pro_v01/upstream/organizer/tasks/C1_crashkv/baseline.py",
+    "before_source_sha256": "aebbe3d1046bfbc8196f517fe58bcfd1971a213e91da182a8812a15829198d11",
+    "before_log": "before_baseline.log",
+    "after_log": "after_baseline.log"
+  },
+  "starter": {
+    "before_source": "imports/pro_v01/upstream/organizer/tasks/C1_crashkv/starter/store.py",
+    "before_source_sha256": "59713f0a7308ae472990af6132fcef2d03306fe7079bc850c429fcf3a2ff936b",
+    "before_log": "before_starter.log",
+    "after_log": "after_starter.log"
+  }
+}

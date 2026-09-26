@@ -1,0 +1,22 @@
+name: 题目或裁判缺陷
+description: 报告可复现的题面、裁判、基线或环境问题。
+body:
+  - type: input
+    id: task
+    attributes:
+      label: 题号、版本或 commit
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现命令、环境与实际结果
+      description: 不要粘贴 API Key 或其它密钥。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 按题面预期应出现什么结果
+    validations:
+      required: true

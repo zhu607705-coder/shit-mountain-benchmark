@@ -1,0 +1,387 @@
+diff -ruN -x __pycache__ -x *.pyc repository/buggy/DIAGNOSIS.md repository/baseline/DIAGNOSIS.md
+--- repository/buggy/DIAGNOSIS.md	1970-01-01 08:00:00
++++ repository/baseline/DIAGNOSIS.md	2026-09-26 09:50:20
+@@ -0,0 +1,20 @@
++# 基线诊断与修复证据
++
++这是对挑战赛合成缺陷的参考修复；不是生产事件归因。公开复现使用 C2 根目录的 `python3 e2e_env_judge.py --submission repository/buggy`。结果存 `repository_buggy_result.json`，8/11项失败；随后对baseline相同矩阵全部通过。
++
++| 症状与最小复现路径 | 根因与涉及模块 | 基线修改与复核 |
++|---|---|---|
++| 配置 `/build/v2` 后GET health为404 | config读了过时的api_prefix键，与配置文件base_path不一致 | 统一base_path并去除末尾斜杠；configured_base_path通过 |
++| web/worker不同cwd，作业永久pending | 相对database以各进程cwd解释，写入两个不同SQLite文件 | 相对配置文件目录解析并规范绝对路径；different_process_workdirs通过 |
++| A/B项目同目标名返回串台；跨项目job URL可读 | core共享缓存跨实例；service.get_job查询只按job ID | core使用独立缓存，SQL同时约束job与project；project_isolation通过 |
++| running任务确认取消后仍变done | 只检查status，未处理cancel_requested；成功发布覆盖取消 | worker准备阶段检查取消位；发布事务再次检查，取消优先；cancel_running_then_retry通过 |
++| 作业入队后改图，旧作业按新图算 | runner重新读取当前projects.graph，忽略入队payload | 用持久化快照执行，按项目+快照管理engine；enqueue_snapshot_isolation通过 |
++| 强杀worker后任务永远running | recover只处理过时的queued状态 | 启动恢复running为pending或cancelled；worker_crash_recovery通过 |
++| v1数据库启动报payload不存在 | CREATE TABLE IF NOT EXISTS不能迁移已有表 | 事务中检查列、补revision/payload/cancel_requested、回填旧作业快照、更新schema版本；legacy_schema_migration通过 |
++| 故障修复后得到成功空列表；图改动后取旧值 | core缓存身份、失效、异常清理及返回值所有权缺陷 | 复用已验证独立实例/版本戳/不可变值核心；同一仓库实现57/57回归，dependency_failure_then_repair通过 |
++
++SQLite连接通过上下文管理关闭；初始化用BEGIN IMMEDIATE避免两个进程同时迁移。作业发布检查与状态写入在同一事务中，避免取消和成功发布的竞态。迁移保留项目图、旧作业与结果，不以删库代替修复。
++
++自测补充了配置路径、basepath、快照、跨项目查询、取消发布、恢复、迁移和worker/core导出一致性。HTTP集成矩阵与模块自测用途不同：前者检查真实进程边界，后者帮助快速定位回归。selftest中临时目录路径比较使用resolve，兼容macOS /var到/private/var的符号链接。
++
++已知边界：本版约定单worker；进程准备阶段可协作取消，计算结束前也会再次检查取消，但不是抢占式中断长Python运算。图快照变化时基线重建Engine，重复相同快照会复用缓存；仍有跨快照增量优化空间。当前通过公开矩阵不证明生产鲁棒性或隐藏泛化。
+diff -ruN -x __pycache__ -x *.pyc repository/buggy/README.md repository/baseline/README.md
+--- repository/buggy/README.md	2026-09-26 09:50:20
++++ repository/baseline/README.md	2026-09-26 09:50:20
+@@ -1,10 +1,18 @@
+-# 参赛起始仓库
++# 参考修复仓库
+ 
+-先读C2/INCIDENT.md和PROMPT.md，再实际启动、复现、定位、修复与自测。
++这是可启动的HTTP服务与独立worker，入口为cli.py，配置示例为example_config.json。详细挑战契约与环境矩阵见上两级C2/PROMPT.md。
+ 
++从本目录开两个终端：
++
+ ```bash
+ python3 cli.py serve --config example_config.json
+ python3 cli.py worker --config example_config.json
+ ```
+ 
+-需要两个终端；服务器打印动态端口。配置和进程能启动不代表整体业务正常，换目录、取消、改图、恢复及升级已有数据库也是题目验收内容。请从本目录复制或创建补丁，保留业务接口与已有数据。
++HTTP进程打印动态端口；base path为/build/v2。相对数据库位置以配置文件所在目录为基准。运行提交方自测：
++
++```bash
++python3 selftest.py
++```
++
++根因见DIAGNOSIS.md，实际复现、自测和全回归记录见TEST_REPORT.md。全套HTTP/数据库/重启验证从C2根目录运行e2e_env_judge.py。
+diff -ruN -x __pycache__ -x *.pyc repository/buggy/TEST_REPORT.md repository/baseline/TEST_REPORT.md
+--- repository/buggy/TEST_REPORT.md	1970-01-01 08:00:00
++++ repository/baseline/TEST_REPORT.md	2026-09-26 09:50:20
+@@ -0,0 +1,36 @@
++# 实跑测试报告
++
++测试对象为这个仓库目录。核心裁判通过仓库根engine.py导出实际worker使用的app.core.engine.Engine，避免测试对象与运行对象分离。
++
++## 复现
++
++在C2根目录实际执行：
++
++```bash
++python3 e2e_env_judge.py --submission repository/buggy --output repository_buggy_result.json
++python3 judge.py --submission repository/buggy --output repository_core_buggy_result.json
++```
++
++旧仓库环境矩阵3/11通过，失败包括basepath、分离工作目录、项目隔离、取消、依赖错误恢复、快照、worker重启恢复和旧schema升级；环境valid=false。核心2/57通过，核心valid=false。详细错误与真实测量保存于对应JSON。
++
++## 修改后自测
++
++```bash
++python3 repository/baseline/selftest.py
++```
++
++8/8实际通过，退出码0，日志存C2根目录的repository_selftest_result.json。测试覆盖：配置文件相对路径、basepath规范化、入队payload冻结、跨项目查询404、取消优先于结果发布、running恢复、同一Engine导出及旧schema无损升级。
++
++这些是可复跑的提交方自测，不是仅写一个测试计划。自测质量是否满足10分评分锚点仍由主办方另行核验，当前selftest_score=null。
++
++## 全回归
++
++```bash
++python3 e2e_env_judge.py --submission repository/baseline --output repository_baseline_result.json
++python3 judge.py --submission repository/baseline --output repository_core_baseline_result.json
++python3 -m unittest -v test_harness.py
++```
++
++真实环境矩阵11/11通过，environment_score=70、valid=true；同份仓库核心57/57通过、valid=true，仓库换算核心分20。裁判自身4项回归也通过。环境测试实际运行服务器和worker，发送HTTP请求，使用临时SQLite，实施进程中断与重启，最后自动清理。
++
++已验证机器小计90/90。完整raw_score与自测质量分暂为null，不自评总分，也不声称最优。每次重跑的时间与源码哈希以最新结果JSON为准。
+diff -ruN -x __pycache__ -x *.pyc repository/buggy/app/config.py repository/baseline/app/config.py
+--- repository/buggy/app/config.py	2026-09-26 09:48:27
++++ repository/baseline/app/config.py	2026-09-26 09:42:30
+@@ -7,7 +7,7 @@
+     source=Path(path).resolve()
+     raw=json.loads(source.read_text())
+     db=Path(raw.get('database','state/service.sqlite3'))
+-    if not db.is_absolute(): db=Path.cwd()/db
+-    prefix=raw.get('api_prefix','').rstrip('/')
++    if not db.is_absolute(): db=source.parent/db
++    prefix=raw.get('base_path','').rstrip('/')
+     if prefix and not prefix.startswith('/'):raise ValueError('base_path must start with /')
+     return dict(database=db.resolve(),base_path=prefix,host='127.0.0.1',port=int(raw.get('port',0)),job_delay=float(raw.get('job_delay',0.10)))
+diff -ruN -x __pycache__ -x *.pyc repository/buggy/app/core/cache.py repository/baseline/app/core/cache.py
+--- repository/buggy/app/core/cache.py	2026-09-26 09:42:30
++++ repository/baseline/app/core/cache.py	2026-09-26 09:42:30
+@@ -1,12 +1,18 @@
+-"""Cache from an older single-graph implementation."""
++"""Per-engine last-success cache. Versions make transitive changes observable."""
+ class Cache:
+-    entries = {}
++    def __init__(self):
++        self.entries = {}
++        self.clock = 0
+ 
+-    def get(self, name):
+-        return self.entries.get(name)
++    def lookup(self, name, signature):
++        entry = self.entries.get(name)
++        return entry if entry is not None and entry[0] == signature else None
+ 
+-    def put(self, name, value):
+-        self.entries[name] = value
++    def store(self, name, signature, value):
++        self.clock += 1
++        entry = signature, value, self.clock
++        self.entries[name] = entry
++        return entry
+ 
+-    def invalidate(self, name):
++    def forget(self, name):
+         self.entries.pop(name, None)
+diff -ruN -x __pycache__ -x *.pyc repository/buggy/app/core/engine.py repository/baseline/app/core/engine.py
+--- repository/buggy/app/core/engine.py	2026-09-26 09:42:30
++++ repository/baseline/app/core/engine.py	2026-09-26 09:42:30
+@@ -1,47 +1,70 @@
++"""Incremental evaluator: validate current graph on every build, reuse pure work."""
++import copy
+ from .cache import Cache
+-from .operations import execute
++from .operations import BuildFault, execute
+ 
+ 
+ class Engine:
+     def __init__(self, nodes, aliases):
+-        self.nodes, self.aliases = nodes, aliases
++        self.nodes = copy.deepcopy(nodes)
++        self.aliases = dict(aliases)
++        self.revisions = {name: 0 for name in nodes}
++        self.clock = 0
+         self.cache = Cache()
+-        self.active = set()
+ 
+     def step(self, command):
+-        op = command["op"]
+-        if op == "set":
+-            self.nodes[command["name"]] = command["node"]
+-            self.cache.invalidate(command["name"])
+-        elif op == "delete":
+-            self.nodes.pop(command["name"], None)
+-        elif op == "alias":
++        operation = command["op"]
++        if operation == "set":
++            name = command["name"]
++            self.nodes[name] = copy.deepcopy(command["node"])
++            self.clock += 1
++            self.revisions[name] = self.clock
++        elif operation == "delete":
++            name = command["name"]
++            self.nodes.pop(name, None)
++            self.revisions.pop(name, None)
++            self.cache.forget(name)
++        elif operation == "alias":
+             self.aliases[command["name"]] = command["target"]
+-        elif op == "unalias":
++        elif operation == "unalias":
+             self.aliases.pop(command["name"], None)
+         else:
+             try:
+-                return {"value": self.build(command["target"], set(command.get("cancel_at", [])))}
+-            except RuntimeError as exc:
++                entry = self._visit(command["target"], set(), {}, set(command.get("cancel_at", [])))
++                return {"value": list(entry[1])}
++            except BuildFault as exc:
+                 return {"error": str(exc)}
+         return {"ok": True}
+ 
+-    def build(self, name, cancelled):
+-        name = self.aliases.get(name, name)
+-        hit = self.cache.get(name)
+-        if hit is not None:
+-            return hit
++    def _resolve(self, name):
++        visited = set()
++        while name in self.aliases:
++            if name in visited:
++                raise BuildFault("ALIAS_CYCLE")
++            visited.add(name)
++            name = self.aliases[name]
++        return name
++
++    def _visit(self, requested, active, memo, cancelled):
++        name = self._resolve(requested)
+         if name not in self.nodes:
+-            raise RuntimeError("MISSING")
+-        if name in self.active:
+-            raise RuntimeError("CYCLE")
+-        self.active.add(name)
+-        self.cache.put(name, [])
+-        node = self.nodes[name]
+-        children = [self.build(dep, cancelled) for dep in node.get("deps", [])]
+-        if name in cancelled:
+-            raise RuntimeError("CANCELLED")
+-        value = execute(node, children)
+-        self.cache.put(name, value)
+-        self.active.remove(name)
+-        return value
++            raise BuildFault("MISSING")
++        if name in active:
++            raise BuildFault("CYCLE")
++        if name in memo:
++            return memo[name]
++        active.add(name)
++        try:
++            node = self.nodes[name]
++            children = [self._visit(dep, active, memo, cancelled) for dep in node.get("deps", [])]
++            if name in cancelled:
++                raise BuildFault("CANCELLED")
++            signature = self.revisions[name], tuple(child[2] for child in children)
++            entry = self.cache.lookup(name, signature)
++            if entry is None:
++                value = execute(node, [child[1] for child in children])
++                entry = self.cache.store(name, signature, value)
++            memo[name] = entry
++            return entry
++        finally:
++            active.remove(name)
+diff -ruN -x __pycache__ -x *.pyc repository/buggy/app/core/operations.py repository/baseline/app/core/operations.py
+--- repository/buggy/app/core/operations.py	2026-09-26 09:42:30
++++ repository/baseline/app/core/operations.py	2026-09-26 09:42:30
+@@ -1,16 +1,27 @@
++"""Pure vector operators. All cache values are immutable tuples."""
++
++
++class BuildFault(Exception):
++    pass
++
++
+ def execute(node, children):
+-    op = node["op"]
+-    if op == "input":
+-        return node["data"]
+-    merged = [x for child in children for x in child]
+-    if op == "concat":
+-        return merged
+-    if op == "sum":
+-        return [sum(row) for row in zip(*children)]
+-    if op == "sort":
+-        return sorted(merged)
+-    if op == "unique":
+-        return list(set(merged))
+-    if op == "scale":
+-        return [x * node["factor"] for x in merged]
+-    raise RuntimeError("FAILED" if op == "fail" else "OP")
++    operation = node["op"]
++    if operation == "input":
++        return tuple(node["data"])
++    if operation == "sum":
++        output = [0] * max((len(child) for child in children), default=0)
++        for child in children:
++            for index, value in enumerate(child):
++                output[index] += value
++        return tuple(output)
++    values = [value for child in children for value in child]
++    if operation == "concat":
++        return tuple(values)
++    if operation == "scale":
++        return tuple(value * node["factor"] for value in values)
++    if operation == "sort":
++        return tuple(sorted(values))
++    if operation == "unique":
++        return tuple(sorted(set(values)))
++    raise BuildFault("FAILED" if operation == "fail" else "OP")
+diff -ruN -x __pycache__ -x *.pyc repository/buggy/app/db.py repository/baseline/app/db.py
+--- repository/buggy/app/db.py	2026-09-26 09:48:27
++++ repository/baseline/app/db.py	2026-09-26 09:44:07
+@@ -24,6 +24,11 @@
+         c.execute('BEGIN IMMEDIATE')
+         c.execute("CREATE TABLE IF NOT EXISTS projects(id TEXT PRIMARY KEY, graph TEXT NOT NULL, revision INTEGER NOT NULL DEFAULT 0)")
+         c.execute("CREATE TABLE IF NOT EXISTS jobs(id TEXT PRIMARY KEY,project_id TEXT NOT NULL,target TEXT NOT NULL,status TEXT NOT NULL,payload TEXT,result TEXT,error TEXT,cancel_requested INTEGER NOT NULL DEFAULT 0,created REAL NOT NULL,updated REAL NOT NULL,FOREIGN KEY(project_id) REFERENCES projects(id))")
++        pcols={r['name'] for r in c.execute('PRAGMA table_info(projects)')}
++        jcols={r['name'] for r in c.execute('PRAGMA table_info(jobs)')}
++        if 'revision' not in pcols:c.execute('ALTER TABLE projects ADD COLUMN revision INTEGER NOT NULL DEFAULT 0')
++        if 'payload' not in jcols:c.execute('ALTER TABLE jobs ADD COLUMN payload TEXT')
++        if 'cancel_requested' not in jcols:c.execute('ALTER TABLE jobs ADD COLUMN cancel_requested INTEGER NOT NULL DEFAULT 0')
+         c.execute('UPDATE jobs SET payload=(SELECT graph FROM projects WHERE id=jobs.project_id) WHERE payload IS NULL')
+         c.execute('CREATE INDEX IF NOT EXISTS jobs_by_status ON jobs(status,created)')
+         c.execute('PRAGMA user_version=2')
+@@ -36,4 +41,4 @@
+ 
+ def recover(config):
+     with connect(config) as c:
+-        c.execute("UPDATE jobs SET status='pending',updated=? WHERE status='queued'",(time.time(),))
++        c.execute("UPDATE jobs SET status=CASE WHEN cancel_requested=1 THEN 'cancelled' ELSE 'pending' END,updated=? WHERE status='running'",(time.time(),))
+diff -ruN -x __pycache__ -x *.pyc repository/buggy/app/runner.py repository/baseline/app/runner.py
+--- repository/buggy/app/runner.py	2026-09-26 09:48:27
++++ repository/baseline/app/runner.py	2026-09-26 09:42:30
+@@ -14,13 +14,15 @@
+ 
+ 
+ def cancelled(config,jid):
+-    with connect(config) as c:row=c.execute('SELECT status FROM jobs WHERE id=?',(jid,)).fetchone()
+-    return row['status']=='cancelled'
++    with connect(config) as c:row=c.execute('SELECT cancel_requested FROM jobs WHERE id=?',(jid,)).fetchone()
++    return bool(row['cancel_requested'])
+ 
+ 
+ def finish(config,job,status,result=None,error=None):
+     with connect(config) as c:
+         c.execute('BEGIN IMMEDIATE')
++        row=c.execute('SELECT cancel_requested FROM jobs WHERE id=?',(job['id'],)).fetchone()
++        if row['cancel_requested']:status,result,error='cancelled',None,None
+         c.execute('UPDATE jobs SET status=?,result=?,error=?,updated=? WHERE id=?',(status,json.dumps(result) if result is not None else None,error,time.time(),job['id']))
+         c.execute('COMMIT')
+ 
+@@ -35,8 +37,7 @@
+         while time.monotonic()<until and not cancelled(config,job['id']):time.sleep(.01)
+         if cancelled(config,job['id']):finish(config,job,'cancelled');continue
+         try:
+-            with connect(config) as c: current=c.execute('SELECT graph FROM projects WHERE id=?',(job['project_id'],)).fetchone()
+-            payload=current['graph'];spec=json.loads(payload);key=job['project_id']
++            payload=job['payload'];spec=json.loads(payload);key=job['project_id']
+             prior=engines.get(key)
+             if prior is None or prior[0]!=payload:engines[key]=(payload,Engine(spec['nodes'],spec['aliases']))
+             result=engines[key][1].step({'op':'build','target':job['target']})
+diff -ruN -x __pycache__ -x *.pyc repository/buggy/app/service.py repository/baseline/app/service.py
+--- repository/buggy/app/service.py	2026-09-26 09:42:30
++++ repository/baseline/app/service.py	2026-09-26 09:42:30
+@@ -33,7 +33,7 @@
+ 
+ 
+ def get_job(config,pid,jid):
+-    with connect(config) as c:row=c.execute('SELECT * FROM jobs WHERE id=?',(jid,)).fetchone()
++    with connect(config) as c:row=c.execute('SELECT * FROM jobs WHERE id=? AND project_id=?',(jid,pid)).fetchone()
+     if row is None:raise Problem(404,'job not found')
+     return {k:(json.loads(row[k]) if row[k] else None) if k=='result' else row[k] for k in ['id','project_id','target','status','result','error']}
+ 
+diff -ruN -x __pycache__ -x *.pyc repository/buggy/selftest.py repository/baseline/selftest.py
+--- repository/buggy/selftest.py	1970-01-01 08:00:00
++++ repository/baseline/selftest.py	2026-09-26 09:45:51
+@@ -0,0 +1,37 @@
++#!/usr/bin/env python3
++"""Submission-authored regressions: direct module tests, independent of organizer harness."""
++import json,sqlite3,tempfile,unittest
++from pathlib import Path
++from app import config,db,service,runner
++
++
++class Regressions(unittest.TestCase):
++    def setUp(self):
++        self.temp=tempfile.TemporaryDirectory(prefix='c2-selftest-');self.root=Path(self.temp.name);self.path=self.root/'service.json';self.path.write_text(json.dumps({'database':'data/state.sqlite','base_path':'/api/v2/'}));self.conf=config.load(self.path);db.initialize(self.conf)
++    def tearDown(self):self.temp.cleanup()
++    def project(self,pid='A',value=1):return service.save_project(self.conf,pid,{'nodes':{'root':{'op':'input','data':[value]}},'aliases':{}})
++    def test_relative_database_anchored_to_config(self):self.assertEqual(self.conf['database'],(self.root/'data/state.sqlite').resolve())
++    def test_base_path_preserved(self):self.assertEqual(self.conf['base_path'],'/api/v2')
++    def test_enqueue_freezes_payload(self):
++        self.project(value=1);job=service.enqueue(self.conf,'A','root');self.project(value=9)
++        with db.connect(self.conf) as c:payload=json.loads(c.execute('SELECT payload FROM jobs WHERE id=?',(job['id'],)).fetchone()[0])
++        self.assertEqual(payload['nodes']['root']['data'],[1])
++    def test_foreign_project_cannot_read_job(self):
++        self.project();self.project('B');job=service.enqueue(self.conf,'A','root')
++        with self.assertRaises(service.Problem) as ctx:service.get_job(self.conf,'B',job['id'])
++        self.assertEqual(ctx.exception.status,404)
++    def test_cancel_wins_before_publish(self):
++        self.project();service.enqueue(self.conf,'A','root');job=runner.claim(self.conf);service.cancel(self.conf,'A',job['id']);runner.finish(self.conf,job,'done',{'value':[1]});result=service.get_job(self.conf,'A',job['id']);self.assertEqual(result['status'],'cancelled');self.assertIsNone(result['result'])
++    def test_worker_restart_requeues_running(self):
++        self.project();service.enqueue(self.conf,'A','root');job=runner.claim(self.conf);db.recover(self.conf);self.assertEqual(service.get_job(self.conf,'A',job['id'])['status'],'pending')
++    def test_core_adapter_is_same_class_as_worker(self):
++        from engine import Engine as Export
++        self.assertIs(Export,runner.Engine)
++    def test_legacy_schema_preserves_graph(self):
++        old=dict(self.conf,database=self.root/'old.sqlite')
++        with sqlite3.connect(old['database']) as c:
++            c.execute('CREATE TABLE projects(id TEXT PRIMARY KEY,graph TEXT NOT NULL)');c.execute('CREATE TABLE jobs(id TEXT PRIMARY KEY,project_id TEXT NOT NULL,target TEXT NOT NULL,status TEXT NOT NULL,result TEXT,error TEXT,created REAL NOT NULL,updated REAL NOT NULL)');c.execute('INSERT INTO projects VALUES(?,?)',('legacy',json.dumps({'nodes':{'root':{'op':'input','data':[7]}},'aliases':{}})));c.execute('INSERT INTO jobs VALUES(?,?,?,?,?,?,?,?)',('j','legacy','root','pending',None,None,0.,0.))
++        db.initialize(old)
++        with db.connect(old) as c:
++            self.assertEqual(c.execute('PRAGMA user_version').fetchone()[0],2);payload=json.loads(c.execute('SELECT payload FROM jobs').fetchone()[0]);self.assertEqual(payload['nodes']['root']['data'],[7])
++if __name__=='__main__':unittest.main()

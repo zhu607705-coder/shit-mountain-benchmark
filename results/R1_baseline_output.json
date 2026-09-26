@@ -1,0 +1,157 @@
+{
+  "format_version": 1,
+  "plan": [
+    {
+      "task": "P3T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P4T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P8T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P7T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P2T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P6T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P5T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P1T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P3T2",
+      "mode": "standard"
+    },
+    {
+      "task": "P6T2",
+      "mode": "standard"
+    },
+    {
+      "task": "P3T3",
+      "mode": "standard"
+    },
+    {
+      "task": "P3T4",
+      "mode": "standard"
+    },
+    {
+      "task": "P8T2",
+      "mode": "standard"
+    },
+    {
+      "task": "P1T2",
+      "mode": "standard"
+    },
+    {
+      "task": "P8T3",
+      "mode": "standard"
+    },
+    {
+      "task": "P8T4",
+      "mode": "standard"
+    },
+    {
+      "task": "P1T3",
+      "mode": "standard"
+    },
+    {
+      "task": "P1T4",
+      "mode": "standard"
+    },
+    {
+      "task": "P6T3",
+      "mode": "standard"
+    },
+    {
+      "task": "P6T4",
+      "mode": "standard"
+    },
+    {
+      "task": "P1T5",
+      "mode": "standard"
+    },
+    {
+      "task": "P4T2",
+      "mode": "standard"
+    },
+    {
+      "task": "P1T6",
+      "mode": "standard"
+    },
+    {
+      "task": "P2T2",
+      "mode": "standard"
+    },
+    {
+      "task": "P3T5",
+      "mode": "standard"
+    },
+    {
+      "task": "P3T6",
+      "mode": "standard"
+    },
+    {
+      "task": "P5T2",
+      "mode": "standard"
+    },
+    {
+      "task": "P6T5",
+      "mode": "standard"
+    },
+    {
+      "task": "P6T6",
+      "mode": "standard"
+    },
+    {
+      "task": "P5T3",
+      "mode": "standard"
+    },
+    {
+      "task": "P2T3",
+      "mode": "standard"
+    },
+    {
+      "task": "P5T4",
+      "mode": "standard"
+    },
+    {
+      "task": "P5T5",
+      "mode": "standard"
+    },
+    {
+      "task": "P5T6",
+      "mode": "standard"
+    },
+    {
+      "task": "P2T4",
+      "mode": "standard"
+    },
+    {
+      "task": "P2T5",
+      "mode": "standard"
+    },
+    {
+      "task": "P2T6",
+      "mode": "standard"
+    },
+    {
+      "task": "P4T3",
+      "mode": "standard"
+    }
+  ]
+}

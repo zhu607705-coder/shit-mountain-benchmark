@@ -1,0 +1,9 @@
+{
+  "command": "patch -p2 -i /absolute/path/to/repository_baseline.patch",
+  "exit_code": 0,
+  "applied": true,
+  "matches_baseline_byte_for_byte": true,
+  "baseline_file_count": 18,
+  "stdout": "patching file DIAGNOSIS.md\npatching file README.md\npatching file TEST_REPORT.md\npatching file 'app/config.py'\npatching file 'app/core/cache.py'\npatching file 'app/core/engine.py'\npatching file 'app/core/operations.py'\npatching file 'app/db.py'\npatching file 'app/runner.py'\npatching file 'app/service.py'\npatching file selftest.py\n",
+  "stderr": ""
+}

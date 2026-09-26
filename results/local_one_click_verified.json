@@ -1,0 +1,94 @@
+{
+  "status": "passed",
+  "python": "3.14.4",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "ci": "false",
+  "checks": [
+    {
+      "name": "python-syntax",
+      "passed": true
+    },
+    {
+      "name": "score-normalization",
+      "passed": true,
+      "seconds": 0.0397
+    },
+    {
+      "name": "R1-judge",
+      "passed": true,
+      "seconds": 0.048
+    },
+    {
+      "name": "R2-judge",
+      "passed": true,
+      "seconds": 0.0409
+    },
+    {
+      "name": "policy-boundaries",
+      "passed": true,
+      "seconds": 0.3299
+    },
+    {
+      "name": "C1-oracle",
+      "passed": true,
+      "seconds": 0.0379
+    },
+    {
+      "name": "C2-oracle",
+      "passed": true,
+      "seconds": 0.0506
+    },
+    {
+      "name": "C3-recovery-regressions",
+      "passed": true,
+      "seconds": 0.0672
+    },
+    {
+      "name": "C4-cache-regressions",
+      "passed": true,
+      "seconds": 0.0445
+    },
+    {
+      "name": "frontend-syntax-and-logic",
+      "passed": true,
+      "seconds": 0.1982
+    },
+    {
+      "name": "F3-stream-state",
+      "passed": true,
+      "seconds": 0.0429
+    },
+    {
+      "name": "F4-multiwindow-state",
+      "passed": true,
+      "seconds": 0.0304
+    },
+    {
+      "name": "API-and-import-adapters",
+      "passed": true,
+      "seconds": 1.1556
+    },
+    {
+      "name": "all-baselines-and-real-services",
+      "passed": true,
+      "seconds": 14.182
+    },
+    {
+      "name": "C1-broken-control-rejected",
+      "passed": true
+    },
+    {
+      "name": "C2-broken-control-rejected",
+      "passed": true
+    },
+    {
+      "name": "C3-broken-control-rejected",
+      "passed": true
+    },
+    {
+      "name": "C4-broken-control-rejected",
+      "passed": true
+    }
+  ],
+  "limits": "No live model API call, no browser UI automation in this command, no independent visual judging."
+}

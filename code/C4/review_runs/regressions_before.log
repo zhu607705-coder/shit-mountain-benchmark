@@ -1,0 +1,42 @@
+test_corrupt_incomplete_cache_is_a_miss (test_review.CacheBoundaryTests.test_corrupt_incomplete_cache_is_a_miss) ... ok
+test_invalid_utf8_text_operator_reports_build_error (test_review.CacheBoundaryTests.test_invalid_utf8_text_operator_reports_build_error) ... ERROR
+test_relative_cache_location_survives_cwd_change (test_review.CacheBoundaryTests.test_relative_cache_location_survives_cwd_change) ... ERROR
+
+======================================================================
+ERROR: test_invalid_utf8_text_operator_reports_build_error (test_review.CacheBoundaryTests.test_invalid_utf8_text_operator_reports_build_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/packs/pro_v01/tasks/C2_cache/test_review.py", line 15, in test_invalid_utf8_text_operator_reports_build_error
+    baseline.Builder(root,Path(directory)/"cache").build(spec,"out")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/packs/pro_v01/tasks/C2_cache/baseline.py", line 64, in build
+    return evaluate(target)[1]
+           ~~~~~~~~^^^^^^^^
+  File "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/packs/pro_v01/tasks/C2_cache/baseline.py", line 50, in evaluate
+    elif op=='upper':data=joined.decode('utf-8').upper().encode('utf-8')
+                          ~~~~~~~~~~~~~^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+
+======================================================================
+ERROR: test_relative_cache_location_survives_cwd_change (test_review.CacheBoundaryTests.test_relative_cache_location_survives_cwd_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/packs/pro_v01/tasks/C2_cache/test_review.py", line 27, in test_relative_cache_location_survives_cwd_change
+    self.assertEqual(builder.build(spec,"out"),b"HELLO")
+                     ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/packs/pro_v01/tasks/C2_cache/baseline.py", line 64, in build
+    return evaluate(target)[1]
+           ~~~~~~~~^^^^^^^^
+  File "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/packs/pro_v01/tasks/C2_cache/baseline.py", line 57, in evaluate
+    fd,tmp=tempfile.mkstemp(prefix='.publish-',dir=self.cache)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.4/Frameworks/Python.framework/Versions/3.14/lib/python3.14/tempfile.py", line 354, in mkstemp
+    return _mkstemp_inner(dir, prefix, suffix, flags, output_type)
+  File "/opt/homebrew/Cellar/python@3.14/3.14.4/Frameworks/Python.framework/Versions/3.14/lib/python3.14/tempfile.py", line 255, in _mkstemp_inner
+    fd = _os.open(file, flags, 0o600)
+FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/tmpmja8jfmm/elsewhere/cache/.publish-0xbk0jme'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+FAILED (errors=2)

@@ -1,0 +1,6 @@
+{
+  "database": "state/service.sqlite3",
+  "base_path": "/build/v2",
+  "port": 0,
+  "job_delay": 0.1
+}

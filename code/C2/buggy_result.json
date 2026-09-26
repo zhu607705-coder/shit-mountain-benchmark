@@ -1,0 +1,326 @@
+{
+  "benchmark": "C2",
+  "version": "0.1.0",
+  "seed": 2026092602,
+  "measured_at_utc": "2026-09-26T01:37:10.880675+00:00",
+  "suite_sha256": "7663baa5c254890edd6389fd779c7aa36db0116b1c0eeddcf1e2dafd53a9144d",
+  "valid": false,
+  "critical_case_names": [
+    "ordinary_build",
+    "failure_repair",
+    "result_mutation_ownership"
+  ],
+  "critical_passed": [
+    "ordinary_build"
+  ],
+  "submission": "buggy",
+  "submission_sha256": "68712d2bcac5c64069a8270a4909105d2f53a6233e3280f741ea361fc857ff62",
+  "raw_score": 2.807018,
+  "correctness": {
+    "passed": 2,
+    "total": 57,
+    "rate": 0.03508771929824561
+  },
+  "performance": {
+    "median_seconds": 6.195998867042363e-05,
+    "samples_seconds": [
+      0.00010291804210282862,
+      6.195998867042363e-05,
+      5.5876007536426187e-05
+    ],
+    "peak_traced_bytes": 663294,
+    "speed_utility": 0.9969115685254375,
+    "memory_utility": 0.9619681993244463,
+    "within_budget": true,
+    "resource_bonus_eligible": false
+  },
+  "environment": {
+    "python": "3.14.4",
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+  },
+  "security": "same-process trusted local prototype; not a sandbox",
+  "tests": [
+    {
+      "name": "ordinary_build",
+      "passed": true
+    },
+    {
+      "name": "transitive_invalidation",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "alias_chain_retarget",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "failure_repair",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "cancel_then_retry",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "result_mutation_ownership",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "cycle_and_recovery",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "alias_cycle_and_recovery",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "delete_dependency_then_recreate",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "dependency_order_and_multiplicity",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "unknown_op_repair",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "error_precedence",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "empty_operators",
+      "passed": true
+    },
+    {
+      "name": "input_dependencies_are_visited",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "aliases_shadow_nodes",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "deep_cycle_after_cache",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "shared_dag_is_not_cycle",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "long_alias_chain",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_00",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_01",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_02",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_03",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_04",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_05",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_06",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_07",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_08",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_09",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_10",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_11",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_12",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_13",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_14",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_15",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_16",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_17",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_18",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_19",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_20",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_21",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_22",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_23",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_24",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_25",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_26",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_27",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_28",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_29",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_30",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_31",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_32",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_33",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_34",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_35",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "metamorphic_base",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "metamorphic_unreachable_edit",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "incremental_branch_updates",
+      "passed": false
+    }
+  ]
+}

@@ -1,0 +1,5489 @@
+{
+  "valid": true,
+  "feasible": true,
+  "raw_score": 528.051477475,
+  "metrics": {
+    "objective": 31.28141666666667,
+    "mean_loss": 12.791,
+    "cvar_worst_10pct_loss": 32.575,
+    "mean_action_loss": 4.956666666666667,
+    "mean_test_harm": 2.9294999999999995,
+    "mean_delay_loss": 4.904833333333333,
+    "mean_test_cost": 12.772222222222222,
+    "mean_test_count": 4.344444444444444,
+    "node_count": 121,
+    "max_depth": 5,
+    "max_path_cost": 18
+  },
+  "score_formula": "1000 / (1 + (mean_loss + 0.45*CVaR_worst_10pct_loss + 0.30*mean_test_cost)/35)",
+  "worlds": [
+    {
+      "world": "W0001",
+      "weight": 1,
+      "action": "A07",
+      "loss": 5.88,
+      "action_loss": 2.4,
+      "test_harm": 1.3199999999999998,
+      "delay_loss": 2.16,
+      "test_cost": 11,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0002",
+      "weight": 1,
+      "action": "A01",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0003",
+      "weight": 1,
+      "action": "A06",
+      "loss": 15.899999999999999,
+      "action_loss": 6.0,
+      "test_harm": 3.5999999999999996,
+      "delay_loss": 6.3,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0004",
+      "weight": 1,
+      "action": "A04",
+      "loss": 13.23,
+      "action_loss": 4.2,
+      "test_harm": 3.36,
+      "delay_loss": 5.67,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0005",
+      "weight": 1,
+      "action": "A04",
+      "loss": 8.7,
+      "action_loss": 3.0,
+      "test_harm": 2.0999999999999996,
+      "delay_loss": 3.6,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0006",
+      "weight": 1,
+      "action": "A07",
+      "loss": 6.96,
+      "action_loss": 2.4,
+      "test_harm": 1.6799999999999997,
+      "delay_loss": 2.88,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        },
+        {
+          "test": "T02",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0007",
+      "weight": 1,
+      "action": "A05",
+      "loss": 7.949999999999999,
+      "action_loss": 3.0,
+      "test_harm": 1.7999999999999998,
+      "delay_loss": 3.15,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0008",
+      "weight": 1,
+      "action": "A01",
+      "loss": 11.34,
+      "action_loss": 4.2,
+      "test_harm": 2.73,
+      "delay_loss": 4.41,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0009",
+      "weight": 1,
+      "action": "A05",
+      "loss": 11.34,
+      "action_loss": 4.2,
+      "test_harm": 2.73,
+      "delay_loss": 4.41,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0010",
+      "weight": 1,
+      "action": "A09",
+      "loss": 20.099999999999998,
+      "action_loss": 15.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0011",
+      "weight": 1,
+      "action": "A02",
+      "loss": 7.4399999999999995,
+      "action_loss": 2.4,
+      "test_harm": 1.7999999999999998,
+      "delay_loss": 3.2399999999999998,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T06",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0012",
+      "weight": 1,
+      "action": "A00",
+      "loss": 12.18,
+      "action_loss": 4.2,
+      "test_harm": 2.94,
+      "delay_loss": 5.04,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0013",
+      "weight": 1,
+      "action": "A04",
+      "loss": 17.7,
+      "action_loss": 6.0,
+      "test_harm": 4.5,
+      "delay_loss": 7.2,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0014",
+      "weight": 1,
+      "action": "A06",
+      "loss": 5.85,
+      "action_loss": 3.0,
+      "test_harm": 1.05,
+      "delay_loss": 1.8,
+      "test_cost": 7,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0015",
+      "weight": 1,
+      "action": "A03",
+      "loss": 33.16,
+      "action_loss": 28.0,
+      "test_harm": 1.9199999999999997,
+      "delay_loss": 3.2399999999999998,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "1"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0016",
+      "weight": 1,
+      "action": "A06",
+      "loss": 7.4399999999999995,
+      "action_loss": 2.4,
+      "test_harm": 1.7999999999999998,
+      "delay_loss": 3.2399999999999998,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T06",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0017",
+      "weight": 1,
+      "action": "A01",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0018",
+      "weight": 1,
+      "action": "A03",
+      "loss": 5.1,
+      "action_loss": 3.0,
+      "test_harm": 0.75,
+      "delay_loss": 1.35,
+      "test_cost": 5,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0019",
+      "weight": 1,
+      "action": "A05",
+      "loss": 15.899999999999999,
+      "action_loss": 6.0,
+      "test_harm": 3.5999999999999996,
+      "delay_loss": 6.3,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0020",
+      "weight": 1,
+      "action": "A03",
+      "loss": 10.2,
+      "action_loss": 6.0,
+      "test_harm": 1.5,
+      "delay_loss": 2.7,
+      "test_cost": 5,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0021",
+      "weight": 1,
+      "action": "A02",
+      "loss": 16.2,
+      "action_loss": 6.0,
+      "test_harm": 3.9,
+      "delay_loss": 6.3,
+      "test_cost": 13,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T11",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0022",
+      "weight": 1,
+      "action": "A06",
+      "loss": 5.85,
+      "action_loss": 3.0,
+      "test_harm": 1.05,
+      "delay_loss": 1.8,
+      "test_cost": 7,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0023",
+      "weight": 1,
+      "action": "A03",
+      "loss": 13.23,
+      "action_loss": 4.2,
+      "test_harm": 3.36,
+      "delay_loss": 5.67,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "1"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0024",
+      "weight": 1,
+      "action": "A02",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0025",
+      "weight": 1,
+      "action": "A01",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0026",
+      "weight": 1,
+      "action": "A03",
+      "loss": 4.08,
+      "action_loss": 2.4,
+      "test_harm": 0.6,
+      "delay_loss": 1.08,
+      "test_cost": 5,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0027",
+      "weight": 1,
+      "action": "A01",
+      "loss": 6.96,
+      "action_loss": 2.4,
+      "test_harm": 1.6799999999999997,
+      "delay_loss": 2.88,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0028",
+      "weight": 1,
+      "action": "A06",
+      "loss": 30.84,
+      "action_loss": 4.2,
+      "test_harm": 11.73,
+      "delay_loss": 14.91,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T04",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0029",
+      "weight": 1,
+      "action": "A02",
+      "loss": 16.2,
+      "action_loss": 6.0,
+      "test_harm": 3.9,
+      "delay_loss": 6.3,
+      "test_cost": 13,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T11",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0030",
+      "weight": 1,
+      "action": "A06",
+      "loss": 7.949999999999999,
+      "action_loss": 3.0,
+      "test_harm": 1.7999999999999998,
+      "delay_loss": 3.15,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0031",
+      "weight": 1,
+      "action": "A02",
+      "loss": 26.700000000000003,
+      "action_loss": 6.0,
+      "test_harm": 3.9,
+      "delay_loss": 16.8,
+      "test_cost": 13,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T11",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0032",
+      "weight": 1,
+      "action": "A00",
+      "loss": 8.85,
+      "action_loss": 3.0,
+      "test_harm": 2.25,
+      "delay_loss": 3.6,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0033",
+      "weight": 1,
+      "action": "A06",
+      "loss": 18.6,
+      "action_loss": 6.0,
+      "test_harm": 4.5,
+      "delay_loss": 8.1,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T06",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0034",
+      "weight": 1,
+      "action": "A00",
+      "loss": 5.7,
+      "action_loss": 3.0,
+      "test_harm": 0.9,
+      "delay_loss": 1.8,
+      "test_cost": 6,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0035",
+      "weight": 1,
+      "action": "A02",
+      "loss": 14.700000000000001,
+      "action_loss": 6.0,
+      "test_harm": 3.3,
+      "delay_loss": 5.4,
+      "test_cost": 11,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0036",
+      "weight": 1,
+      "action": "A01",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0037",
+      "weight": 1,
+      "action": "A06",
+      "loss": 11.34,
+      "action_loss": 4.2,
+      "test_harm": 2.73,
+      "delay_loss": 4.41,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T04",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0038",
+      "weight": 1,
+      "action": "A06",
+      "loss": 11.13,
+      "action_loss": 4.2,
+      "test_harm": 2.52,
+      "delay_loss": 4.41,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0039",
+      "weight": 1,
+      "action": "A09",
+      "loss": 16.080000000000002,
+      "action_loss": 12.0,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0040",
+      "weight": 1,
+      "action": "A00",
+      "loss": 11.7,
+      "action_loss": 3.0,
+      "test_harm": 0.9,
+      "delay_loss": 7.8,
+      "test_cost": 6,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0041",
+      "weight": 1,
+      "action": "A05",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0042",
+      "weight": 1,
+      "action": "A00",
+      "loss": 8.7,
+      "action_loss": 3.0,
+      "test_harm": 2.0999999999999996,
+      "delay_loss": 3.6,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0043",
+      "weight": 1,
+      "action": "A00",
+      "loss": 12.18,
+      "action_loss": 4.2,
+      "test_harm": 2.94,
+      "delay_loss": 5.04,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0044",
+      "weight": 1,
+      "action": "A07",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        },
+        {
+          "test": "T11",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0045",
+      "weight": 1,
+      "action": "A00",
+      "loss": 11.34,
+      "action_loss": 4.2,
+      "test_harm": 2.73,
+      "delay_loss": 4.41,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        },
+        {
+          "test": "T11",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0046",
+      "weight": 1,
+      "action": "A02",
+      "loss": 11.34,
+      "action_loss": 4.2,
+      "test_harm": 2.73,
+      "delay_loss": 4.41,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0047",
+      "weight": 1,
+      "action": "A05",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0048",
+      "weight": 1,
+      "action": "A00",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        },
+        {
+          "test": "T11",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0049",
+      "weight": 1,
+      "action": "A05",
+      "loss": 16.2,
+      "action_loss": 6.0,
+      "test_harm": 3.9,
+      "delay_loss": 6.3,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0050",
+      "weight": 1,
+      "action": "A03",
+      "loss": 18.9,
+      "action_loss": 6.0,
+      "test_harm": 4.8,
+      "delay_loss": 8.1,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "1"
+        },
+        {
+          "test": "T05",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0051",
+      "weight": 1,
+      "action": "A03",
+      "loss": 5.1,
+      "action_loss": 3.0,
+      "test_harm": 0.75,
+      "delay_loss": 1.35,
+      "test_cost": 5,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0052",
+      "weight": 1,
+      "action": "A04",
+      "loss": 13.23,
+      "action_loss": 4.2,
+      "test_harm": 3.36,
+      "delay_loss": 5.67,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0053",
+      "weight": 1,
+      "action": "A00",
+      "loss": 12.18,
+      "action_loss": 4.2,
+      "test_harm": 2.94,
+      "delay_loss": 5.04,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0054",
+      "weight": 1,
+      "action": "A05",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0055",
+      "weight": 1,
+      "action": "A01",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0056",
+      "weight": 1,
+      "action": "A04",
+      "loss": 13.23,
+      "action_loss": 4.2,
+      "test_harm": 3.36,
+      "delay_loss": 5.67,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0057",
+      "weight": 1,
+      "action": "A05",
+      "loss": 5.1,
+      "action_loss": 3.0,
+      "test_harm": 0.75,
+      "delay_loss": 1.35,
+      "test_cost": 5,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        },
+        {
+          "test": "T04",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0058",
+      "weight": 1,
+      "action": "A06",
+      "loss": 18.6,
+      "action_loss": 6.0,
+      "test_harm": 4.5,
+      "delay_loss": 8.1,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T06",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0059",
+      "weight": 1,
+      "action": "A01",
+      "loss": 16.2,
+      "action_loss": 6.0,
+      "test_harm": 3.9,
+      "delay_loss": 6.3,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T04",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0060",
+      "weight": 1,
+      "action": "A02",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T11",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0061",
+      "weight": 1,
+      "action": "A05",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0062",
+      "weight": 1,
+      "action": "A06",
+      "loss": 15.899999999999999,
+      "action_loss": 6.0,
+      "test_harm": 3.5999999999999996,
+      "delay_loss": 6.3,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0063",
+      "weight": 1,
+      "action": "A05",
+      "loss": 16.2,
+      "action_loss": 6.0,
+      "test_harm": 3.9,
+      "delay_loss": 6.3,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0064",
+      "weight": 1,
+      "action": "A02",
+      "loss": 4.08,
+      "action_loss": 2.4,
+      "test_harm": 0.6,
+      "delay_loss": 1.08,
+      "test_cost": 5,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0065",
+      "weight": 1,
+      "action": "A00",
+      "loss": 8.7,
+      "action_loss": 3.0,
+      "test_harm": 2.0999999999999996,
+      "delay_loss": 3.6,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0066",
+      "weight": 1,
+      "action": "A03",
+      "loss": 7.559999999999999,
+      "action_loss": 2.4,
+      "test_harm": 1.9199999999999997,
+      "delay_loss": 3.2399999999999998,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "1"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0067",
+      "weight": 1,
+      "action": "A04",
+      "loss": 7.98,
+      "action_loss": 4.2,
+      "test_harm": 1.26,
+      "delay_loss": 2.52,
+      "test_cost": 6,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0068",
+      "weight": 1,
+      "action": "A02",
+      "loss": 11.34,
+      "action_loss": 4.2,
+      "test_harm": 2.73,
+      "delay_loss": 4.41,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0069",
+      "weight": 1,
+      "action": "A06",
+      "loss": 15.899999999999999,
+      "action_loss": 6.0,
+      "test_harm": 3.5999999999999996,
+      "delay_loss": 6.3,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0070",
+      "weight": 1,
+      "action": "A02",
+      "loss": 5.88,
+      "action_loss": 2.4,
+      "test_harm": 1.3199999999999998,
+      "delay_loss": 2.16,
+      "test_cost": 11,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0071",
+      "weight": 1,
+      "action": "A03",
+      "loss": 9.3,
+      "action_loss": 3.0,
+      "test_harm": 2.25,
+      "delay_loss": 4.05,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T07",
+          "outcome": "1"
+        },
+        {
+          "test": "T01",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0072",
+      "weight": 1,
+      "action": "A00",
+      "loss": 8.7,
+      "action_loss": 3.0,
+      "test_harm": 2.0999999999999996,
+      "delay_loss": 3.6,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0073",
+      "weight": 1,
+      "action": "A00",
+      "loss": 11.13,
+      "action_loss": 4.2,
+      "test_harm": 2.52,
+      "delay_loss": 4.41,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0074",
+      "weight": 1,
+      "action": "A01",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0075",
+      "weight": 1,
+      "action": "A01",
+      "loss": 11.34,
+      "action_loss": 4.2,
+      "test_harm": 2.73,
+      "delay_loss": 4.41,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0076",
+      "weight": 1,
+      "action": "A00",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        },
+        {
+          "test": "T11",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0077",
+      "weight": 1,
+      "action": "A02",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0078",
+      "weight": 1,
+      "action": "A04",
+      "loss": 9.45,
+      "action_loss": 3.0,
+      "test_harm": 2.4,
+      "delay_loss": 4.05,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0079",
+      "weight": 1,
+      "action": "A03",
+      "loss": 4.68,
+      "action_loss": 2.4,
+      "test_harm": 0.84,
+      "delay_loss": 1.44,
+      "test_cost": 7,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0080",
+      "weight": 1,
+      "action": "A00",
+      "loss": 8.85,
+      "action_loss": 3.0,
+      "test_harm": 2.25,
+      "delay_loss": 3.6,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0081",
+      "weight": 1,
+      "action": "A00",
+      "loss": 12.18,
+      "action_loss": 4.2,
+      "test_harm": 2.94,
+      "delay_loss": 5.04,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0082",
+      "weight": 1,
+      "action": "A03",
+      "loss": 41.449999999999996,
+      "action_loss": 35.0,
+      "test_harm": 2.4,
+      "delay_loss": 4.05,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "1"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0083",
+      "weight": 1,
+      "action": "A08",
+      "loss": 20.700000000000003,
+      "action_loss": 15.0,
+      "test_harm": 2.0999999999999996,
+      "delay_loss": 3.6,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0084",
+      "weight": 1,
+      "action": "A05",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0085",
+      "weight": 1,
+      "action": "A03",
+      "loss": 38.64,
+      "action_loss": 33.6,
+      "test_harm": 1.7999999999999998,
+      "delay_loss": 3.2399999999999998,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0086",
+      "weight": 1,
+      "action": "A06",
+      "loss": 15.899999999999999,
+      "action_loss": 6.0,
+      "test_harm": 3.5999999999999996,
+      "delay_loss": 6.3,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0087",
+      "weight": 1,
+      "action": "A03",
+      "loss": 18.6,
+      "action_loss": 6.0,
+      "test_harm": 4.5,
+      "delay_loss": 8.1,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T07",
+          "outcome": "1"
+        },
+        {
+          "test": "T01",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0088",
+      "weight": 1,
+      "action": "A00",
+      "loss": 12.18,
+      "action_loss": 4.2,
+      "test_harm": 2.94,
+      "delay_loss": 5.04,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0089",
+      "weight": 1,
+      "action": "A01",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0090",
+      "weight": 1,
+      "action": "A05",
+      "loss": 7.949999999999999,
+      "action_loss": 3.0,
+      "test_harm": 1.7999999999999998,
+      "delay_loss": 3.15,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0091",
+      "weight": 1,
+      "action": "A03",
+      "loss": 7.4399999999999995,
+      "action_loss": 2.4,
+      "test_harm": 1.7999999999999998,
+      "delay_loss": 3.2399999999999998,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T07",
+          "outcome": "1"
+        },
+        {
+          "test": "T01",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0092",
+      "weight": 1,
+      "action": "A03",
+      "loss": 18.6,
+      "action_loss": 6.0,
+      "test_harm": 4.5,
+      "delay_loss": 8.1,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0093",
+      "weight": 1,
+      "action": "A05",
+      "loss": 16.2,
+      "action_loss": 6.0,
+      "test_harm": 3.9,
+      "delay_loss": 6.3,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0094",
+      "weight": 1,
+      "action": "A03",
+      "loss": 9.3,
+      "action_loss": 3.0,
+      "test_harm": 2.25,
+      "delay_loss": 4.05,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T07",
+          "outcome": "1"
+        },
+        {
+          "test": "T01",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0095",
+      "weight": 1,
+      "action": "A02",
+      "loss": 27.6,
+      "action_loss": 3.0,
+      "test_harm": 10.950000000000001,
+      "delay_loss": 13.65,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0096",
+      "weight": 1,
+      "action": "A00",
+      "loss": 5.76,
+      "action_loss": 2.4,
+      "test_harm": 1.2,
+      "delay_loss": 2.16,
+      "test_cost": 10,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "2"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0097",
+      "weight": 1,
+      "action": "A05",
+      "loss": 8.16,
+      "action_loss": 2.4,
+      "test_harm": 2.1599999999999997,
+      "delay_loss": 3.5999999999999996,
+      "test_cost": 18,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T07",
+          "outcome": "2"
+        },
+        {
+          "test": "T08",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0098",
+      "weight": 1,
+      "action": "A02",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T11",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0099",
+      "weight": 1,
+      "action": "A04",
+      "loss": 10.080000000000002,
+      "action_loss": 4.2,
+      "test_harm": 2.1,
+      "delay_loss": 3.7800000000000002,
+      "test_cost": 10,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "2"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0100",
+      "weight": 1,
+      "action": "A00",
+      "loss": 6.09,
+      "action_loss": 4.2,
+      "test_harm": 0.63,
+      "delay_loss": 1.26,
+      "test_cost": 3,
+      "test_count": 2,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0101",
+      "weight": 1,
+      "action": "A02",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T11",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0102",
+      "weight": 1,
+      "action": "A02",
+      "loss": 26.700000000000003,
+      "action_loss": 6.0,
+      "test_harm": 3.9,
+      "delay_loss": 16.8,
+      "test_cost": 13,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T11",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0103",
+      "weight": 1,
+      "action": "A00",
+      "loss": 6.96,
+      "action_loss": 2.4,
+      "test_harm": 1.68,
+      "delay_loss": 2.88,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0104",
+      "weight": 1,
+      "action": "A04",
+      "loss": 9.45,
+      "action_loss": 3.0,
+      "test_harm": 2.4,
+      "delay_loss": 4.05,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0105",
+      "weight": 1,
+      "action": "A01",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0106",
+      "weight": 1,
+      "action": "A04",
+      "loss": 9.45,
+      "action_loss": 3.0,
+      "test_harm": 2.4,
+      "delay_loss": 4.05,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0107",
+      "weight": 1,
+      "action": "A00",
+      "loss": 17.4,
+      "action_loss": 6.0,
+      "test_harm": 4.199999999999999,
+      "delay_loss": 7.2,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0108",
+      "weight": 1,
+      "action": "A03",
+      "loss": 5.7,
+      "action_loss": 3.0,
+      "test_harm": 0.9,
+      "delay_loss": 1.8,
+      "test_cost": 6,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0109",
+      "weight": 1,
+      "action": "A06",
+      "loss": 6.359999999999999,
+      "action_loss": 2.4,
+      "test_harm": 1.44,
+      "delay_loss": 2.52,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0110",
+      "weight": 1,
+      "action": "A06",
+      "loss": 15.899999999999999,
+      "action_loss": 6.0,
+      "test_harm": 3.5999999999999996,
+      "delay_loss": 6.3,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0111",
+      "weight": 1,
+      "action": "A05",
+      "loss": 15.899999999999999,
+      "action_loss": 6.0,
+      "test_harm": 3.5999999999999996,
+      "delay_loss": 6.3,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T02",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0112",
+      "weight": 1,
+      "action": "A04",
+      "loss": 13.23,
+      "action_loss": 4.2,
+      "test_harm": 3.36,
+      "delay_loss": 5.67,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "1"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0113",
+      "weight": 1,
+      "action": "A02",
+      "loss": 27.6,
+      "action_loss": 3.0,
+      "test_harm": 10.950000000000001,
+      "delay_loss": 13.65,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0114",
+      "weight": 1,
+      "action": "A00",
+      "loss": 8.7,
+      "action_loss": 3.0,
+      "test_harm": 2.0999999999999996,
+      "delay_loss": 3.6,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0115",
+      "weight": 1,
+      "action": "A05",
+      "loss": 16.2,
+      "action_loss": 6.0,
+      "test_harm": 3.9,
+      "delay_loss": 6.3,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0116",
+      "weight": 1,
+      "action": "A00",
+      "loss": 38.400000000000006,
+      "action_loss": 6.0,
+      "test_harm": 13.200000000000001,
+      "delay_loss": 19.2,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0117",
+      "weight": 1,
+      "action": "A02",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0118",
+      "weight": 1,
+      "action": "A05",
+      "loss": 11.13,
+      "action_loss": 4.2,
+      "test_harm": 2.52,
+      "delay_loss": 4.41,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0119",
+      "weight": 1,
+      "action": "A02",
+      "loss": 11.34,
+      "action_loss": 4.2,
+      "test_harm": 2.73,
+      "delay_loss": 4.41,
+      "test_cost": 13,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T11",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0120",
+      "weight": 1,
+      "action": "A02",
+      "loss": 6.359999999999999,
+      "action_loss": 2.4,
+      "test_harm": 1.44,
+      "delay_loss": 2.52,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0121",
+      "weight": 1,
+      "action": "A04",
+      "loss": 7.559999999999999,
+      "action_loss": 2.4,
+      "test_harm": 1.9199999999999997,
+      "delay_loss": 3.2399999999999998,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "1"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0122",
+      "weight": 1,
+      "action": "A02",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0123",
+      "weight": 1,
+      "action": "A06",
+      "loss": 11.13,
+      "action_loss": 4.2,
+      "test_harm": 2.52,
+      "delay_loss": 4.41,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0124",
+      "weight": 1,
+      "action": "A04",
+      "loss": 41.449999999999996,
+      "action_loss": 35.0,
+      "test_harm": 2.4,
+      "delay_loss": 4.05,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "1"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0125",
+      "weight": 1,
+      "action": "A00",
+      "loss": 8.7,
+      "action_loss": 3.0,
+      "test_harm": 2.0999999999999996,
+      "delay_loss": 3.6,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0126",
+      "weight": 1,
+      "action": "A00",
+      "loss": 25.98,
+      "action_loss": 2.4,
+      "test_harm": 10.559999999999999,
+      "delay_loss": 13.020000000000001,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        },
+        {
+          "test": "T11",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0127",
+      "weight": 1,
+      "action": "A01",
+      "loss": 16.2,
+      "action_loss": 6.0,
+      "test_harm": 3.9,
+      "delay_loss": 6.3,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0128",
+      "weight": 1,
+      "action": "A01",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0129",
+      "weight": 1,
+      "action": "A00",
+      "loss": 8.7,
+      "action_loss": 3.0,
+      "test_harm": 2.0999999999999996,
+      "delay_loss": 3.6,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0130",
+      "weight": 1,
+      "action": "A01",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0131",
+      "weight": 1,
+      "action": "A00",
+      "loss": 5.76,
+      "action_loss": 2.4,
+      "test_harm": 1.2,
+      "delay_loss": 2.16,
+      "test_cost": 10,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "2"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0132",
+      "weight": 1,
+      "action": "A08",
+      "loss": 24.78,
+      "action_loss": 21.0,
+      "test_harm": 1.26,
+      "delay_loss": 2.52,
+      "test_cost": 6,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0133",
+      "weight": 1,
+      "action": "A00",
+      "loss": 7.949999999999999,
+      "action_loss": 3.0,
+      "test_harm": 1.7999999999999998,
+      "delay_loss": 3.15,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0134",
+      "weight": 1,
+      "action": "A08",
+      "loss": 16.56,
+      "action_loss": 12.0,
+      "test_harm": 1.68,
+      "delay_loss": 2.88,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0135",
+      "weight": 1,
+      "action": "A00",
+      "loss": 8.7,
+      "action_loss": 3.0,
+      "test_harm": 2.0999999999999996,
+      "delay_loss": 3.6,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0136",
+      "weight": 1,
+      "action": "A07",
+      "loss": 8.7,
+      "action_loss": 3.0,
+      "test_harm": 2.1,
+      "delay_loss": 3.6,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0137",
+      "weight": 1,
+      "action": "A05",
+      "loss": 8.7,
+      "action_loss": 3.0,
+      "test_harm": 2.1,
+      "delay_loss": 3.6,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0138",
+      "weight": 1,
+      "action": "A04",
+      "loss": 30.060000000000002,
+      "action_loss": 2.4,
+      "test_harm": 10.92,
+      "delay_loss": 16.740000000000002,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0139",
+      "weight": 1,
+      "action": "A04",
+      "loss": 5.1,
+      "action_loss": 3.0,
+      "test_harm": 0.75,
+      "delay_loss": 1.35,
+      "test_cost": 5,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        },
+        {
+          "test": "T04",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0140",
+      "weight": 1,
+      "action": "A06",
+      "loss": 16.2,
+      "action_loss": 6.0,
+      "test_harm": 3.9,
+      "delay_loss": 6.3,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T04",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0141",
+      "weight": 1,
+      "action": "A04",
+      "loss": 13.23,
+      "action_loss": 4.2,
+      "test_harm": 3.36,
+      "delay_loss": 5.67,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0142",
+      "weight": 1,
+      "action": "A03",
+      "loss": 9.6,
+      "action_loss": 3.0,
+      "test_harm": 0.75,
+      "delay_loss": 5.85,
+      "test_cost": 5,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0143",
+      "weight": 1,
+      "action": "A04",
+      "loss": 9.45,
+      "action_loss": 3.0,
+      "test_harm": 2.4,
+      "delay_loss": 4.05,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "1"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0144",
+      "weight": 1,
+      "action": "A00",
+      "loss": 8.7,
+      "action_loss": 3.0,
+      "test_harm": 2.0999999999999996,
+      "delay_loss": 3.6,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0145",
+      "weight": 1,
+      "action": "A01",
+      "loss": 11.34,
+      "action_loss": 4.2,
+      "test_harm": 2.73,
+      "delay_loss": 4.41,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0146",
+      "weight": 1,
+      "action": "A03",
+      "loss": 10.2,
+      "action_loss": 3.0,
+      "test_harm": 2.7,
+      "delay_loss": 4.5,
+      "test_cost": 18,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T07",
+          "outcome": "2"
+        },
+        {
+          "test": "T08",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0147",
+      "weight": 1,
+      "action": "A04",
+      "loss": 18.6,
+      "action_loss": 6.0,
+      "test_harm": 4.5,
+      "delay_loss": 8.1,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0148",
+      "weight": 1,
+      "action": "A01",
+      "loss": 11.34,
+      "action_loss": 4.2,
+      "test_harm": 2.73,
+      "delay_loss": 4.41,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0149",
+      "weight": 1,
+      "action": "A01",
+      "loss": 16.2,
+      "action_loss": 6.0,
+      "test_harm": 3.9,
+      "delay_loss": 6.3,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0150",
+      "weight": 1,
+      "action": "A04",
+      "loss": 33.16,
+      "action_loss": 28.0,
+      "test_harm": 1.9199999999999997,
+      "delay_loss": 3.2399999999999998,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0151",
+      "weight": 1,
+      "action": "A01",
+      "loss": 16.2,
+      "action_loss": 6.0,
+      "test_harm": 3.9,
+      "delay_loss": 6.3,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0152",
+      "weight": 1,
+      "action": "A07",
+      "loss": 11.34,
+      "action_loss": 4.2,
+      "test_harm": 2.73,
+      "delay_loss": 4.41,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0153",
+      "weight": 1,
+      "action": "A03",
+      "loss": 38.28,
+      "action_loss": 4.2,
+      "test_harm": 12.780000000000001,
+      "delay_loss": 21.299999999999997,
+      "test_cost": 18,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T07",
+          "outcome": "2"
+        },
+        {
+          "test": "T08",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0154",
+      "weight": 1,
+      "action": "A00",
+      "loss": 17.4,
+      "action_loss": 6.0,
+      "test_harm": 4.199999999999999,
+      "delay_loss": 7.2,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0155",
+      "weight": 1,
+      "action": "A07",
+      "loss": 38.400000000000006,
+      "action_loss": 6.0,
+      "test_harm": 13.200000000000001,
+      "delay_loss": 19.2,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0156",
+      "weight": 1,
+      "action": "A00",
+      "loss": 6.96,
+      "action_loss": 2.4,
+      "test_harm": 1.68,
+      "delay_loss": 2.88,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0157",
+      "weight": 1,
+      "action": "A02",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0158",
+      "weight": 1,
+      "action": "A04",
+      "loss": 9.45,
+      "action_loss": 3.0,
+      "test_harm": 2.4,
+      "delay_loss": 4.05,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0159",
+      "weight": 1,
+      "action": "A07",
+      "loss": 17.4,
+      "action_loss": 6.0,
+      "test_harm": 4.2,
+      "delay_loss": 7.2,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0160",
+      "weight": 1,
+      "action": "A08",
+      "loss": 24.78,
+      "action_loss": 21.0,
+      "test_harm": 1.26,
+      "delay_loss": 2.52,
+      "test_cost": 6,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0161",
+      "weight": 1,
+      "action": "A02",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0162",
+      "weight": 1,
+      "action": "A06",
+      "loss": 30.630000000000003,
+      "action_loss": 4.2,
+      "test_harm": 11.520000000000001,
+      "delay_loss": 14.91,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0163",
+      "weight": 1,
+      "action": "A01",
+      "loss": 6.48,
+      "action_loss": 2.4,
+      "test_harm": 1.5599999999999998,
+      "delay_loss": 2.52,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0164",
+      "weight": 1,
+      "action": "A03",
+      "loss": 20.4,
+      "action_loss": 6.0,
+      "test_harm": 5.4,
+      "delay_loss": 9.0,
+      "test_cost": 18,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T07",
+          "outcome": "2"
+        },
+        {
+          "test": "T08",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0165",
+      "weight": 1,
+      "action": "A04",
+      "loss": 7.559999999999999,
+      "action_loss": 2.4,
+      "test_harm": 1.9199999999999997,
+      "delay_loss": 3.2399999999999998,
+      "test_cost": 16,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0166",
+      "weight": 1,
+      "action": "A02",
+      "loss": 11.34,
+      "action_loss": 4.2,
+      "test_harm": 2.73,
+      "delay_loss": 4.41,
+      "test_cost": 13,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T11",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0167",
+      "weight": 1,
+      "action": "A04",
+      "loss": 9.3,
+      "action_loss": 3.0,
+      "test_harm": 2.25,
+      "delay_loss": 4.05,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0168",
+      "weight": 1,
+      "action": "A00",
+      "loss": 5.7,
+      "action_loss": 3.0,
+      "test_harm": 0.9,
+      "delay_loss": 1.8,
+      "test_cost": 6,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0169",
+      "weight": 1,
+      "action": "A04",
+      "loss": 8.7,
+      "action_loss": 3.0,
+      "test_harm": 2.1,
+      "delay_loss": 3.6,
+      "test_cost": 14,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T07",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0170",
+      "weight": 1,
+      "action": "A04",
+      "loss": 18.6,
+      "action_loss": 6.0,
+      "test_harm": 4.5,
+      "delay_loss": 8.1,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "1"
+        },
+        {
+          "test": "T07",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0171",
+      "weight": 1,
+      "action": "A01",
+      "loss": 7.3500000000000005,
+      "action_loss": 3.0,
+      "test_harm": 1.65,
+      "delay_loss": 2.7,
+      "test_cost": 11,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T11",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0172",
+      "weight": 1,
+      "action": "A06",
+      "loss": 27.450000000000003,
+      "action_loss": 3.0,
+      "test_harm": 10.8,
+      "delay_loss": 13.65,
+      "test_cost": 12,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0173",
+      "weight": 1,
+      "action": "A01",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0174",
+      "weight": 1,
+      "action": "A00",
+      "loss": 12.18,
+      "action_loss": 4.2,
+      "test_harm": 2.94,
+      "delay_loss": 5.04,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T03",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0175",
+      "weight": 1,
+      "action": "A02",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0176",
+      "weight": 1,
+      "action": "A01",
+      "loss": 6.96,
+      "action_loss": 2.4,
+      "test_harm": 1.6799999999999997,
+      "delay_loss": 2.88,
+      "test_cost": 14,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "1"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "2"
+        },
+        {
+          "test": "T02",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0177",
+      "weight": 1,
+      "action": "A03",
+      "loss": 10.2,
+      "action_loss": 6.0,
+      "test_harm": 1.5,
+      "delay_loss": 2.7,
+      "test_cost": 5,
+      "test_count": 3,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "1"
+        }
+      ]
+    },
+    {
+      "world": "W0178",
+      "weight": 1,
+      "action": "A00",
+      "loss": 29.85,
+      "action_loss": 3.0,
+      "test_harm": 11.250000000000002,
+      "delay_loss": 15.6,
+      "test_cost": 15,
+      "test_count": 5,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "1"
+        },
+        {
+          "test": "T09",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T04",
+          "outcome": "0"
+        },
+        {
+          "test": "T05",
+          "outcome": "2"
+        }
+      ]
+    },
+    {
+      "world": "W0179",
+      "weight": 1,
+      "action": "A02",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "2"
+        },
+        {
+          "test": "T09",
+          "outcome": "2"
+        },
+        {
+          "test": "T05",
+          "outcome": "0"
+        }
+      ]
+    },
+    {
+      "world": "W0180",
+      "weight": 1,
+      "action": "A00",
+      "loss": 8.1,
+      "action_loss": 3.0,
+      "test_harm": 1.95,
+      "delay_loss": 3.15,
+      "test_cost": 13,
+      "test_count": 4,
+      "path": [
+        {
+          "test": "T00",
+          "outcome": "0"
+        },
+        {
+          "test": "T12",
+          "outcome": "0"
+        },
+        {
+          "test": "T02",
+          "outcome": "1"
+        },
+        {
+          "test": "T11",
+          "outcome": "1"
+        }
+      ]
+    }
+  ]
+}

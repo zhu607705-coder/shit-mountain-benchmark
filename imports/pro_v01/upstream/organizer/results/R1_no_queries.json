@@ -1,0 +1,1398 @@
+{
+  "episodes": 90,
+  "valid_episodes": 90,
+  "exact_diagnosis_rate": 0.03333333333333333,
+  "mean_queries": 0.0,
+  "mean_loss": 47.93333333333333,
+  "worst_decile_mean_loss": 84.22222222222223,
+  "objective_loss": 55.19111111111111,
+  "episodes_detail": [
+    {
+      "loss": 7.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        4
+      ]
+    },
+    {
+      "loss": 85.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        1,
+        8
+      ]
+    },
+    {
+      "loss": 69.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        1,
+        6
+      ]
+    },
+    {
+      "loss": 57.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        8
+      ]
+    },
+    {
+      "loss": 32.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        2,
+        5
+      ]
+    },
+    {
+      "loss": 85.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        1,
+        8
+      ]
+    },
+    {
+      "loss": 87.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        7,
+        9
+      ]
+    },
+    {
+      "loss": 51.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        9
+      ]
+    },
+    {
+      "loss": 57.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        8
+      ]
+    },
+    {
+      "loss": 41.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        0
+      ]
+    },
+    {
+      "loss": 51.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        9
+      ]
+    },
+    {
+      "loss": 59.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        2,
+        3
+      ]
+    },
+    {
+      "loss": 11.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": []
+    },
+    {
+      "loss": 77.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        6,
+        7
+      ]
+    },
+    {
+      "loss": 77.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        0,
+        7
+      ]
+    },
+    {
+      "loss": 3.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": true,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        4,
+        5
+      ]
+    },
+    {
+      "loss": 51.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        9
+      ]
+    },
+    {
+      "loss": 59.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        2,
+        3
+      ]
+    },
+    {
+      "loss": 79.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        1,
+        9
+      ]
+    },
+    {
+      "loss": 53.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        4,
+        8
+      ]
+    },
+    {
+      "loss": 57.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        8
+      ]
+    },
+    {
+      "loss": 82.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        2,
+        8
+      ]
+    },
+    {
+      "loss": 82.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        2,
+        8
+      ]
+    },
+    {
+      "loss": 87.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        0,
+        8
+      ]
+    },
+    {
+      "loss": 3.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": true,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        4,
+        5
+      ]
+    },
+    {
+      "loss": 30.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        3,
+        5
+      ]
+    },
+    {
+      "loss": 36.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        2
+      ]
+    },
+    {
+      "loss": 41.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        0
+      ]
+    },
+    {
+      "loss": 41.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        0
+      ]
+    },
+    {
+      "loss": 37.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        4,
+        5
+      ],
+      "truth": [
+        5,
+        6
+      ]
+    },
+    {
+      "loss": 49.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        0
+      ]
+    },
+    {
+      "loss": 37.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        4
+      ]
+    },
+    {
+      "loss": 28.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        3,
+        9
+      ]
+    },
+    {
+      "loss": 36.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        6
+      ]
+    },
+    {
+      "loss": 58.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        6,
+        7
+      ]
+    },
+    {
+      "loss": 57.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        1,
+        5
+      ]
+    },
+    {
+      "loss": 3.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": true,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        3,
+        8
+      ]
+    },
+    {
+      "loss": 49.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        0
+      ]
+    },
+    {
+      "loss": 28.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        1,
+        3
+      ]
+    },
+    {
+      "loss": 61.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        5,
+        6
+      ]
+    },
+    {
+      "loss": 70.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        0,
+        1
+      ]
+    },
+    {
+      "loss": 37.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        4
+      ]
+    },
+    {
+      "loss": 58.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        5,
+        7
+      ]
+    },
+    {
+      "loss": 32.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        1
+      ]
+    },
+    {
+      "loss": 32.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        1
+      ]
+    },
+    {
+      "loss": 33.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        7
+      ]
+    },
+    {
+      "loss": 59.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        4,
+        7
+      ]
+    },
+    {
+      "loss": 32.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        1
+      ]
+    },
+    {
+      "loss": 54.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        2,
+        5
+      ]
+    },
+    {
+      "loss": 58.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        5,
+        7
+      ]
+    },
+    {
+      "loss": 11.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": []
+    },
+    {
+      "loss": 11.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": []
+    },
+    {
+      "loss": 57.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        5,
+        9
+      ]
+    },
+    {
+      "loss": 61.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        5,
+        6
+      ]
+    },
+    {
+      "loss": 45.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        0,
+        3
+      ]
+    },
+    {
+      "loss": 36.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        6
+      ]
+    },
+    {
+      "loss": 58.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        1,
+        4
+      ]
+    },
+    {
+      "loss": 45.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        0,
+        3
+      ]
+    },
+    {
+      "loss": 32.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        9
+      ]
+    },
+    {
+      "loss": 32.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        8
+      ],
+      "truth": [
+        1
+      ]
+    },
+    {
+      "loss": 73.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        2,
+        4
+      ]
+    },
+    {
+      "loss": 33.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        4
+      ]
+    },
+    {
+      "loss": 80.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        7,
+        9
+      ]
+    },
+    {
+      "loss": 7.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        3
+      ]
+    },
+    {
+      "loss": 7.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        5
+      ]
+    },
+    {
+      "loss": 80.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        2,
+        7
+      ]
+    },
+    {
+      "loss": 43.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        6
+      ]
+    },
+    {
+      "loss": 29.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        3,
+        4
+      ]
+    },
+    {
+      "loss": 77.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        1,
+        8
+      ]
+    },
+    {
+      "loss": 30.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        0
+      ]
+    },
+    {
+      "loss": 50.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        8
+      ]
+    },
+    {
+      "loss": 51.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        2
+      ]
+    },
+    {
+      "loss": 60.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        1,
+        4
+      ]
+    },
+    {
+      "loss": 80.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        2,
+        7
+      ]
+    },
+    {
+      "loss": 40.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        7
+      ]
+    },
+    {
+      "loss": 40.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        7
+      ]
+    },
+    {
+      "loss": 30.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        0
+      ]
+    },
+    {
+      "loss": 80.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        7,
+        9
+      ]
+    },
+    {
+      "loss": 80.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        7,
+        9
+      ]
+    },
+    {
+      "loss": 50.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        8
+      ]
+    },
+    {
+      "loss": 51.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        9
+      ]
+    },
+    {
+      "loss": 11.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": []
+    },
+    {
+      "loss": 51.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        2
+      ]
+    },
+    {
+      "loss": 90.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        2,
+        8
+      ]
+    },
+    {
+      "loss": 57.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        0,
+        1
+      ]
+    },
+    {
+      "loss": 46.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        3,
+        8
+      ]
+    },
+    {
+      "loss": 51.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        9
+      ]
+    },
+    {
+      "loss": 11.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": []
+    },
+    {
+      "loss": 29.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        3,
+        4
+      ]
+    },
+    {
+      "loss": 51.0,
+      "cost": 0.0,
+      "queries": 0,
+      "exact": false,
+      "valid": true,
+      "history": [],
+      "repair": [
+        3,
+        5
+      ],
+      "truth": [
+        2
+      ]
+    }
+  ]
+}

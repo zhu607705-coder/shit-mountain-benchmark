@@ -1,0 +1,64 @@
+{
+  "r1_mutates_loss": {
+    "loss": 0.0,
+    "cost": 0.0,
+    "queries": 0,
+    "exact": false,
+    "valid": true,
+    "history": [],
+    "repair": [],
+    "truth": [
+      4
+    ]
+  },
+  "r1_bool_repair": {
+    "loss": 51.5,
+    "cost": 0.0,
+    "queries": 0,
+    "exact": false,
+    "valid": true,
+    "history": [],
+    "repair": [
+      true
+    ],
+    "truth": [
+      4
+    ]
+  },
+  "r1_none": {
+    "exception": "TypeError",
+    "message": "argument of type 'NoneType' is not a container or iterable"
+  },
+  "r2_dict_instead_of_list": {
+    "objective_loss": 374.29931972789115,
+    "completed": 0,
+    "jobs": 60,
+    "weighted_tardiness": 98284,
+    "energy": 0,
+    "starts": 0,
+    "invalid_actions": 0,
+    "valid": true
+  },
+  "r2_bool_machine": {
+    "objective_loss": 371.01039455782313,
+    "completed": 1,
+    "jobs": 60,
+    "weighted_tardiness": 97390,
+    "energy": 12,
+    "starts": 1,
+    "invalid_actions": 0,
+    "valid": true
+  },
+  "r2_observation_mutates_host": {
+    "changed_dependency_lists": 21
+  },
+  "scoring_bool_quality": [
+    {
+      "name": "x",
+      "quality": true,
+      "eligible": true,
+      "relative_score": 100.0,
+      "leaderboard_has_winner": true
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "benchmark": "C2",
+  "version": "0.1.0",
+  "seed": 2026092602,
+  "measured_at_utc": "2026-09-26T01:50:59.491997+00:00",
+  "suite_sha256": "7663baa5c254890edd6389fd779c7aa36db0116b1c0eeddcf1e2dafd53a9144d",
+  "valid": true,
+  "critical_case_names": [
+    "ordinary_build",
+    "failure_repair",
+    "result_mutation_ownership"
+  ],
+  "critical_passed": [
+    "ordinary_build",
+    "failure_repair",
+    "result_mutation_ownership"
+  ],
+  "submission": "repository/baseline",
+  "submission_sha256": "4158bcbbd99009b9684fd784bf9054a1cd7c9ad267e998f66fbc0dfd399e7f8d",
+  "raw_score": 93.340465,
+  "correctness": {
+    "passed": 57,
+    "total": 57,
+    "rate": 1.0
+  },
+  "performance": {
+    "median_seconds": 0.020185788976959884,
+    "samples_seconds": [
+      0.020175336103420705,
+      0.020185788976959884,
+      0.020316415844717994
+    ],
+    "peak_traced_bytes": 3282632,
+    "speed_utility": 0.49768837465072036,
+    "memory_utility": 0.8363580820751981,
+    "within_budget": true,
+    "resource_bonus_eligible": true
+  },
+  "environment": {
+    "python": "3.14.4",
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+  },
+  "security": "same-process trusted local prototype; not a sandbox",
+  "tests": [
+    {
+      "name": "ordinary_build",
+      "passed": true
+    },
+    {
+      "name": "transitive_invalidation",
+      "passed": true
+    },
+    {
+      "name": "alias_chain_retarget",
+      "passed": true
+    },
+    {
+      "name": "failure_repair",
+      "passed": true
+    },
+    {
+      "name": "cancel_then_retry",
+      "passed": true
+    },
+    {
+      "name": "result_mutation_ownership",
+      "passed": true
+    },
+    {
+      "name": "cycle_and_recovery",
+      "passed": true
+    },
+    {
+      "name": "alias_cycle_and_recovery",
+      "passed": true
+    },
+    {
+      "name": "delete_dependency_then_recreate",
+      "passed": true
+    },
+    {
+      "name": "dependency_order_and_multiplicity",
+      "passed": true
+    },
+    {
+      "name": "unknown_op_repair",
+      "passed": true
+    },
+    {
+      "name": "error_precedence",
+      "passed": true
+    },
+    {
+      "name": "empty_operators",
+      "passed": true
+    },
+    {
+      "name": "input_dependencies_are_visited",
+      "passed": true
+    },
+    {
+      "name": "aliases_shadow_nodes",
+      "passed": true
+    },
+    {
+      "name": "deep_cycle_after_cache",
+      "passed": true
+    },
+    {
+      "name": "shared_dag_is_not_cycle",
+      "passed": true
+    },
+    {
+      "name": "long_alias_chain",
+      "passed": true
+    },
+    {
+      "name": "public_random_00",
+      "passed": true
+    },
+    {
+      "name": "public_random_01",
+      "passed": true
+    },
+    {
+      "name": "public_random_02",
+      "passed": true
+    },
+    {
+      "name": "public_random_03",
+      "passed": true
+    },
+    {
+      "name": "public_random_04",
+      "passed": true
+    },
+    {
+      "name": "public_random_05",
+      "passed": true
+    },
+    {
+      "name": "public_random_06",
+      "passed": true
+    },
+    {
+      "name": "public_random_07",
+      "passed": true
+    },
+    {
+      "name": "public_random_08",
+      "passed": true
+    },
+    {
+      "name": "public_random_09",
+      "passed": true
+    },
+    {
+      "name": "public_random_10",
+      "passed": true
+    },
+    {
+      "name": "public_random_11",
+      "passed": true
+    },
+    {
+      "name": "public_random_12",
+      "passed": true
+    },
+    {
+      "name": "public_random_13",
+      "passed": true
+    },
+    {
+      "name": "public_random_14",
+      "passed": true
+    },
+    {
+      "name": "public_random_15",
+      "passed": true
+    },
+    {
+      "name": "public_random_16",
+      "passed": true
+    },
+    {
+      "name": "public_random_17",
+      "passed": true
+    },
+    {
+      "name": "public_random_18",
+      "passed": true
+    },
+    {
+      "name": "public_random_19",
+      "passed": true
+    },
+    {
+      "name": "public_random_20",
+      "passed": true
+    },
+    {
+      "name": "public_random_21",
+      "passed": true
+    },
+    {
+      "name": "public_random_22",
+      "passed": true
+    },
+    {
+      "name": "public_random_23",
+      "passed": true
+    },
+    {
+      "name": "public_random_24",
+      "passed": true
+    },
+    {
+      "name": "public_random_25",
+      "passed": true
+    },
+    {
+      "name": "public_random_26",
+      "passed": true
+    },
+    {
+      "name": "public_random_27",
+      "passed": true
+    },
+    {
+      "name": "public_random_28",
+      "passed": true
+    },
+    {
+      "name": "public_random_29",
+      "passed": true
+    },
+    {
+      "name": "public_random_30",
+      "passed": true
+    },
+    {
+      "name": "public_random_31",
+      "passed": true
+    },
+    {
+      "name": "public_random_32",
+      "passed": true
+    },
+    {
+      "name": "public_random_33",
+      "passed": true
+    },
+    {
+      "name": "public_random_34",
+      "passed": true
+    },
+    {
+      "name": "public_random_35",
+      "passed": true
+    },
+    {
+      "name": "metamorphic_base",
+      "passed": true
+    },
+    {
+      "name": "metamorphic_unreachable_edit",
+      "passed": true
+    },
+    {
+      "name": "incremental_branch_updates",
+      "passed": true
+    }
+  ]
+}

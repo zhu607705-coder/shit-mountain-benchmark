@@ -1,0 +1,37 @@
+{
+  "format_version": 1,
+  "plan": [
+    {
+      "task": "P1T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P2T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P3T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P4T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P5T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P6T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P7T1",
+      "mode": "standard"
+    },
+    {
+      "task": "P8T1",
+      "mode": "standard"
+    }
+  ]
+}

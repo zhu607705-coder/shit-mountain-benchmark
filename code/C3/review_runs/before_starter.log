@@ -1,0 +1,63 @@
+{
+  "checks_passed": 5,
+  "checks_total": 10,
+  "checks": [
+    {
+      "name": "basic",
+      "pass": true
+    },
+    {
+      "name": "immutable_snapshot",
+      "pass": false,
+      "error": "AssertionError()"
+    },
+    {
+      "name": "atomic_validation",
+      "pass": false,
+      "error": "AssertionError()"
+    },
+    {
+      "name": "idempotency_after_compact",
+      "pass": false,
+      "error": "AssertionError()"
+    },
+    {
+      "name": "delete_no_resurrection",
+      "pass": true
+    },
+    {
+      "name": "single_writer",
+      "pass": false,
+      "error": "AssertionError('two writers')"
+    },
+    {
+      "name": "random_model_200_transactions",
+      "pass": true
+    },
+    {
+      "name": "sigkill_atomicity_4_windows",
+      "pass": true
+    },
+    {
+      "name": "acknowledged_process_exit",
+      "pass": true
+    },
+    {
+      "name": "closed_handle",
+      "pass": false,
+      "error": "AssertionError('write after close')"
+    }
+  ],
+  "baseline_internal_format_checks": [],
+  "transactions_per_second_500": 8881.007765379696,
+  "timing_seconds": 0.056299916992429644,
+  "timing_note": "single local run; not power-loss proof or formal leaderboard",
+  "review_origin": "current independent local execution, not upstream bundled claim",
+  "implementation": "starter",
+  "task": "C1_crashkv",
+  "wall_seconds": 0.2732317909831181,
+  "python": "3.14.4",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+}
+
+STDERR:

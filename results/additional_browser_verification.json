@@ -1,0 +1,33 @@
+{
+  "scope": "Native HTTP browser smoke; distinct from DOM/storage-double regression and full blind evaluation",
+  "F3": {
+    "observed": [
+      "Native HTTP loads50000 records",
+      "SelectINC49996, filterqueue/P0 yields2500, detail remains sameID",
+      "URL encodesfilter+selection; reload retains2500 filtered records"
+    ],
+    "pending": [
+      "Native burst injection/full export downloads",
+      "Long200events/sec and allstatefulstress",
+      "Fullaccessibility and blinddesign"
+    ],
+    "source_sha256": "e476f5c3242c89ec666d8552cc2447dff1cbe1eae2916c82e201a537295dca39"
+  },
+  "F4": {
+    "observed": [
+      "Two actual pages simultaneously editTASK000 title andnote; both fields visible afterreload",
+      "AccessibleHTML deletion dialog works",
+      "OfflineTASK001 late edit remainslocal whiledisconnected; afteronline andreload deletiontombstone wins, taskcount0",
+      "No capturedconsoleerrors in tested flow"
+    ],
+    "pending": [
+      "3–5windowstress",
+      "Quota/download/importnativefullmatrix",
+      "Longofflineclosing/reopening",
+      "Fullaccessibility and blinddesign"
+    ],
+    "source_sha256": "e1057d6e4684d76674fc9deb7b36b932e28a023805079eb62dfed2b7b2550a0a"
+  },
+  "raw_score": null,
+  "human_visual_score": null
+}

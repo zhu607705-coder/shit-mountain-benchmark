@@ -1,0 +1,139 @@
+{
+  "benchmark": "C1_repository",
+  "version": "0.2.0",
+  "submission": "repository/buggy",
+  "measured_at_utc": "2026-09-26T01:54:42.255831+00:00",
+  "environment": {
+    "python": "3.14.4",
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+  },
+  "suite_sha256": "75d48a19fb33242b6e8d36cd86a645c0aed8172a3caefca6bc148242b2b54b44",
+  "submission_sha256": "1646fc0bf3f43ec157052b10443fa7698267c5458df54605a1914ce7c767b1f2",
+  "valid": false,
+  "raw_score": 23.174603,
+  "environment_score": 20,
+  "environment_passed": 2,
+  "environment_total": 7,
+  "core_score": 3.1746031746031744,
+  "selftest_score": 0,
+  "critical_case_names": [
+    "default_flow",
+    "concurrent_isolation",
+    "restart_persistence"
+  ],
+  "environment_matrix": [
+    {
+      "name": "default_flow",
+      "passed": true
+    },
+    {
+      "name": "legacy_schema",
+      "passed": false,
+      "error": "AssertionError: deadline exceeded: condition false",
+      "logs": {
+        "serve-0.log": "200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:38] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n",
+        "worker-1.log": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsqlite3.OperationalError: no such column: claimed_at\nTraceback (most recent call last):\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/ledger-e2e-xrw3lb2x/仓库 空格/worker.py\", line 42, in run\n    if not process_once(settings[\"db\"], settings[\"lease\"], settings[\"delay\"]):\n           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/ledger-e2e-xrw3lb2x/仓库 空格/worker.py\", line 21, in process_once\n    job = claim_job(path, lease)\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/ledger-e2e-xrw3lb2x/仓库 空格/worker.py\", line 16, in claim_job\n    connection.execute(\"UPDATE jobs SET status='processing',claimed_at=? WHERE id=?\", (now, row[\"id\"]))\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsqlite3.OperationalError: no such column: claimed_at\nTraceback (most recent call last):\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/ledger-e2e-xrw3lb2x/仓库 空格/worker.py\", line 42, in run\n    if not process_once(settings[\"db\"], settings[\"lease\"], settings[\"delay\"]):\n           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/ledger-e2e-xrw3lb2x/仓库 空格/worker.py\", line 21, in process_once\n    job = claim_job(path, lease)\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/ledger-e2e-xrw3lb2x/仓库 空格/worker.py\", line 16, in claim_job\n    connection.execute(\"UPDATE jobs SET status='processing',claimed_at=? WHERE id=?\", (now, row[\"id\"]))\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsqlite3.OperationalError: no such column: claimed_at\n"
+      }
+    },
+    {
+      "name": "unicode_workdir",
+      "passed": false,
+      "error": "AssertionError: deadline exceeded: condition false",
+      "logs": {
+        "serve-0.log": "200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:39] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n",
+        "worker-1.log": "worker ready db=/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/ledger-e2e-4eq21ei1/别处 worker/数据/账本.sqlite3\n"
+      }
+    },
+    {
+      "name": "interrupted_worker",
+      "passed": false,
+      "error": "AssertionError: deadline exceeded: condition false",
+      "logs": {
+        "serve-0.log": "200 -\n127.0.0.1 - - [26/Sep/2026 09:54:40] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:40] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:40] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:40] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:40] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:40] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:40] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:40] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:40] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:40] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:40] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:40] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n",
+        "worker-1.log": "worker ready db=/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/ledger-e2e-m_0fm6om/state.sqlite3\n",
+        "worker-2.log": "worker ready db=/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/ledger-e2e-m_0fm6om/state.sqlite3\n"
+      }
+    },
+    {
+      "name": "duplicates_reordering",
+      "passed": false,
+      "error": "AssertionError: ",
+      "logs": {
+        "serve-0.log": "api ready at 127.0.0.1:59247 db=/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/ledger-e2e-g490ymxg/state.sqlite3\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /health HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/1?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/jobs/2?tenant=A HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /v1/tenants/A/state HTTP/1.1\" 200 -\n",
+        "worker-1.log": "worker ready db=/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/ledger-e2e-g490ymxg/state.sqlite3\n"
+      }
+    },
+    {
+      "name": "concurrent_isolation",
+      "passed": false,
+      "error": "AssertionError: ('submit', 409, {'error': 'REQUEST_CONFLICT'})",
+      "logs": {
+        "serve-0.log": "api ready at 127.0.0.1:59263 db=/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/ledger-e2e-1jmgluqc/state.sqlite3\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"GET /health HTTP/1.1\" 200 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 409 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 409 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 409 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 409 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 409 -\n127.0.0.1 - - [26/Sep/2026 09:54:41] \"POST /v1/batches HTTP/1.1\" 409 -\n",
+        "worker-1.log": "",
+        "worker-2.log": ""
+      }
+    },
+    {
+      "name": "restart_persistence",
+      "passed": true
+    }
+  ],
+  "core_correctness": {
+    "passed": 10,
+    "total": 63,
+    "rate": 0.15873015873015872
+  },
+  "selftest_assessment": {
+    "selftest_score": 0,
+    "clean_passed": true,
+    "mutants_killed": [],
+    "mutants_total": 5,
+    "test_origin": "test_submission.py inside the submitted repository; not host-supplied tests",
+    "reports": [
+      {
+        "name": "clean",
+        "tests": 1,
+        "passed": true,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "tenant_job_leak",
+        "tests": 1,
+        "passed": true,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "cwd_dependent_path",
+        "tests": 1,
+        "passed": true,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "abandoned_job_never_reclaimed",
+        "tests": 1,
+        "passed": true,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "mixed_tenant_batch_accepted",
+        "tests": 1,
+        "passed": true,
+        "failures": 0,
+        "errors": 0
+      },
+      {
+        "name": "migration_drops_history",
+        "tests": 1,
+        "passed": true,
+        "failures": 0,
+        "errors": 0
+      }
+    ]
+  },
+  "wall_seconds": 5.137979167018784,
+  "security": "real local processes and temporary SQLite; trusted code only, not a sandbox"
+}

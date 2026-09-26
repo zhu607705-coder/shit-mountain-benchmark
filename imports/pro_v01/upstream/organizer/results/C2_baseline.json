@@ -1,0 +1,68 @@
+{
+  "checks_passed": 14,
+  "checks_total": 14,
+  "checks": [
+    {
+      "name": "existing_ascii_upper_regression",
+      "pass": true
+    },
+    {
+      "name": "dependency_order_and_prefix",
+      "pass": true
+    },
+    {
+      "name": "same_mtime_same_size_change",
+      "pass": true
+    },
+    {
+      "name": "transitive_recipe_change",
+      "pass": true
+    },
+    {
+      "name": "environment_change",
+      "pass": true
+    },
+    {
+      "name": "deleted_source",
+      "pass": true
+    },
+    {
+      "name": "reachable_cycle",
+      "pass": true
+    },
+    {
+      "name": "irrelevant_cycle",
+      "pass": true
+    },
+    {
+      "name": "symlink_escape",
+      "pass": true
+    },
+    {
+      "name": "unicode_codepoint_reverse",
+      "pass": true
+    },
+    {
+      "name": "shared_cache_multiple_roots",
+      "pass": true
+    },
+    {
+      "name": "warm_cache_reuse",
+      "pass": true
+    },
+    {
+      "name": "six_process_publish",
+      "pass": true
+    },
+    {
+      "name": "random_mutations_100",
+      "pass": true
+    }
+  ],
+  "cold_ms": 0.23787800000718562,
+  "warm_mean_ms_100": 0.09999131000085981,
+  "timing_note": "tiny pilot DAG; not the 5000-node tournament workload",
+  "elapsed_seconds": 1.1333014965057373,
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41"
+}

@@ -1,0 +1,39 @@
+{
+  "task_id": "F2",
+  "generated_at": "2026-09-26T02:15:01.589904+00:00",
+  "valid": null,
+  "valid_reason": "Cross-window mechanisms revised; full browser qualification has not been assigned by this smoke-check script.",
+  "machine_score": null,
+  "human_visual_score": null,
+  "raw_score": null,
+  "checked": [
+    {
+      "id": "baseline.html:syntax",
+      "passed": true,
+      "method": "node --check"
+    },
+    {
+      "id": "starter.html:syntax",
+      "passed": true,
+      "method": "node --check"
+    },
+    {
+      "id": "constraint_logic",
+      "passed": true,
+      "method": "execute actual validate/hasCycle functions in Node, independently assert initial=5, cycle, adjacent and overlap boundaries",
+      "output": {
+        "initialIssues": 5,
+        "acyclic": true,
+        "cycleDetection": true,
+        "boundaryCheck": true
+      }
+    }
+  ],
+  "pending": [
+    "Complete browser F01-F12 and A01-A04; see parent browser report for observed subset",
+    "Independent anonymous human visual evaluation"
+  ],
+  "known_failures": [],
+  "cross_window_regression": "Pending independent browser replay; F1 uses per-event keys, F2 locks and refuses stale shared writes with recoverable drafts.",
+  "evidence_scope": "This file contains only executed syntax and deterministic logic checks, not browser or visual claims."
+}

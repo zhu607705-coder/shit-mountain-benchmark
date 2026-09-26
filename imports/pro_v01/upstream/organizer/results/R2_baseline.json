@@ -1,0 +1,213 @@
+{
+  "episodes": 20,
+  "valid_episodes": 20,
+  "mean_completed": 54.05,
+  "mean_loss": 53.62919653544704,
+  "worst_decile_mean_loss": 86.03055593766273,
+  "objective_loss": 60.10946841589019,
+  "episodes_detail": [
+    {
+      "objective_loss": 42.09663945578231,
+      "completed": 57,
+      "jobs": 60,
+      "weighted_tardiness": 10012,
+      "energy": 2749,
+      "starts": 68,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 44.41544525547446,
+      "completed": 54,
+      "jobs": 60,
+      "weighted_tardiness": 9831,
+      "energy": 2684,
+      "starts": 68,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 69.81770820668693,
+      "completed": 52,
+      "jobs": 60,
+      "weighted_tardiness": 19598,
+      "energy": 2747,
+      "starts": 62,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 38.22613664596273,
+      "completed": 58,
+      "jobs": 60,
+      "weighted_tardiness": 9556,
+      "energy": 2714,
+      "starts": 70,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 51.540474164133734,
+      "completed": 52,
+      "jobs": 60,
+      "weighted_tardiness": 13897,
+      "energy": 2752,
+      "starts": 64,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 54.353174825174825,
+      "completed": 55,
+      "jobs": 60,
+      "weighted_tardiness": 12815,
+      "energy": 2764,
+      "starts": 66,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 73.91428093645484,
+      "completed": 49,
+      "jobs": 60,
+      "weighted_tardiness": 19297,
+      "energy": 2815,
+      "starts": 58,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 46.31965079365079,
+      "completed": 55,
+      "jobs": 60,
+      "weighted_tardiness": 12066,
+      "energy": 2813,
+      "starts": 66,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 49.445241379310346,
+      "completed": 54,
+      "jobs": 60,
+      "weighted_tardiness": 11897,
+      "energy": 2689,
+      "starts": 65,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 92.5861933085502,
+      "completed": 44,
+      "jobs": 60,
+      "weighted_tardiness": 21694,
+      "energy": 2847,
+      "starts": 58,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 63.338698961937716,
+      "completed": 54,
+      "jobs": 60,
+      "weighted_tardiness": 15579,
+      "energy": 2803,
+      "starts": 67,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 39.12771631205674,
+      "completed": 57,
+      "jobs": 60,
+      "weighted_tardiness": 8908,
+      "energy": 2719,
+      "starts": 65,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 39.40829702970297,
+      "completed": 56,
+      "jobs": 60,
+      "weighted_tardiness": 9327,
+      "energy": 2844,
+      "starts": 67,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 33.45288198757764,
+      "completed": 59,
+      "jobs": 60,
+      "weighted_tardiness": 8092,
+      "energy": 2787,
+      "starts": 70,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 36.67228268551237,
+      "completed": 57,
+      "jobs": 60,
+      "weighted_tardiness": 8115,
+      "energy": 2716,
+      "starts": 68,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 53.67063414634146,
+      "completed": 56,
+      "jobs": 60,
+      "weighted_tardiness": 14622,
+      "energy": 2753,
+      "starts": 68,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 59.032792332268365,
+      "completed": 52,
+      "jobs": 60,
+      "weighted_tardiness": 15794,
+      "energy": 2764,
+      "starts": 64,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 79.47491856677526,
+      "completed": 49,
+      "jobs": 60,
+      "weighted_tardiness": 21261,
+      "energy": 2700,
+      "starts": 59,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 44.72041077441077,
+      "completed": 56,
+      "jobs": 60,
+      "weighted_tardiness": 11019,
+      "energy": 2723,
+      "starts": 66,
+      "invalid_actions": 0,
+      "valid": true
+    },
+    {
+      "objective_loss": 60.97035294117647,
+      "completed": 55,
+      "jobs": 60,
+      "weighted_tardiness": 17823,
+      "energy": 2819,
+      "starts": 66,
+      "invalid_actions": 0,
+      "valid": true
+    }
+  ],
+  "elapsed_seconds": 0.2785682678222656,
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41"
+}

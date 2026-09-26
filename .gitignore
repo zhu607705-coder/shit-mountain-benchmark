@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.DS_Store
+reports/
+submissions/
+workspaces/
+.env
+.env.*
+!.env.example
+*.local.json
+.venv/
+.local/
+*.sqlite
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm

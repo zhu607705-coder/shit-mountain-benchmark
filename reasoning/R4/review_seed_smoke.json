@@ -1,0 +1,42 @@
+{
+  "purpose": "alternate-seed API and deterministic replay smoke test, not generalization evidence",
+  "runs_identical": true,
+  "result": {
+    "episodes": 2,
+    "valid": true,
+    "valid_episodes": 2,
+    "sampling": {
+      "seed_base": 456123,
+      "episodes": 2,
+      "public_default_seeds": false
+    },
+    "mean_completed": 0.0,
+    "mean_loss": 385.7140402916821,
+    "worst_decile_mean_loss": 390.3241379310345,
+    "objective_loss": 386.6360598195526,
+    "episodes_detail": [
+      {
+        "objective_loss": 390.3241379310345,
+        "completed": 0,
+        "jobs": 60,
+        "weighted_tardiness": 101594,
+        "energy": 0,
+        "starts": 0,
+        "invalid_actions": 0,
+        "valid": true,
+        "errors": []
+      },
+      {
+        "objective_loss": 381.10394265232975,
+        "completed": 0,
+        "jobs": 60,
+        "weighted_tardiness": 95168,
+        "energy": 0,
+        "starts": 0,
+        "invalid_actions": 0,
+        "valid": true,
+        "errors": []
+      }
+    ]
+  }
+}

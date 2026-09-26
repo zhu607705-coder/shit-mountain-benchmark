@@ -1,0 +1,71 @@
+{
+  "task_id": "C3",
+  "valid": false,
+  "raw_score": null,
+  "details": {
+    "checks_passed": 6,
+    "checks_total": 12,
+    "checks": [
+      {
+        "name": "basic",
+        "pass": true
+      },
+      {
+        "name": "immutable_snapshot",
+        "pass": false,
+        "error": "AssertionError()"
+      },
+      {
+        "name": "atomic_validation",
+        "pass": false,
+        "error": "AssertionError()"
+      },
+      {
+        "name": "idempotency_after_compact",
+        "pass": false,
+        "error": "AssertionError()"
+      },
+      {
+        "name": "delete_no_resurrection",
+        "pass": true
+      },
+      {
+        "name": "single_writer",
+        "pass": false,
+        "error": "AssertionError('two writers')"
+      },
+      {
+        "name": "single_writer_subprocess",
+        "pass": false,
+        "error": "AssertionError(('subprocess accepted second writer', ''))"
+      },
+      {
+        "name": "relative_path_after_cwd_change",
+        "pass": true
+      },
+      {
+        "name": "random_model_200_transactions",
+        "pass": true
+      },
+      {
+        "name": "sigkill_atomicity_4_windows",
+        "pass": true
+      },
+      {
+        "name": "acknowledged_process_exit",
+        "pass": true
+      },
+      {
+        "name": "closed_handle",
+        "pass": false,
+        "error": "AssertionError('write after close')"
+      }
+    ],
+    "baseline_internal_format_checks": [],
+    "transactions_per_second_500": 8995.691170401438,
+    "timing_seconds": 0.05558216600911692,
+    "timing_note": "single local run; not power-loss proof or formal leaderboard"
+  },
+  "note": "Behavior checks verified. Formal performance workload and quality weights are not calibrated; full raw quality remains pending.",
+  "execution": "same-process trusted local evaluator; not an untrusted-code sandbox"
+}

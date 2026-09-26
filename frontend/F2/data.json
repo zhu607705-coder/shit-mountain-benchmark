@@ -1,0 +1,19 @@
+{
+  "schema":1,"synthetic":true,"fixture":"offline-lab-12-v1","date":"2026-09-26","windowStart":"08:00","windowMinutes":720,
+  "resources":[{"id":"bench","name":"样品台"},{"id":"reactor","name":"合成反应器"},{"id":"hplc","name":"HPLC"},{"id":"ms","name":"质谱仪"}],
+  "tasks":[
+    {"id":"T01","title":"缓冲液与单体准备","sample":"PEP-A / 批次 041","resource":"bench","start":0,"duration":40,"deps":[],"status":"done","note":"称量记录已归档；合成固定数据，无真实实验指令。"},
+    {"id":"T02","title":"肽 A 合成","sample":"PEP-A / 批次 041","resource":"reactor","start":40,"duration":120,"deps":["T01"],"status":"running","note":"等待自动化记录导出。"},
+    {"id":"T03","title":"肽 A 分析样品准备","sample":"PEP-A / 批次 041","resource":"bench","start":160,"duration":35,"deps":["T02"],"status":"queued","note":"检查依赖结束时间。"},
+    {"id":"T04","title":"肽 A 纯度分析","sample":"PEP-A / 批次 041","resource":"hplc","start":170,"duration":60,"deps":["T03"],"status":"queued","note":"原计划过早开始，且与校准冲突。"},
+    {"id":"T05","title":"肽 A 质量确认","sample":"PEP-A / 批次 041","resource":"ms","start":230,"duration":40,"deps":["T04"],"status":"queued","note":"远端更新模拟器默认修改此任务的开始时间和备注。"},
+    {"id":"T06","title":"反应器清洁与检查","sample":"设备周期 088","resource":"reactor","start":160,"duration":30,"deps":["T02"],"status":"queued","note":"完成后才能开始第二批。"},
+    {"id":"T07","title":"肽 B 合成","sample":"PEP-B / 批次 042","resource":"reactor","start":180,"duration":100,"deps":["T06"],"status":"queued","note":"与清洁重叠 10 分钟。"},
+    {"id":"T08","title":"肽 B 分析样品准备","sample":"PEP-B / 批次 042","resource":"bench","start":280,"duration":35,"deps":["T07"],"status":"queued","note":"合成结束后才可开始。"},
+    {"id":"T09","title":"肽 B 纯度分析","sample":"PEP-B / 批次 042","resource":"hplc","start":310,"duration":60,"deps":["T08"],"status":"queued","note":"依赖约束需要重新协调。"},
+    {"id":"T10","title":"结果整理与批次归档","sample":"PEP-A + PEP-B","resource":"bench","start":370,"duration":30,"deps":["T05","T09"],"status":"queued","note":"检查两个批次的数据是否齐全。"},
+    {"id":"T11","title":"HPLC 校准窗口","sample":"设备周期 034","resource":"hplc","start":190,"duration":30,"deps":[],"status":"queued","note":"预约窗口已经确认。"},
+    {"id":"T12","title":"对照样质量确认","sample":"QC / 标准样","resource":"ms","start":160,"duration":35,"deps":[],"status":"queued","note":"不依赖当前合成批次。"}
+  ],
+  "remotePatch":{"id":"T05","changes":{"start":255,"note":"远端：仪器维护延后至 12:15，负责人已确认。"}}
+}

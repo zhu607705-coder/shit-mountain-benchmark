@@ -1,0 +1,78 @@
+[
+  {
+    "model": "author-baseline-v0.1",
+    "task_id": "R1",
+    "raw_score": 212.870434383,
+    "valid": true
+  },
+  {
+    "model": "author-baseline-v0.1",
+    "task_id": "R2",
+    "raw_score": 528.051477475,
+    "valid": true
+  },
+  {
+    "model": "author-baseline-v0.1",
+    "task_id": "C1",
+    "raw_score": 100.0,
+    "valid": true
+  },
+  {
+    "model": "author-baseline-v0.1",
+    "task_id": "C2",
+    "raw_score": null,
+    "valid": true
+  },
+  {
+    "model": "author-baseline-v0.1",
+    "task_id": "R3",
+    "raw_score": 21.876731907942712,
+    "valid": true
+  },
+  {
+    "model": "author-baseline-v0.1",
+    "task_id": "R4",
+    "raw_score": 14.2634086749594,
+    "valid": true
+  },
+  {
+    "model": "author-baseline-v0.1",
+    "task_id": "C3",
+    "raw_score": null,
+    "valid": true
+  },
+  {
+    "model": "author-baseline-v0.1",
+    "task_id": "C4",
+    "raw_score": null,
+    "valid": true
+  },
+  {
+    "model": "author-baseline-v0.1",
+    "task_id": "F1",
+    "raw_score": null,
+    "valid": null,
+    "note": "Pending full functional adjudication and independent blind visual review; see frontend browser verification report."
+  },
+  {
+    "model": "author-baseline-v0.1",
+    "task_id": "F2",
+    "raw_score": null,
+    "valid": null,
+    "note": "Pending full functional adjudication and independent blind visual review; see frontend browser verification report."
+  },
+  {
+    "model": "author-baseline-v0.1",
+    "task_id": "F3",
+    "raw_score": null,
+    "valid": null,
+    "note": "Pending full functional adjudication and independent blind visual review; see frontend browser verification report."
+  },
+  {
+    "model": "author-baseline-v0.1",
+    "task_id": "F4",
+    "raw_score": null,
+    "valid": null,
+    "note": "Pending full functional adjudication and independent blind visual review; see frontend browser verification report."
+  }
+]

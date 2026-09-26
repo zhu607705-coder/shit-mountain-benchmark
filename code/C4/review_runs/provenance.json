@@ -1,0 +1,14 @@
+{
+  "baseline": {
+    "before_source": "imports/pro_v01/upstream/organizer/tasks/C2_cache/baseline.py",
+    "before_source_sha256": "9d3324bd034961ddf2cc3c8cd54b9c110f799c6b98ee43e7a153e678a90dde4d",
+    "before_log": "before_baseline.log",
+    "after_log": "after_baseline.log"
+  },
+  "starter": {
+    "before_source": "imports/pro_v01/upstream/organizer/tasks/C2_cache/starter/engine.py",
+    "before_source_sha256": "12659814a275505c689898ec1db817a7cb70ce82ded458abb7db9590bcaad14f",
+    "before_log": "before_starter.log",
+    "after_log": "after_starter.log"
+  }
+}

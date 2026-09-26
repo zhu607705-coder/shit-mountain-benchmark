@@ -1,0 +1,57 @@
+{
+  "checks_passed": 10,
+  "checks_total": 10,
+  "checks": [
+    {
+      "name": "basic",
+      "pass": true
+    },
+    {
+      "name": "immutable_snapshot",
+      "pass": true
+    },
+    {
+      "name": "atomic_validation",
+      "pass": true
+    },
+    {
+      "name": "idempotency_after_compact",
+      "pass": true
+    },
+    {
+      "name": "delete_no_resurrection",
+      "pass": true
+    },
+    {
+      "name": "single_writer",
+      "pass": true
+    },
+    {
+      "name": "random_model_200_transactions",
+      "pass": true
+    },
+    {
+      "name": "sigkill_atomicity_4_windows",
+      "pass": true
+    },
+    {
+      "name": "acknowledged_process_exit",
+      "pass": true
+    },
+    {
+      "name": "closed_handle",
+      "pass": true
+    }
+  ],
+  "baseline_internal_format_checks": [
+    true,
+    true,
+    true
+  ],
+  "transactions_per_second_500": 59922.960645019884,
+  "timing_seconds": 0.008344046999980037,
+  "timing_note": "single local run; not power-loss proof or formal leaderboard",
+  "elapsed_seconds": 2.242689847946167,
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41"
+}

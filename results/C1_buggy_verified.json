@@ -1,0 +1,348 @@
+{
+  "benchmark": "C1",
+  "version": "0.1.0",
+  "seed": 2026092601,
+  "measured_at_utc": "2026-09-26T01:38:18.187464+00:00",
+  "suite_sha256": "f2bdd1af9378473a0ed329d924b1d510d367aa818ba71ed8c287f7cf12f61e82",
+  "valid": false,
+  "critical_case_names": [
+    "ordinary_post",
+    "tenant_namespace",
+    "invalid_is_atomic"
+  ],
+  "critical_passed": [
+    "ordinary_post"
+  ],
+  "submission": "buggy",
+  "submission_sha256": "442278503eea517b20e4169b1c5d7012ecba4fe72ab4023687a46f2c94d431d9",
+  "raw_score": 12.698413,
+  "correctness": {
+    "passed": 10,
+    "total": 63,
+    "rate": 0.15873015873015872
+  },
+  "performance": {
+    "median_seconds": 0.009746083000209183,
+    "samples_seconds": [
+      0.011953665991313756,
+      0.009378374990774319,
+      0.009746083000209183
+    ],
+    "peak_traced_bytes": 2170392,
+    "speed_utility": 0.7547913589332088,
+    "memory_utility": 0.7944509896770527,
+    "within_budget": true,
+    "resource_bonus_eligible": false
+  },
+  "environment": {
+    "python": "3.14.4",
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+  },
+  "security": "same-process trusted local prototype; not a sandbox",
+  "tests": [
+    {
+      "name": "empty",
+      "passed": true
+    },
+    {
+      "name": "ordinary_post",
+      "passed": true
+    },
+    {
+      "name": "tenant_namespace",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "reverse_before_post",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "conflicting_payload",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "invalid_is_atomic",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "boolean_is_not_money",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "reversal_of_reversal",
+      "passed": true
+    },
+    {
+      "name": "conflicting_reversal_is_quarantined",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "repeated_account_zero_projection",
+      "passed": true
+    },
+    {
+      "name": "unknown_kind_and_extra_fields",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "integer_precision",
+      "passed": true
+    },
+    {
+      "name": "two_reversals_one_post",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "canonical_object_keys",
+      "passed": true
+    },
+    {
+      "name": "bad_row",
+      "passed": false,
+      "error": "ValueError: too many values to unpack (expected 2, got 3)"
+    },
+    {
+      "name": "non_list_entries",
+      "passed": false,
+      "error": "ValueError: not enough values to unpack (expected 2, got 1)"
+    },
+    {
+      "name": "float_money",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "out_of_range_money",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "empty_reverse_target",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "tenant_reverse_isolation",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "conflict_precedes_invalid",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "aggregate_exceeds_float_exactness",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_00",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_01",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_02",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_03",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_04",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_05",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_06",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_07",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_08",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_09",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_10",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_11",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_12",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_13",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_14",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_15",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_16",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_17",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_18",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_19",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_20",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_21",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_22",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_23",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_24",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_25",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_26",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_27",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_28",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_29",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_30",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_31",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_32",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_33",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_34",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "public_random_35",
+      "passed": false,
+      "error": "output_mismatch"
+    },
+    {
+      "name": "metamorphic_base",
+      "passed": true
+    },
+    {
+      "name": "metamorphic_permutation",
+      "passed": true
+    },
+    {
+      "name": "metamorphic_idempotence",
+      "passed": true
+    },
+    {
+      "name": "metamorphic_tenant_rename",
+      "passed": true
+    },
+    {
+      "name": "large_mixed_event_stream",
+      "passed": false
+    }
+  ]
+}

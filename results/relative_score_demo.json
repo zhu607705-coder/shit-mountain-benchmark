@@ -1,0 +1,67 @@
+{
+  "normalization": "100 * raw_score / best_valid_raw_score; no positive result => 0",
+  "best_raw_scores": {
+    "R1": 212.870434383,
+    "R2": 528.051477475,
+    "R3": 21.876731907942712,
+    "R4": 14.2634086749594,
+    "C1": 100.0,
+    "C2": 0,
+    "C3": 0,
+    "C4": 0,
+    "F1": 0,
+    "F2": 0,
+    "F3": 0,
+    "F4": 0
+  },
+  "note": "Missing submissions count as 0. Pending judgments remain null. A sole valid entrant receiving 100 does not prove absolute quality.",
+  "rows": [
+    {
+      "model": "author-baseline-v0.1",
+      "raw_scores": {
+        "R1": 212.870434383,
+        "R2": 528.051477475,
+        "R3": 21.876731907942712,
+        "R4": 14.2634086749594,
+        "C1": 100.0,
+        "C2": null,
+        "C3": null,
+        "C4": null,
+        "F1": null,
+        "F2": null,
+        "F3": null,
+        "F4": null
+      },
+      "relative_scores": {
+        "R1": 100.0,
+        "R2": 100.0,
+        "R3": 100.0,
+        "R4": 100.0,
+        "C1": 100.0,
+        "C2": null,
+        "C3": null,
+        "C4": null,
+        "F1": null,
+        "F2": null,
+        "F3": null,
+        "F4": null
+      },
+      "tracks": {
+        "reasoning": 100.0,
+        "code": null,
+        "frontend": null
+      },
+      "total": null,
+      "missing_tasks": [],
+      "pending_tasks": [
+        "C2",
+        "C3",
+        "C4",
+        "F1",
+        "F2",
+        "F3",
+        "F4"
+      ]
+    }
+  ]
+}

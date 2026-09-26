@@ -1,0 +1,7 @@
+{
+  "command": "python3 repository/baseline/selftest.py",
+  "exit_code": 0,
+  "passed": true,
+  "stdout": "",
+  "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.025s\n\nOK\n"
+}
