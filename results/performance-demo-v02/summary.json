@@ -1,0 +1,1112 @@
+{
+  "overall": {
+    "attempts": 9,
+    "successful_attempts": 9,
+    "failed_attempts": 0,
+    "logical_runs": 9,
+    "failed_logical_runs": 0,
+    "all_attempt_metrics": {
+      "total_ms": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 26.260856558413554,
+        "max": 31.495875009568408,
+        "min": 20.28908400097862,
+        "p50": 26.316333009162918,
+        "p95": 31.448158208513632,
+        "sum": 236.347709025722
+      },
+      "ttft_ms": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 21.265856443076498,
+        "max": 27.15208299923688,
+        "min": 16.32774999598041,
+        "p50": 21.15683301235549,
+        "p95": 26.20786620536819,
+        "sum": 191.39270798768848
+      },
+      "first_event_ms": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 6.112458446295932,
+        "max": 11.933375004446134,
+        "min": 4.7108749859035015,
+        "p50": 5.203333013923839,
+        "p95": 9.858375001931561,
+        "sum": 55.01212601666339
+      },
+      "first_reasoning_delta_ms": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 11.195935221621767,
+        "max": 17.101750010624528,
+        "min": 8.653625001898035,
+        "p50": 11.026958003640175,
+        "p95": 15.126216411590574,
+        "sum": 100.7634169945959
+      },
+      "observed_reasoning_stream_span_ms": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 5.057958333054557,
+        "max": 6.3454580085817724,
+        "min": 3.7662499817088246,
+        "p50": 5.025708000175655,
+        "p95": 6.338041607523337,
+        "sum": 45.52162499749102
+      },
+      "output_tokens": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 125.0,
+        "max": 129,
+        "min": 121,
+        "p50": 125.0,
+        "p95": 128.6,
+        "sum": 1125
+      },
+      "input_tokens": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 19.333333333333332,
+        "max": 20,
+        "min": 19,
+        "p50": 19.0,
+        "p95": 20.0,
+        "sum": 174
+      },
+      "cached_input_tokens": {
+        "observations": 0,
+        "missing": 9,
+        "mean": null,
+        "max": null,
+        "min": null,
+        "p50": null,
+        "p95": null,
+        "sum": null
+      },
+      "reasoning_tokens": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 85.0,
+        "max": 89,
+        "min": 81,
+        "p50": 85.0,
+        "p95": 88.6,
+        "sum": 765
+      },
+      "visible_output_chars": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 62.0,
+        "max": 62,
+        "min": 62,
+        "p50": 62.0,
+        "p95": 62.0,
+        "sum": 558
+      },
+      "thinking_time_ms": {
+        "observations": 0,
+        "missing": 9,
+        "mean": null,
+        "max": null,
+        "min": null,
+        "p50": null,
+        "p95": null,
+        "sum": null
+      },
+      "provider_output_tokens_per_second": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 4905.598524726739,
+        "max": 6144.156236534241,
+        "min": 3841.7729294150536,
+        "p50": 4825.90032417437,
+        "p95": 6111.4430396624675,
+        "sum": 44150.38672254065
+      }
+    },
+    "successful_attempt_metrics": {
+      "total_ms": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 26.260856558413554,
+        "max": 31.495875009568408,
+        "min": 20.28908400097862,
+        "p50": 26.316333009162918,
+        "p95": 31.448158208513632,
+        "sum": 236.347709025722
+      },
+      "ttft_ms": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 21.265856443076498,
+        "max": 27.15208299923688,
+        "min": 16.32774999598041,
+        "p50": 21.15683301235549,
+        "p95": 26.20786620536819,
+        "sum": 191.39270798768848
+      },
+      "first_event_ms": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 6.112458446295932,
+        "max": 11.933375004446134,
+        "min": 4.7108749859035015,
+        "p50": 5.203333013923839,
+        "p95": 9.858375001931561,
+        "sum": 55.01212601666339
+      },
+      "first_reasoning_delta_ms": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 11.195935221621767,
+        "max": 17.101750010624528,
+        "min": 8.653625001898035,
+        "p50": 11.026958003640175,
+        "p95": 15.126216411590574,
+        "sum": 100.7634169945959
+      },
+      "observed_reasoning_stream_span_ms": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 5.057958333054557,
+        "max": 6.3454580085817724,
+        "min": 3.7662499817088246,
+        "p50": 5.025708000175655,
+        "p95": 6.338041607523337,
+        "sum": 45.52162499749102
+      },
+      "output_tokens": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 125.0,
+        "max": 129,
+        "min": 121,
+        "p50": 125.0,
+        "p95": 128.6,
+        "sum": 1125
+      },
+      "input_tokens": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 19.333333333333332,
+        "max": 20,
+        "min": 19,
+        "p50": 19.0,
+        "p95": 20.0,
+        "sum": 174
+      },
+      "cached_input_tokens": {
+        "observations": 0,
+        "missing": 9,
+        "mean": null,
+        "max": null,
+        "min": null,
+        "p50": null,
+        "p95": null,
+        "sum": null
+      },
+      "reasoning_tokens": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 85.0,
+        "max": 89,
+        "min": 81,
+        "p50": 85.0,
+        "p95": 88.6,
+        "sum": 765
+      },
+      "visible_output_chars": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 62.0,
+        "max": 62,
+        "min": 62,
+        "p50": 62.0,
+        "p95": 62.0,
+        "sum": 558
+      },
+      "thinking_time_ms": {
+        "observations": 0,
+        "missing": 9,
+        "mean": null,
+        "max": null,
+        "min": null,
+        "p50": null,
+        "p95": null,
+        "sum": null
+      },
+      "provider_output_tokens_per_second": {
+        "observations": 9,
+        "missing": 0,
+        "mean": 4905.598524726739,
+        "max": 6144.156236534241,
+        "min": 3841.7729294150536,
+        "p50": 4825.90032417437,
+        "p95": 6111.4430396624675,
+        "sum": 44150.38672254065
+      }
+    },
+    "logical_total_ms": {
+      "observations": 9,
+      "missing": 0,
+      "mean": 26.419231781296226,
+      "max": 31.68341700802557,
+      "min": 20.439084008103237,
+      "p50": 26.472500001545995,
+      "p95": 31.647367001278326,
+      "sum": 237.77308603166603
+    },
+    "logical_ttft_ms": {
+      "observations": 9,
+      "missing": 0,
+      "mean": 21.26701866250692,
+      "max": 27.152458002092317,
+      "min": 16.329083999153227,
+      "p50": 21.157250012038276,
+      "p95": 26.20887479861267,
+      "sum": 191.4031679625623
+    }
+  },
+  "by_prompt": {
+    "code-transaction": {
+      "attempts": 3,
+      "successful_attempts": 3,
+      "failed_attempts": 0,
+      "logical_runs": 3,
+      "failed_logical_runs": 0,
+      "all_attempt_metrics": {
+        "total_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 23.862958332756534,
+          "max": 29.413374984869733,
+          "min": 20.507291017565876,
+          "p50": 21.668208995833993,
+          "p95": 28.63885838596616,
+          "sum": 71.5888749982696
+        },
+        "ttft_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 19.373736324875306,
+          "max": 23.72591698076576,
+          "min": 16.599624999798834,
+          "p50": 17.79566699406132,
+          "p95": 23.132891982095316,
+          "sum": 58.121208974625915
+        },
+        "first_event_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 5.56713900490043,
+          "max": 6.745874998159707,
+          "min": 4.752209002617747,
+          "p50": 5.203333013923839,
+          "p95": 6.59162079973612,
+          "sum": 16.701417014701292
+        },
+        "first_reasoning_delta_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 10.241138991356516,
+          "max": 11.097416980192065,
+          "min": 9.03870799811557,
+          "p50": 10.587291995761916,
+          "p95": 11.04640448174905,
+          "sum": 30.72341697406955
+        },
+        "observed_reasoning_stream_span_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 4.668111330829561,
+          "max": 6.317916995612904,
+          "min": 3.8198750116862357,
+          "p50": 3.866541985189542,
+          "p95": 6.072779494570568,
+          "sum": 14.004333992488682
+        },
+        "output_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 125.66666666666667,
+          "max": 129,
+          "min": 122,
+          "p50": 126.0,
+          "p95": 128.7,
+          "sum": 377
+        },
+        "input_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 19.0,
+          "max": 19,
+          "min": 19,
+          "p50": 19.0,
+          "p95": 19.0,
+          "sum": 57
+        },
+        "cached_input_tokens": {
+          "observations": 0,
+          "missing": 3,
+          "mean": null,
+          "max": null,
+          "min": null,
+          "p50": null,
+          "p95": null,
+          "sum": null
+        },
+        "reasoning_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 85.66666666666667,
+          "max": 89,
+          "min": 82,
+          "p50": 86.0,
+          "p95": 88.7,
+          "sum": 257
+        },
+        "visible_output_chars": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 62.0,
+          "max": 62,
+          "min": 62,
+          "p50": 62.0,
+          "p95": 62.0,
+          "sum": 186
+        },
+        "thinking_time_ms": {
+          "observations": 0,
+          "missing": 3,
+          "mean": null,
+          "max": null,
+          "min": null,
+          "p50": null,
+          "p95": null,
+          "sum": null
+        },
+        "provider_output_tokens_per_second": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 5415.117170336934,
+          "max": 6144.156236534241,
+          "min": 4147.772911566826,
+          "p50": 5953.422362909736,
+          "p95": 6125.08284917179,
+          "sum": 16245.351511010802
+        }
+      },
+      "successful_attempt_metrics": {
+        "total_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 23.862958332756534,
+          "max": 29.413374984869733,
+          "min": 20.507291017565876,
+          "p50": 21.668208995833993,
+          "p95": 28.63885838596616,
+          "sum": 71.5888749982696
+        },
+        "ttft_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 19.373736324875306,
+          "max": 23.72591698076576,
+          "min": 16.599624999798834,
+          "p50": 17.79566699406132,
+          "p95": 23.132891982095316,
+          "sum": 58.121208974625915
+        },
+        "first_event_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 5.56713900490043,
+          "max": 6.745874998159707,
+          "min": 4.752209002617747,
+          "p50": 5.203333013923839,
+          "p95": 6.59162079973612,
+          "sum": 16.701417014701292
+        },
+        "first_reasoning_delta_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 10.241138991356516,
+          "max": 11.097416980192065,
+          "min": 9.03870799811557,
+          "p50": 10.587291995761916,
+          "p95": 11.04640448174905,
+          "sum": 30.72341697406955
+        },
+        "observed_reasoning_stream_span_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 4.668111330829561,
+          "max": 6.317916995612904,
+          "min": 3.8198750116862357,
+          "p50": 3.866541985189542,
+          "p95": 6.072779494570568,
+          "sum": 14.004333992488682
+        },
+        "output_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 125.66666666666667,
+          "max": 129,
+          "min": 122,
+          "p50": 126.0,
+          "p95": 128.7,
+          "sum": 377
+        },
+        "input_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 19.0,
+          "max": 19,
+          "min": 19,
+          "p50": 19.0,
+          "p95": 19.0,
+          "sum": 57
+        },
+        "cached_input_tokens": {
+          "observations": 0,
+          "missing": 3,
+          "mean": null,
+          "max": null,
+          "min": null,
+          "p50": null,
+          "p95": null,
+          "sum": null
+        },
+        "reasoning_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 85.66666666666667,
+          "max": 89,
+          "min": 82,
+          "p50": 86.0,
+          "p95": 88.7,
+          "sum": 257
+        },
+        "visible_output_chars": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 62.0,
+          "max": 62,
+          "min": 62,
+          "p50": 62.0,
+          "p95": 62.0,
+          "sum": 186
+        },
+        "thinking_time_ms": {
+          "observations": 0,
+          "missing": 3,
+          "mean": null,
+          "max": null,
+          "min": null,
+          "p50": null,
+          "p95": null,
+          "sum": null
+        },
+        "provider_output_tokens_per_second": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 5415.117170336934,
+          "max": 6144.156236534241,
+          "min": 4147.772911566826,
+          "p50": 5953.422362909736,
+          "p95": 6125.08284917179,
+          "sum": 16245.351511010802
+        }
+      },
+      "logical_total_ms": {
+        "observations": 3,
+        "missing": 0,
+        "mean": 24.022792000323534,
+        "max": 29.555999994045123,
+        "min": 20.678208995377645,
+        "p50": 21.834167011547834,
+        "p95": 28.783816695795394,
+        "sum": 72.0683760009706
+      },
+      "logical_ttft_ms": {
+        "observations": 3,
+        "missing": 0,
+        "mean": 19.375319650862366,
+        "max": 23.72737496625632,
+        "min": 16.600834002019837,
+        "p50": 17.79774998431094,
+        "p95": 23.134412468061782,
+        "sum": 58.1259589525871
+      }
+    },
+    "frontend-snapshot": {
+      "attempts": 3,
+      "successful_attempts": 3,
+      "failed_attempts": 0,
+      "logical_runs": 3,
+      "failed_logical_runs": 0,
+      "all_attempt_metrics": {
+        "total_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 29.403764007535454,
+          "max": 31.495875009568408,
+          "min": 26.316333009162918,
+          "p50": 30.399084003875032,
+          "p95": 31.38619590899907,
+          "sum": 88.21129202260636
+        },
+        "ttft_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 24.116013674453523,
+          "max": 27.15208299923688,
+          "min": 21.15683301235549,
+          "p50": 24.039125011768192,
+          "p95": 26.840787200490013,
+          "sum": 72.34804102336057
+        },
+        "first_event_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 7.604444671111803,
+          "max": 11.933375004446134,
+          "min": 4.843959002755582,
+          "p50": 6.0360000061336905,
+          "p95": 11.34363750461489,
+          "sum": 22.813334013335407
+        },
+        "first_reasoning_delta_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 13.147014008912569,
+          "max": 17.101750010624528,
+          "min": 11.026958003640175,
+          "p50": 11.312334012473002,
+          "p95": 16.522808410809375,
+          "sum": 39.441042026737705
+        },
+        "observed_reasoning_stream_span_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 5.488208000315353,
+          "max": 6.3454580085817724,
+          "min": 5.025708000175655,
+          "p50": 5.0934579921886325,
+          "p95": 6.2202580069424585,
+          "sum": 16.46462400094606
+        },
+        "output_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 124.33333333333333,
+          "max": 127,
+          "min": 121,
+          "p50": 125.0,
+          "p95": 126.8,
+          "sum": 373
+        },
+        "input_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 19.0,
+          "max": 19,
+          "min": 19,
+          "p50": 19.0,
+          "p95": 19.0,
+          "sum": 57
+        },
+        "cached_input_tokens": {
+          "observations": 0,
+          "missing": 3,
+          "mean": null,
+          "max": null,
+          "min": null,
+          "p50": null,
+          "p95": null,
+          "sum": null
+        },
+        "reasoning_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 84.33333333333333,
+          "max": 87,
+          "min": 81,
+          "p50": 85.0,
+          "p95": 86.8,
+          "sum": 253
+        },
+        "visible_output_chars": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 62.0,
+          "max": 62,
+          "min": 62,
+          "p50": 62.0,
+          "p95": 62.0,
+          "sum": 186
+        },
+        "thinking_time_ms": {
+          "observations": 0,
+          "missing": 3,
+          "mean": null,
+          "max": null,
+          "min": null,
+          "p50": null,
+          "p95": null,
+          "sum": null
+        },
+        "provider_output_tokens_per_second": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 4259.8797527855795,
+          "max": 4825.90032417437,
+          "min": 3841.7729294150536,
+          "p50": 4111.966004767315,
+          "p95": 4754.506892233665,
+          "sum": 12779.63925835674
+        }
+      },
+      "successful_attempt_metrics": {
+        "total_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 29.403764007535454,
+          "max": 31.495875009568408,
+          "min": 26.316333009162918,
+          "p50": 30.399084003875032,
+          "p95": 31.38619590899907,
+          "sum": 88.21129202260636
+        },
+        "ttft_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 24.116013674453523,
+          "max": 27.15208299923688,
+          "min": 21.15683301235549,
+          "p50": 24.039125011768192,
+          "p95": 26.840787200490013,
+          "sum": 72.34804102336057
+        },
+        "first_event_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 7.604444671111803,
+          "max": 11.933375004446134,
+          "min": 4.843959002755582,
+          "p50": 6.0360000061336905,
+          "p95": 11.34363750461489,
+          "sum": 22.813334013335407
+        },
+        "first_reasoning_delta_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 13.147014008912569,
+          "max": 17.101750010624528,
+          "min": 11.026958003640175,
+          "p50": 11.312334012473002,
+          "p95": 16.522808410809375,
+          "sum": 39.441042026737705
+        },
+        "observed_reasoning_stream_span_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 5.488208000315353,
+          "max": 6.3454580085817724,
+          "min": 5.025708000175655,
+          "p50": 5.0934579921886325,
+          "p95": 6.2202580069424585,
+          "sum": 16.46462400094606
+        },
+        "output_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 124.33333333333333,
+          "max": 127,
+          "min": 121,
+          "p50": 125.0,
+          "p95": 126.8,
+          "sum": 373
+        },
+        "input_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 19.0,
+          "max": 19,
+          "min": 19,
+          "p50": 19.0,
+          "p95": 19.0,
+          "sum": 57
+        },
+        "cached_input_tokens": {
+          "observations": 0,
+          "missing": 3,
+          "mean": null,
+          "max": null,
+          "min": null,
+          "p50": null,
+          "p95": null,
+          "sum": null
+        },
+        "reasoning_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 84.33333333333333,
+          "max": 87,
+          "min": 81,
+          "p50": 85.0,
+          "p95": 86.8,
+          "sum": 253
+        },
+        "visible_output_chars": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 62.0,
+          "max": 62,
+          "min": 62,
+          "p50": 62.0,
+          "p95": 62.0,
+          "sum": 186
+        },
+        "thinking_time_ms": {
+          "observations": 0,
+          "missing": 3,
+          "mean": null,
+          "max": null,
+          "min": null,
+          "p50": null,
+          "p95": null,
+          "sum": null
+        },
+        "provider_output_tokens_per_second": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 4259.8797527855795,
+          "max": 4825.90032417437,
+          "min": 3841.7729294150536,
+          "p50": 4111.966004767315,
+          "p95": 4754.506892233665,
+          "sum": 12779.63925835674
+        }
+      },
+      "logical_total_ms": {
+        "observations": 3,
+        "missing": 0,
+        "mean": 29.559236339991912,
+        "max": 31.68341700802557,
+        "min": 26.472500001545995,
+        "p50": 30.52179201040417,
+        "p95": 31.56725450826343,
+        "sum": 88.67770901997574
+      },
+      "logical_ttft_ms": {
+        "observations": 3,
+        "missing": 0,
+        "mean": 24.11665267815503,
+        "max": 27.152458002092317,
+        "min": 21.157250012038276,
+        "p50": 24.040250020334497,
+        "p95": 26.841237203916535,
+        "sum": 72.34995803446509
+      }
+    },
+    "reasoning-order": {
+      "attempts": 3,
+      "successful_attempts": 3,
+      "failed_attempts": 0,
+      "logical_runs": 3,
+      "failed_logical_runs": 0,
+      "all_attempt_metrics": {
+        "total_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 25.515847334948678,
+          "max": 31.37658300693147,
+          "min": 20.28908400097862,
+          "p50": 24.88187499693595,
+          "p95": 30.727112205931917,
+          "sum": 76.54754200484604
+        },
+        "ttft_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 20.307819329900667,
+          "max": 24.791541014565155,
+          "min": 16.32774999598041,
+          "p50": 19.804166979156435,
+          "p95": 24.292803611024283,
+          "sum": 60.923457989702
+        },
+        "first_event_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 5.165791662875563,
+          "max": 5.856875010067597,
+          "min": 4.7108749859035015,
+          "p50": 4.92962499265559,
+          "p95": 5.764150008326396,
+          "sum": 15.497374988626689
+        },
+        "first_reasoning_delta_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 10.199652664596215,
+          "max": 12.162916013039649,
+          "min": 8.653625001898035,
+          "p50": 9.78241697885096,
+          "p95": 11.92486610962078,
+          "sum": 30.598957993788645
+        },
+        "observed_reasoning_stream_span_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 5.017555668018758,
+          "max": 6.326917005935684,
+          "min": 3.7662499817088246,
+          "p50": 4.959500016411766,
+          "p95": 6.190175306983292,
+          "sum": 15.052667004056275
+        },
+        "output_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 125.0,
+          "max": 128,
+          "min": 123,
+          "p50": 124.0,
+          "p95": 127.6,
+          "sum": 375
+        },
+        "input_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 20.0,
+          "max": 20,
+          "min": 20,
+          "p50": 20.0,
+          "p95": 20.0,
+          "sum": 60
+        },
+        "cached_input_tokens": {
+          "observations": 0,
+          "missing": 3,
+          "mean": null,
+          "max": null,
+          "min": null,
+          "p50": null,
+          "p95": null,
+          "sum": null
+        },
+        "reasoning_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 85.0,
+          "max": 88,
+          "min": 83,
+          "p50": 84.0,
+          "p95": 87.6,
+          "sum": 255
+        },
+        "visible_output_chars": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 62.0,
+          "max": 62,
+          "min": 62,
+          "p50": 62.0,
+          "p95": 62.0,
+          "sum": 186
+        },
+        "thinking_time_ms": {
+          "observations": 0,
+          "missing": 3,
+          "mean": null,
+          "max": null,
+          "min": null,
+          "p50": null,
+          "p95": null,
+          "sum": null
+        },
+        "provider_output_tokens_per_second": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 5041.798651057703,
+          "max": 6062.373244354809,
+          "min": 4079.475447397291,
+          "p50": 4983.547261421008,
+          "p95": 5954.490646061428,
+          "sum": 15125.395953173109
+        }
+      },
+      "successful_attempt_metrics": {
+        "total_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 25.515847334948678,
+          "max": 31.37658300693147,
+          "min": 20.28908400097862,
+          "p50": 24.88187499693595,
+          "p95": 30.727112205931917,
+          "sum": 76.54754200484604
+        },
+        "ttft_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 20.307819329900667,
+          "max": 24.791541014565155,
+          "min": 16.32774999598041,
+          "p50": 19.804166979156435,
+          "p95": 24.292803611024283,
+          "sum": 60.923457989702
+        },
+        "first_event_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 5.165791662875563,
+          "max": 5.856875010067597,
+          "min": 4.7108749859035015,
+          "p50": 4.92962499265559,
+          "p95": 5.764150008326396,
+          "sum": 15.497374988626689
+        },
+        "first_reasoning_delta_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 10.199652664596215,
+          "max": 12.162916013039649,
+          "min": 8.653625001898035,
+          "p50": 9.78241697885096,
+          "p95": 11.92486610962078,
+          "sum": 30.598957993788645
+        },
+        "observed_reasoning_stream_span_ms": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 5.017555668018758,
+          "max": 6.326917005935684,
+          "min": 3.7662499817088246,
+          "p50": 4.959500016411766,
+          "p95": 6.190175306983292,
+          "sum": 15.052667004056275
+        },
+        "output_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 125.0,
+          "max": 128,
+          "min": 123,
+          "p50": 124.0,
+          "p95": 127.6,
+          "sum": 375
+        },
+        "input_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 20.0,
+          "max": 20,
+          "min": 20,
+          "p50": 20.0,
+          "p95": 20.0,
+          "sum": 60
+        },
+        "cached_input_tokens": {
+          "observations": 0,
+          "missing": 3,
+          "mean": null,
+          "max": null,
+          "min": null,
+          "p50": null,
+          "p95": null,
+          "sum": null
+        },
+        "reasoning_tokens": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 85.0,
+          "max": 88,
+          "min": 83,
+          "p50": 84.0,
+          "p95": 87.6,
+          "sum": 255
+        },
+        "visible_output_chars": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 62.0,
+          "max": 62,
+          "min": 62,
+          "p50": 62.0,
+          "p95": 62.0,
+          "sum": 186
+        },
+        "thinking_time_ms": {
+          "observations": 0,
+          "missing": 3,
+          "mean": null,
+          "max": null,
+          "min": null,
+          "p50": null,
+          "p95": null,
+          "sum": null
+        },
+        "provider_output_tokens_per_second": {
+          "observations": 3,
+          "missing": 0,
+          "mean": 5041.798651057703,
+          "max": 6062.373244354809,
+          "min": 4079.475447397291,
+          "p50": 4983.547261421008,
+          "p95": 5954.490646061428,
+          "sum": 15125.395953173109
+        }
+      },
+      "logical_total_ms": {
+        "observations": 3,
+        "missing": 0,
+        "mean": 25.675667003573228,
+        "max": 31.593291991157457,
+        "min": 20.439084008103237,
+        "p50": 24.994625011458993,
+        "p95": 30.93342529318761,
+        "sum": 77.02700101071969
+      },
+      "logical_ttft_ms": {
+        "observations": 3,
+        "missing": 0,
+        "mean": 20.30908365850337,
+        "max": 24.793499993393198,
+        "min": 16.329083999153227,
+        "p50": 19.80466698296368,
+        "p95": 24.294616692350246,
+        "sum": 60.927250975510105
+      }
+    }
+  },
+  "warmup_attempts_excluded": 0,
+  "interpretation": "Quantiles are descriptive across recorded attempts, not confidence intervals. Missing usage or thinking times are null, never zero. Failures remain in all-attempt and logical-run summaries.",
+  "schema_version": "0.2.0",
+  "recorded_at": "2026-09-26T04:32:09.458743+00:00",
+  "simulated": true,
+  "config": {
+    "alias": "local-simulated-demo",
+    "base_url": "http://127.0.0.1:54514/v1",
+    "model": "local-synthetic-sse-model",
+    "api_key_env": "SMB_PERFORMANCE_LOCAL_DEMO_CREDENTIAL",
+    "timeout": 5,
+    "max_tokens": 512,
+    "temperature": 0
+  },
+  "rounds": 3,
+  "warmups": 0,
+  "retries": 0,
+  "order_seed": 260926,
+  "conversation": false,
+  "transport": "chat-completions-sse",
+  "reasoning_effort": null,
+  "plan_sha256": "2acbf3c9d370149702243f9956e1d99b323915fe8a4fcebffd91655945e7a4a9",
+  "planned_measured_logical_runs": 9,
+  "not_executed_logical_runs": 0
+}

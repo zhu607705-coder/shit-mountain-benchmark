@@ -1,0 +1,42 @@
+{
+  "artifact_type": "real-browser-workflow-control",
+  "live_model_run": false,
+  "task": "R3",
+  "tier": "bronze",
+  "checks": {
+    "task_and_six_tiers": true,
+    "tier_changes_scale_count_budget": true,
+    "draw_and_three_scoped_prompts": true,
+    "readme_dialog": true,
+    "two_actual_submissions_sealed_and_graded": true,
+    "relative_scores": true,
+    "viewport_390_no_horizontal_overflow_before_and_after_grading": true,
+    "browser_console_errors": []
+  },
+  "entries": [
+    {
+      "participant": "流程自检 · 整组修复策略",
+      "raw_score": 28.735632183908045,
+      "relative_score": 100.0,
+      "valid": true,
+      "completed": true,
+      "metrics_trust": "unverified",
+      "efficiency_eligible": false
+    },
+    {
+      "participant": "流程自检 · 空操作策略",
+      "raw_score": 20.833333333333336,
+      "relative_score": 72.5,
+      "valid": true,
+      "completed": true,
+      "metrics_trust": "unverified",
+      "efficiency_eligible": false
+    }
+  ],
+  "screenshot_sha256": "3eddd0a41ad34ddcb3426c70956e4d25b2795a6daf5aaacd4015ff2ec068c58c",
+  "limits": [
+    "Workflow controls are not model capability results",
+    "No real model/API run was conducted",
+    "Complete frontend browser/visual scoring remains separate"
+  ]
+}

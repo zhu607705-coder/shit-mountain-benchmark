@@ -24,10 +24,11 @@ def main():
     manifest = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files()}
     manifest_path = ROOT / "MANIFEST.sha256.json"
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    target = ROOT.parent / (ROOT.name + ".zip")
+    version = json.loads((ROOT / 'benchmark.json').read_text())['version']
+    target = ROOT.parent / ("shit-mountain-benchmark-v" + version + ".zip")
     with ZipFile(target, "w", compression=ZIP_DEFLATED) as archive:
         for p in [*files(), manifest_path]:
-            archive.write(p, Path(ROOT.name) / p.relative_to(ROOT))
+            archive.write(p, Path('shit-mountain-benchmark-v' + version) / p.relative_to(ROOT))
     with ZipFile(target) as archive:
         bad = archive.testzip()
         if bad:

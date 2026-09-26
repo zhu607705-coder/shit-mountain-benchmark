@@ -1,0 +1,9 @@
+{
+  "total_ms": null,
+  "ttft_ms": null,
+  "output_tokens": null,
+  "reasoning_tokens": null,
+  "thinking_time_ms": null,
+  "source": "agent_self_reported",
+  "evidence_files": []
+}

@@ -1,0 +1,351 @@
+{
+  "task_id": "C4",
+  "profile": "extreme",
+  "version": "0.2",
+  "scale": "smoke",
+  "seed": 260926,
+  "dimensions": [
+    {
+      "name": "roots",
+      "legacy": 2,
+      "current": 2,
+      "ratio": 1.0,
+      "scope": "executed",
+      "full_target": 20,
+      "full_target_ratio": 10.0,
+      "denominator_source": "C4/TASK.md: cache shared by two roots"
+    },
+    {
+      "name": "mutations",
+      "legacy": 100,
+      "current": 8,
+      "ratio": 0.08,
+      "scope": "executed",
+      "full_target": 1000,
+      "full_target_ratio": 10.0,
+      "denominator_source": "C4/TASK.md: 100 random changes"
+    }
+  ],
+  "mechanisms": [
+    "required stage-v2: manifest changes during build + consistent source/env cut + immutable cache publication",
+    "shared cache across roots + equal-mtime mutation + ordered dependencies",
+    "failed source build + repair + corrupted-cache retry",
+    "concurrent publication + subsequent source/environment epoch change",
+    "5000-node iterative-reference comparison; scale boundary, not reasoning proof"
+  ],
+  "candidate_result": {
+    "valid": false,
+    "status": "incomplete",
+    "legacy_probe": {
+      "checks": [
+        {
+          "name": "cross_root_epoch_change_delete_repair_order_history",
+          "passed": true,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 0.0251,
+          "evidence": {
+            "mutations": 8,
+            "roots": 2,
+            "distinct_outputs": 8,
+            "same_mtime": true,
+            "dependency_order_changes": true,
+            "failed_build_retried": true
+          }
+        },
+        {
+          "name": "concurrent_publish_then_new_epoch",
+          "passed": true,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 0.0941,
+          "evidence": {
+            "processes": 3,
+            "distinct_outputs": 3,
+            "after_publication_epoch_verified": true
+          }
+        },
+        {
+          "name": "deep_shared_dag_scale_boundary",
+          "passed": false,
+          "kind": "scale_boundary",
+          "critical": true,
+          "seconds": 0.0017,
+          "error": "RecursionError: maximum recursion depth exceeded",
+          "classification": "behavior_failure"
+        }
+      ],
+      "valid": false
+    },
+    "stage_v2": {
+      "status": "capability_gap",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C4/extreme.py",
+      "reason": "required stage-v2 module extreme.py is absent",
+      "checks": []
+    },
+    "checks_passed": 2,
+    "checks_total": 4,
+    "machine_pass_rate": 0.5,
+    "raw_score": 0,
+    "quality_score": 0,
+    "checks": [
+      {
+        "name": "cross_root_epoch_change_delete_repair_order_history",
+        "passed": true,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 0.0251,
+        "evidence": {
+          "mutations": 8,
+          "roots": 2,
+          "distinct_outputs": 8,
+          "same_mtime": true,
+          "dependency_order_changes": true,
+          "failed_build_retried": true
+        }
+      },
+      {
+        "name": "concurrent_publish_then_new_epoch",
+        "passed": true,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 0.0941,
+        "evidence": {
+          "processes": 3,
+          "distinct_outputs": 3,
+          "after_publication_epoch_verified": true
+        }
+      },
+      {
+        "name": "deep_shared_dag_scale_boundary",
+        "passed": false,
+        "kind": "scale_boundary",
+        "critical": true,
+        "seconds": 0.0017,
+        "error": "RecursionError: maximum recursion depth exceeded",
+        "classification": "behavior_failure"
+      },
+      {
+        "name": "stage_v2_capability",
+        "passed": false,
+        "kind": "capability_gap",
+        "critical": true,
+        "classification": "capability_gap",
+        "error": "required stage-v2 module extreme.py is absent"
+      }
+    ],
+    "score_status": "binary machine contract quality; independent host scores agent elapsed time and tokens"
+  },
+  "verification": {
+    "executed": true,
+    "constructed": {
+      "nodes": 1200,
+      "depth": 1100,
+      "roots": 2,
+      "mutations": 8,
+      "parallel_publishers": 3
+    },
+    "observed": {
+      "mutations": 8,
+      "roots": 2,
+      "distinct_outputs": 8,
+      "parallel_publishers": 3,
+      "nodes": 1200,
+      "depth": 1100
+    },
+    "tiny_feasible_witness": {
+      "vector_sum": [
+        12,
+        20
+      ],
+      "byte_env_duplicate": "!z11",
+      "independent": true
+    },
+    "negative_control_expected": "C2/C4 old recursive baselines may fail depth; evaluated behavior is never hardcoded"
+  },
+  "stage_v2": {
+    "contract": "stage-v2",
+    "required": true,
+    "candidate": {
+      "status": "capability_gap",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C4/extreme.py",
+      "reason": "required stage-v2 module extreme.py is absent",
+      "checks": []
+    },
+    "faulty_starter": {
+      "status": "behavior_failure",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C4/extreme/starter.py",
+      "checks": [
+        {
+          "name": "stable_only",
+          "index": 0,
+          "passed": true,
+          "evidence": {
+            "visible_versions": 1,
+            "consistent_result": {
+              "version": "fbd1f6cf4c39a8739fbe497af056187770f06b50da07dbbc38a4bbbd35aac7f9",
+              "data": "260926-a|260926-b#old"
+            },
+            "old_manifest_replayed": true
+          }
+        },
+        {
+          "name": "update_only",
+          "index": 1,
+          "passed": true,
+          "evidence": {
+            "visible_versions": 2,
+            "consistent_result": {
+              "version": "5121199108f8bd46570b1a1d5c0f077e2704b7ed676752a0c569605df3a2d4e5",
+              "data": "260926-new-a|260926-new-b#new"
+            },
+            "old_manifest_replayed": true
+          }
+        },
+        {
+          "name": "composition",
+          "index": 2,
+          "passed": false,
+          "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260926-a|260926-b#old\", \"actual\": \"260926-a|260926-b#new\"}"
+        }
+      ],
+      "controls_passed": true,
+      "composition_passed": false
+    },
+    "tiny_feasible_witness": {
+      "feasible": true,
+      "kind": "finite_trace_witness_not_complete_solver",
+      "execution": "independent finite-state arithmetic, not a complete I/O implementation",
+      "trace": {
+        "visible_manifests": {
+          "old": "old-a|old-b#old",
+          "new": "new-a|new-b#new"
+        },
+        "illegal_mix": "old-a|old-b#new",
+        "legal_strategy": "pin complete immutable manifest or report RetryRequired before publishing any cache entry"
+      },
+      "negative_perturbation_rejected": true
+    },
+    "audit_passed": true,
+    "difficulty_evidence": "same runnable starter passes isolated controls but fails their composition; not an impossibility proof"
+  },
+  "audit_passed": true,
+  "limitations": [
+    "public seeded workloads; not hidden evaluation",
+    "local trusted-code runner, not a security sandbox",
+    "judge execution time is diagnostic runtime, not model thinking time; agent elapsed time/tokens come from the independent host",
+    "passing interaction chains is reported honestly; no claim that the author cannot solve a problem",
+    "C3 intercepts Python os I/O calls; native/buffered I/O adapters require separate instrumentation; process kill is not power loss"
+  ],
+  "elapsed_seconds": 0.2189,
+  "budget_seconds": 28,
+  "candidate_path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C4/baseline.py",
+  "process_exit_code": 0,
+  "baseline_result": {
+    "valid": false,
+    "status": "incomplete",
+    "legacy_probe": {
+      "checks": [
+        {
+          "name": "cross_root_epoch_change_delete_repair_order_history",
+          "passed": true,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 0.0251,
+          "evidence": {
+            "mutations": 8,
+            "roots": 2,
+            "distinct_outputs": 8,
+            "same_mtime": true,
+            "dependency_order_changes": true,
+            "failed_build_retried": true
+          }
+        },
+        {
+          "name": "concurrent_publish_then_new_epoch",
+          "passed": true,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 0.0941,
+          "evidence": {
+            "processes": 3,
+            "distinct_outputs": 3,
+            "after_publication_epoch_verified": true
+          }
+        },
+        {
+          "name": "deep_shared_dag_scale_boundary",
+          "passed": false,
+          "kind": "scale_boundary",
+          "critical": true,
+          "seconds": 0.0017,
+          "error": "RecursionError: maximum recursion depth exceeded",
+          "classification": "behavior_failure"
+        }
+      ],
+      "valid": false
+    },
+    "stage_v2": {
+      "status": "capability_gap",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C4/extreme.py",
+      "reason": "required stage-v2 module extreme.py is absent",
+      "checks": []
+    },
+    "checks_passed": 2,
+    "checks_total": 4,
+    "machine_pass_rate": 0.5,
+    "raw_score": 0,
+    "quality_score": 0,
+    "checks": [
+      {
+        "name": "cross_root_epoch_change_delete_repair_order_history",
+        "passed": true,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 0.0251,
+        "evidence": {
+          "mutations": 8,
+          "roots": 2,
+          "distinct_outputs": 8,
+          "same_mtime": true,
+          "dependency_order_changes": true,
+          "failed_build_retried": true
+        }
+      },
+      {
+        "name": "concurrent_publish_then_new_epoch",
+        "passed": true,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 0.0941,
+        "evidence": {
+          "processes": 3,
+          "distinct_outputs": 3,
+          "after_publication_epoch_verified": true
+        }
+      },
+      {
+        "name": "deep_shared_dag_scale_boundary",
+        "passed": false,
+        "kind": "scale_boundary",
+        "critical": true,
+        "seconds": 0.0017,
+        "error": "RecursionError: maximum recursion depth exceeded",
+        "classification": "behavior_failure"
+      },
+      {
+        "name": "stage_v2_capability",
+        "passed": false,
+        "kind": "capability_gap",
+        "critical": true,
+        "classification": "capability_gap",
+        "error": "required stage-v2 module extreme.py is absent"
+      }
+    ],
+    "score_status": "binary machine contract quality; independent host scores agent elapsed time and tokens"
+  }
+}

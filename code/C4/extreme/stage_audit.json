@@ -1,0 +1,175 @@
+{
+  "contract": "stage-v2",
+  "required": true,
+  "candidate": {
+    "status": "capability_gap",
+    "valid": false,
+    "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C4/extreme.py",
+    "reason": "required stage-v2 module extreme.py is absent",
+    "checks": []
+  },
+  "faulty_starter": {
+    "status": "behavior_failure",
+    "valid": false,
+    "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C4/extreme/starter.py",
+    "checks": [
+      {
+        "name": "stable_only",
+        "index": 0,
+        "passed": true,
+        "evidence": {
+          "visible_versions": 1,
+          "consistent_result": {
+            "version": "fbd1f6cf4c39a8739fbe497af056187770f06b50da07dbbc38a4bbbd35aac7f9",
+            "data": "260926-a|260926-b#old"
+          },
+          "old_manifest_replayed": true
+        }
+      },
+      {
+        "name": "update_only",
+        "index": 1,
+        "passed": true,
+        "evidence": {
+          "visible_versions": 2,
+          "consistent_result": {
+            "version": "5121199108f8bd46570b1a1d5c0f077e2704b7ed676752a0c569605df3a2d4e5",
+            "data": "260926-new-a|260926-new-b#new"
+          },
+          "old_manifest_replayed": true
+        }
+      },
+      {
+        "name": "composition",
+        "index": 2,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260926-a|260926-b#old\", \"actual\": \"260926-a|260926-b#new\"}"
+      }
+    ],
+    "controls_passed": true,
+    "composition_passed": false
+  },
+  "tiny_feasible_witness": {
+    "feasible": true,
+    "kind": "finite_trace_witness_not_complete_solver",
+    "execution": "independent finite-state arithmetic, not a complete I/O implementation",
+    "trace": {
+      "visible_manifests": {
+        "old": "old-a|old-b#old",
+        "new": "new-a|new-b#new"
+      },
+      "illegal_mix": "old-a|old-b#new",
+      "legal_strategy": "pin complete immutable manifest or report RetryRequired before publishing any cache entry"
+    },
+    "negative_perturbation_rejected": true
+  },
+  "audit_passed": true,
+  "difficulty_evidence": "same runnable starter passes isolated controls but fails their composition; not an impossibility proof",
+  "expanded_faulty_starter": {
+    "status": "behavior_failure",
+    "valid": false,
+    "path": "code/C4/extreme/starter.py",
+    "checks": [
+      {
+        "name": "stable_only",
+        "index": 0,
+        "passed": true,
+        "evidence": {
+          "visible_versions": 1,
+          "consistent_result": {
+            "version": "fbd1f6cf4c39a8739fbe497af056187770f06b50da07dbbc38a4bbbd35aac7f9",
+            "data": "260926-a|260926-b#old"
+          },
+          "old_manifest_replayed": true
+        }
+      },
+      {
+        "name": "update_only",
+        "index": 1,
+        "passed": true,
+        "evidence": {
+          "visible_versions": 2,
+          "consistent_result": {
+            "version": "5121199108f8bd46570b1a1d5c0f077e2704b7ed676752a0c569605df3a2d4e5",
+            "data": "260926-new-a|260926-new-b#new"
+          },
+          "old_manifest_replayed": true
+        }
+      },
+      {
+        "name": "composition",
+        "index": 2,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260926-a|260926-b#old\", \"actual\": \"260926-a|260926-b#new\"}"
+      },
+      {
+        "name": "composition",
+        "index": 3,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260927-a|260927-b#old\", \"actual\": \"260927-a|260927-b#new\"}"
+      },
+      {
+        "name": "composition",
+        "index": 4,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260928-a|260928-b#old\", \"actual\": \"260928-a|260928-b#new\"}"
+      },
+      {
+        "name": "composition",
+        "index": 5,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260929-a|260929-b#old\", \"actual\": \"260929-a|260929-b#new\"}"
+      },
+      {
+        "name": "composition",
+        "index": 6,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260930-a|260930-b#old\", \"actual\": \"260930-a|260930-b#new\"}"
+      },
+      {
+        "name": "composition",
+        "index": 7,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260931-a|260931-b#old\", \"actual\": \"260931-a|260931-b#new\"}"
+      },
+      {
+        "name": "composition",
+        "index": 8,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260932-a|260932-b#old\", \"actual\": \"260932-a|260932-b#new\"}"
+      },
+      {
+        "name": "composition",
+        "index": 9,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260933-a|260933-b#old\", \"actual\": \"260933-a|260933-b#new\"}"
+      },
+      {
+        "name": "composition",
+        "index": 10,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260934-a|260934-b#old\", \"actual\": \"260934-a|260934-b#new\"}"
+      },
+      {
+        "name": "composition",
+        "index": 11,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260935-a|260935-b#old\", \"actual\": \"260935-a|260935-b#new\"}"
+      },
+      {
+        "name": "composition",
+        "index": 12,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260936-a|260936-b#old\", \"actual\": \"260936-a|260936-b#new\"}"
+      },
+      {
+        "name": "composition",
+        "index": 13,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"sources and environment came from different manifest generations\", \"expected\": \"260937-a|260937-b#old\", \"actual\": \"260937-a|260937-b#new\"}"
+      }
+    ],
+    "controls_passed": true,
+    "composition_passed": false
+  }
+}

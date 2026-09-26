@@ -1,0 +1,8 @@
+# Retain complete machine evidence while keeping code reviews focused on source.
+results/** linguist-generated=true
+reasoning/R*/extreme/*_result.json linguist-generated=true
+code/C*/extreme/baseline_*.json linguist-generated=true
+code/C*/extreme/stage_audit.json linguist-generated=true
+frontend/F*/extreme/baseline-*.json linguist-generated=true
+frontend/F*/extreme/sample.jsonl linguist-generated=true
+MANIFEST.sha256.json linguist-generated=true

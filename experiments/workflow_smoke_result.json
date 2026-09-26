@@ -1,0 +1,238 @@
+{
+  "verification": "real R3 public export + process policy + root judge; no model API call",
+  "prepare": {
+    "workspace": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/workspaces/experiments/workflow-smoke-1790392713",
+    "attempts": 1,
+    "private_record": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/reports/experiments/workflow-smoke-1790392713/organizer.json"
+  },
+  "submit": {
+    "attempt_id": "R3-direct-r01",
+    "status": "sealed",
+    "files": 2,
+    "manifest_sha256": "6e2805fd98620a5f9dc1a0f8b528122c14bd663d6fefe861d3f3d0081a46e41e",
+    "sealed": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/workspaces/experiments/workflow-smoke-1790392713/answers/R3-direct-r01/sealed",
+    "metrics_trust": "unverified",
+    "efficiency_eligible": false
+  },
+  "inspect": {
+    "id": "workflow-smoke-1790392713",
+    "task_input_integrity": {
+      "R3": true
+    },
+    "attempts": [
+      {
+        "attempt_id": "R3-direct-r01",
+        "task": "R3",
+        "variant": "direct",
+        "round": 1,
+        "status": "sealed",
+        "quality_score": null,
+        "quality_status": "grading_pending",
+        "manifest_sha256": "6e2805fd98620a5f9dc1a0f8b528122c14bd663d6fefe861d3f3d0081a46e41e"
+      }
+    ],
+    "counts": {
+      "missing": 0,
+      "sealed": 1,
+      "tampered": 0
+    },
+    "integrity_ok": true
+  },
+  "grade": {
+    "grade": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/reports/experiments/workflow-smoke-1790392713/results/R3-direct-r01/2026-09-26T031834015611+0000-5cd1b4/grade.json",
+    "task": "R3",
+    "candidate_result": {
+      "valid": true,
+      "episodes": 16,
+      "valid_episodes": 16,
+      "mean_loss": 190.0,
+      "worst_decile_loss": 190.0,
+      "objective_loss": 190.0,
+      "raw_score": 20.833333333333336,
+      "loss_scale": 50,
+      "episodes_detail": [
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        },
+        {
+          "valid": true,
+          "loss": 190.0,
+          "queries": 0,
+          "budget_spent": 0.0,
+          "repair": [],
+          "group_repair": [],
+          "missed_faults": 2,
+          "exact_both": false,
+          "history": []
+        }
+      ],
+      "both_faults_repaired_rate": 0.0,
+      "mean_missed_faults": 2.0
+    },
+    "frontend_visual_review": "not_applicable",
+    "efficiency_eligible": false
+  },
+  "post_grade_integrity": true
+}

@@ -1,0 +1,1484 @@
+{
+  "task_id": "R2",
+  "profile": "extreme",
+  "scale": "smoke",
+  "seed": 260926,
+  "dimensions": [
+    {
+      "name": "evaluated_worlds",
+      "legacy": 180,
+      "current": 24,
+      "ratio": 0.13333333333333333,
+      "scope": "executed"
+    },
+    {
+      "name": "distinct_available_tests",
+      "legacy": 18,
+      "current": 180,
+      "ratio": 10.0,
+      "scope": "generated"
+    }
+  ],
+  "mechanisms": [
+    "Assays require irreversible chamber preparation, so zero-information setup can unlock later value.",
+    "Calibration and preparation change stress; stress changes subsequent observation equations and treatment harm.",
+    "Latent channel drift correlates cheap sensors; public cohort priors differ, with pooled upper-tail loss.",
+    "Different assays trade decision information against class-specific toxic side effects."
+  ],
+  "baseline_result": {
+    "valid": true,
+    "episodes": 24,
+    "valid_episodes": 24,
+    "mean_loss": 37.96666666666667,
+    "worst_decile_loss": 126.30000000000001,
+    "objective_loss": 64.46666666666667,
+    "raw_score": 43.6808386721025,
+    "loss_scale": 50,
+    "episodes_detail": [
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 0,
+        "queries": 9,
+        "terminal_action": 21,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 0,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 1,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 1,
+        "queries": 9,
+        "terminal_action": 22,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 1,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 1,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 0,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 2,
+        "queries": 9,
+        "terminal_action": 18,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 0,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 1,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 3,
+        "queries": 9,
+        "terminal_action": 28,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 1,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 1,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 0,
+        "queries": 9,
+        "terminal_action": 3,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 0,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 0,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 1,
+        "queries": 9,
+        "terminal_action": 24,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 1,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 1,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 2,
+        "queries": 9,
+        "terminal_action": 22,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 0,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 1,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 126.30000000000001,
+        "cohort": 3,
+        "queries": 9,
+        "terminal_action": 19,
+        "terminal_loss": 117,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 0,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 1,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": false
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 0,
+        "queries": 9,
+        "terminal_action": 26,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 1,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 1,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 126.30000000000001,
+        "cohort": 1,
+        "queries": 9,
+        "terminal_action": 15,
+        "terminal_loss": 117,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 1,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 0,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": false
+      },
+      {
+        "valid": true,
+        "loss": 126.30000000000001,
+        "cohort": 2,
+        "queries": 9,
+        "terminal_action": 2,
+        "terminal_loss": 117,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 1,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 0,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 1,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": false
+      },
+      {
+        "valid": true,
+        "loss": 83.30000000000001,
+        "cohort": 3,
+        "queries": 9,
+        "terminal_action": 26,
+        "terminal_loss": 74,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 0,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 1,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": false
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 0,
+        "queries": 9,
+        "terminal_action": 31,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 1,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 1,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 126.30000000000001,
+        "cohort": 1,
+        "queries": 9,
+        "terminal_action": 3,
+        "terminal_loss": 117,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 0,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 0,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": false
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 2,
+        "queries": 9,
+        "terminal_action": 13,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 1,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 0,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 3,
+        "queries": 9,
+        "terminal_action": 23,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 1,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 1,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 0,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 0,
+        "queries": 9,
+        "terminal_action": 29,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 1,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 1,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 1,
+        "queries": 9,
+        "terminal_action": 5,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 0,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 0,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 2,
+        "queries": 9,
+        "terminal_action": 4,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 1,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 0,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 83.30000000000001,
+        "cohort": 3,
+        "queries": 9,
+        "terminal_action": 31,
+        "terminal_loss": 74,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 1,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 0,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 0,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": false
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 0,
+        "queries": 9,
+        "terminal_action": 13,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 1,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 0,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 1,
+        "queries": 9,
+        "terminal_action": 15,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 1,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 0,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 2,
+        "queries": 9,
+        "terminal_action": 14,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 1,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 0,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 0,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      },
+      {
+        "valid": true,
+        "loss": 13.299999999999999,
+        "cohort": 3,
+        "queries": 9,
+        "terminal_action": 29,
+        "terminal_loss": 4,
+        "side_effect": 0.0,
+        "stress": 4,
+        "budget_spent": 13,
+        "history": [
+          {
+            "test": 5,
+            "result": 0,
+            "stress_before": 0
+          },
+          {
+            "test": 0,
+            "result": 0,
+            "stress_before": 1
+          },
+          {
+            "test": 6,
+            "result": 1,
+            "stress_before": 1
+          },
+          {
+            "test": 1,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 7,
+            "result": 0,
+            "stress_before": 2
+          },
+          {
+            "test": 2,
+            "result": 0,
+            "stress_before": 3
+          },
+          {
+            "test": 8,
+            "result": 1,
+            "stress_before": 3
+          },
+          {
+            "test": 3,
+            "result": 1,
+            "stress_before": 4
+          },
+          {
+            "test": 4,
+            "result": 1,
+            "stress_before": 4
+          }
+        ],
+        "exact_repair": true
+      }
+    ],
+    "exact_repair_rate": 0.75,
+    "cohort_mean_losses": [
+      13.299999999999999,
+      50.96666666666667,
+      32.13333333333333,
+      55.46666666666667
+    ]
+  },
+  "verification": {
+    "independent_tiny_witness": {
+      "tiny_worlds_enumerated": 2,
+      "stop_loss": 31.0,
+      "setup_then_assay_loss": 0.6,
+      "judge_agrees": true
+    },
+    "reproducible_seed": true,
+    "private_future_in_observations": false,
+    "selftest_command": "python3 reasoning/extreme_selftest.py",
+    "formal_hidden_evaluation": false,
+    "multiple_model_calibration": null
+  },
+  "policy_runtime": {
+    "calls": 240,
+    "decision_seconds": 0.0344287077896297,
+    "total_decision_budget_seconds": 120.0,
+    "per_action_timeout_seconds": 2.0
+  },
+  "audit_passed": true,
+  "wall_seconds": 0.03649545900407247
+}

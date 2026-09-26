@@ -1,0 +1,435 @@
+{
+  "task_id": "C1",
+  "profile": "extreme",
+  "version": "0.2",
+  "scale": "full",
+  "seed": 260926,
+  "dimensions": [
+    {
+      "name": "tenants",
+      "legacy": 2,
+      "current": 20,
+      "ratio": 10.0,
+      "scope": "generated",
+      "full_target": 20,
+      "full_target_ratio": 10.0,
+      "denominator_source": "C1/PROMPT.md: concurrent_isolation"
+    },
+    {
+      "name": "http_concurrency",
+      "legacy": 8,
+      "current": 80,
+      "ratio": 10.0,
+      "scope": "executed",
+      "full_target": 80,
+      "full_target_ratio": 10.0,
+      "denominator_source": "C1/PROMPT.md: concurrent_isolation"
+    },
+    {
+      "name": "workers",
+      "legacy": 2,
+      "current": 20,
+      "ratio": 10.0,
+      "scope": "executed",
+      "full_target": 20,
+      "full_target_ratio": 10.0,
+      "denominator_source": "C1/PROMPT.md: concurrent_isolation"
+    }
+  ],
+  "mechanisms": [
+    "required stage-v2: logical transfer receipt + physical shard epoch migration + ACK-loss replay",
+    "migration + lost HTTP response + idempotent replay",
+    "lease takeover + stale worker resumption + late conflict/reversal",
+    "epoch barriers + tenant isolation + full restart"
+  ],
+  "candidate_result": {
+    "valid": false,
+    "status": "incomplete",
+    "legacy_probe": {
+      "checks": [
+        {
+          "name": "concurrent_legacy_migration",
+          "passed": false,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 0.0844,
+          "error": "AssertionError: concurrent migration failed",
+          "classification": "behavior_failure"
+        },
+        {
+          "name": "migration_lost_ack_lease_steal_late_conflict",
+          "passed": true,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 1.1293,
+          "evidence": {
+            "lost_response_replayed": true,
+            "lease_stolen": true,
+            "old_worker_resumed": true,
+            "late_conflict_and_reverse": [
+              [
+                "R",
+                "p0",
+                "CONFLICT"
+              ],
+              [
+                "R",
+                "p1",
+                "REVERSED"
+              ],
+              [
+                "R",
+                "reverse-future",
+                "APPLIED"
+              ]
+            ],
+            "generation": 3
+          }
+        },
+        {
+          "name": "epoch_replay_isolation_projection_restart",
+          "passed": false,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 13.8776,
+          "error": "AssertionError: ('submit', 500, {'error': 'INTERNAL'})",
+          "classification": "behavior_failure",
+          "service_log_tail": {
+            "serve-0.log": " HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\nTraceback (most recent call last):\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/c1-extreme-abkmjqya/仓库 空格/api.py\", line 31, in do_POST\n    result = service.submit_batch(path, body[\"tenant\"], body[\"request_id\"], body[\"events\"])\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/c1-extreme-abkmjqya/仓库 空格/service.py\", line 33, in submit_batch\n    connection.execute(\"BEGIN IMMEDIATE\")\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nsqlite3.OperationalError: database is locked\n127.0.0.1 - - [26/Sep/2026 11:35:06] \"POST /v1/batches HTTP/1.1\" 500 -\n"
+          }
+        }
+      ],
+      "valid": false
+    },
+    "stage_v2": {
+      "status": "capability_gap",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C1/repository/baseline/extreme.py",
+      "reason": "required stage-v2 module extreme.py is absent",
+      "checks": []
+    },
+    "checks_passed": 1,
+    "checks_total": 4,
+    "machine_pass_rate": 0.25,
+    "raw_score": 0,
+    "quality_score": 0,
+    "checks": [
+      {
+        "name": "concurrent_legacy_migration",
+        "passed": false,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 0.0844,
+        "error": "AssertionError: concurrent migration failed",
+        "classification": "behavior_failure"
+      },
+      {
+        "name": "migration_lost_ack_lease_steal_late_conflict",
+        "passed": true,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 1.1293,
+        "evidence": {
+          "lost_response_replayed": true,
+          "lease_stolen": true,
+          "old_worker_resumed": true,
+          "late_conflict_and_reverse": [
+            [
+              "R",
+              "p0",
+              "CONFLICT"
+            ],
+            [
+              "R",
+              "p1",
+              "REVERSED"
+            ],
+            [
+              "R",
+              "reverse-future",
+              "APPLIED"
+            ]
+          ],
+          "generation": 3
+        }
+      },
+      {
+        "name": "epoch_replay_isolation_projection_restart",
+        "passed": false,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 13.8776,
+        "error": "AssertionError: ('submit', 500, {'error': 'INTERNAL'})",
+        "classification": "behavior_failure",
+        "service_log_tail": {
+          "serve-0.log": " HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\nTraceback (most recent call last):\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/c1-extreme-abkmjqya/仓库 空格/api.py\", line 31, in do_POST\n    result = service.submit_batch(path, body[\"tenant\"], body[\"request_id\"], body[\"events\"])\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/c1-extreme-abkmjqya/仓库 空格/service.py\", line 33, in submit_batch\n    connection.execute(\"BEGIN IMMEDIATE\")\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nsqlite3.OperationalError: database is locked\n127.0.0.1 - - [26/Sep/2026 11:35:06] \"POST /v1/batches HTTP/1.1\" 500 -\n"
+        }
+      },
+      {
+        "name": "stage_v2_capability",
+        "passed": false,
+        "kind": "capability_gap",
+        "critical": true,
+        "classification": "capability_gap",
+        "error": "required stage-v2 module extreme.py is absent"
+      }
+    ],
+    "score_status": "binary machine contract quality; independent host scores agent elapsed time and tokens"
+  },
+  "verification": {
+    "executed": true,
+    "constructed": {
+      "tenants": 20,
+      "workers": 20,
+      "batches": 1600,
+      "events": 128000,
+      "http_concurrency": 80
+    },
+    "observed": {
+      "http_requests": 900,
+      "workers_started": 22,
+      "workers": 20,
+      "http_concurrency": 80
+    },
+    "tiny_feasible_witness": {
+      "vector_sum": [
+        12,
+        20
+      ],
+      "byte_env_duplicate": "!z11",
+      "independent": true
+    },
+    "negative_control_expected": "C2/C4 old recursive baselines may fail depth; evaluated behavior is never hardcoded"
+  },
+  "stage_v2": {
+    "contract": "stage-v2",
+    "required": true,
+    "candidate": {
+      "status": "capability_gap",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C1/repository/baseline/extreme.py",
+      "reason": "required stage-v2 module extreme.py is absent",
+      "checks": []
+    },
+    "faulty_starter": {
+      "status": "behavior_failure",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C1/extreme/starter.py",
+      "checks": [
+        {
+          "name": "lost_reply_only",
+          "index": 0,
+          "passed": true,
+          "evidence": {
+            "balance": 40,
+            "amount": 4,
+            "expected": {
+              "source": 36,
+              "target": 4
+            },
+            "receipt": {
+              "txid": "logical-1",
+              "amount": 4
+            },
+            "reopened": true
+          }
+        },
+        {
+          "name": "migration_only",
+          "index": 1,
+          "passed": true,
+          "evidence": {
+            "balance": 40,
+            "amount": 4,
+            "expected": {
+              "source": 36,
+              "target": 4
+            },
+            "receipt": {
+              "txid": "logical-1",
+              "amount": 4
+            },
+            "reopened": true
+          }
+        },
+        {
+          "name": "composition",
+          "index": 2,
+          "passed": false,
+          "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 36, \"target\": 4}, \"actual\": {\"source\": 32, \"target\": 8}}"
+        }
+      ],
+      "controls_passed": true,
+      "composition_passed": false
+    },
+    "tiny_feasible_witness": {
+      "feasible": true,
+      "kind": "finite_trace_witness_not_complete_solver",
+      "execution": "independent finite-state arithmetic, not a complete I/O implementation",
+      "trace": {
+        "initial": {
+          "a": 100,
+          "b": 0
+        },
+        "after_transfer": {
+          "a": 90,
+          "b": 10
+        },
+        "after_migration_and_retry": {
+          "a": 90,
+          "b": 10
+        },
+        "legal_strategy": "receipt identity stays (logical source, request id) across physical epochs"
+      },
+      "negative_perturbation_rejected": true
+    },
+    "audit_passed": true,
+    "difficulty_evidence": "same runnable starter passes isolated controls but fails their composition; not an impossibility proof"
+  },
+  "audit_passed": true,
+  "limitations": [
+    "public seeded workloads; not hidden evaluation",
+    "local trusted-code runner, not a security sandbox",
+    "judge execution time is diagnostic runtime, not model thinking time; agent elapsed time/tokens come from the independent host",
+    "passing interaction chains is reported honestly; no claim that the author cannot solve a problem",
+    "C3 intercepts Python os I/O calls; native/buffered I/O adapters require separate instrumentation; process kill is not power loss"
+  ],
+  "elapsed_seconds": 15.4447,
+  "budget_seconds": 600,
+  "candidate_path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C1/repository/baseline",
+  "process_exit_code": 0,
+  "baseline_result": {
+    "valid": false,
+    "status": "incomplete",
+    "legacy_probe": {
+      "checks": [
+        {
+          "name": "concurrent_legacy_migration",
+          "passed": false,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 0.0844,
+          "error": "AssertionError: concurrent migration failed",
+          "classification": "behavior_failure"
+        },
+        {
+          "name": "migration_lost_ack_lease_steal_late_conflict",
+          "passed": true,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 1.1293,
+          "evidence": {
+            "lost_response_replayed": true,
+            "lease_stolen": true,
+            "old_worker_resumed": true,
+            "late_conflict_and_reverse": [
+              [
+                "R",
+                "p0",
+                "CONFLICT"
+              ],
+              [
+                "R",
+                "p1",
+                "REVERSED"
+              ],
+              [
+                "R",
+                "reverse-future",
+                "APPLIED"
+              ]
+            ],
+            "generation": 3
+          }
+        },
+        {
+          "name": "epoch_replay_isolation_projection_restart",
+          "passed": false,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 13.8776,
+          "error": "AssertionError: ('submit', 500, {'error': 'INTERNAL'})",
+          "classification": "behavior_failure",
+          "service_log_tail": {
+            "serve-0.log": " HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\nTraceback (most recent call last):\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/c1-extreme-abkmjqya/仓库 空格/api.py\", line 31, in do_POST\n    result = service.submit_batch(path, body[\"tenant\"], body[\"request_id\"], body[\"events\"])\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/c1-extreme-abkmjqya/仓库 空格/service.py\", line 33, in submit_batch\n    connection.execute(\"BEGIN IMMEDIATE\")\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nsqlite3.OperationalError: database is locked\n127.0.0.1 - - [26/Sep/2026 11:35:06] \"POST /v1/batches HTTP/1.1\" 500 -\n"
+          }
+        }
+      ],
+      "valid": false
+    },
+    "stage_v2": {
+      "status": "capability_gap",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C1/repository/baseline/extreme.py",
+      "reason": "required stage-v2 module extreme.py is absent",
+      "checks": []
+    },
+    "checks_passed": 1,
+    "checks_total": 4,
+    "machine_pass_rate": 0.25,
+    "raw_score": 0,
+    "quality_score": 0,
+    "checks": [
+      {
+        "name": "concurrent_legacy_migration",
+        "passed": false,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 0.0844,
+        "error": "AssertionError: concurrent migration failed",
+        "classification": "behavior_failure"
+      },
+      {
+        "name": "migration_lost_ack_lease_steal_late_conflict",
+        "passed": true,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 1.1293,
+        "evidence": {
+          "lost_response_replayed": true,
+          "lease_stolen": true,
+          "old_worker_resumed": true,
+          "late_conflict_and_reverse": [
+            [
+              "R",
+              "p0",
+              "CONFLICT"
+            ],
+            [
+              "R",
+              "p1",
+              "REVERSED"
+            ],
+            [
+              "R",
+              "reverse-future",
+              "APPLIED"
+            ]
+          ],
+          "generation": 3
+        }
+      },
+      {
+        "name": "epoch_replay_isolation_projection_restart",
+        "passed": false,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 13.8776,
+        "error": "AssertionError: ('submit', 500, {'error': 'INTERNAL'})",
+        "classification": "behavior_failure",
+        "service_log_tail": {
+          "serve-0.log": " HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:04] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\n127.0.0.1 - - [26/Sep/2026 11:35:05] \"POST /v1/batches HTTP/1.1\" 202 -\nTraceback (most recent call last):\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/c1-extreme-abkmjqya/仓库 空格/api.py\", line 31, in do_POST\n    result = service.submit_batch(path, body[\"tenant\"], body[\"request_id\"], body[\"events\"])\n  File \"/private/var/folders/dx/q55b575n27j66lqxr00s3ncr0000gn/T/c1-extreme-abkmjqya/仓库 空格/service.py\", line 33, in submit_batch\n    connection.execute(\"BEGIN IMMEDIATE\")\n    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nsqlite3.OperationalError: database is locked\n127.0.0.1 - - [26/Sep/2026 11:35:06] \"POST /v1/batches HTTP/1.1\" 500 -\n"
+        }
+      },
+      {
+        "name": "stage_v2_capability",
+        "passed": false,
+        "kind": "capability_gap",
+        "critical": true,
+        "classification": "capability_gap",
+        "error": "required stage-v2 module extreme.py is absent"
+      }
+    ],
+    "score_status": "binary machine contract quality; independent host scores agent elapsed time and tokens"
+  }
+}

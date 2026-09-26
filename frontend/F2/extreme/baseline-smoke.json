@@ -1,0 +1,153 @@
+{
+  "task_id": "F2",
+  "profile": "extreme-v0.2",
+  "scale": "smoke",
+  "seed": 260926,
+  "dimensions": [
+    {
+      "name": "initial_records",
+      "legacy": 12,
+      "current": 36,
+      "ratio": 3.0,
+      "scope": "generated"
+    },
+    {
+      "name": "initial_records_acknowledged_by_adapter",
+      "legacy": 12,
+      "current": 36,
+      "ratio": 3.0,
+      "scope": "executed"
+    }
+  ],
+  "mechanisms": [
+    "causal field merge creates new global resource/dependency conflicts",
+    "conditional undo after causally newer remote edits",
+    "reverse causal replay and multi-actor convergence",
+    "offline write failure, refresh and schema migration"
+  ],
+  "baseline_result": {
+    "valid": false,
+    "passed": 5,
+    "total": 13,
+    "semantic_score": 38.4615,
+    "quality_score": null,
+    "human_visual_score": null,
+    "checks": [
+      {
+        "name": "all initial tasks are present",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "two locally valid changes create dependency and resource conflicts after merge",
+        "passed": false,
+        "detail": "response.issues: expected ['dependency:T00000:T00012', 'overlap:T00000:T00012'], received []"
+      },
+      {
+        "name": "same-field concurrent changes remain visible for resolution",
+        "passed": false,
+        "detail": "response.conflicts: expected ['T00001:title'], received []"
+      },
+      {
+        "name": "old local undo cannot overwrite a causally later resolution",
+        "passed": false,
+        "detail": "response.records.T00001.title: expected resolved intent, received task 1 seed 260926"
+      },
+      {
+        "name": "schema-1 recovery converts duration into end without changing the schedule",
+        "passed": false,
+        "detail": "response.schema: expected 2, received 1"
+      },
+      {
+        "name": "failed persistence leaves current intent visible and does not claim saved",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "refresh after successful persistence recovers both offline edits",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "causal replay converges for replica R00 regardless of arrival order",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "causal replay converges for replica R01 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-0-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R02 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-3-task-24"
+      },
+      {
+        "name": "complete actor R00 export covers the entire converged document",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "complete actor R01 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R02 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      }
+    ],
+    "failure": null,
+    "stderr_tail": "",
+    "implementation": "new weak semantic adapter; legacy HTML was not executed",
+    "scope": "JSONL semantic adapter only, not arbitrary HTML end-to-end certification"
+  },
+  "verification": {
+    "commands_generated": 28,
+    "responses_observed": 28,
+    "initial_records_generated": 36,
+    "event_deliveries_generated": 187,
+    "adapter_acknowledged": {
+      "records_loaded": 36,
+      "event_deliveries": 187,
+      "protocol_errors": 0
+    },
+    "command_counts": {
+      "config": 1,
+      "load": 1,
+      "observe": 10,
+      "deliver": 8,
+      "undo": 1,
+      "restore_document": 1,
+      "storage": 2,
+      "refresh": 1,
+      "export": 3
+    },
+    "elapsed_seconds": 0.039,
+    "witnesses": {
+      "passed": true,
+      "checks": {
+        "observed_remove_preserves_unseen_add_under_all_six_orders": true,
+        "merge_creates_new_global_conflict_from_locally_valid_edits": true,
+        "noncommuting_transport_has_convergent_causal_result": true,
+        "true_concurrency_retains_two_candidates": true,
+        "causal_resolution_wins_all_twenty_four_permutations": true,
+        "atomic_rejection_rolls_back_valid_prefix": true,
+        "identical_event_union_is_idempotent": true,
+        "restoration_generation_blocks_old_patches_in_both_orders": true
+      },
+      "scope": "bounded exhaustive witnesses (at most 8 events); not a full task implementation or optimum"
+    },
+    "full_browser_load_executed": false,
+    "pending": [
+      "native multi-window browser persistence and recovery",
+      "real download and resource usage",
+      "keyboard, IME, narrow viewport and assistive-technology workflows",
+      "independent visual and usability review"
+    ],
+    "trace_sha256": "dc63f3163d127bd56626023c8d20dbe86deeb3feefdf59f6026230f48688f15b"
+  },
+  "audit_passed": true
+}

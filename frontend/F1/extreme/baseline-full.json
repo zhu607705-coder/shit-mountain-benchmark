@@ -1,0 +1,129 @@
+{
+  "task_id": "F1",
+  "profile": "extreme-v0.2",
+  "scale": "full",
+  "seed": 260926,
+  "dimensions": [
+    {
+      "name": "initial_records",
+      "legacy": 10000,
+      "current": 100000,
+      "ratio": 10.0,
+      "scope": "generated"
+    },
+    {
+      "name": "initial_records_acknowledged_by_adapter",
+      "legacy": 10000,
+      "current": 100000,
+      "ratio": 10.0,
+      "scope": "executed"
+    }
+  ],
+  "mechanisms": [
+    "observed-remove acknowledgement under concurrent actors",
+    "identity alias chains coupled to selection, focus and URL history",
+    "per-record revisions under reordered partial streams",
+    "whole-result export integrity"
+  ],
+  "baseline_result": {
+    "valid": false,
+    "passed": 3,
+    "total": 8,
+    "semantic_score": 37.5,
+    "quality_score": null,
+    "human_visual_score": null,
+    "checks": [
+      {
+        "name": "full initial population is available",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "undoing one acknowledgement preserves an unseen concurrent acknowledgement",
+        "passed": false,
+        "detail": "response.acked: expected ['E0000000'], received []"
+      },
+      {
+        "name": "alias chain rewrites selection focus and acknowledgement identity",
+        "passed": false,
+        "detail": "response.selection: expected Z-canonical, received E0000000"
+      },
+      {
+        "name": "late source alias cannot split identity or replace a newer canonical version",
+        "passed": false,
+        "detail": "response.count: expected 100000, received 100001"
+      },
+      {
+        "name": "back navigation re-resolves old URL identity against the alias chain",
+        "passed": false,
+        "detail": "response.selection: expected Z-canonical, received E0000000"
+      },
+      {
+        "name": "forward navigation preserves the complete filter and target",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "stale retry cannot revive a deleted incident",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "complete export retains every unaffected incident",
+        "passed": false,
+        "detail": "export: expected 99999 rows, received 100000"
+      }
+    ],
+    "failure": null,
+    "stderr_tail": "",
+    "implementation": "new weak semantic adapter; legacy HTML was not executed",
+    "scope": "JSONL semantic adapter only, not arbitrary HTML end-to-end certification"
+  },
+  "verification": {
+    "commands_generated": 73,
+    "responses_observed": 73,
+    "initial_records_generated": 100000,
+    "event_deliveries_generated": 4,
+    "adapter_acknowledged": {
+      "records_loaded": 100000,
+      "event_deliveries": 4,
+      "protocol_errors": 0
+    },
+    "command_counts": {
+      "config": 1,
+      "load": 50,
+      "observe": 7,
+      "view": 2,
+      "ack": 3,
+      "alias": 2,
+      "stream": 1,
+      "ingest": 4,
+      "history": 2,
+      "export": 1
+    },
+    "elapsed_seconds": 0.787,
+    "witnesses": {
+      "passed": true,
+      "checks": {
+        "observed_remove_preserves_unseen_add_under_all_six_orders": true,
+        "merge_creates_new_global_conflict_from_locally_valid_edits": true,
+        "noncommuting_transport_has_convergent_causal_result": true,
+        "true_concurrency_retains_two_candidates": true,
+        "causal_resolution_wins_all_twenty_four_permutations": true,
+        "atomic_rejection_rolls_back_valid_prefix": true,
+        "identical_event_union_is_idempotent": true,
+        "restoration_generation_blocks_old_patches_in_both_orders": true
+      },
+      "scope": "bounded exhaustive witnesses (at most 8 events); not a full task implementation or optimum"
+    },
+    "full_browser_load_executed": false,
+    "pending": [
+      "native multi-window browser persistence and recovery",
+      "real download and resource usage",
+      "keyboard, IME, narrow viewport and assistive-technology workflows",
+      "independent visual and usability review"
+    ],
+    "trace_sha256": "3f173577aa72b7c683df126841dbe602575d46e836fb1e1e341fd8afb33ccb78"
+  },
+  "audit_passed": true
+}

@@ -171,9 +171,16 @@ class IntegrationTests(unittest.TestCase):
                     self.assertTrue(any(name.startswith('public_') for name in files))
         path = self.root / 'C1.zip'
         with contextlib.redirect_stdout(io.StringIO()):
-            cli.main(['export-task', '--task', 'C1', '--output', str(path)])
+            cli.main(['export-task', '--task', 'C1', '--profile', 'legacy', '--output', str(path)])
         self.assertIn('repository/buggy/engine.py', cli.source_files(path))
         self.assertIn('EXPORT_README.md', cli.source_files(path))
+
+    def test_extreme_export_is_public_and_handles_platform_temp_alias(self):
+        files=cli.task_files('R1',profile='extreme',scale='smoke')
+        self.assertIn('policy.py',files)
+        self.assertIn('public.json',files)
+        self.assertFalse(any(name in files for name in ('judge.py','baseline.py','oracle.py')))
+        self.assertNotIn('seed',json.loads(files['public.json']))
 
 
 if __name__ == '__main__':

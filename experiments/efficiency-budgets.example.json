@@ -1,0 +1,8 @@
+{
+  "total_ms": 1800000,
+  "ttft_ms": 60000,
+  "output_tokens": 64000,
+  "reasoning_tokens": 32000,
+  "max_penalty": 0.3,
+  "time_weight": 0.6
+}

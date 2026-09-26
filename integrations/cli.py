@@ -265,7 +265,16 @@ def save_bundle(files, target, metadata):
     return target
 
 
-def task_files(task):
+def task_files(task, profile='legacy', scale='full'):
+    if profile == 'extreme':
+        with tempfile.TemporaryDirectory(prefix='public-extreme-export-') as temp:
+            destination = Path(temp).resolve() / 'public'
+            process = subprocess.run([sys.executable, str(ROOT / TASKS[task] / 'extreme.py'),
+                                      '--task', task, '--scale', scale, '--seed', '260926', '--export', str(destination)],
+                                     cwd=ROOT, text=True, capture_output=True, timeout=180)
+            if process.returncode: raise ValueError('extreme public export failed: ' + process.stderr[-1000:])
+            return source_files(destination)
+    if profile != 'legacy': raise ValueError('unknown task profile')
     if task in POLICY_TASKS | SPECIALIST_CODE_TASKS | {'F3', 'F4'}:
         track = TASKS[task]
         folder = ROOT / track / task
@@ -287,7 +296,9 @@ def task_files(task):
                     files['starter/' + path.relative_to(folder / 'starter').as_posix()] = path.read_bytes()
         return files
     folder = ROOT / TASKS[task] / task
-    files = {'PROMPT.md': (folder / 'PROMPT.md').read_bytes()}
+    prompt = folder / 'LEGACY_PROMPT.md'
+    if not prompt.exists(): prompt = folder / 'PROMPT.md'
+    files = {'PROMPT.md': prompt.read_bytes()}
     if task.startswith('R'):
         files['input.json'] = (folder / 'input.json').read_bytes()
     elif task.startswith('F'):
@@ -338,6 +349,7 @@ def run_reasoning(task, config, submissions_dir):
     if judged.returncode:
         raise ValueError('local judge failed; submission retained for inspection')
     normalized = normalize_result(task, read_json(judged.stdout), config['alias'])
+    normalized['task_profile'] = 'legacy'
     write_json(target / 'result.json', normalized)
     return {'submission_dir': str(target), 'result': normalized}
 
@@ -349,6 +361,7 @@ def main(argv=None):
     c = commands.add_parser('import-config'); c.add_argument('--source', required=True); c.add_argument('--output', required=True)
     c = commands.add_parser('run-reasoning'); c.add_argument('--task', choices=['R1', 'R2'], required=True); c.add_argument('--config', required=True); c.add_argument('--submissions-dir', default=str(ROOT / 'submissions'))
     c = commands.add_parser('export-task'); c.add_argument('--task', choices=TASKS, required=True); c.add_argument('--output', required=True)
+    c.add_argument('--profile', choices=['extreme', 'legacy'], default='extreme'); c.add_argument('--scale', choices=['smoke', 'full'], default='full')
     c = commands.add_parser('import-submission'); c.add_argument('--task', choices=TASKS, required=True); c.add_argument('--alias', required=True); c.add_argument('--source', required=True); c.add_argument('--submissions-dir', default=str(ROOT / 'submissions'))
     c = commands.add_parser('normalize-result'); c.add_argument('--task', choices=TASKS, required=True); c.add_argument('--source', required=True); c.add_argument('--output', required=True); c.add_argument('--alias')
     args = parser.parse_args(argv)
@@ -365,8 +378,10 @@ def main(argv=None):
     elif args.command == 'run-reasoning':
         out = run_reasoning(args.task, load_config(args.config), args.submissions_dir)
     elif args.command == 'export-task':
-        files = task_files(args.task)
-        files['EXPORT_README.md'] = ('# Public task workspace\n\n'
+        files = task_files(args.task, args.profile, args.scale)
+        files['EXPORT_README.md'] = (f'# Public task workspace — {args.profile}\n\n'
+            'For extreme tasks, follow the exported PROMPT.md and README/PROTOCOL files. Model experiment answers are sealed before independent Codex grading. '
+            'The following legacy layout notes apply only when --profile legacy was selected.\n\n'
             'Start with PROMPT.md. C1/C2 preserve repository/buggy/ as the documented source repository; copy it to your working submission before editing. '
             'C3/C4 expose starter/, R3/R4 expose submission.py, and frontend tasks expose starter.html. '
             'Organizer judge.py/e2e_env_judge.py commands mentioned in the contract describe organizer acceptance and are not bundled here. '
@@ -375,7 +390,8 @@ def main(argv=None):
         target = Path(args.output); ensure_plain_parents(target)
         if target.exists():
             raise ValueError('export destination already exists')
-        metadata = {'task_id': args.task, 'source_type': 'public-task-export', 'created_at': stamp(), 'excluded': ['baseline', 'oracle', 'expected_outputs', 'judge_internals']}
+        metadata = {'task_id': args.task, 'task_profile': args.profile, 'scale': args.scale if args.profile == 'extreme' else None,
+                    'source_type': 'public-task-export', 'created_at': stamp(), 'excluded': ['baseline', 'oracle', 'expected_outputs', 'judge_internals']}
         if target.suffix.lower() == '.zip':
             target.parent.mkdir(parents=True, exist_ok=True)
             with zipfile.ZipFile(target, 'x', compression=zipfile.ZIP_DEFLATED) as z:

@@ -1,0 +1,293 @@
+{
+  "checked_at": "2026-09-26T04:50:40.512378+00:00",
+  "archive": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-contestant-v0.2.0-extreme.zip",
+  "profile": "extreme",
+  "scale": "full",
+  "bytes": 8141449,
+  "archive_sha256": "69574f9b3944067ea1fbad493f5435a06d4f8e37638af8e86a8c744611ea04a6",
+  "crc_valid": true,
+  "unique_paths": true,
+  "unsafe_paths": [],
+  "archive_members": 120,
+  "manifest_entries": 118,
+  "manifest_digest_errors": [],
+  "manifest_scope": "118 task files; root README.md and the manifest itself are separately hashed in this audit",
+  "all_content_sha256": {
+    "README.md": "b98c857e00859684bce62a7900377d4f681b6a8b4fafaab2885a79e8268fe3ec",
+    "tasks/R1/PROMPT.md": "bc34f1352547e41498b0d5c523c3ba7d3d9dbaffdd093309999fbf49efad1cd3",
+    "tasks/R1/constant_action.json": "4233dfb0451593e85b6b2fa7b79bf8310137426de80e7ddf2686d49db7a81e07",
+    "tasks/R1/policy.py": "dd1504a66e02fda287343a706eda4bf458302c3dcc91f73150617865ed5d4e40",
+    "tasks/R1/public.json": "6dd344efae12d57144ee309eb6a223843768bc10d672e387ea34a9df30b3dc24",
+    "tasks/R2/PROMPT.md": "ecbf7acd8425fbfc00e67d0d246491af7ef90f50b90bef1cdab0b71ffef63cf3",
+    "tasks/R2/constant_action.json": "3530c7ea326c7ead4acef6d2ae9937b6ebdb3d78a7136c533a6ffd3cdad6715d",
+    "tasks/R2/policy.py": "1de46eece811f9176a179e34a722e4bface7b0fc67eb232332f6c08c3c5728d1",
+    "tasks/R2/public.json": "bdb771097500a091660da639058c142e70b5479e561590fa088a7513f408f0b2",
+    "tasks/R3/PROMPT.md": "ff1f90d8928f6f631332060f75ac63c0c3dc25e4514022d4b1b144c5c4cd2d34",
+    "tasks/R3/constant_action.json": "8f5eaa96642378f8151d074200dd7381bb5d1693493b91aea6a2f093b5a35f04",
+    "tasks/R3/policy.py": "931b201a169f75084a933403aac78c29bc2783c7beaef9fdc911f15bb6dcc732",
+    "tasks/R3/public.json": "ccc306ee46dc6e8015a0c8da0b9c8fa1ec5626d159b8fe6e22fcf5cbe1a54939",
+    "tasks/R4/PROMPT.md": "4468e9057b897198716264d6a8c835fe41ff2f8cffd1079e8785830b0ce71630",
+    "tasks/R4/constant_action.json": "c56b51b14e326bed6450414ad0101473c6d886415b66579346d1f9d0c099a752",
+    "tasks/R4/policy.py": "c95acc53297582eb54cdc59d2ea9bf2d38c07c53def07e994401a174be5ead89",
+    "tasks/R4/public.json": "316bde4d120347a8e152ee8564c62b7be79551668cfca44be47c9c81a9f6836a",
+    "tasks/C1/COMPATIBILITY_CONTRACT.md": "6b8218f4da2c01d4677aa410747036a1fb9f735db2c84f34db06f9c96d6c30b4",
+    "tasks/C1/PROMPT.md": "e1fdc4aa3df35dd704181ae5f3a0545fdfbf4fd1dd0c4b0e0efb33b3047d8ac2",
+    "tasks/C1/README.md": "74bd52f07eb5b8d04cb7135fb238751665c8d4bb96948f93884f42a78c3696ea",
+    "tasks/C1/STAGE_PROTOCOL.md": "bee8c71adafac49f0baa3d606149aafa3d11617e3f44896334edf92ea6188c2a",
+    "tasks/C1/manifest.json": "3651d5b317f49bbcfd79886d1fff6ace6488003158f74db8c9119fcf8097ea26",
+    "tasks/C1/scenario.json": "3382823814a99f88065f78002c2cc64df329372e1d4ae51b85a57192b613de93",
+    "tasks/C1/smoke.py": "9ff1ec691ce92c97ef293e76dc3ef2747c6a33c1077fafe0e6af6d081b039cb5",
+    "tasks/C1/submission/INCIDENT.md": "262eedd53e4b12ae56d36bf4443fc18eab2abf5f519c3a426b9ec0d447947efe",
+    "tasks/C1/submission/README.md": "c3ba5f688d8ce892aa99bf89eae7c891bc6ec727b0605651bce7a4add7c47ca7",
+    "tasks/C1/submission/api.py": "23aa181f8e6184984f57bb33c48d1d968628a039982c77fb2ae78ac78bc7742b",
+    "tasks/C1/submission/config.py": "e385ff761a83f01be8eb7c7c17726727eade4f46249d299a0736e9a8a0dd387d",
+    "tasks/C1/submission/db.py": "ea6265db428959b4c8f9f0aa50cb6e62887eee5961b45d53223f389ff1c94061",
+    "tasks/C1/submission/engine.py": "c83c7578d38ba5a3876298fe94566223e79eaf64c18c07a7bc12bd9103b64b18",
+    "tasks/C1/submission/extreme.py": "ff1142128d660c3bd312986891fcbd6cd96f207eec9bc4aa1c6c72473f1efb72",
+    "tasks/C1/submission/manage.py": "f10db63c749708a6632755708ebba183875877bb8c37fa39d4114537416ebbe8",
+    "tasks/C1/submission/projection.py": "c7409baea8c41489390d579509951af218c3f520964da6b650f1b22e529b0c22",
+    "tasks/C1/submission/service.py": "a69691d047d6dfc4bd3abd3fd0701d7a0cfb57f5ba506afd884a7e26bb182f7f",
+    "tasks/C1/submission/storage.py": "c559c6a4fbd7ec11b7486d9814f400e16a5732a8981f8dad6af314d59c5ba831",
+    "tasks/C1/submission/test_submission.py": "176cbb7b91a57112fc02814081ee616c23cb9e9ead19a699c8c9128b4df2284a",
+    "tasks/C1/submission/worker.py": "5135f48fb574e827b3c973c2d506d715f2b31b550779adfc6deb28a86996757b",
+    "tasks/C2/COMPATIBILITY_CONTRACT.md": "1a1501985da2224c989e50e039d7d59687fa5ea661c0aef70697a1b3e517fbec",
+    "tasks/C2/PROMPT.md": "ac5bfbbfea680880ec25440db615bacff796349ca49d2b9fe5d3d9a5bd02bb1a",
+    "tasks/C2/README.md": "da1ed5d02c080f81534aebe8b85fd2e112117ad585b7f3d9a05a1dbea155f2ed",
+    "tasks/C2/STAGE_PROTOCOL.md": "b4af09e123f3ab8915f28c264489b597f8bea931e07dc3a7040659c2a77e7316",
+    "tasks/C2/manifest.json": "47fb2110d35091b03c0af27768901dd20b40dee4b9d4699884d918099664fc83",
+    "tasks/C2/scenario.json": "402b812f18236af702370cc8727d63902f35f1fe66f9433e79c17741015df68f",
+    "tasks/C2/smoke.py": "0e0fc6e4dffffa6238d35f44e4da76ad11e127719ba1f43b87efeb810044e200",
+    "tasks/C2/submission/README.md": "adcd4bb40496cd4e245b50e94e9c10995f42b72f0a820bbe002211cdc9cd145b",
+    "tasks/C2/submission/app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tasks/C2/submission/app/api.py": "d180cae88fc60709bf459ec9c20b82e9fb07fd28d14f48429b8b147943136285",
+    "tasks/C2/submission/app/cli.py": "4371b342a3f6c0b1a23841a8fd843dfc1c253b393cc5737638da85b252e702f5",
+    "tasks/C2/submission/app/config.py": "62530889acfee7f32816835a02ce713d656b19fa164bde66027f057f5b241acf",
+    "tasks/C2/submission/app/core/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tasks/C2/submission/app/core/cache.py": "deb4605b9dea46bbe69311a8e682e5e7b45cc6ac8b750c79526ac65dd08461a5",
+    "tasks/C2/submission/app/core/engine.py": "fb1b22531a15e3f4dd2ea9af0f03739a0da7d5d9346072a91c9a1fbaaed730f1",
+    "tasks/C2/submission/app/core/operations.py": "96f2737848137d55a87a26de6d5b48e7e65d38aff8a991cafeb87ea23efc07b3",
+    "tasks/C2/submission/app/db.py": "957bdc97084fdbe034c62b000f616962886162181620cb472ec20449ac0dac91",
+    "tasks/C2/submission/app/runner.py": "ba38ac7a6aabbc9a4efd11381e6a23330879f09326cccf637518626696a47656",
+    "tasks/C2/submission/app/service.py": "906e4cfe3f4ce222fce7e46179a7e26828f4f6da529b0d5c971e10701bd768e6",
+    "tasks/C2/submission/cli.py": "9745b905a58d572a4dd478a6559b3663a41a281edff02529bf0862983d6c37f9",
+    "tasks/C2/submission/engine.py": "0aa51a57c5ad0b3f99f6b5c330b1ee42a86639603a820c538a31c3fea2c30464",
+    "tasks/C2/submission/example_config.json": "5659bbc9f0c0808aeaf0530f51ad35f5cefc1c985980cf841d18e3eebea206b8",
+    "tasks/C2/submission/extreme.py": "4fd7be21c2f0515d17f2d63e5d2607252c66eb7cfaf98cefd19561c55d0c4148",
+    "tasks/C3/COMPATIBILITY_CONTRACT.md": "c622e8d1c10b83361ea888ef267232aa5b59b8a3370a94036f684d9fc660918f",
+    "tasks/C3/PROMPT.md": "664e7c7ee81400b841e817a4154dc9f7e07c7b21771dfa29657b98e7ce95d1e5",
+    "tasks/C3/README.md": "5e985b9c23590ea82e8ff6eca4e39f9e62a52e2d74485c2cfb68b0b241f744e8",
+    "tasks/C3/STAGE_PROTOCOL.md": "8a3cd40400b33fe936a57b80aa7d3b07a7622d819f172c212741f91535351ba4",
+    "tasks/C3/manifest.json": "8d928149adea2c43737aa4b9b331ed395c01e7c5136bef6f124b594cfab7d25f",
+    "tasks/C3/scenario.json": "a8929d763518a53eb3d8ac90279ffa4a33f5e15130018d0d2c5132d018481e26",
+    "tasks/C3/smoke.py": "f8c44b6efb3297e22e56f74053930a98938acab63a2775d2cc1a8e4d163ed008",
+    "tasks/C3/submission/__init__.py": "fe28c9b73fe0fcad8f87de28bfe9f2a7c8693d8976fd98849ada8ee7c7288c69",
+    "tasks/C3/submission/codec.py": "43e4d88991d646a9d11bdb5c41389d458b260ebf1218bb06228a16d71a322a5f",
+    "tasks/C3/submission/extreme.py": "98ce8acd6d105a9a11c7ec0c729be844111f8781d4edbddeac34c22300c5f5ce",
+    "tasks/C3/submission/snapshot.py": "b58580c1889fc552add234ba4a61bb6a8774d58981b382336b618e094d02bb08",
+    "tasks/C3/submission/store.py": "59713f0a7308ae472990af6132fcef2d03306fe7079bc850c429fcf3a2ff936b",
+    "tasks/C4/COMPATIBILITY_CONTRACT.md": "f36e6ea4d341c100012dfada01f5bd9493199f2ec6ac574b63d2ae20bc5368a3",
+    "tasks/C4/PROMPT.md": "37381336870a3c81ea2753929c34ddcdb2c04a1a9e54db587cca42f714679902",
+    "tasks/C4/README.md": "c219a933346742cac49b0715041c73f0c491a2319daf4b13ec1c5e807e08c470",
+    "tasks/C4/STAGE_PROTOCOL.md": "1f2286529b27f16e18257e99c3ac9f8432957040ba24ff303f8030697b9b11ef",
+    "tasks/C4/manifest.json": "c16d722775097ce9488e7fde7c452098ac51ae511121d953e6dbc24c26731cc7",
+    "tasks/C4/scenario.json": "c67e06a4aa0c278e2e1b6c5b77355463842f7f071ec4209db2c56066b47d0bd9",
+    "tasks/C4/smoke.py": "7e93e42dc8753f56ab2a8c583e5982e0df83a0c54908cb65b35c48f5d267cb75",
+    "tasks/C4/submission/__init__.py": "08d925713e6a08102dd2688b3e5061a242e44c49d4f5cdb509429a4052fb9af0",
+    "tasks/C4/submission/engine.py": "12659814a275505c689898ec1db817a7cb70ce82ded458abb7db9590bcaad14f",
+    "tasks/C4/submission/extreme.py": "5a78fb62e301eb708bc1fec1720c6ab7c80252c1c2389308fdd725419bcee0dc",
+    "tasks/C4/submission/keying.py": "cd1d98da5d171efa36fffb9021404c8b90573ae6168e062140bad4188de24be1",
+    "tasks/F1/PROMPT.md": "4aca1d7c772367f55e2a7b3ecb5622b26d0a88cb04b99ed08dd65934a6c5c129",
+    "tasks/F1/PROTOCOL.md": "75aa08e23cf3de59b72c568cfc5ebcf5c8fd9e93d1ac9b3bf4039b2b8cf03d81",
+    "tasks/F1/fixture.json": "f89144c2b831e65721c40398c7eec2741b939ce49cc0cadfd82a668e7e428d4b",
+    "tasks/F1/generate_fixture.py": "11fc91c13f5ae9f9dd2739bbe129403d779ae1ab860c23e9d37f85255a6f443e",
+    "tasks/F1/sample.jsonl": "dcc65f2e06b0d1b085ed7b7cffd95432c35b6c630651e820d107cd482286d286",
+    "tasks/F1/starter.html": "dab2f064bf8a60ad1e0dbca3446b13328ebc64a723a04dd69805ec1c2fb5434b",
+    "tasks/F1/starter_adapter.py": "b74ff389d7fcca14c081fd7fe38338dcbee3c82875115ee147d6790ea2c20ead",
+    "tasks/F1/trace-viewer.html": "08a5de87dfff3a7647771990c242165553efd0bb0a0b606547a02f37878abee6",
+    "tasks/F1/trace.jsonl.gz": "7c7a1dab15855fb74b1fd34b7367c8fa9f89a404ec22c2e453b0f59774f164f9",
+    "tasks/F2/PROMPT.md": "8552b8f7ccc191419c6ba240dd59dcd5f6b809d6ff5816e8491b0fd380de5c6f",
+    "tasks/F2/PROTOCOL.md": "75aa08e23cf3de59b72c568cfc5ebcf5c8fd9e93d1ac9b3bf4039b2b8cf03d81",
+    "tasks/F2/fixture.json": "99b8736f6427547791ff98cec8b9377ddf2a0ea31e2b337ad8d1b0cf55a62aff",
+    "tasks/F2/generate_fixture.py": "11fc91c13f5ae9f9dd2739bbe129403d779ae1ab860c23e9d37f85255a6f443e",
+    "tasks/F2/sample.jsonl": "dc63f3163d127bd56626023c8d20dbe86deeb3feefdf59f6026230f48688f15b",
+    "tasks/F2/starter.html": "e8132d4e22fe960ab517aa58c1331106cdd9ec27a785b1684f42171511715a8e",
+    "tasks/F2/starter_adapter.py": "b74ff389d7fcca14c081fd7fe38338dcbee3c82875115ee147d6790ea2c20ead",
+    "tasks/F2/trace-viewer.html": "08a5de87dfff3a7647771990c242165553efd0bb0a0b606547a02f37878abee6",
+    "tasks/F2/trace.jsonl.gz": "1599701584d2e5572d6b31a8d4a1e2f40f66dd235d0a7ea0674ff765277492e4",
+    "tasks/F3/PROMPT.md": "abb0ac5465feeb4e442a52527b95d5eeaeb45461bae3940668f9f9e5b57b34bb",
+    "tasks/F3/PROTOCOL.md": "75aa08e23cf3de59b72c568cfc5ebcf5c8fd9e93d1ac9b3bf4039b2b8cf03d81",
+    "tasks/F3/fixture.json": "0e122decebba59ccd2922844093185400d660f25481b05cc43b351f8253bf49a",
+    "tasks/F3/generate_fixture.py": "11fc91c13f5ae9f9dd2739bbe129403d779ae1ab860c23e9d37f85255a6f443e",
+    "tasks/F3/sample.jsonl": "b8858d8a35ef8eb601839b53bd360bea691cc2b54e5843dbcca48648cf430543",
+    "tasks/F3/starter.html": "6d59052bf7d6f72261be1254ec735b9c0067c1c5aa4b34b8844e9f61fdafdee7",
+    "tasks/F3/starter_adapter.py": "b74ff389d7fcca14c081fd7fe38338dcbee3c82875115ee147d6790ea2c20ead",
+    "tasks/F3/trace-viewer.html": "08a5de87dfff3a7647771990c242165553efd0bb0a0b606547a02f37878abee6",
+    "tasks/F3/trace.jsonl.gz": "2c7ea80e3cc3312ca8d05d8f4caa2fbd0d8f7265d70b86f446ac0b3e725b5b84",
+    "tasks/F4/PROMPT.md": "a1c09d6f77f180a7cf83f6bf39d670b5bb7e891f51cd62847420ae06876859d1",
+    "tasks/F4/PROTOCOL.md": "75aa08e23cf3de59b72c568cfc5ebcf5c8fd9e93d1ac9b3bf4039b2b8cf03d81",
+    "tasks/F4/fixture.json": "76ff50ff595fe4a092b00deaabbfc849aaed4c5ae5de3ecf17bc45c7ef9d2478",
+    "tasks/F4/generate_fixture.py": "11fc91c13f5ae9f9dd2739bbe129403d779ae1ab860c23e9d37f85255a6f443e",
+    "tasks/F4/sample.jsonl": "8dc0b2a680a3644b1fbf4d850b8974709868889a9fce7152280c7136adc00b4e",
+    "tasks/F4/starter.html": "6ca1bde7fb3e3bc9ef2108e4cdaf64a48103bd93a78d27e481131d7913922ea4",
+    "tasks/F4/starter_adapter.py": "b74ff389d7fcca14c081fd7fe38338dcbee3c82875115ee147d6790ea2c20ead",
+    "tasks/F4/trace-viewer.html": "08a5de87dfff3a7647771990c242165553efd0bb0a0b606547a02f37878abee6",
+    "tasks/F4/trace.jsonl.gz": "75db2238493a3ee9c7a222d358e5f8d0149ce0c4fb9e1dc8d2adb9d140b9ebf3",
+    "MANIFEST.sha256.json": "4c84f4e42cc12c6636ec9fb535d0f3e40ded8699dd469ce569d8f3d4ba88aadb"
+  },
+  "expected_tasks": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ],
+  "actual_tasks": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ],
+  "task_completeness": {
+    "C1": {
+      "files": 20,
+      "missing": []
+    },
+    "C2": {
+      "files": 23,
+      "missing": []
+    },
+    "C3": {
+      "files": 12,
+      "missing": []
+    },
+    "C4": {
+      "files": 11,
+      "missing": []
+    },
+    "F1": {
+      "files": 9,
+      "missing": []
+    },
+    "F2": {
+      "files": 9,
+      "missing": []
+    },
+    "F3": {
+      "files": 9,
+      "missing": []
+    },
+    "F4": {
+      "files": 9,
+      "missing": []
+    },
+    "R1": {
+      "files": 4,
+      "missing": []
+    },
+    "R2": {
+      "files": 4,
+      "missing": []
+    },
+    "R3": {
+      "files": 4,
+      "missing": []
+    },
+    "R4": {
+      "files": 4,
+      "missing": []
+    }
+  },
+  "forbidden_member_paths": [],
+  "python_syntax_errors": [],
+  "private_seed_check": {
+    "organizer_and_arena_sources": 6,
+    "known_distinct_seed_count": 111,
+    "matched_members": [],
+    "seed_values_disclosed": false
+  },
+  "public_demonstration_seed": 260926,
+  "trace_inputs": {
+    "tasks/F1/trace.jsonl.gz": {
+      "commands": 73,
+      "loaded_records": 100000,
+      "delivered_events": 4,
+      "contains_only_input_commands": true
+    },
+    "tasks/F2/trace.jsonl.gz": {
+      "commands": 179,
+      "loaded_records": 1200,
+      "delivered_events": 117607,
+      "contains_only_input_commands": true
+    },
+    "tasks/F3/trace.jsonl.gz": {
+      "commands": 316,
+      "loaded_records": 500000,
+      "delivered_events": 100004,
+      "contains_only_input_commands": true
+    },
+    "tasks/F4/trace.jsonl.gz": {
+      "commands": 178,
+      "loaded_records": 1200,
+      "delivered_events": 117614,
+      "contains_only_input_commands": true
+    }
+  },
+  "public_model_top_level_keys": {
+    "tasks/R1/public.json": [
+      "action",
+      "horizon",
+      "job_arrivals",
+      "jobs_per_episode",
+      "task",
+      "weather"
+    ],
+    "tasks/R2/public.json": [
+      "model",
+      "private",
+      "task",
+      "worlds"
+    ],
+    "tasks/R3/public.json": [
+      "episodes",
+      "model",
+      "private",
+      "task"
+    ],
+    "tasks/R4/public.json": [
+      "action",
+      "horizon",
+      "jobs_per_episode",
+      "machines",
+      "private",
+      "task"
+    ]
+  },
+  "reference_solution_scope": {
+    "corrected_legacy_baseline_files_present": false,
+    "organizer_evaluator_or_expected_output_files_present": false,
+    "weak_starter_adapter_present": true,
+    "note": "F starter_adapter.py is the explicitly incomplete weak semantic starter, not a corrected full reference solution. R constant_action is an empty-action starter."
+  },
+  "package_scope_notes": [
+    "Static 12-task extreme/full contestant development package, not the organizer GUI or a frozen Arena match. Six-tier scope, three prompt segments and private cases are assigned by Arena/experiment host.",
+    "R policies and F semantic adapters are standalone input/output entrypoints. C submissions include original service/repository code plus the required stage extension.",
+    "C smoke.py and F trace expansion are public local starting commands. Organizer judges are intentionally not bundled.",
+    "Root README is not in the archive task manifest; its SHA-256 is retained in all_content_sha256 and covered by the whole archive digest."
+  ],
+  "passed": true
+}

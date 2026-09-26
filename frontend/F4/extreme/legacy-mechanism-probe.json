@@ -1,0 +1,13 @@
+{
+  "task_id": "F4",
+  "implementation": "actual frontend/F4/baseline.html JavaScript",
+  "environment": "Node VM with DOM/storage doubles, not native browser",
+  "scenario": "B observes A before making a same-field successor edit",
+  "observed_a_before_edit": "A first",
+  "final_value": "B after observing A",
+  "legacy_history_warning": true,
+  "new_contract_requires_exact_causal_concurrency": true,
+  "concurrency_in_this_history": false,
+  "gap_confirmed": true,
+  "interpretation": "Legacy history warning is valid under v0.1 but cannot serve as the new exact concurrency indicator. This is not a full v2 baseline score."
+}

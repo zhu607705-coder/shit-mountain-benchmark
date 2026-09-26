@@ -1,0 +1,136 @@
+{
+  "status": "passed",
+  "python": "3.14.4",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "ci": "false",
+  "checks": [
+    {
+      "name": "python-syntax",
+      "passed": true
+    },
+    {
+      "name": "score-normalization",
+      "passed": true,
+      "seconds": 0.4259
+    },
+    {
+      "name": "R1-judge",
+      "passed": true,
+      "seconds": 0.0541
+    },
+    {
+      "name": "R2-judge",
+      "passed": true,
+      "seconds": 0.0457
+    },
+    {
+      "name": "policy-boundaries",
+      "passed": true,
+      "seconds": 0.3926
+    },
+    {
+      "name": "C1-oracle",
+      "passed": true,
+      "seconds": 0.3509
+    },
+    {
+      "name": "C2-oracle",
+      "passed": true,
+      "seconds": 0.0572
+    },
+    {
+      "name": "C2-local-service-portability",
+      "passed": true,
+      "seconds": 1.1593
+    },
+    {
+      "name": "C3-recovery-regressions",
+      "passed": true,
+      "seconds": 0.0681
+    },
+    {
+      "name": "C4-cache-regressions",
+      "passed": true,
+      "seconds": 0.0518
+    },
+    {
+      "name": "frontend-syntax-and-logic",
+      "passed": true,
+      "seconds": 0.215
+    },
+    {
+      "name": "F3-stream-state",
+      "passed": true,
+      "seconds": 0.048
+    },
+    {
+      "name": "F4-multiwindow-state",
+      "passed": true,
+      "seconds": 0.0331
+    },
+    {
+      "name": "API-and-import-adapters",
+      "passed": true,
+      "seconds": 3.3104
+    },
+    {
+      "name": "README-experiment-sealing-and-grading",
+      "passed": true,
+      "seconds": 0.5026
+    },
+    {
+      "name": "arena-draw-scope-sealing-and-grading",
+      "passed": true,
+      "seconds": 1.3977
+    },
+    {
+      "name": "legacy-v01-baselines-and-real-services",
+      "passed": true,
+      "seconds": 14.3931
+    },
+    {
+      "name": "extreme-reasoning-witnesses",
+      "passed": true,
+      "seconds": 0.36
+    },
+    {
+      "name": "extreme-code-fault-interactions",
+      "passed": true,
+      "seconds": 1.5741
+    },
+    {
+      "name": "extreme-frontend-causal-witnesses",
+      "passed": true,
+      "seconds": 0.3422
+    },
+    {
+      "name": "extreme-twelve-task-smoke",
+      "passed": true,
+      "seconds": 6.3708
+    },
+    {
+      "name": "C1-broken-control-rejected",
+      "passed": true
+    },
+    {
+      "name": "C2-broken-control-rejected",
+      "passed": true
+    },
+    {
+      "name": "C3-broken-control-rejected",
+      "passed": true
+    },
+    {
+      "name": "C4-broken-control-rejected",
+      "passed": true
+    }
+  ],
+  "limits": "No live model API call, no browser UI automation in this command, no independent visual judging.",
+  "supplemental_checks": [
+    {
+      "name": "arena-browser-script-syntax",
+      "command": "node --check arena/web/app.js",
+      "passed": true
+    }
+  ]
+}

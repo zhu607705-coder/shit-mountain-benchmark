@@ -1,0 +1,186 @@
+{
+  "contract": "stage-v2",
+  "required": true,
+  "candidate": {
+    "status": "capability_gap",
+    "valid": false,
+    "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C3/extreme.py",
+    "reason": "required stage-v2 module extreme.py is absent",
+    "checks": []
+  },
+  "faulty_starter": {
+    "status": "behavior_failure",
+    "valid": false,
+    "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C3/extreme/starter.py",
+    "checks": [
+      {
+        "name": "compaction_only",
+        "index": 0,
+        "passed": true,
+        "evidence": {
+          "expected": {
+            "stable": "260926",
+            "deleted": "old"
+          },
+          "first_version": 1,
+          "second_version": null,
+          "snapshot_frozen": true
+        }
+      },
+      {
+        "name": "migration_only",
+        "index": 1,
+        "passed": true,
+        "evidence": {
+          "expected": {
+            "stable": "260926",
+            "new": "260926-new"
+          },
+          "first_version": 1,
+          "second_version": 2,
+          "snapshot_frozen": true
+        }
+      },
+      {
+        "name": "composition",
+        "index": 2,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260926\", \"new\": \"260926-new\"}, \"actual\": {\"stable\": \"260926\", \"deleted\": \"old\"}}"
+      }
+    ],
+    "controls_passed": true,
+    "composition_passed": false
+  },
+  "tiny_feasible_witness": {
+    "feasible": true,
+    "kind": "finite_trace_witness_not_complete_solver",
+    "execution": "independent finite-state arithmetic, not a complete I/O implementation",
+    "trace": {
+      "old_snapshot": {
+        "a": 1,
+        "deleted": 3
+      },
+      "new_acknowledged": {
+        "a": 1,
+        "b": 2
+      },
+      "after_old_publish": {
+        "a": 1,
+        "b": 2
+      },
+      "legal_strategy": "compare captured writer epoch and content version before publishing; reject obsolete token"
+    },
+    "negative_perturbation_rejected": true
+  },
+  "audit_passed": true,
+  "difficulty_evidence": "same runnable starter passes isolated controls but fails their composition; not an impossibility proof",
+  "expanded_faulty_starter": {
+    "status": "behavior_failure",
+    "valid": false,
+    "path": "code/C3/extreme/starter.py",
+    "checks": [
+      {
+        "name": "compaction_only",
+        "index": 0,
+        "passed": true,
+        "evidence": {
+          "expected": {
+            "stable": "260926",
+            "deleted": "old"
+          },
+          "first_version": 1,
+          "second_version": null,
+          "snapshot_frozen": true
+        }
+      },
+      {
+        "name": "migration_only",
+        "index": 1,
+        "passed": true,
+        "evidence": {
+          "expected": {
+            "stable": "260926",
+            "new": "260926-new"
+          },
+          "first_version": 1,
+          "second_version": 2,
+          "snapshot_frozen": true
+        }
+      },
+      {
+        "name": "composition",
+        "index": 2,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260926\", \"new\": \"260926-new\"}, \"actual\": {\"stable\": \"260926\", \"deleted\": \"old\"}}"
+      },
+      {
+        "name": "composition",
+        "index": 3,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260927\", \"new\": \"260927-new\"}, \"actual\": {\"stable\": \"260927\", \"deleted\": \"old\"}}"
+      },
+      {
+        "name": "composition",
+        "index": 4,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260928\", \"new\": \"260928-new\"}, \"actual\": {\"stable\": \"260928\", \"deleted\": \"old\"}}"
+      },
+      {
+        "name": "composition",
+        "index": 5,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260929\", \"new\": \"260929-new\"}, \"actual\": {\"stable\": \"260929\", \"deleted\": \"old\"}}"
+      },
+      {
+        "name": "composition",
+        "index": 6,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260930\", \"new\": \"260930-new\"}, \"actual\": {\"stable\": \"260930\", \"deleted\": \"old\"}}"
+      },
+      {
+        "name": "composition",
+        "index": 7,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260931\", \"new\": \"260931-new\"}, \"actual\": {\"stable\": \"260931\", \"deleted\": \"old\"}}"
+      },
+      {
+        "name": "composition",
+        "index": 8,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260932\", \"new\": \"260932-new\"}, \"actual\": {\"stable\": \"260932\", \"deleted\": \"old\"}}"
+      },
+      {
+        "name": "composition",
+        "index": 9,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260933\", \"new\": \"260933-new\"}, \"actual\": {\"stable\": \"260933\", \"deleted\": \"old\"}}"
+      },
+      {
+        "name": "composition",
+        "index": 10,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260934\", \"new\": \"260934-new\"}, \"actual\": {\"stable\": \"260934\", \"deleted\": \"old\"}}"
+      },
+      {
+        "name": "composition",
+        "index": 11,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260935\", \"new\": \"260935-new\"}, \"actual\": {\"stable\": \"260935\", \"deleted\": \"old\"}}"
+      },
+      {
+        "name": "composition",
+        "index": 12,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260936\", \"new\": \"260936-new\"}, \"actual\": {\"stable\": \"260936\", \"deleted\": \"old\"}}"
+      },
+      {
+        "name": "composition",
+        "index": 13,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260937\", \"new\": \"260937-new\"}, \"actual\": {\"stable\": \"260937\", \"deleted\": \"old\"}}"
+      }
+    ],
+    "controls_passed": true,
+    "composition_passed": false
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "contract": "stage-v2",
+  "required": true,
+  "candidate": {
+    "status": "capability_gap",
+    "valid": false,
+    "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/baseline/extreme.py",
+    "reason": "required stage-v2 module extreme.py is absent",
+    "checks": []
+  },
+  "faulty_starter": {
+    "status": "behavior_failure",
+    "valid": false,
+    "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/extreme/starter.py",
+    "checks": [
+      {
+        "name": "cancel_only",
+        "index": 0,
+        "passed": true,
+        "evidence": {
+          "old_value": 58,
+          "expected": 58,
+          "retry": {
+            "status": "done",
+            "value": 58,
+            "revision": 0
+          }
+        }
+      },
+      {
+        "name": "revision_only",
+        "index": 1,
+        "passed": true,
+        "evidence": {
+          "old_value": 58,
+          "expected": 147,
+          "retry": {
+            "status": "done",
+            "value": 147,
+            "revision": 1
+          }
+        }
+      },
+      {
+        "name": "composition",
+        "index": 2,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 147, \"actual\": 58}"
+      }
+    ],
+    "controls_passed": true,
+    "composition_passed": false
+  },
+  "tiny_feasible_witness": {
+    "feasible": true,
+    "kind": "finite_trace_witness_not_complete_solver",
+    "execution": "independent finite-state arithmetic, not a complete I/O implementation",
+    "trace": {
+      "old_graph_value": 10,
+      "new_graph_value": 75,
+      "cancelled_value": null,
+      "legal_strategy": "recovery artifact includes immutable graph revision; discard or recompute mismatches"
+    },
+    "negative_perturbation_rejected": true
+  },
+  "audit_passed": true,
+  "difficulty_evidence": "same runnable starter passes isolated controls but fails their composition; not an impossibility proof",
+  "expanded_faulty_starter": {
+    "status": "behavior_failure",
+    "valid": false,
+    "path": "code/C2/extreme/starter.py",
+    "checks": [
+      {
+        "name": "cancel_only",
+        "index": 0,
+        "passed": true,
+        "evidence": {
+          "old_value": 58,
+          "expected": 58,
+          "retry": {
+            "status": "done",
+            "value": 58,
+            "revision": 0
+          }
+        }
+      },
+      {
+        "name": "revision_only",
+        "index": 1,
+        "passed": true,
+        "evidence": {
+          "old_value": 58,
+          "expected": 147,
+          "retry": {
+            "status": "done",
+            "value": 147,
+            "revision": 1
+          }
+        }
+      },
+      {
+        "name": "composition",
+        "index": 2,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 147, \"actual\": 58}"
+      },
+      {
+        "name": "composition",
+        "index": 3,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 96, \"actual\": 24}"
+      },
+      {
+        "name": "composition",
+        "index": 4,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 102, \"actual\": 28}"
+      },
+      {
+        "name": "composition",
+        "index": 5,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 108, \"actual\": 32}"
+      },
+      {
+        "name": "composition",
+        "index": 6,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 114, \"actual\": 36}"
+      },
+      {
+        "name": "composition",
+        "index": 7,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 87, \"actual\": 18}"
+      },
+      {
+        "name": "composition",
+        "index": 8,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 93, \"actual\": 22}"
+      },
+      {
+        "name": "composition",
+        "index": 9,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 99, \"actual\": 26}"
+      },
+      {
+        "name": "composition",
+        "index": 10,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 105, \"actual\": 30}"
+      },
+      {
+        "name": "composition",
+        "index": 11,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 111, \"actual\": 34}"
+      },
+      {
+        "name": "composition",
+        "index": 12,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 117, \"actual\": 38}"
+      },
+      {
+        "name": "composition",
+        "index": 13,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 123, \"actual\": 42}"
+      }
+    ],
+    "controls_passed": true,
+    "composition_passed": false
+  }
+}

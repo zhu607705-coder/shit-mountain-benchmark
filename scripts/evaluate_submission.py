@@ -19,12 +19,27 @@ def main():
     parser.add_argument("--task", required=True, choices=tuple(f"{t}{n}" for t in "RCF" for n in range(1, 5)))
     parser.add_argument("--submission", required=True, type=Path)
     parser.add_argument("--model", required=True)
+    parser.add_argument("--profile", choices=("extreme", "legacy"), default="extreme")
+    parser.add_argument("--scale", choices=("smoke", "full"), default="smoke")
+    parser.add_argument("--seed", type=int, default=260926)
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     path = args.submission.resolve(strict=True)
     task = args.task
     result = {"task_id": task, "model": args.model, "submission": str(path)}
-    if task in ("R1", "R2"):
+    if args.profile == 'extreme':
+        import tempfile
+        with tempfile.TemporaryDirectory(prefix='evaluate-extreme-') as directory:
+            proc = subprocess.run([sys.executable, str(ROOT / 'scripts/extreme.py'), '--task', task,
+                                   '--scale', args.scale, '--seed', str(args.seed), '--submission', str(path),
+                                   '--output', directory, '--timeout', '900'], capture_output=True, text=True, timeout=930, check=True)
+            details = json.loads((Path(directory) / (task + '.json')).read_text())
+        candidate = details['candidate_result']
+        score = candidate.get('semantic_score') if task.startswith('F') else candidate.get('raw_score')
+        result.update(valid=candidate.get('valid'), raw_score=0 if candidate.get('valid') is False else score,
+                      task_profile='extreme', scale=args.scale, quality_scope='semantic_only' if task.startswith('F') else 'task_quality',
+                      visual_review='pending' if task.startswith('F') else 'not_applicable', details=details)
+    elif task in ("R1", "R2"):
         details = judge(ROOT / "reasoning" / task, "judge.py", ["--input", "input.json", "--submission", str(path)])
         result.update(valid=details["valid"], raw_score=details["raw_score"], details=details)
     elif task in ("C1", "C2"):

@@ -1,0 +1,7 @@
+{
+  "command": "python3 -m unittest discover -s experiments -p test_*.py -v",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_atomic_submit_and_overwrite_refusal (test_experiment.ExperimentTests.test_atomic_submit_and_overwrite_refusal) ... ok\ntest_baseline_only_result_is_refused (test_experiment.ExperimentTests.test_baseline_only_result_is_refused) ... ok\ntest_file_tamper_detected_and_grade_refused (test_experiment.ExperimentTests.test_file_tamper_detected_and_grade_refused) ... ok\ntest_grade_calls_judge_and_frontend_stays_pending (test_experiment.ExperimentTests.test_grade_calls_judge_and_frontend_stays_pending) ... ok\ntest_manifest_rewrite_does_not_hide_tamper (test_experiment.ExperimentTests.test_manifest_rewrite_does_not_hide_tamper) ... ok\ntest_missing_and_shared_input_tamper (test_experiment.ExperimentTests.test_missing_and_shared_input_tamper) ... ok\ntest_prepare_shared_tasks_and_private_seeds (test_experiment.ExperimentTests.test_prepare_shared_tasks_and_private_seeds) ... ok\ntest_source_label_never_promotes_metrics (test_experiment.ExperimentTests.test_source_label_never_promotes_metrics) ... ok\ntest_symlink_and_entrypoint_escape_refused (test_experiment.ExperimentTests.test_symlink_and_entrypoint_escape_refused) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.090s\n\nOK\n",
+  "verified_at": "2026-09-26T03:18:34.301411+00:00"
+}

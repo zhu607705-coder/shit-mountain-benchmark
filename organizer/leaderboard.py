@@ -9,9 +9,14 @@ from pathlib import Path
 TASKS = tuple(f"{track}{number}" for track in ("R", "C", "F") for number in range(1, 5))
 
 
-def build(records):
+def build(records, metric="quality", scope="complete"):
+    if metric not in ("quality", "efficiency"):
+        raise ValueError("metric must be quality or efficiency")
+    if scope not in ('complete', 'automated'): raise ValueError('unknown leaderboard scope')
     table = {}
     models = set()
+    comparison_profiles = {}
+    task_profiles = {}
     for record in records:
         task, model = record["task_id"], record["model"]
         if task not in TASKS or not isinstance(model, str) or not model.strip():
@@ -19,7 +24,10 @@ def build(records):
         key = (model, task)
         if key in table:
             raise ValueError(f"duplicate official result: {key}")
-        valid, raw = record.get("valid"), record.get("raw_score")
+        valid = record.get("valid")
+        raw = record.get("raw_score") if metric == "quality" else record.get("efficiency_score")
+        if scope == 'complete' and task.startswith('F') and record.get('final_ui_leaderboard_eligible') is False and raw != 0:
+            raw = None
         if not isinstance(valid, bool) and valid is not None:
             raise ValueError("valid must be a boolean or null for pending judgment")
         if raw is not None and (isinstance(raw, bool) or not isinstance(raw, (int, float)) or not math.isfinite(raw) or raw < 0):
@@ -28,6 +36,24 @@ def build(records):
             raise ValueError("pending qualification requires raw_score=null")
         if valid is False:
             raw = 0.0
+        task_profile=record.get('task_profile','legacy')
+        scale=record.get('scale','legacy_fixed' if task_profile=='legacy' else None)
+        if task_profile=='extreme' and scale not in ('smoke','full'): raise ValueError('extreme ranking requires an explicit smoke/full scale')
+        profile = (task_profile,scale,record.get('comparison_id','unrecorded'),record.get("quality_scope", record.get("score_scope", record.get("scope", "task_quality"))))
+        if scope == 'complete' and task.startswith('F') and 'final_ui_leaderboard_eligible' in record:
+            profile = (*profile[:3], 'complete_frontend')
+        if task in task_profiles and task_profiles[task] != profile:
+            raise ValueError(f"cannot mix task versions or quality scopes for {task}")
+        task_profiles[task] = profile
+        if valid is True and raw is not None and (metric == 'quality' or raw > 0):
+            if metric == "efficiency":
+                policy = record.get("efficiency_profile_id", record.get("score_profile_id"))
+                if not isinstance(policy, str) or not policy:
+                    raise ValueError("efficiency scoring requires the frozen policy fingerprint")
+                profile += (policy,)
+            if task in comparison_profiles and comparison_profiles[task] != profile:
+                raise ValueError(f"cannot mix task versions, quality scopes or efficiency policies for {task}")
+            comparison_profiles[task] = profile
         table[key] = {"valid": valid, "raw_score": raw}
         models.add(model)
     maxima = {}
@@ -54,7 +80,8 @@ def build(records):
                      "missing_tasks": [task for task in TASKS if (model, task) not in table],
                      "pending_tasks": [task for task in TASKS if (model, task) in table and table[(model, task)]["raw_score"] is None]})
     rows.sort(key=lambda row: (row["total"] is None, -(row["total"] or 0), row["model"]))
-    return {"normalization": "100 * raw_score / best_valid_raw_score; no positive result => 0", "best_raw_scores": maxima,
+    return {"metric": metric, "scope": scope, "comparison_profiles": comparison_profiles,
+            "normalization": "100 * raw_score / best_valid_raw_score; no positive result => 0", "best_raw_scores": maxima,
             "note": "Missing submissions count as 0. Pending judgments remain null. A sole valid entrant receiving 100 does not prove absolute quality.", "rows": rows}
 
 
@@ -62,10 +89,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("records", type=Path)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--metric", choices=("quality", "efficiency"), default="quality")
+    parser.add_argument("--scope", choices=("complete", "automated"), default="complete")
     args = parser.parse_args()
     try:
         records = json.loads(args.records.read_text(encoding="utf-8"))
-        result = build(records)
+        if isinstance(records, dict) and 'leaderboard_records' in records: records = records['leaderboard_records']
+        result = build(records, args.metric, args.scope)
     except (OSError, ValueError, TypeError, KeyError) as exc:
         print(f"invalid results: {exc}", file=sys.stderr)
         return 2

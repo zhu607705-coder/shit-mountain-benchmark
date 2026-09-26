@@ -1,0 +1,160 @@
+{
+  "task_id": "F4",
+  "profile": "extreme-v0.2",
+  "scale": "smoke",
+  "seed": 260926,
+  "dimensions": [
+    {
+      "name": "initial_records",
+      "legacy": 12,
+      "current": 36,
+      "ratio": 3.0,
+      "scope": "generated"
+    },
+    {
+      "name": "initial_records_acknowledged_by_adapter",
+      "legacy": 12,
+      "current": 36,
+      "ratio": 3.0,
+      "scope": "executed"
+    }
+  ],
+  "mechanisms": [
+    "causal versus concurrent field conflicts",
+    "generation-scoped deletion and explicit restoration",
+    "conditional undo coupled to remote causal context",
+    "atomic import and multi-actor reverse causal replay"
+  ],
+  "baseline_result": {
+    "valid": false,
+    "passed": 5,
+    "total": 15,
+    "semantic_score": 33.3333,
+    "quality_score": null,
+    "human_visual_score": null,
+    "checks": [
+      {
+        "name": "all initial tasks are present",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "sequential remote editing is not classified as concurrent conflict",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "conditional undo preserves a later remote field value",
+        "passed": false,
+        "detail": "response.records.T00000.title: expected observed successor, received task 0 seed 260926"
+      },
+      {
+        "name": "merged independent fields preserve intent and expose invalid range",
+        "passed": false,
+        "detail": "response.issues: expected ['range:T00001'], received []"
+      },
+      {
+        "name": "concurrent field contenders use deterministic display order and retain conflict",
+        "passed": false,
+        "detail": "response.conflicts: expected ['T00002:title'], received []"
+      },
+      {
+        "name": "explicit restore starts a new generation immune to old high-counter edits",
+        "passed": false,
+        "detail": "response.records.T00003.title: expected explicitly restored, received stale prior generation"
+      },
+      {
+        "name": "same-ID different-content import rejects the entire batch",
+        "passed": false,
+        "detail": "response.ok: expected False, received True"
+      },
+      {
+        "name": "an invalid import cannot leak its valid prefix",
+        "passed": false,
+        "detail": "response.records.T00004.notes: expected original event, received same ID, altered payload"
+      },
+      {
+        "name": "identical event replay is idempotent",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "causal replay converges for replica R00 regardless of arrival order",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "causal replay converges for replica R01 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-0-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R02 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-3-task-24"
+      },
+      {
+        "name": "complete actor R00 export covers the entire converged document",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "complete actor R01 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R02 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      }
+    ],
+    "failure": null,
+    "stderr_tail": "",
+    "implementation": "new weak semantic adapter; legacy HTML was not executed",
+    "scope": "JSONL semantic adapter only, not arbitrary HTML end-to-end certification"
+  },
+  "verification": {
+    "commands_generated": 27,
+    "responses_observed": 27,
+    "initial_records_generated": 36,
+    "event_deliveries_generated": 194,
+    "adapter_acknowledged": {
+      "records_loaded": 36,
+      "event_deliveries": 194,
+      "protocol_errors": 0
+    },
+    "command_counts": {
+      "config": 1,
+      "load": 1,
+      "observe": 11,
+      "deliver": 10,
+      "undo": 1,
+      "export": 3
+    },
+    "elapsed_seconds": 0.042,
+    "witnesses": {
+      "passed": true,
+      "checks": {
+        "observed_remove_preserves_unseen_add_under_all_six_orders": true,
+        "merge_creates_new_global_conflict_from_locally_valid_edits": true,
+        "noncommuting_transport_has_convergent_causal_result": true,
+        "true_concurrency_retains_two_candidates": true,
+        "causal_resolution_wins_all_twenty_four_permutations": true,
+        "atomic_rejection_rolls_back_valid_prefix": true,
+        "identical_event_union_is_idempotent": true,
+        "restoration_generation_blocks_old_patches_in_both_orders": true
+      },
+      "scope": "bounded exhaustive witnesses (at most 8 events); not a full task implementation or optimum"
+    },
+    "full_browser_load_executed": false,
+    "pending": [
+      "native multi-window browser persistence and recovery",
+      "real download and resource usage",
+      "keyboard, IME, narrow viewport and assistive-technology workflows",
+      "independent visual and usability review"
+    ],
+    "trace_sha256": "8dc0b2a680a3644b1fbf4d850b8974709868889a9fce7152280c7136adc00b4e"
+  },
+  "audit_passed": true
+}
