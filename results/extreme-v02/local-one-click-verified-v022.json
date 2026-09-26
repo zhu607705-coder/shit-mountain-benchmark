@@ -1,0 +1,164 @@
+{
+  "status": "passed",
+  "python": "3.14.4",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "ci": "false",
+  "checks": [
+    {
+      "name": "python-syntax",
+      "passed": true
+    },
+    {
+      "name": "ui-build-resource-integrity",
+      "passed": true,
+      "seconds": 0.0493
+    },
+    {
+      "name": "score-normalization",
+      "passed": true,
+      "seconds": 0.3982
+    },
+    {
+      "name": "R1-judge",
+      "passed": true,
+      "seconds": 0.0513
+    },
+    {
+      "name": "R2-judge",
+      "passed": true,
+      "seconds": 0.0439
+    },
+    {
+      "name": "policy-boundaries",
+      "passed": true,
+      "seconds": 0.3439
+    },
+    {
+      "name": "C1-oracle",
+      "passed": true,
+      "seconds": 0.3268
+    },
+    {
+      "name": "C2-oracle",
+      "passed": true,
+      "seconds": 0.051
+    },
+    {
+      "name": "C2-local-service-portability",
+      "passed": true,
+      "seconds": 1.15
+    },
+    {
+      "name": "C3-recovery-regressions",
+      "passed": true,
+      "seconds": 0.0681
+    },
+    {
+      "name": "C4-cache-regressions",
+      "passed": true,
+      "seconds": 0.0473
+    },
+    {
+      "name": "frontend-syntax-and-logic",
+      "passed": true,
+      "seconds": 0.2068
+    },
+    {
+      "name": "F3-stream-state",
+      "passed": true,
+      "seconds": 0.0579
+    },
+    {
+      "name": "F4-multiwindow-state",
+      "passed": true,
+      "seconds": 0.0337
+    },
+    {
+      "name": "API-and-import-adapters",
+      "passed": true,
+      "seconds": 3.506
+    },
+    {
+      "name": "README-experiment-sealing-and-grading",
+      "passed": true,
+      "seconds": 0.509
+    },
+    {
+      "name": "arena-draw-scope-sealing-and-grading",
+      "passed": true,
+      "seconds": 1.5756
+    },
+    {
+      "name": "arena-browser-script-syntax",
+      "passed": true,
+      "seconds": 0.0229
+    },
+    {
+      "name": "arena-motion-script-syntax",
+      "passed": true,
+      "seconds": 0.0218
+    },
+    {
+      "name": "arena-mission-room-script-syntax",
+      "passed": true,
+      "seconds": 0.0222
+    },
+    {
+      "name": "arena-outcome-semantics",
+      "passed": true,
+      "seconds": 0.0707
+    },
+    {
+      "name": "arena-motion-lifecycle",
+      "passed": true,
+      "seconds": 0.0983
+    },
+    {
+      "name": "arena-update-state-preservation",
+      "passed": true,
+      "seconds": 0.0609
+    },
+    {
+      "name": "legacy-v01-baselines-and-real-services",
+      "passed": true,
+      "seconds": 14.5711
+    },
+    {
+      "name": "extreme-reasoning-witnesses",
+      "passed": true,
+      "seconds": 0.3451
+    },
+    {
+      "name": "extreme-code-fault-interactions",
+      "passed": true,
+      "seconds": 1.5316
+    },
+    {
+      "name": "extreme-frontend-causal-witnesses",
+      "passed": true,
+      "seconds": 0.3331
+    },
+    {
+      "name": "extreme-twelve-task-smoke",
+      "passed": true,
+      "seconds": 6.1915
+    },
+    {
+      "name": "C1-broken-control-rejected",
+      "passed": true
+    },
+    {
+      "name": "C2-broken-control-rejected",
+      "passed": true
+    },
+    {
+      "name": "C3-broken-control-rejected",
+      "passed": true
+    },
+    {
+      "name": "C4-broken-control-rejected",
+      "passed": true
+    }
+  ],
+  "limits": "No live model API call, no browser UI automation in this command, no independent visual judging."
+}
