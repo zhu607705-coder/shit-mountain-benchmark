@@ -1,0 +1,63 @@
+{
+  "artifact_type": "native-browser-draw-stage-verification",
+  "live_model_run": false,
+  "tested_viewports": [
+    [
+      1024,
+      768
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      717,
+      739
+    ]
+  ],
+  "checks": {
+    "server_random_reasoning_pool_matched_R4": true,
+    "server_random_frontend_pool_matched_F3": true,
+    "manual_R3_draw_and_sealed_actual_grading": true,
+    "mouse_moves_changed_card_and_blade_transforms": true,
+    "reduced_motion_disabled_pointer_motion": true,
+    "blocked_draw_restored_previous_card_and_enabled_retry": true,
+    "fresh_blocked_draw_showed_chinese_error": true,
+    "fault_injection_removed": true,
+    "case_details_remained_open_across_poll": true,
+    "no_horizontal_page_overflow": true,
+    "stage_internal_scroll_remained_zero": true,
+    "mobile_draw_button_single_line_and_in_viewport": true,
+    "ticket_and_start_action_above_blades": true
+  },
+  "regressions_fixed": [
+    "direction event bubbled to scene data-track",
+    "hidden-overflow scene scrolled internally",
+    "narrow mobile redraw label wrapped",
+    "decorative frontend blade covered start action",
+    "stale report could overwrite scene",
+    "poll could collapse details"
+  ],
+  "control_quality": {
+    "task": "R3",
+    "tier": "bronze",
+    "raw_score": 28.735632183908045,
+    "completed": true,
+    "efficiency_eligible": false
+  },
+  "source_sha256": {
+    "arena/web/index.html": "7eeb1c711967fdb35ed2742db90ff4829f0ec043a8f20ae251674a4502bbd0e5",
+    "arena/web/app.js": "3c1109af89fc552de92f65db710adb3cd03653b6de2e4858b90b633fa3eea9ff",
+    "arena/web/style.css": "6247ddd75825cdff8497657a5bc65e4f3a200ed37b7fb4bd4e7d498d279be1fc",
+    "arena/web/motion.js": "6c7bac66157bf4122af978d0638d4fbbe77d7b682f638a620ea1c638303d428f"
+  },
+  "screenshots": {
+    "docs/images/draw-stage.png": "33454122b7ebdda50d2130da7b72e13d7fd1904512132d7837166fc73b6256ff",
+    "docs/images/draw-revealed.png": "64a355a00dab4afaad314df9430298c712d781365f2dc5e6ff411e22f92ef6a4"
+  },
+  "limits": [
+    "A workflow control is not a commercial-model benchmark",
+    "Touch behavior has code/simulated coverage; reduced-motion was exercised in the real browser",
+    "Complete contestant frontend UI evaluation remains independent"
+  ]
+}

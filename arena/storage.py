@@ -95,26 +95,39 @@ class ArenaStore:
         if folder.is_symlink() or not folder.is_dir():raise FileNotFoundError('match not found')
         return folder
 
-    def create_draw(self,task,tier):
+    def create_draw(self,task,tier,track='all'):
+        from arena.rules import TASKS
+        if type(track) is not str or track not in ('all','R','C','F'):
+            raise ValueError('track must be all, R, C or F')
+        eligible=[tid for tid in TASKS if track=='all' or tid.startswith(track)]
+        random_task=task=='random'
+        if random_task:task=secrets.choice(eligible)
+        elif type(task) is not str or task not in eligible:
+            raise ValueError('task does not belong to the requested pool')
+        selection={'mode':'random' if random_task else 'fixed','track':track,
+                   'eligible_tasks':eligible if random_task else [task],'task_id':task}
         if self.draw_factory is None:
             from arena.rules import draw_spec
             factory=draw_spec
         else:factory=self.draw_factory
         draw=factory(task,tier)
         if not {'public','private'}<=set(draw):raise ValueError('draw factory omitted public/private scopes')
-        public=draw['public'];task=public['task_id'];tier=public['tier'];identity(task);identity(tier)
+        public=draw['public']
+        if public['task_id']!=task:raise ValueError('draw factory changed the selected task')
+        task=public['task_id'];tier=public['tier'];identity(task);identity(tier)
         match_id=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S')+'-'+secrets.token_hex(4)
         folder=self.matches/match_id;folder.mkdir(mode=0o700)
         try:
             private=folder/'private';private.mkdir(mode=0o700)
             # Freeze the draw before material generation; no API ever rewrites this file.
             record={'id':match_id,'created_at':now(),'public':public,'private':draw['private'],
-                    'source_fingerprints':fingerprints(task)}
+                    'source_fingerprints':fingerprints(task),'selection':selection}
             atomic(private/'draw.json',record);(private/'draw.json').chmod(0o444)
             atomic(private/'anchor.json',{'draw_sha256':digest(private/'draw.json')});(private/'anchor.json').chmod(0o444)
             public_dir=folder/'public';self.exporter(task,public.get('fixture_scale','smoke'),public_dir)
             public_dir.mkdir(exist_ok=True)
             match_text='# 本轮比赛 / '+task+'\n\n抽签标识：'+match_id+'\n\n'
+            match_text+='选题方式：'+('服务端均匀随机抽题' if random_task else '指定题目')+'；题池：'+', '.join(selection['eligible_tasks'])+'。\n\n'
             match_text+='本轮要求由 MATCH.md 固定，原题完整档仅作接口与背景材料。请按本轮阶段完成实验、自测和答案，再由主办方封存独立评分。\n\n'
             match_text+='```json\n'+json.dumps(public,ensure_ascii=False,indent=2)+'\n```\n\n'
             match_text+='先下载公开ZIP并解压，或将本题包复制到自己的可写工作目录，再修改工作副本中的 submission/、policy.py 或对应入口。不要修改启动器保存的只读原件。不要把观察型 smoke 当作评分通过；不得访问主办方私有数据。提交时提供可写工作副本的目录/ZIP及相对 entrypoint。\n'
@@ -212,6 +225,7 @@ class ArenaStore:
         submissions=[self.submission_view(match_id,path.name) for path in sorted((folder/'submissions').glob('*')) if (path/'sealed'/'manifest.json').is_file()]
         return {'id':match_id,'task_id':public['task_id'],'tier':public['tier'],'created_at':record['created_at'],
                 'status':state['status'],'commitment':public['commitment'],'public_scope':public,
+                'selection':record.get('selection',{'mode':'fixed','task_id':public['task_id']}),
                 'stages':public.get('prompt_segments',[]),'submissions':submissions,
                 'public_bundle_path':str(folder/'public'),'download_url':'/api/matches/'+match_id+'/download'}
 

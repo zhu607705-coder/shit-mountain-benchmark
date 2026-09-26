@@ -2,7 +2,7 @@
   "benchmark": "C1_repository",
   "version": "0.2.0",
   "submission": "repository/baseline",
-  "measured_at_utc": "2026-09-26T04:48:30.291282+00:00",
+  "measured_at_utc": "2026-09-26T05:24:10.467945+00:00",
   "environment": {
     "python": "3.14.4",
     "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
@@ -113,6 +113,6 @@
       }
     ]
   },
-  "wall_seconds": 2.135654458019417,
+  "wall_seconds": 3.483139041985851,
   "security": "real local processes and temporary SQLite; trusted code only, not a sandbox"
 }

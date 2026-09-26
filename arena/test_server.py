@@ -96,6 +96,33 @@ class ServerTests(unittest.TestCase):
         _,archive=self.request('/api/matches/'+match['id']+'/download')
         self.assertTrue(archive.startswith(b'PK'))
 
+    def test_random_draw_is_selected_on_host_and_grades_that_task(self):
+        with mock.patch.object(storage.secrets,'choice',return_value='F3') as choose:
+            code,match=self.json('/api/draw',{'task_id':'random','tier':'bronze','track':'F'})
+        self.assertEqual(code,201,match)
+        choose.assert_called_once_with(['F1','F2','F3','F4'])
+        self.assertEqual(match['task_id'],'F3')
+        self.assertEqual(match['selection'],{'mode':'random','track':'F','eligible_tasks':['F1','F2','F3','F4'],'task_id':'F3'})
+        observed=[]
+        def grader(spec,*args,**kwargs):
+            observed.append(spec['task_id']);return grade_result(frontend=True)
+        self.app.grader=grader
+        self.grade(match,self.submit(match))
+        self.assertEqual(observed,['F3'])
+
+    def test_random_pool_validation_and_manual_selection(self):
+        for track in ('unknown',False,[],{'id':'R'}):
+            code,_=self.json('/api/draw',{'task_id':'random','tier':'bronze','track':track})
+            self.assertEqual(code,400)
+        code,_=self.json('/api/draw',{'task_id':'C1','tier':'bronze','track':'R'})
+        self.assertEqual(code,400)
+        match=self.draw('C1');self.assertEqual(match['selection']['mode'],'fixed')
+        self.assertEqual(match['selection']['eligible_tasks'],['C1'])
+        with mock.patch.object(storage.secrets,'choice',return_value='R2') as choose:
+            code,match=self.json('/api/draw',{'task_id':'random','tier':'silver'})
+        self.assertEqual(code,201);choose.assert_called_once_with(list(rules.TASKS))
+        self.assertEqual(match['public_scope']['task_id'],'R2')
+
     def test_answer_and_public_bundle_tampering_are_rejected(self):
         match=self.draw();submission=self.submit(match)
         file=self.store.folder(match['id'])/'submissions'/submission['id']/'sealed'/'payload'/'policy.py'

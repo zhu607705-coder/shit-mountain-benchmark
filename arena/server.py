@@ -234,7 +234,7 @@ def make_server(app=None,host='127.0.0.1',port=0,web_root=None):
                 if type(body) is not dict:raise ValueError('JSON object required')
                 parts=self.parts()
                 if parts==['api','draw']:
-                    result=app.store.create_draw(body['task_id'],body['tier']);return self.reply(201,result)
+                    result=app.store.create_draw(body['task_id'],body['tier'],body.get('track','all'));return self.reply(201,result)
                 if len(parts)==4 and parts[:2]==['api','matches']:
                     mid=identity(parts[2]);action=parts[3]
                     if action=='submit':return self.reply(201,app.store.submit(mid,body['participant'],body['source_path'],body.get('entrypoint'),body.get('metrics_path')))

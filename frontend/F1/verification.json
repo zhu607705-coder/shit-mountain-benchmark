@@ -1,6 +1,6 @@
 {
   "task_id": "F1",
-  "generated_at": "2026-09-26T04:48:21.287163+00:00",
+  "generated_at": "2026-09-26T05:23:56.486525+00:00",
   "valid": null,
   "valid_reason": "Cross-window mechanisms revised; full browser qualification has not been assigned by this smoke-check script.",
   "machine_score": null,
