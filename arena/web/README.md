@@ -1,6 +1,6 @@
 # 比赛操作台
 
-本目录是沉浸式抽题舞台，连接同源 Arena API。入口为 `/`，资源为 `/app.js`、`/motion.js`、`/style.css`、`/icons/`。无需 CDN、npm、字体服务或构建步骤。应由项目 Arena 服务启动并提供 API。
+本目录包含沉浸式抽题舞台与比赛空间，连接同源 Arena API。入口为 `/`，资源为 `/app.js`、`/motion.js`、`/room.js`、`/style.css`、`/room.css`、`/icons/`。无需 CDN、npm、字体服务或构建步骤。应由项目 Arena 服务启动并提供 API。
 
 操作顺序：选择方向和难度 → 抽一道 → 服务端返回后揭晓题签 → 开始这题 → 查看三段任务或下载题包 → 封存并检验 → 查看案例、原分与相对分 → 下载 Codex 评阅任务。刷新进入未知题目的初始舞台；手动选题和历史场次放在次级菜单，提交与成绩放在工作抽屉。
 
@@ -31,7 +31,20 @@
 - 前端场次冠军仅显示“语义领先”，完整 UI 冠军不由前端页面推断。
 - 后台 `diagnostic=true` 的复跑标明“诊断复验”；官方冻结成绩仍来自服务端报告。
 
-后台检验期间约每 1.4 秒刷新，其他时候约每 4 秒刷新，页面隐藏时降低频率。重新选题不会被当前比赛的状态轮询覆盖。不同场次的过期状态响应不会覆盖较新的选择。页面只在 sessionStorage 保留当前场次 ID，不存私有 seed、密钥、原始 reasoning 或用户答案文件。
+后台检验期间约每 1.4 秒刷新，其他时候约每 4 秒刷新，页面隐藏时降低频率。用户加载另一场时取消旧轮询，旧异步响应不能覆盖新选择；提交与判分响应也绑定原场次。页面不保存私有 seed、密钥、原始 reasoning 或用户答案文件。
+
+## 开始后的四个场景
+
+`ArenaRoom` 管理任务、提交、检验、战报四个 view；现有 `ArenaUI` 继续拥有实际提交、服务状态和报告。room 不计算新的成绩，也不修改判分。
+
+- 任务：大阶段编号与三段提示词切换，长判定范围、材料和交付收进详情。
+- 提交：答案纸与投递口构图，保留实际目录/文件入口和性能证据表单。
+- 检验：扫描动画只在真实执行阶段运行；正在执行第 N 组不代表 N 组已经完成，未知进度不显示虚构百分比。“检验用时”是裁判耗时。
+- 战报：只有 C 题 `valid=true`、`completed=true` 且分数有效时显示本档通过；R 是策略评估，F 是语义结果并保留完整 UI 待评。失败 0 分与未知 null 保持区别。
+
+`watchJob(id)` 仅跟踪用户实际启动的 job。新结果等待 grade_id 对齐，明确 null 不回退到旧分；诊断复验保留首次官方分。轮询和历史加载不会重播胜利。揭示回调绑定 match/job 并可取消，关闭、换场或 reduced-motion 变化立即停止。若检验在任务页关闭期间结束，不弹窗；再次进入同场直接显示战报。
+
+图片示例来自真实本地控制候选：[任务](../../docs/images/mission-briefing.png)、[通过](../../docs/images/mission-success.png)、[部分完成](../../docs/images/mission-partial.png)，不作为商业模型比赛成绩。
 
 ## 视觉与图标来源
 
@@ -50,6 +63,8 @@
 ```bash
 node --check arena/web/app.js
 node --check arena/web/motion.js
+node --check arena/web/room.js
+node --test arena/web/test_room.cjs
 ```
 
 开发期间还运行了 Node mock 响应检查，覆盖 GET/POST、CSRF、结构化 API 错误、partial/completed 区分、前端完整评阅 pending、案例状态和 null/0 区分。上述检查不替代真实服务和原生浏览器的完整 draw-submit-grade 流程；浏览器验收由主任务统一执行。

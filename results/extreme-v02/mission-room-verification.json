@@ -1,0 +1,100 @@
+{
+  "release": "0.2.1",
+  "task_contract_version": "0.2.0",
+  "live_model_run": false,
+  "browser_checks": {
+    "three_prompt_stage_switching": true,
+    "real_submission_and_running_scanner": true,
+    "real_C1_success_auto_revealed": true,
+    "real_C1_failure_zero_without_celebration": true,
+    "real_cancelled_job_unknown_score": true,
+    "close_during_run_reopen_directly_to_report": true,
+    "real_F1_partial_33_33_without_celebration": true,
+    "real_F1_semantic_100_still_UI_pending": true,
+    "no_horizontal_overflow_at_390_and_1024": true,
+    "reduced_motion_resets_pointer_motion": true,
+    "pointer_changes_room_variables": true,
+    "unexpected_console_errors": []
+  },
+  "unit_tests": {
+    "room_outcome_tests": 11,
+    "arena_tests": 29
+  },
+  "actual_control_results": [
+    {
+      "task": "F1",
+      "tier": "bronze",
+      "participant": "任务区自检 · 语义通过待评",
+      "valid": true,
+      "completed": true,
+      "raw_score": 100.0,
+      "efficiency_eligible": false,
+      "status": "review_pending"
+    },
+    {
+      "task": "F1",
+      "tier": "silver",
+      "participant": "任务区自检 · 部分完成",
+      "valid": true,
+      "completed": false,
+      "raw_score": 33.333333333333336,
+      "efficiency_eligible": false,
+      "status": "review_pending"
+    },
+    {
+      "task": "C1",
+      "tier": "bronze",
+      "participant": "任务区自检 · 故障引擎",
+      "valid": false,
+      "completed": false,
+      "raw_score": 0,
+      "efficiency_eligible": false,
+      "status": "invalid"
+    },
+    {
+      "task": "C1",
+      "tier": "bronze",
+      "participant": "任务区自检 · 返回看战报",
+      "valid": true,
+      "completed": true,
+      "raw_score": 100.0,
+      "efficiency_eligible": false,
+      "status": "graded"
+    },
+    {
+      "task": "C1",
+      "tier": "bronze",
+      "participant": "任务区自检 · 取消检验",
+      "valid": null,
+      "completed": null,
+      "raw_score": null,
+      "efficiency_eligible": false,
+      "status": "sealed"
+    },
+    {
+      "task": "C1",
+      "tier": "bronze",
+      "participant": "任务区自检 · 正确引擎",
+      "valid": true,
+      "completed": true,
+      "raw_score": 100.0,
+      "efficiency_eligible": false,
+      "status": "graded"
+    }
+  ],
+  "sha256": {
+    "arena/web/app.js": "4a3add164858d0ea011a4c54f9dfc7e989312c913863a3867ad870ecb99c686d",
+    "arena/web/room.js": "b026542eea289b17908d30f22a598f72116d02c4684ce8bc31ecd913bc03c7c3",
+    "arena/web/room.css": "754b5a33499711f622689912ded6a5dcf49318e45e2687e7d99122bfe77f4b60",
+    "arena/web/index.html": "b02397f528f872ac6068843efe8258262c9ff322ade32b29663d6ccabfb09997",
+    "arena/web/test_room.cjs": "70b4423e644fd1320081399a38af4e748e25dcad8939e07f713fce427528f93a",
+    "docs/images/mission-briefing.png": "b3fb201082d47828f5303659ff4d59e5d2a6f3b47ec2d63a4c147d5393a94c56",
+    "docs/images/mission-success.png": "2cd4d09007d19281e8019f57ef1189086897be3d1ce4cff8487009806aac2b59",
+    "docs/images/mission-partial.png": "734641200eb7e77597236526c5440f41f35c5410844f36916fff76b2e0e352b3"
+  },
+  "limits": [
+    "Browser evidence uses actual benchmark control submissions, not a live-model competition",
+    "R3/diagnostic/environment-error classification also checked with real fixtures and unit tests",
+    "Complete contestant frontend UI scoring remains independent"
+  ]
+}

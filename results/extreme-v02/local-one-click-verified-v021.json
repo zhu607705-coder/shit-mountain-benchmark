@@ -1,0 +1,149 @@
+{
+  "status": "passed",
+  "python": "3.14.4",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "ci": "false",
+  "checks": [
+    {
+      "name": "python-syntax",
+      "passed": true
+    },
+    {
+      "name": "score-normalization",
+      "passed": true,
+      "seconds": 0.463
+    },
+    {
+      "name": "R1-judge",
+      "passed": true,
+      "seconds": 0.058
+    },
+    {
+      "name": "R2-judge",
+      "passed": true,
+      "seconds": 0.0498
+    },
+    {
+      "name": "policy-boundaries",
+      "passed": true,
+      "seconds": 0.3652
+    },
+    {
+      "name": "C1-oracle",
+      "passed": true,
+      "seconds": 0.3781
+    },
+    {
+      "name": "C2-oracle",
+      "passed": true,
+      "seconds": 0.0572
+    },
+    {
+      "name": "C2-local-service-portability",
+      "passed": true,
+      "seconds": 1.2097
+    },
+    {
+      "name": "C3-recovery-regressions",
+      "passed": true,
+      "seconds": 0.0742
+    },
+    {
+      "name": "C4-cache-regressions",
+      "passed": true,
+      "seconds": 0.053
+    },
+    {
+      "name": "frontend-syntax-and-logic",
+      "passed": true,
+      "seconds": 0.2221
+    },
+    {
+      "name": "F3-stream-state",
+      "passed": true,
+      "seconds": 0.0523
+    },
+    {
+      "name": "F4-multiwindow-state",
+      "passed": true,
+      "seconds": 0.035
+    },
+    {
+      "name": "API-and-import-adapters",
+      "passed": true,
+      "seconds": 3.4251
+    },
+    {
+      "name": "README-experiment-sealing-and-grading",
+      "passed": true,
+      "seconds": 0.5221
+    },
+    {
+      "name": "arena-draw-scope-sealing-and-grading",
+      "passed": true,
+      "seconds": 1.4941
+    },
+    {
+      "name": "arena-browser-script-syntax",
+      "passed": true,
+      "seconds": 0.0238
+    },
+    {
+      "name": "arena-motion-script-syntax",
+      "passed": true,
+      "seconds": 0.0231
+    },
+    {
+      "name": "arena-mission-room-script-syntax",
+      "passed": true,
+      "seconds": 0.023
+    },
+    {
+      "name": "arena-outcome-semantics",
+      "passed": true,
+      "seconds": 0.0675
+    },
+    {
+      "name": "legacy-v01-baselines-and-real-services",
+      "passed": true,
+      "seconds": 15.3385
+    },
+    {
+      "name": "extreme-reasoning-witnesses",
+      "passed": true,
+      "seconds": 0.3885
+    },
+    {
+      "name": "extreme-code-fault-interactions",
+      "passed": true,
+      "seconds": 1.7405
+    },
+    {
+      "name": "extreme-frontend-causal-witnesses",
+      "passed": true,
+      "seconds": 0.3875
+    },
+    {
+      "name": "extreme-twelve-task-smoke",
+      "passed": true,
+      "seconds": 6.5816
+    },
+    {
+      "name": "C1-broken-control-rejected",
+      "passed": true
+    },
+    {
+      "name": "C2-broken-control-rejected",
+      "passed": true
+    },
+    {
+      "name": "C3-broken-control-rejected",
+      "passed": true
+    },
+    {
+      "name": "C4-broken-control-rejected",
+      "passed": true
+    }
+  ],
+  "limits": "No live model API call, no browser UI automation in this command, no independent visual judging."
+}

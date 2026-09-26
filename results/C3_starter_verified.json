@@ -62,8 +62,8 @@
       }
     ],
     "baseline_internal_format_checks": [],
-    "transactions_per_second_500": 2728.8449041331323,
-    "timing_seconds": 0.18322770899976604,
+    "transactions_per_second_500": 9485.048738264393,
+    "timing_seconds": 0.052714541991008446,
     "timing_note": "single local run; not power-loss proof or formal leaderboard"
   },
   "note": "Behavior checks verified. Formal performance workload and quality weights are not calibrated; full raw quality remains pending.",

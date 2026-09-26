@@ -1,4 +1,4 @@
-# 屎山 Bug 挑战赛 · v0.2 Extreme
+# 屎山 Bug 挑战赛 · v0.2.1 Extreme
 
 **统一12题：R1–R4、C1–C4、F1–F4。每题的 full 规格都有至少10倍的实际规模维度，并加入需要跨阶段推理的机制。**
 
@@ -7,6 +7,10 @@
 [实验说明](experiments/README.md) · [Codex评分说明](experiments/GRADER_README.md) · [时间与token计分](experiments/EFFICIENCY.md) · [难度与实际证据](docs/EXTREME_V02.md) · [GitHub Actions](https://github.com/zhu607705-coder/shit-mountain-benchmark/actions/workflows/verify.yml)
 
 ![抽题舞台：卡包、几何切面与真实随机抽题](docs/images/draw-stage.png)
+
+“开始这题”进入任务、提交、检验、战报四个场景。检验结果到达后独立揭晓战报：代码本档通过、部分完成、失败、取消与待评分别呈现；原分、同场相对分和效率分保持区分。v0.2.1 更新任务区与结果展示，题目和评分合约仍为 v0.2.0。
+
+![真实代码本档通过后的战报](docs/images/mission-success.png)
 
 ## 一键打开实战比赛
 
