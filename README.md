@@ -7,16 +7,16 @@
 ## 拉取与一键测试
 
 ```bash
-gh repo clone zhu607705-coder/shit-mountain-benchmark
+git clone https://github.com/zhu607705-coder/shit-mountain-benchmark.git
 cd shit-mountain-benchmark
 ./scripts/test.sh
 ```
 
-需要 Python 3.10+、Node.js 22+；无 pip/npm 安装步骤。`make test` 等价。私有仓库首次拉取需登录有权限的 GitHub 账号。
+需要 Python 3.10+、Node.js 22+；无 pip/npm 安装步骤。`make test` 等价。仓库公开，可直接拉取。
 
 这一命令运行裁判回归、API mock、前端状态逻辑、全部程序基线，以及真实 HTTP/SQLite/worker 环境；也确认故障起点仍能被检测出来。**不调用付费模型 API，不替代原生浏览器验收或人工盲评。** 输出在 `reports/` 和 `results/`。
 
-GitHub Actions 配置了 Linux/Python 3.12 与 macOS/Python 3.14，支持 push、PR、手动 **Run workflow**。每次运行的 JSON 证据可从 Artifacts 下载。
+GitHub Actions 配置了 Linux/Python 3.12 与 macOS/Python 3.14，支持 push、PR、手动 **Run workflow**。每次运行的 JSON 证据可从 Artifacts 下载。`main` 已配置上述两项必需检查、线性历史、禁止强推和删除；分支保护模板位于 `.github/branch-protection.template.json`。
 
 ## 题库
 

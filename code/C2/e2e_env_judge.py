@@ -2,10 +2,31 @@
 """Real loopback HTTP + SQLite + independent worker lifecycle acceptance tests.
 Trusted local code only. Not a sandbox. No third-party dependencies or fixed ports.
 """
-import argparse,datetime,hashlib,json,os,platform,select,sqlite3,subprocess,sys,tempfile,time,urllib.error,urllib.request
+import argparse,datetime,hashlib,json,os,platform,select,signal,sqlite3,subprocess,sys,tempfile,time,urllib.error,urllib.request
 from pathlib import Path
 
 TERMINAL={'done','failed','cancelled'}
+STARTUP_TIMEOUT=4.0
+TRACE_MARKER='C2_STARTUP_TRACE_READY'
+# Preserve the script's argv/import path while enabling startup stack evidence.
+_CHILD_BOOTSTRAP=r"""
+import faulthandler,runpy,signal,sys
+from pathlib import Path
+faulthandler.enable()
+if hasattr(signal,'SIGUSR1'):
+    faulthandler.register(signal.SIGUSR1,all_threads=True)
+    sys.stderr.write('C2_STARTUP_TRACE_READY\n')
+    sys.stderr.flush()
+sys.argv=sys.argv[1:]
+sys.path.insert(0,str(Path(sys.argv[0]).resolve().parent))
+runpy.run_path(sys.argv[0],run_name='__main__')
+"""
+
+
+class StartupFailure(AssertionError):
+    def __init__(self,evidence):
+        self.evidence=evidence
+        super().__init__('subprocess readiness failed: '+json.dumps(evidence,ensure_ascii=False))
 
 
 def small(value=2):return {'nodes':{'a':{'op':'input','data':[value,value+2]},'root':{'op':'scale','deps':['a'],'factor':3}},'aliases':{'main':'root'}}
@@ -13,6 +34,7 @@ def small(value=2):return {'nodes':{'a':{'op':'input','data':[value,value+2]},'r
 
 class Stack:
     def __init__(self,submission,prefix='',split=False,unicode=False,legacy=False,delay=.10):
+        self.http=urllib.request.build_opener(urllib.request.ProxyHandler({}))
         self.submission=submission;self.temp=tempfile.TemporaryDirectory(prefix='c2-env-');self.root=Path(self.temp.name);self.prefix=prefix;self.processes=[];self.logs=[];self.server=None;self.worker=None
         self.config_dir=self.root/('配置 目录' if unicode else 'config');self.config_dir.mkdir()
         self.config=self.config_dir/'service.json';self.db=self.config_dir/('非ASCII数据/状态.sqlite3' if unicode else 'state/service.sqlite3')
@@ -31,13 +53,41 @@ class Stack:
     def start(self,kind):
         logfile=open(self.root/f'{kind}-{len(self.logs)}.log','w+');self.logs.append(logfile)
         env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1',PYTHONUNBUFFERED='1')
-        proc=subprocess.Popen([sys.executable,str(self.submission/'cli.py'),kind,'--config',str(self.config)],cwd=self.server_cwd if kind=='serve' else self.worker_cwd,env=env,stdout=subprocess.PIPE,stderr=logfile,text=True)
-        self.processes.append(proc)
-        ready,_,_=select.select([proc.stdout],[],[],4)
-        line=proc.stdout.readline() if ready else ''
-        if not line:
-            logfile.flush();logfile.seek(0);raise AssertionError(kind+' did not become ready: '+logfile.read()[-1800:])
-        status=json.loads(line)
+        proc=subprocess.Popen([sys.executable,'-u','-c',_CHILD_BOOTSTRAP,str(self.submission/'cli.py'),kind,'--config',str(self.config)],cwd=self.server_cwd if kind=='serve' else self.worker_cwd,env=env,stdout=subprocess.PIPE,stderr=logfile)
+        self.processes.append(proc);started=time.monotonic();deadline=started+STARTUP_TIMEOUT;output=bytearray();reason='timeout';status=None
+        while time.monotonic()<deadline:
+            readable,_,_=select.select([proc.stdout],[],[],min(.05,max(0,deadline-time.monotonic())))
+            if readable:
+                chunk=os.read(proc.stdout.fileno(),65536)
+                if not chunk:
+                    try:proc.wait(timeout=.10)
+                    except subprocess.TimeoutExpired:pass
+                    reason='process_exited' if proc.poll() is not None else 'stdout_closed';break
+                output.extend(chunk)
+                if b'\n' in output:
+                    try:
+                        status=json.loads(bytes(output).split(b'\n',1)[0])
+                        if type(status) is not dict:raise ValueError('ready message must be object')
+                        if kind=='serve':
+                            if status.get('ready') is not True or type(status.get('port')) is not int or not 1<=status['port']<=65535:raise ValueError('invalid server ready/port')
+                        elif status.get('worker_ready') is not True:raise ValueError('invalid worker ready message')
+                    except (ValueError,UnicodeDecodeError) as exc:
+                        reason='invalid_ready: '+str(exc);status=None
+                    break
+            if proc.poll() is not None:reason='process_exited';break
+        if status is None or proc.poll() is not None:
+            def stderr_tail():
+                logfile.flush();return Path(logfile.name).read_text(errors='replace')[-8192:]
+            stderr=stderr_tail();probe='not_needed'
+            if reason=='timeout' and proc.poll() is None:
+                probe='bootstrap_not_ready'
+                if TRACE_MARKER in stderr and hasattr(signal,'SIGUSR1'):
+                    try:
+                        proc.send_signal(signal.SIGUSR1);probe='SIGUSR1_stack_dump'
+                        # Diagnostic grace only: readiness has already failed its unchanged deadline.
+                        time.sleep(.10);stderr=stderr_tail()
+                    except ProcessLookupError:probe='process_exited_before_stack_dump'
+            raise StartupFailure({'process':kind,'reason':reason,'returncode':proc.poll(),'elapsed_seconds':round(time.monotonic()-started,4),'startup_timeout_seconds':STARTUP_TIMEOUT,'stdout':bytes(output).decode(errors='replace')[-8192:],'stderr':stderr,'stack_probe':probe})
         if kind=='serve':self.server=proc;self.port=status['port']
         else:self.worker=proc
     def start_all(self):self.start('serve');self.start('worker')
@@ -51,7 +101,7 @@ class Stack:
         data=None if body is None else json.dumps(body).encode()
         req=urllib.request.Request(f'http://127.0.0.1:{self.port}{self.prefix}{path}',data=data,headers={'Content-Type':'application/json'})
         try:
-            with urllib.request.urlopen(req,timeout=2) as resp:return resp.status,json.load(resp)
+            with self.http.open(req,timeout=2) as resp:return resp.status,json.load(resp)
         except urllib.error.HTTPError as exc:return exc.code,json.load(exc)
     def ok(self,path,body=None):
         status,value=self.request(path,body);assert status==200,(path,status,value);return value
@@ -78,7 +128,10 @@ def execute(submission,name,options,test):
     try:
         stack=Stack(submission,**options);stack.start_all();test(stack)
         return {'name':name,'passed':True,'seconds':round(time.monotonic()-start,4)}
-    except Exception as exc:return {'name':name,'passed':False,'seconds':round(time.monotonic()-start,4),'error':type(exc).__name__+': '+str(exc)}
+    except Exception as exc:
+        result={'name':name,'passed':False,'seconds':round(time.monotonic()-start,4),'error':type(exc).__name__+': '+str(exc)}
+        if isinstance(exc,StartupFailure):result['startup_diagnostics']=exc.evidence
+        return result
     finally:
         if stack:stack.close()
 

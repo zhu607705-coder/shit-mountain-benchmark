@@ -32,7 +32,7 @@
 
 ## 一键验收与接口
 
-`./scripts/test.sh` 已在本机实际通过。`local_one_click_verified.json` 保存检查摘要。内容包括评分边界、R1/R2裁判、R3/R4的14项输入/信息边界、C1/C2 oracle、C3/C4故障回归、前端状态逻辑、8项API/导入测试、8道程序题基线与故障起点对照。
+`./scripts/test.sh` 已在本机实际通过。`local_one_click_verified.json` 保存检查摘要。内容包括评分边界、R1/R2裁判、R3/R4的14项输入/信息边界、C1/C2 oracle及本地HTTP启动/代理可移植性回归、C3/C4故障回归、前端状态逻辑、10项API/导入测试、8道程序题基线与故障起点对照。
 
 API测试使用本机mock HTTP，实际走过完整R2题面/input → Chat Completions兼容响应 → JSON解析 → 本地裁判。没有真实供应商调用，没有真实API Key，也没有自动完成复杂仓库Agent工具循环的声明。
 

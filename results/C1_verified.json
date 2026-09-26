@@ -11,7 +11,7 @@
     "benchmark": "C1",
     "version": "0.1.0",
     "seed": 2026092601,
-    "measured_at_utc": "2026-09-26T02:15:04.228057+00:00",
+    "measured_at_utc": "2026-09-26T02:35:10.762057+00:00",
     "suite_sha256": "f2bdd1af9378473a0ed329d924b1d510d367aa818ba71ed8c287f7cf12f61e82",
     "valid": true,
     "critical_case_names": [
@@ -25,22 +25,22 @@
       "invalid_is_atomic"
     ],
     "submission": "repository/baseline",
-    "submission_sha256": "169402f79cbd5387370aaa1ae667100638841810a438f812e183fd666a3a5ef0",
-    "raw_score": 92.308046,
+    "submission_sha256": "808ba4dd6523fc1948a557bc9cac918c2d869ec9cb3da1255e633e835d02d1a3",
+    "raw_score": 92.250995,
     "correctness": {
       "passed": 63,
       "total": 63,
       "rate": 1.0
     },
     "performance": {
-      "median_seconds": 0.02408558299066499,
+      "median_seconds": 0.024647665995871648,
       "samples_seconds": [
-        0.02408558299066499,
-        0.024363042000913993,
-        0.023532082996098325
+        0.024687333003384992,
+        0.02415525002288632,
+        0.024647665995871648
       ],
       "peak_traced_bytes": 4018223,
-      "speed_utility": 0.5546764653563577,
+      "speed_utility": 0.5489712955401672,
       "memory_utility": 0.6761281748739868,
       "within_budget": true,
       "resource_bonus_eligible": true
@@ -309,13 +309,13 @@
     "benchmark": "C1_repository",
     "version": "0.2.0",
     "submission": "repository/baseline",
-    "measured_at_utc": "2026-09-26T02:15:06.346761+00:00",
+    "measured_at_utc": "2026-09-26T02:35:12.987362+00:00",
     "environment": {
       "python": "3.14.4",
       "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
     },
-    "suite_sha256": "75d48a19fb33242b6e8d36cd86a645c0aed8172a3caefca6bc148242b2b54b44",
-    "submission_sha256": "169402f79cbd5387370aaa1ae667100638841810a438f812e183fd666a3a5ef0",
+    "suite_sha256": "1cdd248ca23f03dc44df4149e70bc043105d3a349308176d9ef740ef5af2d9c3",
+    "submission_sha256": "808ba4dd6523fc1948a557bc9cac918c2d869ec9cb3da1255e633e835d02d1a3",
     "valid": true,
     "raw_score": 100.0,
     "environment_score": 70,
@@ -420,7 +420,7 @@
         }
       ]
     },
-    "wall_seconds": 2.050813209003536,
+    "wall_seconds": 2.1610560000117403,
     "security": "real local processes and temporary SQLite; trusted code only, not a sandbox"
   },
   "note": "Repository-level task. Core microbenchmark raw score is diagnostic and is not the official task quality."

@@ -1,0 +1,17 @@
+{
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 code/C2/test_environment_harness.py",
+  "local_tests_passed": 6,
+  "local_tests_total": 6,
+  "observed_test_seconds": 1.086,
+  "controlled_before_fix": {
+    "resolver_assertion_prevented_ready_output": true,
+    "controlled_dns_delay_seconds": 0.2,
+    "observed_ready_delay_seconds": 0.2064
+  },
+  "startup_deadline_seconds": 4.0,
+  "environment": {
+    "python": "3.14.4",
+    "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+  },
+  "remote_confirmation": "pending next macOS CI run; local controlled reproduction is not confirmation of the original remote blocking stack"
+}

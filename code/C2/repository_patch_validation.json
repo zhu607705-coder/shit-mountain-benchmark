@@ -4,6 +4,9 @@
   "applied": true,
   "matches_baseline_byte_for_byte": true,
   "baseline_file_count": 18,
+  "patch_sha256": "46f7cf915db5364286cbf163dcab52aabf291e54b27611eeb46eeca4a156e234",
+  "baseline_source_sha256": "ac1c3398dd34e290a229b9e3ec490f0ad8004917fc13cfa0d8c0338d34e153b6",
+  "buggy_source_sha256": "51b1391444c0f9e74175243a3103fcdc546ab95c2c8b7adad28ed2439f82beca",
   "stdout": "patching file DIAGNOSIS.md\npatching file README.md\npatching file TEST_REPORT.md\npatching file 'app/config.py'\npatching file 'app/core/cache.py'\npatching file 'app/core/engine.py'\npatching file 'app/core/operations.py'\npatching file 'app/db.py'\npatching file 'app/runner.py'\npatching file 'app/service.py'\npatching file selftest.py\n",
   "stderr": ""
 }

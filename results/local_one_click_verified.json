@@ -11,67 +11,72 @@
     {
       "name": "score-normalization",
       "passed": true,
-      "seconds": 0.0397
+      "seconds": 0.0409
     },
     {
       "name": "R1-judge",
       "passed": true,
-      "seconds": 0.048
+      "seconds": 0.0494
     },
     {
       "name": "R2-judge",
       "passed": true,
-      "seconds": 0.0409
+      "seconds": 0.0415
     },
     {
       "name": "policy-boundaries",
       "passed": true,
-      "seconds": 0.3299
+      "seconds": 0.3355
     },
     {
       "name": "C1-oracle",
       "passed": true,
-      "seconds": 0.0379
+      "seconds": 0.3092
     },
     {
       "name": "C2-oracle",
       "passed": true,
-      "seconds": 0.0506
+      "seconds": 0.0513
+    },
+    {
+      "name": "C2-local-service-portability",
+      "passed": true,
+      "seconds": 1.1642
     },
     {
       "name": "C3-recovery-regressions",
       "passed": true,
-      "seconds": 0.0672
+      "seconds": 0.0678
     },
     {
       "name": "C4-cache-regressions",
       "passed": true,
-      "seconds": 0.0445
+      "seconds": 0.0447
     },
     {
       "name": "frontend-syntax-and-logic",
       "passed": true,
-      "seconds": 0.1982
+      "seconds": 0.1928
     },
     {
       "name": "F3-stream-state",
       "passed": true,
-      "seconds": 0.0429
+      "seconds": 0.044
     },
     {
       "name": "F4-multiwindow-state",
       "passed": true,
-      "seconds": 0.0304
+      "seconds": 0.0308
     },
     {
       "name": "API-and-import-adapters",
       "passed": true,
-      "seconds": 1.1556
+      "seconds": 2.1842
     },
     {
       "name": "all-baselines-and-real-services",
       "passed": true,
-      "seconds": 14.182
+      "seconds": 14.4863
     },
     {
       "name": "C1-broken-control-rejected",

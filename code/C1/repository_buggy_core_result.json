@@ -2,39 +2,37 @@
   "benchmark": "C1",
   "version": "0.1.0",
   "seed": 2026092601,
-  "measured_at_utc": "2026-09-26T02:35:10.762057+00:00",
+  "measured_at_utc": "2026-09-26T02:30:49.563990+00:00",
   "suite_sha256": "f2bdd1af9378473a0ed329d924b1d510d367aa818ba71ed8c287f7cf12f61e82",
-  "valid": true,
+  "valid": false,
   "critical_case_names": [
     "ordinary_post",
     "tenant_namespace",
     "invalid_is_atomic"
   ],
   "critical_passed": [
-    "ordinary_post",
-    "tenant_namespace",
-    "invalid_is_atomic"
+    "ordinary_post"
   ],
-  "submission": "repository/baseline",
-  "submission_sha256": "808ba4dd6523fc1948a557bc9cac918c2d869ec9cb3da1255e633e835d02d1a3",
-  "raw_score": 92.250995,
+  "submission": "repository/buggy",
+  "submission_sha256": "19033bdaf262eac54511eb2223eadff25c4dafefc7d42ce3a6284a7142842db5",
+  "raw_score": 12.698413,
   "correctness": {
-    "passed": 63,
+    "passed": 10,
     "total": 63,
-    "rate": 1.0
+    "rate": 0.15873015873015872
   },
   "performance": {
-    "median_seconds": 0.024647665995871648,
+    "median_seconds": 0.008601417008321732,
     "samples_seconds": [
-      0.024687333003384992,
-      0.02415525002288632,
-      0.024647665995871648
+      0.010293958010151982,
+      0.008544165990315378,
+      0.008601417008321732
     ],
-    "peak_traced_bytes": 4018223,
-    "speed_utility": 0.5489712955401672,
-    "memory_utility": 0.6761281748739868,
+    "peak_traced_bytes": 2170392,
+    "speed_utility": 0.7771735424513709,
+    "memory_utility": 0.7944509896770527,
     "within_budget": true,
-    "resource_bonus_eligible": true
+    "resource_bonus_eligible": false
   },
   "environment": {
     "python": "3.14.4",
@@ -52,23 +50,28 @@
     },
     {
       "name": "tenant_namespace",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "reverse_before_post",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "conflicting_payload",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "invalid_is_atomic",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "boolean_is_not_money",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "reversal_of_reversal",
@@ -76,7 +79,8 @@
     },
     {
       "name": "conflicting_reversal_is_quarantined",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "repeated_account_zero_projection",
@@ -84,7 +88,8 @@
     },
     {
       "name": "unknown_kind_and_extra_fields",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "integer_precision",
@@ -92,7 +97,8 @@
     },
     {
       "name": "two_reversals_one_post",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "canonical_object_keys",
@@ -100,179 +106,223 @@
     },
     {
       "name": "bad_row",
-      "passed": true
+      "passed": false,
+      "error": "ValueError: too many values to unpack (expected 2, got 3)"
     },
     {
       "name": "non_list_entries",
-      "passed": true
+      "passed": false,
+      "error": "ValueError: not enough values to unpack (expected 2, got 1)"
     },
     {
       "name": "float_money",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "out_of_range_money",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "empty_reverse_target",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "tenant_reverse_isolation",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "conflict_precedes_invalid",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "aggregate_exceeds_float_exactness",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_00",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_01",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_02",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_03",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_04",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_05",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_06",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_07",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_08",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_09",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_10",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_11",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_12",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_13",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_14",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_15",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_16",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_17",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_18",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_19",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_20",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_21",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_22",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_23",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_24",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_25",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_26",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_27",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_28",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_29",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_30",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_31",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_32",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_33",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_34",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "public_random_35",
-      "passed": true
+      "passed": false,
+      "error": "output_mismatch"
     },
     {
       "name": "metamorphic_base",
@@ -292,7 +342,7 @@
     },
     {
       "name": "large_mixed_event_stream",
-      "passed": true
+      "passed": false
     }
   ]
 }

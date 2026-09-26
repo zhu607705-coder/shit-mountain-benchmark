@@ -1,9 +1,9 @@
 {
   "benchmark": "C2-repository",
   "version": "0.2.0",
-  "measured_at_utc": "2026-09-26T01:50:55.849850+00:00",
-  "suite_sha256": "0328add86c2e11c410fc73cba34624baf28f4e6fbda4736fa1ee885067265baa",
-  "submission_sha256": "4158bcbbd99009b9684fd784bf9054a1cd7c9ad267e998f66fbc0dfd399e7f8d",
+  "measured_at_utc": "2026-09-26T02:33:55.056914+00:00",
+  "suite_sha256": "ac0a276c1609eb66b76adf4e03a44c5c76cb3dba41258b4133c89994c708c70c",
+  "submission_sha256": "ac1c3398dd34e290a229b9e3ec490f0ad8004917fc13cfa0d8c0338d34e153b6",
   "environment": {
     "python": "3.14.4",
     "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
@@ -26,57 +26,57 @@
     {
       "name": "default_business_flow",
       "passed": true,
-      "seconds": 0.2618
+      "seconds": 0.2549
     },
     {
       "name": "configured_base_path",
       "passed": true,
-      "seconds": 0.262
+      "seconds": 0.2694
     },
     {
       "name": "different_process_workdirs",
       "passed": true,
-      "seconds": 0.2572
+      "seconds": 0.2619
     },
     {
       "name": "unicode_data_directory",
       "passed": true,
-      "seconds": 0.261
+      "seconds": 0.2597
     },
     {
       "name": "project_isolation",
       "passed": true,
-      "seconds": 0.3652
+      "seconds": 0.3533
     },
     {
       "name": "cancel_running_then_retry",
       "passed": true,
-      "seconds": 0.5998
+      "seconds": 0.5872
     },
     {
       "name": "dependency_failure_then_repair",
       "passed": true,
-      "seconds": 0.4131
+      "seconds": 0.4149
     },
     {
       "name": "enqueue_snapshot_isolation",
       "passed": true,
-      "seconds": 0.8944
+      "seconds": 0.9635
     },
     {
       "name": "server_restart_persistence",
       "passed": true,
-      "seconds": 0.5482
+      "seconds": 0.5495
     },
     {
       "name": "worker_crash_recovery",
       "passed": true,
-      "seconds": 0.5736
+      "seconds": 0.5677
     },
     {
       "name": "legacy_schema_migration",
       "passed": true,
-      "seconds": 0.3658
+      "seconds": 0.382
     }
   ],
   "process_model": "real HTTP server and worker subprocesses; temporary SQLite DBs; no fixed ports; automatic cleanup",

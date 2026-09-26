@@ -1,9 +1,18 @@
 """Small loopback HTTP API; routing respects the configured base path."""
 import json
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
+from socketserver import TCPServer
 from urllib.parse import unquote,urlsplit
 from . import service
 from .db import initialize
+
+
+class LoopbackHTTPServer(ThreadingHTTPServer):
+    """This service binds 127.0.0.1; no reverse DNS is needed for HTTP metadata."""
+    def server_bind(self):
+        TCPServer.server_bind(self)
+        self.server_name='localhost'
+        self.server_port=self.server_address[1]
 
 
 def serve(config):
@@ -32,7 +41,7 @@ def serve(config):
             except Exception as exc:self.reply(500,{'error':type(exc).__name__+': '+str(exc)})
         def reply(self,status,payload):
             data=json.dumps(payload,ensure_ascii=False).encode();self.send_response(status);self.send_header('Content-Type','application/json; charset=utf-8');self.send_header('Content-Length',str(len(data)));self.end_headers();self.wfile.write(data)
-    server=ThreadingHTTPServer((config['host'],config['port']),Handler)
+    server=LoopbackHTTPServer((config['host'],config['port']),Handler)
     print(json.dumps({'ready':True,'port':server.server_address[1],'base_path':config['base_path']}),flush=True)
     try:server.serve_forever(poll_interval=.05)
     finally:server.server_close()

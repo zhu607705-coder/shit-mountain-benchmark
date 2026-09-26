@@ -11,6 +11,7 @@ import threading
 import unittest
 import warnings
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from socketserver import TCPServer
 from unittest.mock import patch
 import zipfile
 
@@ -106,7 +107,12 @@ class IntegrationTests(unittest.TestCase):
                 handler.end_headers(); handler.wfile.write(raw)
             def log_message(self, *_):
                 pass
-        server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+        class LoopbackServer(ThreadingHTTPServer):
+            def server_bind(server):
+                TCPServer.server_bind(server)
+                server.server_name = 'localhost'
+                server.server_port = server.server_address[1]
+        server = LoopbackServer(('127.0.0.1', 0), Handler)
         thread = threading.Thread(target=server.serve_forever, daemon=True); thread.start()
         self.addCleanup(server.server_close); self.addCleanup(server.shutdown)
         return {**self.cfg, 'base_url': f'http://127.0.0.1:{server.server_port}/v1'}, observed
@@ -129,6 +135,23 @@ class IntegrationTests(unittest.TestCase):
         cfg, _ = self.mock_server(json.dumps({'leaked': self.key}))
         with patch.dict(os.environ, {'INTEGRATION_TEST_KEY': self.key}), self.assertRaises(ValueError):
             cli.completion(cfg, [])
+
+    def test_loopback_mock_ignores_unrelated_proxy(self):
+        cfg, observed = self.mock_server()
+        cfg['timeout'] = 2
+        proxy_environment = {'INTEGRATION_TEST_KEY': self.key, 'http_proxy': 'http://127.0.0.1:9',
+                             'HTTP_PROXY': 'http://127.0.0.1:9', 'no_proxy': '', 'NO_PROXY': ''}
+        with patch.dict(os.environ, proxy_environment):
+            submission, _ = cli.completion(cfg, [])
+        self.assertEqual(submission['format_version'], 1)
+        self.assertEqual(len(observed), 1)
+
+    def test_loopback_mock_startup_needs_no_reverse_dns(self):
+        with patch('socket.getfqdn', side_effect=AssertionError('unexpected reverse DNS')):
+            cfg, _ = self.mock_server()
+            with patch.dict(os.environ, {'INTEGRATION_TEST_KEY': self.key}):
+                submission, _ = cli.completion(cfg, [])
+        self.assertEqual(submission['format_version'], 1)
 
     def test_task_exports_exclude_solutions(self):
         for task in cli.TASKS:

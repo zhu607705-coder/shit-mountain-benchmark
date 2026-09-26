@@ -115,7 +115,11 @@ def completion(config, messages):
         def redirect_request(self, req, fp, code, msg, headers, newurl):
             return None
     try:
-        with request.build_opener(NoRedirect()).open(req, timeout=config['timeout']) as response:
+        # Loopback mocks are local endpoints; macOS system proxy discovery can route or stall them.
+        handlers = [NoRedirect()]
+        if parse.urlsplit(url).hostname in ('localhost', '127.0.0.1', '::1'):
+            handlers.insert(0, request.ProxyHandler({}))
+        with request.build_opener(*handlers).open(req, timeout=config['timeout']) as response:
             body = response.read(MAX_FILE + 1)
     except error.HTTPError as exc:
         raise ValueError(f'API returned HTTP {exc.code}; response body omitted') from None

@@ -1,9 +1,9 @@
 {
-  "captured_at_utc": "2026-09-26T02:15:17.159758+00:00",
+  "captured_at_utc": "2026-09-26T02:35:23.979906+00:00",
   "python": "3.14.4 (main, Apr  7 2026, 13:13:20) [Clang 21.0.0 (clang-2100.0.123.102)]",
   "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
   "official_model_comparison": false,
-  "total_wall_seconds": 14.150139,
+  "total_wall_seconds": 14.455391,
   "tasks": {
     "R1": {
       "judge_result": {
@@ -6440,7 +6440,7 @@
           }
         ]
       },
-      "wall_seconds_for_baseline_and_judge": 0.518443
+      "wall_seconds_for_baseline_and_judge": 0.526876
     },
     "R2": {
       "judge_result": {
@@ -11932,7 +11932,7 @@
           }
         ]
       },
-      "wall_seconds_for_baseline_and_judge": 0.218045
+      "wall_seconds_for_baseline_and_judge": 0.220378
     },
     "C1": {
       "judge_result": {
@@ -11948,7 +11948,7 @@
           "benchmark": "C1",
           "version": "0.1.0",
           "seed": 2026092601,
-          "measured_at_utc": "2026-09-26T02:15:04.228057+00:00",
+          "measured_at_utc": "2026-09-26T02:35:10.762057+00:00",
           "suite_sha256": "f2bdd1af9378473a0ed329d924b1d510d367aa818ba71ed8c287f7cf12f61e82",
           "valid": true,
           "critical_case_names": [
@@ -11962,22 +11962,22 @@
             "invalid_is_atomic"
           ],
           "submission": "repository/baseline",
-          "submission_sha256": "169402f79cbd5387370aaa1ae667100638841810a438f812e183fd666a3a5ef0",
-          "raw_score": 92.308046,
+          "submission_sha256": "808ba4dd6523fc1948a557bc9cac918c2d869ec9cb3da1255e633e835d02d1a3",
+          "raw_score": 92.250995,
           "correctness": {
             "passed": 63,
             "total": 63,
             "rate": 1.0
           },
           "performance": {
-            "median_seconds": 0.02408558299066499,
+            "median_seconds": 0.024647665995871648,
             "samples_seconds": [
-              0.02408558299066499,
-              0.024363042000913993,
-              0.023532082996098325
+              0.024687333003384992,
+              0.02415525002288632,
+              0.024647665995871648
             ],
             "peak_traced_bytes": 4018223,
-            "speed_utility": 0.5546764653563577,
+            "speed_utility": 0.5489712955401672,
             "memory_utility": 0.6761281748739868,
             "within_budget": true,
             "resource_bonus_eligible": true
@@ -12246,13 +12246,13 @@
           "benchmark": "C1_repository",
           "version": "0.2.0",
           "submission": "repository/baseline",
-          "measured_at_utc": "2026-09-26T02:15:06.346761+00:00",
+          "measured_at_utc": "2026-09-26T02:35:12.987362+00:00",
           "environment": {
             "python": "3.14.4",
             "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
           },
-          "suite_sha256": "75d48a19fb33242b6e8d36cd86a645c0aed8172a3caefca6bc148242b2b54b44",
-          "submission_sha256": "169402f79cbd5387370aaa1ae667100638841810a438f812e183fd666a3a5ef0",
+          "suite_sha256": "1cdd248ca23f03dc44df4149e70bc043105d3a349308176d9ef740ef5af2d9c3",
+          "submission_sha256": "808ba4dd6523fc1948a557bc9cac918c2d869ec9cb3da1255e633e835d02d1a3",
           "valid": true,
           "raw_score": 100.0,
           "environment_score": 70,
@@ -12357,12 +12357,12 @@
               }
             ]
           },
-          "wall_seconds": 2.050813209003536,
+          "wall_seconds": 2.1610560000117403,
           "security": "real local processes and temporary SQLite; trusted code only, not a sandbox"
         },
         "note": "Repository-level task. Core microbenchmark raw score is diagnostic and is not the official task quality."
       },
-      "wall_seconds_for_baseline_and_judge": 2.60554
+      "wall_seconds_for_baseline_and_judge": 2.723829
     },
     "C2": {
       "judge_result": {
@@ -12378,7 +12378,7 @@
           "benchmark": "C2",
           "version": "0.1.0",
           "seed": 2026092602,
-          "measured_at_utc": "2026-09-26T02:15:08.618607+00:00",
+          "measured_at_utc": "2026-09-26T02:35:15.261701+00:00",
           "suite_sha256": "7663baa5c254890edd6389fd779c7aa36db0116b1c0eeddcf1e2dafd53a9144d",
           "valid": true,
           "critical_case_names": [
@@ -12392,22 +12392,22 @@
             "result_mutation_ownership"
           ],
           "submission": "repository/baseline",
-          "submission_sha256": "4158bcbbd99009b9684fd784bf9054a1cd7c9ad267e998f66fbc0dfd399e7f8d",
-          "raw_score": 93.423008,
+          "submission_sha256": "ac1c3398dd34e290a229b9e3ec490f0ad8004917fc13cfa0d8c0338d34e153b6",
+          "raw_score": 93.397465,
           "correctness": {
             "passed": 57,
             "total": 57,
             "rate": 1.0
           },
           "performance": {
-            "median_seconds": 0.019530166988261044,
+            "median_seconds": 0.01973075108253397,
             "samples_seconds": [
-              0.019836335093714297,
-              0.0195272509008646,
-              0.019530166988261044
+              0.01997078792192042,
+              0.01973075108253397,
+              0.019637290883110836
             ],
             "peak_traced_bytes": 3282632,
-            "speed_utility": 0.5059427147357924,
+            "speed_utility": 0.5033884196765712,
             "memory_utility": 0.8363580820751981,
             "within_budget": true,
             "resource_bonus_eligible": true
@@ -12651,9 +12651,9 @@
         "environment_result": {
           "benchmark": "C2-repository",
           "version": "0.2.0",
-          "measured_at_utc": "2026-09-26T02:15:13.524014+00:00",
-          "suite_sha256": "0328add86c2e11c410fc73cba34624baf28f4e6fbda4736fa1ee885067265baa",
-          "submission_sha256": "4158bcbbd99009b9684fd784bf9054a1cd7c9ad267e998f66fbc0dfd399e7f8d",
+          "measured_at_utc": "2026-09-26T02:35:20.281935+00:00",
+          "suite_sha256": "ac0a276c1609eb66b76adf4e03a44c5c76cb3dba41258b4133c89994c708c70c",
+          "submission_sha256": "ac1c3398dd34e290a229b9e3ec490f0ad8004917fc13cfa0d8c0338d34e153b6",
           "environment": {
             "python": "3.14.4",
             "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
@@ -12676,57 +12676,57 @@
             {
               "name": "default_business_flow",
               "passed": true,
-              "seconds": 0.2514
+              "seconds": 0.2565
             },
             {
               "name": "configured_base_path",
               "passed": true,
-              "seconds": 0.2692
+              "seconds": 0.2703
             },
             {
               "name": "different_process_workdirs",
               "passed": true,
-              "seconds": 0.2597
+              "seconds": 0.2707
             },
             {
               "name": "unicode_data_directory",
               "passed": true,
-              "seconds": 0.2341
+              "seconds": 0.264
             },
             {
               "name": "project_isolation",
               "passed": true,
-              "seconds": 0.3847
+              "seconds": 0.3941
             },
             {
               "name": "cancel_running_then_retry",
               "passed": true,
-              "seconds": 0.5786
+              "seconds": 0.6003
             },
             {
               "name": "dependency_failure_then_repair",
               "passed": true,
-              "seconds": 0.3803
+              "seconds": 0.4131
             },
             {
               "name": "enqueue_snapshot_isolation",
               "passed": true,
-              "seconds": 0.9317
+              "seconds": 0.9196
             },
             {
               "name": "server_restart_persistence",
               "passed": true,
-              "seconds": 0.5437
+              "seconds": 0.5493
             },
             {
               "name": "worker_crash_recovery",
               "passed": true,
-              "seconds": 0.5634
+              "seconds": 0.5709
             },
             {
               "name": "legacy_schema_migration",
               "passed": true,
-              "seconds": 0.3775
+              "seconds": 0.3705
             }
           ],
           "process_model": "real HTTP server and worker subprocesses; temporary SQLite DBs; no fixed ports; automatic cleanup",
@@ -12734,7 +12734,7 @@
         },
         "note": "Repository-level task. Core microbenchmark raw score is diagnostic and is not the official task quality."
       },
-      "wall_seconds_for_baseline_and_judge": 7.196913
+      "wall_seconds_for_baseline_and_judge": 7.31053
     },
     "R3": {
       "judge_result": {
@@ -16419,7 +16419,7 @@
         "note": "Fixed quality mapping: 100/(1+objective_loss/10). Public replay, not a sealed hidden set.",
         "execution": "same-process trusted local evaluator; not an untrusted-code sandbox"
       },
-      "wall_seconds_for_baseline_and_judge": 2.305003
+      "wall_seconds_for_baseline_and_judge": 2.360639
     },
     "R4": {
       "judge_result": {
@@ -16665,7 +16665,7 @@
         "note": "Fixed quality mapping: 100/(1+objective_loss/10). Public replay, not a sealed hidden set.",
         "execution": "same-process trusted local evaluator; not an untrusted-code sandbox"
       },
-      "wall_seconds_for_baseline_and_judge": 0.793917
+      "wall_seconds_for_baseline_and_judge": 0.814806
     },
     "C3": {
       "judge_result": {
@@ -16730,14 +16730,14 @@
             true,
             true
           ],
-          "transactions_per_second_500": 29951.478033884236,
-          "timing_seconds": 0.0166936669847928,
+          "transactions_per_second_500": 33874.28764546719,
+          "timing_seconds": 0.014760457997908816,
           "timing_note": "single local run; not power-loss proof or formal leaderboard"
         },
         "note": "Behavior checks verified. Formal performance workload and quality weights are not calibrated; full raw quality remains pending.",
         "execution": "same-process trusted local evaluator; not an untrusted-code sandbox"
       },
-      "wall_seconds_for_baseline_and_judge": 0.311863
+      "wall_seconds_for_baseline_and_judge": 0.306977
     },
     "C4": {
       "judge_result": {
@@ -16817,14 +16817,14 @@
               "pass": true
             }
           ],
-          "cold_ms": 0.4952909948769957,
-          "warm_mean_ms_100": 0.11304791987640783,
+          "cold_ms": 0.5063340067863464,
+          "warm_mean_ms_100": 0.11217500024940819,
           "timing_note": "tiny pilot DAG; not the 5000-node tournament workload"
         },
         "note": "Behavior checks verified. Formal performance workload and quality weights are not calibrated; full raw quality remains pending.",
         "execution": "same-process trusted local evaluator; not an untrusted-code sandbox"
       },
-      "wall_seconds_for_baseline_and_judge": 0.189605
+      "wall_seconds_for_baseline_and_judge": 0.181134
     }
   }
 }

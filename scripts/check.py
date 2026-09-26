@@ -40,6 +40,7 @@ def main():
         ("policy-boundaries", [sys.executable, "reasoning/R3/review_selftest.py"]),
         ("C1-oracle", [sys.executable, "-m", "unittest", "discover", "-s", "code/C1", "-p", "test_harness.py"]),
         ("C2-oracle", [sys.executable, "-m", "unittest", "discover", "-s", "code/C2", "-p", "test_harness.py"]),
+        ("C2-local-service-portability", [sys.executable, "code/C2/test_environment_harness.py"]),
         ("C3-recovery-regressions", [sys.executable, "-m", "unittest", "discover", "-s", "code/C3", "-p", "test_review.py"]),
         ("C4-cache-regressions", [sys.executable, "-m", "unittest", "discover", "-s", "code/C4", "-p", "test_review.py"]),
         ("frontend-syntax-and-logic", [sys.executable, "frontend/verify_frontend.py"]),

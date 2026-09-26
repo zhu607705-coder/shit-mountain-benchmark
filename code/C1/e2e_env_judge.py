@@ -44,19 +44,22 @@ class Environment:
                         LEDGER_LEASE_SECONDS="0.12", LEDGER_WORKER_DELAY="0")
         self.processes, self.logs = [], []
         self.relative = relative
+        # These URLs only target our temporary 127.0.0.1 service. System or
+        # environment proxies must not route local fixture traffic elsewhere.
+        self._http = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 
     def start(self, role, delay="0"):
         cwd = self.root / ("别处 api" if role == "serve" else "别处 worker") if self.relative else self.repo
         cwd.mkdir(exist_ok=True)
         log = self.root / f"{role}-{len(self.logs)}.log"
         handle = log.open("w")
-        process = subprocess.Popen([sys.executable, str(self.repo / "manage.py"), role], cwd=cwd,
+        process = subprocess.Popen([sys.executable, "-u", str(self.repo / "manage.py"), role], cwd=cwd,
                                    env=dict(self.env, LEDGER_WORKER_DELAY=delay), stdout=handle, stderr=subprocess.STDOUT)
         handle.close()
         self.processes.append(process)
         self.logs.append(log)
         if role == "serve":
-            self.until(lambda: self.request("GET", "/health")[0] == 200, timeout=1.2)
+            self.until(lambda: self.request("GET", "/health")[0] == 200, timeout=1.2, process=process)
         return process
 
     def request(self, method, path, body=None):
@@ -64,21 +67,24 @@ class Environment:
         request = urllib.request.Request(f"http://127.0.0.1:{self.port}{path}", data=data, method=method,
                                          headers={"Content-Type": "application/json"})
         try:
-            with urllib.request.urlopen(request, timeout=.4) as response:
+            with self._http.open(request, timeout=.4) as response:
                 return response.status, json.load(response)
         except urllib.error.HTTPError as exc:
             return exc.code, json.loads(exc.read())
 
-    def until(self, predicate, timeout=1.2):
+    def until(self, predicate, timeout=1.2, process=None):
         deadline, last = time.monotonic() + timeout, None
         while time.monotonic() < deadline:
+            if process is not None and process.poll() is not None:
+                raise AssertionError(f"service exited before readiness: pid={process.pid} exit_code={process.returncode}; logs={self.tail()}")
             try:
                 if predicate():
                     return
             except (OSError, urllib.error.URLError, TimeoutError, KeyError) as exc:
                 last = str(exc)
             time.sleep(.015)
-        raise AssertionError(f"deadline exceeded: {last or 'condition false'}")
+        diagnostic = "" if process is None else f"; pid={process.pid} exit_code={process.poll()}; logs={self.tail()}"
+        raise AssertionError(f"deadline exceeded: {last or 'condition false'}{diagnostic}")
 
     def submit(self, tenant, request_id, events, expected=202):
         status, body = self.request("POST", "/v1/batches", {"tenant": tenant, "request_id": request_id, "events": events})

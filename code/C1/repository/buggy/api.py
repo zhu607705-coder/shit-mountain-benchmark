@@ -1,5 +1,6 @@
 """Small JSON API: separate API process, no implicit in-process queue runner."""
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from socketserver import TCPServer
 import json
 from urllib.parse import parse_qs, unquote, urlparse
 import traceback
@@ -59,6 +60,17 @@ def run(settings):
                 traceback.print_exc()
                 self.reply(500, {"error": "INTERNAL"})
 
-    server = ThreadingHTTPServer((settings["host"], settings["port"]), Handler)
+    class Server(ThreadingHTTPServer):
+        def server_bind(self):
+            # Match the baseline's portable loopback transport; keep the
+            # intended persistence, tenancy and recovery defects unchanged.
+            TCPServer.server_bind(self)
+            self.server_name = "localhost"
+            self.server_port = self.server_address[1]
+
+    server = Server((settings["host"], settings["port"]), Handler)
     print(f"api ready at {settings['host']}:{settings['port']} db={path}", flush=True)
-    server.serve_forever()
+    try:
+        server.serve_forever()
+    finally:
+        server.server_close()

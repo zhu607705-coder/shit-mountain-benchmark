@@ -1,38 +1,38 @@
 {
-  "benchmark": "C2",
+  "benchmark": "C1",
   "version": "0.1.0",
-  "seed": 2026092602,
-  "measured_at_utc": "2026-09-26T02:35:15.261701+00:00",
-  "suite_sha256": "7663baa5c254890edd6389fd779c7aa36db0116b1c0eeddcf1e2dafd53a9144d",
+  "seed": 2026092601,
+  "measured_at_utc": "2026-09-26T02:30:49.281872+00:00",
+  "suite_sha256": "f2bdd1af9378473a0ed329d924b1d510d367aa818ba71ed8c287f7cf12f61e82",
   "valid": true,
   "critical_case_names": [
-    "ordinary_build",
-    "failure_repair",
-    "result_mutation_ownership"
+    "ordinary_post",
+    "tenant_namespace",
+    "invalid_is_atomic"
   ],
   "critical_passed": [
-    "ordinary_build",
-    "failure_repair",
-    "result_mutation_ownership"
+    "ordinary_post",
+    "tenant_namespace",
+    "invalid_is_atomic"
   ],
   "submission": "repository/baseline",
-  "submission_sha256": "ac1c3398dd34e290a229b9e3ec490f0ad8004917fc13cfa0d8c0338d34e153b6",
-  "raw_score": 93.397465,
+  "submission_sha256": "808ba4dd6523fc1948a557bc9cac918c2d869ec9cb3da1255e633e835d02d1a3",
+  "raw_score": 92.307055,
   "correctness": {
-    "passed": 57,
-    "total": 57,
+    "passed": 63,
+    "total": 63,
     "rate": 1.0
   },
   "performance": {
-    "median_seconds": 0.01973075108253397,
+    "median_seconds": 0.024095249973470345,
     "samples_seconds": [
-      0.01997078792192042,
-      0.01973075108253397,
-      0.019637290883110836
+      0.024956125009339303,
+      0.023508041980676353,
+      0.024095249973470345
     ],
-    "peak_traced_bytes": 3282632,
-    "speed_utility": 0.5033884196765712,
-    "memory_utility": 0.8363580820751981,
+    "peak_traced_bytes": 4018223,
+    "speed_utility": 0.5545773430146408,
+    "memory_utility": 0.6761281748739868,
     "within_budget": true,
     "resource_bonus_eligible": true
   },
@@ -43,75 +43,91 @@
   "security": "same-process trusted local prototype; not a sandbox",
   "tests": [
     {
-      "name": "ordinary_build",
+      "name": "empty",
       "passed": true
     },
     {
-      "name": "transitive_invalidation",
+      "name": "ordinary_post",
       "passed": true
     },
     {
-      "name": "alias_chain_retarget",
+      "name": "tenant_namespace",
       "passed": true
     },
     {
-      "name": "failure_repair",
+      "name": "reverse_before_post",
       "passed": true
     },
     {
-      "name": "cancel_then_retry",
+      "name": "conflicting_payload",
       "passed": true
     },
     {
-      "name": "result_mutation_ownership",
+      "name": "invalid_is_atomic",
       "passed": true
     },
     {
-      "name": "cycle_and_recovery",
+      "name": "boolean_is_not_money",
       "passed": true
     },
     {
-      "name": "alias_cycle_and_recovery",
+      "name": "reversal_of_reversal",
       "passed": true
     },
     {
-      "name": "delete_dependency_then_recreate",
+      "name": "conflicting_reversal_is_quarantined",
       "passed": true
     },
     {
-      "name": "dependency_order_and_multiplicity",
+      "name": "repeated_account_zero_projection",
       "passed": true
     },
     {
-      "name": "unknown_op_repair",
+      "name": "unknown_kind_and_extra_fields",
       "passed": true
     },
     {
-      "name": "error_precedence",
+      "name": "integer_precision",
       "passed": true
     },
     {
-      "name": "empty_operators",
+      "name": "two_reversals_one_post",
       "passed": true
     },
     {
-      "name": "input_dependencies_are_visited",
+      "name": "canonical_object_keys",
       "passed": true
     },
     {
-      "name": "aliases_shadow_nodes",
+      "name": "bad_row",
       "passed": true
     },
     {
-      "name": "deep_cycle_after_cache",
+      "name": "non_list_entries",
       "passed": true
     },
     {
-      "name": "shared_dag_is_not_cycle",
+      "name": "float_money",
       "passed": true
     },
     {
-      "name": "long_alias_chain",
+      "name": "out_of_range_money",
+      "passed": true
+    },
+    {
+      "name": "empty_reverse_target",
+      "passed": true
+    },
+    {
+      "name": "tenant_reverse_isolation",
+      "passed": true
+    },
+    {
+      "name": "conflict_precedes_invalid",
+      "passed": true
+    },
+    {
+      "name": "aggregate_exceeds_float_exactness",
       "passed": true
     },
     {
@@ -263,11 +279,19 @@
       "passed": true
     },
     {
-      "name": "metamorphic_unreachable_edit",
+      "name": "metamorphic_permutation",
       "passed": true
     },
     {
-      "name": "incremental_branch_updates",
+      "name": "metamorphic_idempotence",
+      "passed": true
+    },
+    {
+      "name": "metamorphic_tenant_rename",
+      "passed": true
+    },
+    {
+      "name": "large_mixed_event_stream",
       "passed": true
     }
   ]
