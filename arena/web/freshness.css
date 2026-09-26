@@ -1,0 +1,3 @@
+.ui-update{position:fixed;z-index:1000;right:20px;bottom:20px;display:flex;align-items:center;gap:12px;max-width:calc(100vw - 40px);padding:12px 14px;border:1px solid #717466;background:#f2efe4;color:#13170f;box-shadow:5px 5px 0 #0008;font-size:13px;line-height:1.4}
+.ui-update[hidden]{display:none!important}.ui-update button{border:1px solid currentColor;padding:7px 10px;font:inherit;cursor:pointer;white-space:nowrap}.ui-update #ui-update-reload{background:#14190f;color:#f2efe4}.ui-update #ui-update-later{background:transparent;color:#3e4834}.ui-update button:focus-visible{outline:3px solid #14190f;outline-offset:3px}
+@media(max-width:600px){.ui-update{left:12px;right:12px;bottom:12px;max-width:none;flex-wrap:wrap}.ui-update span{flex-basis:100%}}

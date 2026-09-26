@@ -1,0 +1,45 @@
+{
+  "release": "0.2.2",
+  "cause": "The actual user-selected tab retained the pre-mission-room document; the live server already served the newer document. Previous QA used another tab.",
+  "original_document": {
+    "scripts": [
+      "/motion.js",
+      "/app.js"
+    ],
+    "room_verdict_present": false
+  },
+  "checks": {
+    "live_html_matched_disk": true,
+    "selected_user_F4_restored": true,
+    "user_fields_preserved": true,
+    "user_tab_final_build_matches_served_build": true,
+    "stale_page_notified_without_auto_reload": true,
+    "update_banner_inside_open_dialog": true,
+    "update_kept_match_view_and_nonempty_draft": true,
+    "stage_motion_observed_opacity": 0.977334,
+    "stage_motion_observed_translate_x": 0.498655,
+    "blade_mid_transition_angle_deg": 49.2857,
+    "blade_target_angle_deg": 0,
+    "seal_animation_observed": "room-seal-drop",
+    "form_animation_observed": "room-seal-sweep",
+    "sealing_and_real_job_running_simultaneously": true,
+    "seal_completed_into_actual_C1_score": 100
+  },
+  "build": "fd807247ce59f1761207fb9e3170004eae57c047985862582e38328a9c9058a3",
+  "sha256": {
+    "arena/web/index.html": "8b486c369ecaaf6f4f10d90ead146bd32ac7ce4bbccb377fbad91be77fd9821b",
+    "arena/web/app.js": "2029ffb24161b1f0cd699a4accab600853c4ed4b969f3b3e04d9158b1c6c9124",
+    "arena/web/freshness.js": "ff1771f0e9fccb48dfbccc2ff2e2ac3e83620844a90661244d9f9350e7afc0e9",
+    "arena/web/freshness.css": "9357b6ecab3ce8ef4be9098de7e49a7e1ae2a97979f62ebe0e5eaf34296dd6d5",
+    "arena/web/motion.js": "121fd33cc95e20ba280c4fa60f286af686af1f87cd10fb93377f509a441fc630",
+    "arena/web/room.js": "240051fed2cd2936148bf84cab327a2856bce007d5d680cceb0ccd2095042519",
+    "arena/web/room.css": "f3ae24a657d18fbb7a19295ea5c07277eebb2f1616de6a6f65301a2855dd38ed",
+    "arena/web/style.css": "0fd23938c176f601043beb8e3b0f42c84434eb0642139cc6fc27bd5aa6b3ddc7",
+    "arena/web/build.txt": "31b4a4b7cfee673736952a74c9131a5f7f965b0c37e519914e3ff1fc2df58b3b"
+  },
+  "limits": [
+    "Browser observations validate UI behavior, not a live commercial-model result",
+    "The first upgrade from old documents without the watcher requires a refresh; the currently selected user tab was explicitly upgraded and verified",
+    "Browser-native reload outside the supplied update/refresh controls is not promised to retain drafts"
+  ]
+}

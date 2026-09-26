@@ -34,6 +34,7 @@ def main():
             ast.parse(p.read_text(encoding="utf-8"), filename=str(p))
     checks.append({"name": "python-syntax", "passed": True})
     commands = [
+        ("ui-build-resource-integrity", [sys.executable, "scripts/build_ui.py", "--check"]),
         ("score-normalization", [sys.executable, "-m", "unittest", "discover", "-s", "organizer", "-p", "test_*.py"]),
         ("R1-judge", [sys.executable, "reasoning/R1/selftest.py"]),
         ("R2-judge", [sys.executable, "reasoning/R2/selftest.py"]),
@@ -53,6 +54,8 @@ def main():
         ("arena-motion-script-syntax", ["node", "--check", "arena/web/motion.js"]),
         ("arena-mission-room-script-syntax", ["node", "--check", "arena/web/room.js"]),
         ("arena-outcome-semantics", ["node", "--test", "arena/web/test_room.cjs"]),
+        ("arena-motion-lifecycle", ["node", "--test", "arena/web/test_motion_lifecycle.cjs"]),
+        ("arena-update-state-preservation", ["node", "--test", "arena/web/test_freshness.cjs"]),
         ("legacy-v01-baselines-and-real-services", [sys.executable, "run_baselines.py"]),
         ("extreme-reasoning-witnesses", [sys.executable, "reasoning/extreme_selftest.py"]),
         ("extreme-code-fault-interactions", [sys.executable, "code/extreme_selftest.py"]),

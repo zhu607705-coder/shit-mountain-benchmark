@@ -58,10 +58,31 @@ const ArenaUI = (() => {
     function announce(text,tone='error'){const node=$('notice');const dialogs=[...document.querySelectorAll('dialog[open]')];(dialogs.at(-1)||$('draw-stage')).append(node);node.textContent=text;node.className='notice'+(tone==='success'?' success':'');node.hidden=!text;}
     function motion(){return typeof ArenaMotion!=='undefined'?ArenaMotion:null;}
     function room(){return typeof ArenaRoom!=='undefined'?ArenaRoom:null;}
+    function freshness(){return typeof ArenaFreshness!=='undefined'?ArenaFreshness:null;}
     function renderRoom(){if(state.match)room()?.render({match:state.match,reports:state.reports,board:state.board});}
-    function syncPanels(){document.body.classList.toggle('panel-open',!!document.querySelector('dialog[open]'));motion()?.reset();if(!$('work-dialog').open)room()?.close();}
+    function syncPanels(){document.body.classList.toggle('panel-open',!!document.querySelector('dialog[open]'));motion()?.reset();if(!$('work-dialog').open)room()?.close();freshness()?.place();}
     function openPanel(id){if(state.busy)return;const dialog=$(id);if(!dialog.open)dialog.showModal();syncPanels();if(id==='work-dialog'){renderRoom();room()?.open();}}
     function closePanel(id){$(id).close();syncPanels();}
+    function captureUi(){
+      const ids=['participant','source-path','entrypoint','metrics-path'];
+      return {matchId:state.match?.id||null,roomOpen:$('work-dialog').open,view:$('work-dialog').dataset.roomView||'briefing',
+        stage:Math.max(0,[...$('room-stage-tabs').querySelectorAll('button')].findIndex(b=>b.getAttribute('aria-pressed')==='true')),
+        fields:Object.fromEntries(ids.map(id=>[id,$(id).value])),track:state.track,tier:state.selectedTier,manualTask:state.manualTask,
+        scrollTop:$('work-dialog').scrollTop,focusField:ids.includes(document.activeElement?.id)?document.activeElement.id:null,
+        activeJobId:activeJob(state.match?.job)?state.match.job.id:null};
+    }
+    async function restoreUi(saved){
+      if(!saved)return;
+      state.track=saved.track;state.selectedTier=state.tiers.some(t=>t.id===saved.tier)?saved.tier:state.selectedTier;
+      state.manualTask=state.tasks.some(t=>t.id===saved.manualTask)?saved.manualTask:null;renderTasks();renderTiers();renderSelection();
+      try{if(saved.matchId){await loadMatch(saved.matchId);motion()?.setTask(scopeOf(state.match).task_id);motion()?.fail(true);
+        if(saved.roomOpen){openPanel('work-dialog');document.querySelector(`.room-nav [data-room-view="${saved.view}"]`)?.click();
+          $('room-stage-tabs').querySelectorAll('button')[saved.stage]?.click();}
+        if(saved.view==='inspection'&&saved.activeJobId&&state.match?.job?.id===saved.activeJobId){room()?.watchJob(saved.activeJobId);renderRoom();}
+      }}catch{announce('输入已保留，原场次暂时无法打开。');}
+      finally{for(const [id,value] of Object.entries(saved.fields))$(id).value=value;
+        requestAnimationFrame(()=>{if($('work-dialog').open){$('work-dialog').scrollTo({top:saved.scrollTop,behavior:'instant'});if(saved.focusField&&$(saved.focusField).getClientRects().length)$(saved.focusField).focus({preventScroll:true});}});}
+    }
     function renderTicket(){if(!state.match)return;const pub=scopeOf(state.match),task=pub.task_id||state.match.task_id;
       $('selected-code').textContent=task;$('draw-heading').textContent=pub.title||state.match.title||task;
       $('selected-title').textContent=`${duration(pub.budgets?.total_ms)} · ${tokens(pub.budgets?.output_tokens)}`;
@@ -140,7 +161,7 @@ const ArenaUI = (() => {
     }
     async function startGrade(submissionId){const mid=state.match?.id;if(!mid)return;try{announce('');const job=await api(`/api/matches/${encodeURIComponent(mid)}/grade`,{submission_id:submissionId});if(state.match?.id!==mid)return;room()?.watchJob(job.id);await loadMatch(mid);if(state.match?.id===mid)$('submit-feedback').textContent='答案已封存，检验已启动。';}catch(error){if(state.match?.id!==mid)return;announce(error.message);$('submit-feedback').textContent='答案仍已封存，可稍后重新开始检验。';await loadMatch(mid,false,true).catch(()=>{});}}
     async function initialize(){
-      try{const data=await api('/api/bootstrap');state.csrf=data.csrf||'';state.tasks=list(data.tasks||data.catalog?.tasks);state.tiers=list(data.tiers||data.catalog?.tiers);state.selectedTask=state.selectedTask||state.tasks[0]?.id;state.selectedTier=state.selectedTier||(state.tiers.some(tier=>tier.id==='bronze')?'bronze':state.tiers[0]?.id);state.matches=list(data.matches);renderTasks();renderTiers();renderSelection();renderMatches();$('connection-label').textContent='本机已连接';$('connection-dot').className='dot online';announce('');await refreshMatches();}catch(error){$('connection-label').textContent='服务未连接';$('connection-dot').className='dot error';announce(error.message);$('task-grid').replaceChildren(el('p','题库读取失败，请重新连接。','empty'));}}
+      try{const data=await api('/api/bootstrap');state.csrf=data.csrf||'';state.tasks=list(data.tasks||data.catalog?.tasks);state.tiers=list(data.tiers||data.catalog?.tiers);state.selectedTask=state.selectedTask||state.tasks[0]?.id;state.selectedTier=state.selectedTier||(state.tiers.some(tier=>tier.id==='bronze')?'bronze':state.tiers[0]?.id);state.matches=list(data.matches);renderTasks();renderTiers();renderSelection();renderMatches();$('connection-label').textContent='本机已连接';$('connection-dot').className='dot online';announce('');await refreshMatches();if(!state.restoreAttempted){state.restoreAttempted=true;await restoreUi(freshness()?.takeRestore());}}catch(error){$('connection-label').textContent='服务未连接';$('connection-dot').className='dot error';announce(error.message);$('task-grid').replaceChildren(el('p','题库读取失败，请重新连接。','empty'));}}
     document.querySelectorAll('#track-tabs button[data-track]').forEach(button=>button.addEventListener('click',()=>{if(state.busy)return;state.track=button.dataset.track;state.manualTask=null;renderTasks();renderSelection();}));
     $('open-manual').addEventListener('click',()=>openPanel('manual-dialog'));
     $('open-history').addEventListener('click',()=>{openPanel('history-dialog');refreshMatches().catch(error=>announce(error.message));});
@@ -150,20 +171,20 @@ const ArenaUI = (() => {
     $('manual-choice').addEventListener('click',()=>{state.manualTask=null;renderTasks();renderSelection();});
     document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>closePanel(button.dataset.close)));
     document.querySelectorAll('dialog').forEach(dialog=>dialog.addEventListener('close',syncPanels));
-    $('reload-app').addEventListener('click',initialize);$('refresh-matches').addEventListener('click',()=>refreshMatches().catch(error=>announce(error.message)));$('refresh-results').addEventListener('click',()=>state.match&&loadMatch(state.match.id).catch(()=>{}));
+    $('reload-app').addEventListener('click',()=>freshness()?freshness().reload():initialize());$('refresh-matches').addEventListener('click',()=>refreshMatches().catch(error=>announce(error.message)));$('refresh-results').addEventListener('click',()=>state.match&&loadMatch(state.match.id).catch(()=>{}));
     $('draw-button').addEventListener('click',async()=>{
       if(state.busy)return;state.busy=true;const request=++state.drawRequest;++state.matchRequest;clearTimeout(state.poll);$('tier-picker').open=false;renderSelection();motion()?.begin();$('draw-label').textContent='抽取中';
       try{announce('');const result=await api('/api/draw',{task_id:state.manualTask||'random',tier:state.selectedTier,track:state.track});if(request!==state.drawRequest)return;const match=result.match||result;await loadMatch(match.id,true);await refreshMatches().catch(()=>{});}
       catch(error){motion()?.fail(!!state.match);announce(error.message);}
       finally{state.busy=false;$('draw-label').textContent=state.match?'再抽一道':'抽一道';renderSelection();schedulePoll();}
     });
-    $('submission-form').addEventListener('submit',async event=>{event.preventDefault();const mid=state.match?.id;if(!mid)return;const participant=$('participant').value.trim(),source_path=$('source-path').value.trim(),entrypoint=$('entrypoint').value.trim(),metrics_path=$('metrics-path').value.trim();if(!participant||!source_path||!entrypoint){announce('请填写选手、答案路径和裁判入口。');return;}$('submit-button').disabled=true;$('submit-feedback').textContent='正在封存…';try{announce('');const payload={participant,source_path,entrypoint};if(metrics_path)payload.metrics_path=metrics_path;const result=await api(`/api/matches/${encodeURIComponent(mid)}/submit`,payload);if(state.match?.id!==mid)return;const sub=result.submission||result;if(!sub.id)throw new Error('服务端未返回提交编号，请刷新确认封存状态。');await loadMatch(mid);if(state.match?.id===mid)await startGrade(sub.id);}catch(error){if(state.match?.id!==mid)return;announce(error.message);$('submit-feedback').textContent='未完成提交，请核对路径与服务端提示。';}finally{$('submit-button').disabled=false;}});
+    $('submission-form').addEventListener('submit',async event=>{event.preventDefault();const mid=state.match?.id;if(!mid)return;const participant=$('participant').value.trim(),source_path=$('source-path').value.trim(),entrypoint=$('entrypoint').value.trim(),metrics_path=$('metrics-path').value.trim();if(!participant||!source_path||!entrypoint){announce('请填写选手、答案路径和裁判入口。');return;}$('submit-button').disabled=true;$('submit-feedback').textContent='正在封存…';try{announce('');const payload={participant,source_path,entrypoint};if(metrics_path)payload.metrics_path=metrics_path;const result=await api(`/api/matches/${encodeURIComponent(mid)}/submit`,payload);if(state.match?.id!==mid)return;const sub=result.submission||result;if(!sub.id)throw new Error('服务端未返回提交编号，请刷新确认封存状态。');room()?.sealAccepted?.();await loadMatch(mid);if(state.match?.id===mid)await startGrade(sub.id);}catch(error){if(state.match?.id!==mid)return;announce(error.message);$('submit-feedback').textContent='未完成提交，请核对路径与服务端提示。';}finally{$('submit-button').disabled=false;}});
     $('cancel-job').addEventListener('click',async()=>{if(!state.match?.job)return;try{await api(endpoint('cancel'),{job_id:state.match.job.id});await loadMatch(state.match.id);}catch(error){announce(error.message);}});
     $('open-readme').addEventListener('click',()=>state.match&&showReadme(allMarkdown(),'Agent 任务 README'));
     $('close-readme').addEventListener('click',()=>$('readme-dialog').close());$('readme-dialog').addEventListener('click',event=>{if(event.target===$('readme-dialog')){const bounds=event.target.getBoundingClientRect();if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)event.target.close();}});
     $('copy-readme').addEventListener('click',()=>copy(state.readme,$('copy-status')));$('copy-commitment').addEventListener('click',()=>copy(scopeOf(state.match).commitment||state.match.commitment||''));$('download-readme').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([state.readme],{type:'text/markdown;charset=utf-8'}));const link=el('a');link.href=url;link.download=state.readmeName;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);});
     document.addEventListener('visibilitychange',()=>{if(!document.hidden&&state.match)loadMatch(state.match.id,false,true).catch(()=>{});});
-    setIcon('reload-app','refresh-cw');setIcon('close-readme','circle-x');document.querySelectorAll('[data-icon]').forEach(node=>node.replaceChildren(icon(node.dataset.icon)));room()?.boot();initialize();
+    setIcon('reload-app','refresh-cw');setIcon('close-readme','circle-x');document.querySelectorAll('[data-icon]').forEach(node=>node.replaceChildren(icon(node.dataset.icon)));room()?.boot();freshness()?.boot({capture:captureUi});initialize();
   }
   return {boot,createApi,submissionState,caseState,scoreText,duration,tokens,scopeOf,activeJob,jobProgress};
 })();

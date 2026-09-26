@@ -33,11 +33,12 @@ const ArenaRoom = (() => {
     if(submission.id||job.id)return result('pending','答案已封存。','开始检验后生成战报。','SEALED','YOUR MOVE IS SEALED');
     return result('pending','等你出招。','提交答案后生成战报。','WAIT','AWAITING ENTRY');
   }
-  const state={booted:false,matchId:null,match:null,reports:[],board:null,view:'briefing',stage:0,stageKey:'',watchedJob:null,handled:new Set(),raf:null,entryFrame:null,revealFrame:null,effectTimer:null,open:false,reduced:null};
+  const state={booted:false,matchId:null,match:null,reports:[],board:null,view:'briefing',stage:0,stageKey:'',stageAnimation:null,watchedJob:null,handled:new Set(),raf:null,entryFrame:null,revealFrame:null,effectTimer:null,seal:null,sealEpoch:0,open:false,reduced:null};
   const $=id=>document.getElementById(id);
   function text(id,value){const node=$(id);if(node)node.textContent=value??'';}
   function show(view,{focus=false,animate=true}={}){
     if(!views.includes(view))return;
+    if(view!==state.view){cancelStageMotion();if(state.seal)cancelSeal();}
     state.view=view;
     const dialog=$('work-dialog');if(!dialog)return;
     dialog.dataset.roomView=view;
@@ -47,15 +48,28 @@ const ArenaRoom = (() => {
     if(animate&&dialog.open&&!state.reduced?.matches){dialog.classList.remove('room-enter');cancelAnimationFrame(state.entryFrame);state.entryFrame=requestAnimationFrame(()=>dialog.classList.add('room-enter'));}
     if(focus&&dialog.open){const page=dialog.querySelector(`[data-room-page="${view}"]`);page?.querySelector('h2')?.focus({preventScroll:true});dialog.scrollTo({top:0,behavior:'instant'});}
   }
-  function stageView(index){
-    const cards=[...$('stage-cards').querySelectorAll('.stage-card')];state.stage=Math.max(0,Math.min(index,cards.length-1));
+  function cancelStageMotion(){state.stageAnimation?.cancel();state.stageAnimation=null;}
+  function stageView(index,{user=false}={}){
+    const cards=[...$('stage-cards').querySelectorAll('.stage-card')],previous=state.stage;
+    state.stage=Math.max(0,Math.min(index,cards.length-1));
     cards.forEach((card,i)=>{card.hidden=i!==state.stage;card.setAttribute('aria-label',`阶段 ${i+1}`);});
     $('room-stage-tabs').querySelectorAll('button').forEach((button,i)=>button.setAttribute('aria-pressed',String(i===state.stage)));
+    // Polling refreshes keep this exact card and its animation untouched.
+    if(user&&previous!==state.stage){
+      cancelStageMotion();
+      if(state.open&&state.view==='briefing'&&!state.reduced?.matches){
+        const distance=state.stage>previous?22:-22;
+        state.stageAnimation=cards[state.stage]?.animate?.([
+          {opacity:0,transform:`translateX(${distance}px)`},
+          {opacity:1,transform:'translateX(0)'}
+        ],{duration:360,easing:'cubic-bezier(.16,.8,.24,1)'});
+      }
+    }
   }
   function renderStages(pub){
     const stages=list(pub.prompt_segments||state.match?.stages);
     const key=JSON.stringify([state.matchId,stages.map(s=>s.name||s.title)]);
-    if(key!==state.stageKey){state.stageKey=key;state.stage=0;const container=$('room-stage-tabs');container.replaceChildren();stages.forEach((stage,index)=>{const button=document.createElement('button');button.type='button';button.setAttribute('aria-pressed',String(index===0));const number=document.createElement('span');number.textContent=String(index+1).padStart(2,'0');const name=document.createElement('b');name.textContent=stage.name||stage.title||`阶段 ${index+1}`;button.append(number,name);button.addEventListener('click',()=>stageView(index));container.append(button);});}
+    if(key!==state.stageKey){cancelStageMotion();state.stageKey=key;state.stage=0;const container=$('room-stage-tabs');container.replaceChildren();stages.forEach((stage,index)=>{const button=document.createElement('button');button.type='button';button.setAttribute('aria-pressed',String(index===0));const number=document.createElement('span');number.textContent=String(index+1).padStart(2,'0');const name=document.createElement('b');name.textContent=stage.name||stage.title||`阶段 ${index+1}`;button.append(number,name);button.addEventListener('click',()=>stageView(index,{user:true}));container.append(button);});}
     stageView(state.stage);
   }
   function selection(){
@@ -87,11 +101,44 @@ const ArenaRoom = (() => {
     state.revealFrame=requestAnimationFrame(()=>{if(!state.open||state.view!=='results'||state.matchId!==matchId||state.match?.job?.id!==jobId||state.reduced?.matches)return;poster.classList.add('room-reveal');if(outcome.canCelebrate)poster.classList.add('room-celebrate');});
     clearTimeout(state.effectTimer);state.effectTimer=setTimeout(()=>poster.classList.remove('room-reveal','room-celebrate'),1400);
   }
+  function cancelSeal(){
+    const seal=state.seal;state.seal=null;state.sealEpoch++;
+    if(seal)clearTimeout(seal.timer);
+    $('work-dialog')?.classList.remove('room-sealing');
+    return !!seal;
+  }
+  function finishWatchedJob(outcome){
+    const job=state.match?.job||{};
+    if(state.seal||state.watchedJob!==job.id||!terminal(job)||state.handled.has(job.id))return false;
+    const {report}=selection();
+    // Completion may arrive one poll before its report. Never reveal stale evidence.
+    if(job.status==='completed'&&job.diagnostic!==true&&report.grade_id!==job.id)return false;
+    state.handled.add(job.id);state.watchedJob=null;
+    const visible=state.open&&$('work-dialog').open;
+    show('results',{focus:visible,animate:false});if(visible)reveal(outcome);
+    return true;
+  }
+  function settleSeal(epoch,matchId){
+    if(!state.seal||state.seal.epoch!==epoch||state.matchId!==matchId)return;
+    cancelSeal();
+    if(!state.open||!$('work-dialog').open||state.view!=='submission')return;
+    if(!finishWatchedJob(renderVerdict())&&state.watchedJob)show('inspection',{focus:true});
+  }
+  // Called only after the server confirms an immutable submission. Never await it:
+  // the grader starts immediately while this brief acknowledgement remains visible.
+  function sealAccepted(){
+    if(typeof document==='undefined'||!state.matchId||!state.open||!$('work-dialog').open||state.view!=='submission'||state.reduced?.matches)return false;
+    if(state.seal)return false;
+    const epoch=++state.sealEpoch,matchId=state.matchId;
+    state.seal={epoch,matchId,timer:setTimeout(()=>settleSeal(epoch,matchId),820)};
+    $('work-dialog').classList.add('room-sealing');
+    return true;
+  }
   function render({match,reports=[],board=null}={}){
     if(typeof document==='undefined'||!match)return;
     boot();
     const changed=state.matchId!==match.id;
-    if(changed){cancelAnimationFrame(state.revealFrame);cancelAnimationFrame(state.raf);$('work-dialog').style.setProperty('--room-x','0');$('work-dialog').style.setProperty('--room-y','0');clearTimeout(state.effectTimer);$('room-verdict').classList.remove('room-reveal','room-celebrate');state.matchId=match.id;state.stageKey='';state.stage=0;state.watchedJob=null;show('briefing',{animate:false});}
+    if(changed){cancelSeal();cancelStageMotion();cancelAnimationFrame(state.revealFrame);cancelAnimationFrame(state.raf);$('work-dialog').style.setProperty('--room-x','0');$('work-dialog').style.setProperty('--room-y','0');clearTimeout(state.effectTimer);$('room-verdict').classList.remove('room-reveal','room-celebrate');state.matchId=match.id;state.stageKey='';state.stage=0;state.watchedJob=null;show('briefing',{animate:false});}
     state.match=match;state.reports=list(reports);state.board=board;
     const pub=scope(match),taskId=pub.task_id||match.task_id||'?';
     for(const id of ['room-task-code','room-ambient-code','room-seal-code','room-scan-code'])text(id,taskId);
@@ -104,29 +151,24 @@ const ArenaRoom = (() => {
     text('room-scan-phase',job.status==='running'?'SCANNING':job.status==='queued'?'QUEUED':job.status==='completed'?'COMPLETE':job.status==='failed'?'INTERRUPTED':job.status==='cancelled'?'STOPPED':'STANDBY');
     $('room-view-report').hidden=!terminal(job);
     const outcome=renderVerdict();
-    if(state.watchedJob===job.id&&terminal(job)&&!state.handled.has(job.id)){
-      const {report}=selection();
-      // A completed status can arrive one poll before the matching report. Await real evidence.
-      const ready=job.status!=='completed'||job.diagnostic===true||report.grade_id===job.id;
-      if(ready){state.handled.add(job.id);state.watchedJob=null;const visible=state.open&&$('work-dialog').open;show('results',{focus:visible,animate:false});if(visible)reveal(outcome);}
-    }
+    finishWatchedJob(outcome);
   }
-  function watchJob(jobId){if(!jobId)return;state.watchedJob=jobId;state.handled.delete(jobId);if(typeof document!=='undefined')show('inspection',{focus:true});}
+  function watchJob(jobId){if(!jobId)return;state.watchedJob=jobId;state.handled.delete(jobId);if(typeof document!=='undefined'&&!state.seal)show('inspection',{focus:state.open});}
   function open(){boot();state.open=true;show(state.view,{animate:true});}
-  function close(){state.open=false;cancelAnimationFrame(state.raf);cancelAnimationFrame(state.entryFrame);cancelAnimationFrame(state.revealFrame);clearTimeout(state.effectTimer);const dialog=$('work-dialog');dialog?.style.setProperty('--room-x','0');dialog?.style.setProperty('--room-y','0');dialog?.classList.remove('room-enter');$('room-verdict')?.classList.remove('room-reveal','room-celebrate');}
+  function close(){state.open=false;const held=cancelSeal();cancelStageMotion();if(held&&state.watchedJob)show('inspection',{animate:false});cancelAnimationFrame(state.raf);cancelAnimationFrame(state.entryFrame);cancelAnimationFrame(state.revealFrame);clearTimeout(state.effectTimer);const dialog=$('work-dialog');dialog?.style.setProperty('--room-x','0');dialog?.style.setProperty('--room-y','0');dialog?.classList.remove('room-enter');$('room-verdict')?.classList.remove('room-reveal','room-celebrate');}
   function boot(){
     if(state.booted||typeof document==='undefined'||!$('work-dialog'))return;state.booted=true;state.reduced=matchMedia('(prefers-reduced-motion: reduce)');
     const dialog=$('work-dialog');
     dialog.querySelectorAll('.room-nav [data-room-view]').forEach(button=>button.addEventListener('click',()=>show(button.dataset.roomView,{focus:true})));
     dialog.querySelectorAll('[data-room-go]').forEach(button=>button.addEventListener('click',()=>show(button.dataset.roomGo,{focus:true})));
     $('room-home').addEventListener('click',event=>{event.preventDefault();show('briefing',{focus:true});});
-    $('room-stage-tabs').addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;const buttons=[...$('room-stage-tabs').querySelectorAll('button')];if(!buttons.length)return;event.preventDefault();const current=buttons.indexOf(document.activeElement);const next=event.key==='Home'?0:event.key==='End'?buttons.length-1:(current+(event.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;stageView(next);buttons[next].focus();});
+    $('room-stage-tabs').addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;const buttons=[...$('room-stage-tabs').querySelectorAll('button')];if(!buttons.length)return;event.preventDefault();const current=buttons.indexOf(document.activeElement);const next=event.key==='Home'?0:event.key==='End'?buttons.length-1:(current+(event.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;stageView(next,{user:true});buttons[next].focus();});
     dialog.addEventListener('pointermove',event=>{if(!state.open||state.reduced.matches||event.pointerType==='touch')return;cancelAnimationFrame(state.raf);const rect=dialog.getBoundingClientRect(),x=(event.clientX-rect.left)/rect.width*2-1,y=(event.clientY-rect.top)/rect.height*2-1;state.raf=requestAnimationFrame(()=>{if(!state.open||state.reduced.matches)return;dialog.style.setProperty('--room-x',x.toFixed(3));dialog.style.setProperty('--room-y',y.toFixed(3));});});
     dialog.addEventListener('pointerleave',()=>{cancelAnimationFrame(state.raf);dialog.style.setProperty('--room-x','0');dialog.style.setProperty('--room-y','0');});
     dialog.addEventListener('close',close);
-    state.reduced.addEventListener('change',()=>{cancelAnimationFrame(state.raf);cancelAnimationFrame(state.revealFrame);cancelAnimationFrame(state.entryFrame);clearTimeout(state.effectTimer);dialog.classList.remove('room-enter');$('room-verdict').classList.remove('room-reveal','room-celebrate');dialog.style.setProperty('--room-x','0');dialog.style.setProperty('--room-y','0');});
+    state.reduced.addEventListener('change',()=>{if(state.seal)settleSeal(state.seal.epoch,state.seal.matchId);cancelStageMotion();cancelAnimationFrame(state.raf);cancelAnimationFrame(state.revealFrame);cancelAnimationFrame(state.entryFrame);clearTimeout(state.effectTimer);dialog.classList.remove('room-enter');$('room-verdict').classList.remove('room-reveal','room-celebrate');dialog.style.setProperty('--room-x','0');dialog.style.setProperty('--room-y','0');});
     show('briefing',{animate:false});
   }
-  return {boot,open,close,render,watchJob,classifyOutcome};
+  return {boot,open,close,render,watchJob,sealAccepted,classifyOutcome};
 })();
 if(typeof module!=='undefined'&&module.exports)module.exports=ArenaRoom;

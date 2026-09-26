@@ -65,8 +65,18 @@ node --check arena/web/app.js
 node --check arena/web/motion.js
 node --check arena/web/room.js
 node --test arena/web/test_room.cjs
+node --test arena/web/test_motion_lifecycle.cjs arena/web/test_freshness.cjs
+python3 scripts/build_ui.py --check
 ```
 
 开发期间还运行了 Node mock 响应检查，覆盖 GET/POST、CSRF、结构化 API 错误、partial/completed 区分、前端完整评阅 pending、案例状态和 null/0 区分。上述检查不替代真实服务和原生浏览器的完整 draw-submit-grade 流程；浏览器验收由主任务统一执行。
 
 额外 Node 模拟时钟测试覆盖三阶段时序、揭示前身份不变、R/C/F 几何配置差异、rAF 收敛与回位、reduced-motion/触屏静态和揭示取消。真实浏览器发现的方向事件冒泡、舞台内部滚动、手机按钮换行问题已分别通过限定按钮选择器、overflow:clip、两行底部控件修复；最终屏幕与端到端证据由主任务记录。
+
+## 已打开页面的版本与动画修复
+
+更新资源后运行 `python3 scripts/build_ui.py`。它对 HTML、JS、CSS 和图标生成确定性构建指纹，并把同一标识写入 HTML meta 和 `build.txt` 的 JSON 文本。`--check` 只读检查漂移，已纳入一键回归。构建清单通过静态文本资源提供，无需改变已经冻结比赛记录的后端源码。
+
+`freshness.js` 在加载、恢复焦点和定期检查时比较已加载文档与当前构建。发现不同版本后提示更新，用户确认前不会重载。刷新保存的仅是当前比赛 ID、任务步骤、选题状态与表单元数据，不包括答案文件、指标文件内容或私有种子；sessionStorage 中的快照只恢复一次。保存失败时停止刷新，避免丢失输入。
+
+动画修复具有独立触发边界：8 个切面节点持续复用后改变布局与角度，才能产生真实过渡；三段提示词只在用户切换不同阶段时播放；`sealAccepted()` 仅在提交接口确认封存后启动纸张投入与表单反馈。后台检验同时启动，检验页或战报等短封存动作结束后再呈现。关闭、换场、主动改页和减少动态效果会清理过期动画，轮询不重播。
