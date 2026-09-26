@@ -1,7 +1,7 @@
 {
   "benchmark": "C2-repository",
   "version": "0.2.0",
-  "measured_at_utc": "2026-09-26T04:48:37.442618+00:00",
+  "measured_at_utc": "2026-09-26T05:24:20.649084+00:00",
   "suite_sha256": "ac0a276c1609eb66b76adf4e03a44c5c76cb3dba41258b4133c89994c708c70c",
   "submission_sha256": "ac1c3398dd34e290a229b9e3ec490f0ad8004917fc13cfa0d8c0338d34e153b6",
   "environment": {
@@ -26,57 +26,57 @@
     {
       "name": "default_business_flow",
       "passed": true,
-      "seconds": 0.2618
+      "seconds": 0.3701
     },
     {
       "name": "configured_base_path",
       "passed": true,
-      "seconds": 0.2591
+      "seconds": 0.3447
     },
     {
       "name": "different_process_workdirs",
       "passed": true,
-      "seconds": 0.2362
+      "seconds": 0.3539
     },
     {
       "name": "unicode_data_directory",
       "passed": true,
-      "seconds": 0.2592
+      "seconds": 0.3439
     },
     {
       "name": "project_isolation",
       "passed": true,
-      "seconds": 0.359
+      "seconds": 0.4538
     },
     {
       "name": "cancel_running_then_retry",
       "passed": true,
-      "seconds": 0.562
+      "seconds": 0.6287
     },
     {
       "name": "dependency_failure_then_repair",
       "passed": true,
-      "seconds": 0.4249
+      "seconds": 0.4851
     },
     {
       "name": "enqueue_snapshot_isolation",
       "passed": true,
-      "seconds": 0.9057
+      "seconds": 1.0409
     },
     {
       "name": "server_restart_persistence",
       "passed": true,
-      "seconds": 0.5278
+      "seconds": 0.764
     },
     {
       "name": "worker_crash_recovery",
       "passed": true,
-      "seconds": 0.5575
+      "seconds": 0.6713
     },
     {
       "name": "legacy_schema_migration",
       "passed": true,
-      "seconds": 0.3488
+      "seconds": 0.4879
     }
   ],
   "process_model": "real HTTP server and worker subprocesses; temporary SQLite DBs; no fixed ports; automatic cleanup",

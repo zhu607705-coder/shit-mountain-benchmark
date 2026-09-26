@@ -2,9 +2,11 @@
 
 **统一12题：R1–R4、C1–C4、F1–F4。每题的 full 规格都有至少10倍的实际规模维度，并加入需要跨阶段推理的机制。**
 
-主流程是：**统一启动器选题与难度 → 抽签并冻结范围、提示词和预算 → Agent 读取 README 解题 → 答案统一封存 → 独立检验与 Codex 复核 → 质量与效率分别计分。**
+主流程是：**选择题池与难度 → 抽题、揭晓并冻结任务 → Agent 读取 README 解题 → 答案统一封存 → 独立检验与 Codex 复核 → 质量与效率分别计分。**
 
 [实验说明](experiments/README.md) · [Codex评分说明](experiments/GRADER_README.md) · [时间与token计分](experiments/EFFICIENCY.md) · [难度与实际证据](docs/EXTREME_V02.md) · [GitHub Actions](https://github.com/zhu607705-coder/shit-mountain-benchmark/actions/workflows/verify.yml)
+
+![抽题舞台：卡包、几何切面与真实随机抽题](docs/images/draw-stage.png)
 
 ## 一键打开实战比赛
 
@@ -15,7 +17,7 @@ cd shit-mountain-benchmark
 python3 scripts/launch_arena.py
 ```
 
-macOS 也可直接双击仓库内的 **`启动挑战赛.command`**。启动器在本机打开网页；从 **青铜、白银、黄金、钻石、王者、噩梦** 六档中选择难度，再选择 R/C/F 共 12 道题之一。详细规则见 [难度划分与抽签](arena/DIFFICULTY.md)。
+macOS 也可直接双击仓库内的 **`启动挑战赛.command`**。进入抽题舞台后，选择全部/推理/代码/前端题池与 **青铜、白银、黄金、钻石、王者、噩梦** 六档之一，点击“抽一道”。服务器从题池中随机选题，画面随后揭晓；“开始这题”进入材料、提交与检验。手动选题和历史场次保留在次级入口。详细规则见 [难度划分与抽签](arena/DIFFICULTY.md)。
 
 抽签生成本场比赛的公共 README 和三个任务段，分别规定诊断、实现、整体验证要交付什么。档位会改变检查范围、规模、案例数与预算；公共页面只显示承诺指纹，私有抽样种子保存在组织者目录。同一场中的所有参赛者共用冻结后的实例和规则。难度推荐是基于机制的初始划分，尚未使用多模型实测通过率校准。
 
@@ -23,7 +25,7 @@ Agent 完成后，把答案目录路径与入口填回界面并封存，再点�
 
 比赛文件保存于 `reports/arena/`，不会提交到 GitHub。当前启动器用于本机可信实验，代码隔离边界见下方说明。
 
-页面使用仓库内保存的 [Lucide 官方 SVG](https://lucide.dev/icons/)；图标源码版本、逐文件哈希和许可证见 [来源清单](arena/web/icons/SOURCE.json)。布局参考 [shadcn/ui 控制台组件](https://ui.shadcn.com/blocks)，规则说明折叠到详情与 README，运行时不依赖 CDN。
+页面使用仓库内保存的 [Lucide 官方 SVG](https://lucide.dev/icons/)；图标源码版本、逐文件哈希和许可证见 [来源清单](arena/web/icons/SOURCE.json)。新版入口采用几何切面、波普排字和鼠标响应的抽签卡片，设计参考与实现边界见 [舞台设计记录](docs/plans/2026-09-26-draw-stage.md)。规则说明折叠到详情与 README，运行时不依赖 CDN。
 
 ## 批量实验：把 README 交给 Agent
 

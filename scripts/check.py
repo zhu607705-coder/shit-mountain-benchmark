@@ -50,6 +50,7 @@ def main():
         ("README-experiment-sealing-and-grading", [sys.executable, "-m", "unittest", "discover", "-s", "experiments", "-p", "test_*.py"]),
         ("arena-draw-scope-sealing-and-grading", [sys.executable, "-m", "unittest", "discover", "-s", "arena", "-p", "test_*.py"]),
         ("arena-browser-script-syntax", ["node", "--check", "arena/web/app.js"]),
+        ("arena-motion-script-syntax", ["node", "--check", "arena/web/motion.js"]),
         ("legacy-v01-baselines-and-real-services", [sys.executable, "run_baselines.py"]),
         ("extreme-reasoning-witnesses", [sys.executable, "reasoning/extreme_selftest.py"]),
         ("extreme-code-fault-interactions", [sys.executable, "code/extreme_selftest.py"]),
