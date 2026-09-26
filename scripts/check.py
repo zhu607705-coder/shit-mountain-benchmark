@@ -30,7 +30,7 @@ def main():
         raise SystemExit("Node.js is required for frontend syntax/logic checks; install Node 22+ and retry.")
     checks = []
     for p in ROOT.rglob("*.py"):
-        if not {".git", "__pycache__", "submissions", ".venv"}.intersection(p.parts):
+        if not {".git", "__pycache__", "submissions", "workspaces", "reports", ".venv"}.intersection(p.parts):
             ast.parse(p.read_text(encoding="utf-8"), filename=str(p))
     checks.append({"name": "python-syntax", "passed": True})
     commands = [
@@ -47,7 +47,14 @@ def main():
         ("F3-stream-state", ["node", "frontend/F3/selftest.cjs"]),
         ("F4-multiwindow-state", ["node", "frontend/F4/selftest.cjs"]),
         ("API-and-import-adapters", [sys.executable, "-m", "unittest", "discover", "-s", "integrations", "-p", "test_*.py"]),
-        ("all-baselines-and-real-services", [sys.executable, "run_baselines.py"]),
+        ("README-experiment-sealing-and-grading", [sys.executable, "-m", "unittest", "discover", "-s", "experiments", "-p", "test_*.py"]),
+        ("arena-draw-scope-sealing-and-grading", [sys.executable, "-m", "unittest", "discover", "-s", "arena", "-p", "test_*.py"]),
+        ("arena-browser-script-syntax", ["node", "--check", "arena/web/app.js"]),
+        ("legacy-v01-baselines-and-real-services", [sys.executable, "run_baselines.py"]),
+        ("extreme-reasoning-witnesses", [sys.executable, "reasoning/extreme_selftest.py"]),
+        ("extreme-code-fault-interactions", [sys.executable, "code/extreme_selftest.py"]),
+        ("extreme-frontend-causal-witnesses", [sys.executable, "frontend/extreme_selftest.py"]),
+        ("extreme-twelve-task-smoke", [sys.executable, "scripts/extreme.py", "--task", "all", "--scale", "smoke", "--output", "reports/extreme-ci"]),
     ]
     for label, args in commands:
         checks.append(run(label, args))
@@ -85,7 +92,7 @@ def main():
     reports = ROOT / "reports"
     reports.mkdir(exist_ok=True)
     (reports / "one-click-test.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("PASS: real repository flows and regressions verified; human/frontend full scores remain separate.")
+    print("PASS: legacy compatibility, extreme judges and experiment workflow verified. Weak candidate failures remain failures; human/frontend full scores stay separate.")
 
 
 if __name__ == "__main__":

@@ -91,8 +91,8 @@
         "error": "AssertionError()"
       }
     ],
-    "cold_ms": 0.1916250039357692,
-    "warm_mean_ms_100": 0.0002775000757537782,
+    "cold_ms": 0.18304199329577386,
+    "warm_mean_ms_100": 0.0009641700307838619,
     "timing_note": "tiny pilot DAG; not the 5000-node tournament workload"
   },
   "note": "Behavior checks verified. Formal performance workload and quality weights are not calibrated; full raw quality remains pending.",

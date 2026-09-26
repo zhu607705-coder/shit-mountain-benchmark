@@ -1,0 +1,109 @@
+[
+  {
+    "task_id": "C1",
+    "profile": "extreme",
+    "version": "0.2",
+    "constructed": {
+      "tenants": 20,
+      "workers": 20,
+      "batches": 1600,
+      "events": 128000,
+      "http_concurrency": 80
+    },
+    "scenario_bytes": 11232689,
+    "scenario_sha256": "3382823814a99f88065f78002c2cc64df329372e1d4ae51b85a57192b613de93",
+    "host_evaluator_included": false,
+    "compatibility_contract_source": "CORE_CONTRACT.md",
+    "demo": {
+      "task": "C1",
+      "demo_only": true,
+      "observation": {
+        "receipt": {
+          "txid": "demo",
+          "amount": 10
+        },
+        "observed": {
+          "a": 90,
+          "b": 10
+        }
+      }
+    },
+    "isolation_passed": true
+  },
+  {
+    "task_id": "C2",
+    "profile": "extreme",
+    "version": "0.2",
+    "constructed": {
+      "nodes": 5000,
+      "depth": 2000,
+      "projects": 20,
+      "queued_snapshots": 400
+    },
+    "scenario_bytes": 395442,
+    "scenario_sha256": "402b812f18236af702370cc8727d63902f35f1fe66f9433e79c17741015df68f",
+    "host_evaluator_included": false,
+    "compatibility_contract_source": "CORE_CONTRACT.md",
+    "demo": {
+      "task": "C2",
+      "demo_only": true,
+      "observation": {
+        "status": "done",
+        "value": 10,
+        "revision": 0
+      }
+    },
+    "isolation_passed": true
+  },
+  {
+    "task_id": "C3",
+    "profile": "extreme",
+    "version": "0.2",
+    "constructed": {
+      "keys": 100000,
+      "fault_histories": 288,
+      "transactions": 1440,
+      "snapshot_readers": 8
+    },
+    "scenario_bytes": 2429537,
+    "scenario_sha256": "a8929d763518a53eb3d8ac90279ffa4a33f5e15130018d0d2c5132d018481e26",
+    "host_evaluator_included": false,
+    "compatibility_contract_source": "LEGACY_PROMPT.md",
+    "demo": {
+      "task": "C3",
+      "demo_only": true,
+      "observation": {
+        "version": 1,
+        "observed": {
+          "key": "value"
+        }
+      }
+    },
+    "isolation_passed": true
+  },
+  {
+    "task_id": "C4",
+    "profile": "extreme",
+    "version": "0.2",
+    "constructed": {
+      "nodes": 5000,
+      "depth": 2200,
+      "roots": 20,
+      "mutations": 1000,
+      "parallel_publishers": 12
+    },
+    "scenario_bytes": 412931,
+    "scenario_sha256": "c67e06a4aa0c278e2e1b6c5b77355463842f7f071ec4209db2c56066b47d0bd9",
+    "host_evaluator_included": false,
+    "compatibility_contract_source": "LEGACY_PROMPT.md",
+    "demo": {
+      "task": "C4",
+      "demo_only": true,
+      "observation": {
+        "version": "b762da6aaf0067d5ae7227895ab0f66a16bc598e4eceb03ae2ceb0e3d2beb26a",
+        "data": "hello#demo"
+      }
+    },
+    "isolation_passed": true
+  }
+]

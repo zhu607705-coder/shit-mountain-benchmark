@@ -1,110 +1,180 @@
 {
   "name": "shit-mountain-benchmark",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "tasks": [
     {
       "id": "R1",
       "track": "reasoning",
-      "adapter": "decision-json",
+      "adapter": "ndjson-policy",
       "directory": "reasoning/R1",
       "prompt": "PROMPT.md",
-      "input": "input.json"
+      "legacy_prompt": "LEGACY_PROMPT.md",
+      "extreme_prompt": "extreme/PROMPT.md",
+      "profile": "extreme",
+      "legacy_adapter": "decision-json",
+      "legacy_input": "input.json",
+      "status": "extreme-pilot"
     },
     {
       "id": "R2",
       "track": "reasoning",
-      "adapter": "decision-json",
+      "adapter": "ndjson-policy",
       "directory": "reasoning/R2",
       "prompt": "PROMPT.md",
-      "input": "input.json"
+      "legacy_prompt": "LEGACY_PROMPT.md",
+      "extreme_prompt": "extreme/PROMPT.md",
+      "profile": "extreme",
+      "legacy_adapter": "decision-json",
+      "legacy_input": "input.json",
+      "status": "extreme-pilot"
     },
     {
       "id": "R3",
       "track": "reasoning",
       "directory": "reasoning/R3",
       "prompt": "PROMPT.md",
-      "adapter": "policy-agent",
-      "status": "pilot"
+      "adapter": "ndjson-policy",
+      "status": "extreme-pilot",
+      "legacy_prompt": "LEGACY_PROMPT.md",
+      "extreme_prompt": "extreme/PROMPT.md",
+      "profile": "extreme",
+      "legacy_adapter": "policy-agent"
     },
     {
       "id": "R4",
       "track": "reasoning",
       "directory": "reasoning/R4",
       "prompt": "PROMPT.md",
-      "adapter": "policy-agent",
-      "status": "pilot"
+      "adapter": "ndjson-policy",
+      "status": "extreme-pilot",
+      "legacy_prompt": "LEGACY_PROMPT.md",
+      "extreme_prompt": "extreme/PROMPT.md",
+      "profile": "extreme",
+      "legacy_adapter": "policy-agent"
     },
     {
       "id": "C1",
       "track": "code",
-      "adapter": "repository-agent",
+      "adapter": "staged-repository-agent",
       "directory": "code/C1",
       "prompt": "PROMPT.md",
-      "starter": "repository/buggy"
+      "legacy_prompt": "LEGACY_PROMPT.md",
+      "extreme_prompt": "extreme/PROMPT.md",
+      "profile": "extreme",
+      "legacy_adapter": "repository-agent",
+      "legacy_starter": "repository/buggy",
+      "status": "extreme-pilot"
     },
     {
       "id": "C2",
       "track": "code",
-      "adapter": "repository-agent",
+      "adapter": "staged-repository-agent",
       "directory": "code/C2",
       "prompt": "PROMPT.md",
-      "starter": "repository/buggy"
+      "legacy_prompt": "LEGACY_PROMPT.md",
+      "extreme_prompt": "extreme/PROMPT.md",
+      "profile": "extreme",
+      "legacy_adapter": "repository-agent",
+      "legacy_starter": "repository/buggy",
+      "status": "extreme-pilot"
     },
     {
       "id": "C3",
       "track": "code",
       "directory": "code/C3",
       "prompt": "PROMPT.md",
-      "adapter": "repository-agent",
-      "status": "pilot"
+      "adapter": "staged-repository-agent",
+      "status": "extreme-pilot",
+      "legacy_prompt": "LEGACY_PROMPT.md",
+      "extreme_prompt": "extreme/PROMPT.md",
+      "profile": "extreme",
+      "legacy_adapter": "repository-agent"
     },
     {
       "id": "C4",
       "track": "code",
       "directory": "code/C4",
       "prompt": "PROMPT.md",
-      "adapter": "repository-agent",
-      "status": "pilot"
+      "adapter": "staged-repository-agent",
+      "status": "extreme-pilot",
+      "legacy_prompt": "LEGACY_PROMPT.md",
+      "extreme_prompt": "extreme/PROMPT.md",
+      "profile": "extreme",
+      "legacy_adapter": "repository-agent"
     },
     {
       "id": "F1",
       "track": "frontend",
-      "adapter": "browser-agent",
+      "adapter": "ui-and-semantic-adapter",
       "directory": "frontend/F1",
       "prompt": "PROMPT.md",
-      "starter": "starter.html",
-      "input": "data.json"
+      "legacy_prompt": "LEGACY_PROMPT.md",
+      "extreme_prompt": "extreme/PROMPT.md",
+      "profile": "extreme",
+      "legacy_adapter": "browser-agent",
+      "legacy_input": "data.json",
+      "legacy_starter": "starter.html",
+      "status": "extreme-pilot"
     },
     {
       "id": "F2",
       "track": "frontend",
-      "adapter": "browser-agent",
+      "adapter": "ui-and-semantic-adapter",
       "directory": "frontend/F2",
       "prompt": "PROMPT.md",
-      "starter": "starter.html",
-      "input": "data.json"
+      "legacy_prompt": "LEGACY_PROMPT.md",
+      "extreme_prompt": "extreme/PROMPT.md",
+      "profile": "extreme",
+      "legacy_adapter": "browser-agent",
+      "legacy_input": "data.json",
+      "legacy_starter": "starter.html",
+      "status": "extreme-pilot"
     },
     {
       "id": "F3",
       "track": "frontend",
       "directory": "frontend/F3",
       "prompt": "PROMPT.md",
-      "adapter": "browser-agent",
-      "status": "pilot"
+      "adapter": "ui-and-semantic-adapter",
+      "status": "extreme-pilot",
+      "legacy_prompt": "LEGACY_PROMPT.md",
+      "extreme_prompt": "extreme/PROMPT.md",
+      "profile": "extreme",
+      "legacy_adapter": "browser-agent"
     },
     {
       "id": "F4",
       "track": "frontend",
       "directory": "frontend/F4",
       "prompt": "PROMPT.md",
-      "adapter": "browser-agent",
-      "status": "pilot"
+      "adapter": "ui-and-semantic-adapter",
+      "status": "extreme-pilot",
+      "legacy_prompt": "LEGACY_PROMPT.md",
+      "extreme_prompt": "extreme/PROMPT.md",
+      "profile": "extreme",
+      "legacy_adapter": "browser-agent"
     }
   ],
   "entrypoints": {
     "test": "./scripts/test.sh",
     "baseline": "python3 run_baselines.py",
     "integrations": "python3 integrations/cli.py --help",
-    "leaderboard": "python3 organizer/leaderboard.py results/baseline_records.json"
+    "leaderboard": "python3 organizer/leaderboard.py results/baseline_records.json",
+    "extreme": "python3 scripts/extreme.py --task all --scale smoke",
+    "experiment": "python3 scripts/experiment.py --help",
+    "performance": "python3 integrations/performance.py --help",
+    "efficiency": "python3 organizer/efficiency.py --help"
+  },
+  "default_profile": "extreme",
+  "profiles": {
+    "extreme": {
+      "runner": "scripts/extreme.py",
+      "full_scale": true,
+      "ci_scale": "smoke"
+    },
+    "legacy": {
+      "release": "v0.1.0",
+      "runner": "run_baselines.py"
+    }
   }
 }

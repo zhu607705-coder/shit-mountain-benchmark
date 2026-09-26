@@ -1,0 +1,126 @@
+{
+  "task_id": "F3",
+  "profile": "extreme-v0.2",
+  "scale": "smoke",
+  "seed": 260926,
+  "dimensions": [
+    {
+      "name": "initial_records",
+      "legacy": 50000,
+      "current": 5000,
+      "ratio": 0.1,
+      "scope": "generated"
+    },
+    {
+      "name": "initial_records_acknowledged_by_adapter",
+      "legacy": 50000,
+      "current": 5000,
+      "ratio": 0.1,
+      "scope": "executed"
+    }
+  ],
+  "mechanisms": [
+    "per-view frozen snapshot coupled to full export",
+    "tombstone retention under lagging actor and delayed replay",
+    "post-compaction epoch floor forbids resurrection",
+    "500k-row complete export plus shuffled update history"
+  ],
+  "baseline_result": {
+    "valid": false,
+    "passed": 4,
+    "total": 8,
+    "semantic_score": 50.0,
+    "quality_score": null,
+    "human_visual_score": null,
+    "checks": [
+      {
+        "name": "full initial population is available",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "a paused view stays on one coherent historical snapshot",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "an unpaused second view observes newest versions",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "paused full export uses its frozen cut, not live rows",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "resume preserves the maximum revision across shuffled batches",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "lagging actor prevents premature resurrection after compaction",
+        "passed": false,
+        "detail": "response.records.E0000000: expected None, received {'generation': 0, 'id': 'E0000000', 'rev': 4, 'service': 'svc-0', 'severity': 0, 'status': 'open', 'title': 'incident 0 seed 260926'}"
+      },
+      {
+        "name": "committed epoch floor rejects old-session replay even after safe GC",
+        "passed": false,
+        "detail": "response.records.E0000499: expected None, received {'generation': 0, 'id': 'E0000499', 'rev': 9, 'service': 'svc-18', 'severity': 3, 'status': 'open', 'title': 'incident 499 seed 260926'}"
+      },
+      {
+        "name": "all-record export matches resumed cut after deletion and GC",
+        "passed": false,
+        "detail": "export: expected 4998 rows, received 5000"
+      }
+    ],
+    "failure": null,
+    "stderr_tail": "",
+    "implementation": "new weak semantic adapter; legacy HTML was not executed",
+    "scope": "JSONL semantic adapter only, not arbitrary HTML end-to-end certification"
+  },
+  "verification": {
+    "commands_generated": 20,
+    "responses_observed": 20,
+    "initial_records_generated": 5000,
+    "event_deliveries_generated": 1004,
+    "adapter_acknowledged": {
+      "records_loaded": 5000,
+      "event_deliveries": 1004,
+      "protocol_errors": 0
+    },
+    "command_counts": {
+      "config": 1,
+      "load": 3,
+      "observe": 6,
+      "pause": 2,
+      "ingest": 4,
+      "export": 2,
+      "compact": 2
+    },
+    "elapsed_seconds": 0.087,
+    "witnesses": {
+      "passed": true,
+      "checks": {
+        "observed_remove_preserves_unseen_add_under_all_six_orders": true,
+        "merge_creates_new_global_conflict_from_locally_valid_edits": true,
+        "noncommuting_transport_has_convergent_causal_result": true,
+        "true_concurrency_retains_two_candidates": true,
+        "causal_resolution_wins_all_twenty_four_permutations": true,
+        "atomic_rejection_rolls_back_valid_prefix": true,
+        "identical_event_union_is_idempotent": true,
+        "restoration_generation_blocks_old_patches_in_both_orders": true
+      },
+      "scope": "bounded exhaustive witnesses (at most 8 events); not a full task implementation or optimum"
+    },
+    "full_browser_load_executed": false,
+    "pending": [
+      "native multi-window browser persistence and recovery",
+      "real download and resource usage",
+      "keyboard, IME, narrow viewport and assistive-technology workflows",
+      "independent visual and usability review"
+    ],
+    "trace_sha256": "b8858d8a35ef8eb601839b53bd360bea691cc2b54e5843dbcca48648cf430543"
+  },
+  "audit_passed": true
+}

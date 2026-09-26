@@ -1,0 +1,123 @@
+{
+  "task_id": "R1",
+  "profile": "extreme",
+  "scale": "full",
+  "seed": 260926,
+  "dimensions": [
+    {
+      "name": "jobs_per_episode",
+      "legacy": 48,
+      "current": 576,
+      "ratio": 12.0,
+      "scope": "executed"
+    }
+  ],
+  "mechanisms": [
+    "Only released contracts and current weather are observable; plans must adapt online.",
+    "Irreversible capacity investments compete with project spending and cancellation recourse.",
+    "Cross-chain dependencies transmit delivered quality; deadline losses interact with regional fairness.",
+    "Correlated weather reduces admission capacity and changes duration/quality at start."
+  ],
+  "baseline_result": {
+    "valid": true,
+    "episodes": 4,
+    "valid_episodes": 4,
+    "mean_loss": 91.30277553855443,
+    "worst_decile_loss": 91.52430796183702,
+    "objective_loss": 91.3692352655392,
+    "raw_score": 35.3683741063486,
+    "loss_scale": 50,
+    "episodes_detail": [
+      {
+        "valid": true,
+        "loss": 91.47759749960491,
+        "error": null,
+        "completed": 290,
+        "jobs": 576,
+        "coverage": 0.12463344246462438,
+        "minimum_region_coverage": 0.07044404848399939,
+        "budget_spent": 2145,
+        "investments": [
+          0,
+          0,
+          0
+        ],
+        "cancellations": 0,
+        "timeline_sha256": "37af551d14d6c35a627a3626da98d8b61269f3a91d3731997ec921877f5e0a55"
+      },
+      {
+        "valid": true,
+        "loss": 91.44371150069415,
+        "error": null,
+        "completed": 305,
+        "jobs": 576,
+        "coverage": 0.12059747405332501,
+        "minimum_region_coverage": 0.08955002690316867,
+        "budget_spent": 2262,
+        "investments": [
+          0,
+          0,
+          0
+        ],
+        "cancellations": 0,
+        "timeline_sha256": "557eee2158ee9bd59fdb456f66ca883923de83831b5e64a79adb1fe6bd187aac"
+      },
+      {
+        "valid": true,
+        "loss": 91.52430796183702,
+        "error": null,
+        "completed": 305,
+        "jobs": 576,
+        "coverage": 0.12581113465375193,
+        "minimum_region_coverage": 0.07044404848399939,
+        "budget_spent": 2257,
+        "investments": [
+          0,
+          0,
+          0
+        ],
+        "cancellations": 0,
+        "timeline_sha256": "06f4c1c97d86847bc4efdeff4398444a7fab5dfc02604d659307e4aa99a1e293"
+      },
+      {
+        "valid": true,
+        "loss": 90.76548519208164,
+        "error": null,
+        "completed": 321,
+        "jobs": 576,
+        "coverage": 0.13209563130231275,
+        "minimum_region_coverage": 0.08681446040641992,
+        "budget_spent": 2358,
+        "investments": [
+          0,
+          0,
+          0
+        ],
+        "cancellations": 0,
+        "timeline_sha256": "def51b6b4686c8b12091419c6b14fa6e08b8b99dc4bec947e5e4ad43e5bc313e"
+      }
+    ],
+    "mean_completed": 305.25
+  },
+  "verification": {
+    "independent_tiny_witness": {
+      "independent_legal_plans_enumerated": 7,
+      "optimal_tiny_loss": 5.0,
+      "no_investment_best_loss": 51.666666666666664,
+      "judge_agrees": true
+    },
+    "reproducible_seed": true,
+    "private_future_in_observations": false,
+    "selftest_command": "python3 reasoning/extreme_selftest.py",
+    "formal_hidden_evaluation": false,
+    "multiple_model_calibration": null
+  },
+  "policy_runtime": {
+    "calls": 960,
+    "decision_seconds": 2.1983784088806715,
+    "total_decision_budget_seconds": 120.0,
+    "per_action_timeout_seconds": 2.0
+  },
+  "audit_passed": true,
+  "wall_seconds": 2.2632655409979634
+}

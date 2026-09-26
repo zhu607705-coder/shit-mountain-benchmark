@@ -1,0 +1,52 @@
+{
+  "id": "extreme-v02-study-001",
+  "tasks": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+  ],
+  "scale": "full",
+  "rounds": 3,
+  "budgets": {
+    "total_ms": 1800000,
+    "ttft_ms": null,
+    "output_tokens": 64000,
+    "reasoning_tokens": null,
+    "thinking_time_ms": null
+  },
+  "prompt_variants": [
+    {
+      "id": "direct",
+      "text": "先完整阅读题目 README/PROMPT 和协议，独立完成任务。保存可执行答案与简短方法说明，运行你认为必要的自测，并明确尚未解决的失败。评价以真实提交物与外部裁判为准。"
+    },
+    {
+      "id": "hypothesis",
+      "text": "先完整阅读题目 README/PROMPT 和协议。先构造最小复现或反例，提出可检验的故障/优化假设，再完成修复或策略，并通过整体回归检查副作用。保存答案、关键假设验证证据和未解决问题；无需提供私人思维链。"
+    },
+    {
+      "id": "adversarial",
+      "text": "先完整阅读题目 README/PROMPT 和协议。解决任务后，另做一次针对依赖交互、资源边界、信息泄漏、重启/乱序/冲突的自我质疑检查；允许推翻初版方案。保存最终答案、实际自测与失败记录，勿把解释代替可执行结果。"
+    }
+  ],
+  "efficiency_policy": {
+    "profile": "elapsed_only",
+    "budgets": {
+      "total_ms": 1800000,
+      "ttft_ms": 60000,
+      "output_tokens": 64000,
+      "reasoning_tokens": 32000,
+      "max_penalty": 0.3,
+      "time_weight": 0.6
+    }
+  },
+  "cohort_id": "extreme-v02-full-cohort-002"
+}

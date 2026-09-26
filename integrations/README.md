@@ -1,6 +1,6 @@
 # 模型接口与已有提交导入
 
-12 道题共用配置与提交入口。R1/R2 可直接调用模型 API 生成决策 JSON 并交本地裁判；R3/R4、C1–C4、F1–F4 可导出给外部 Agent，再导入其实际完成的目录或 ZIP。全部使用 Python 标准库，无第三方依赖。一次文本补全不冒充具备环境操作能力的完整 Agent。
+主流程见 ../experiments/README.md：Agent读取实验README独立答题，答案封存后由Codex评分。本CLI是辅助接口。v0.2默认导出extreme任务；所有12题使用各自公开策略/仓库/语义协议。旧R1/R2单次API决策接口保留为v0.1 legacy兼容功能，不代表新版极难任务的完整Agent执行。
 
 ## API 配置
 
@@ -34,13 +34,13 @@ python3 integrations/cli.py import-submission --task C1 --alias external-agent-v
 python3 integrations/cli.py import-submission --task F1 --alias external-agent-v1 --source /path/to/completed.zip
 ```
 
-C1/C2 导出包含题面、事故记录、核心契约、无期待输出的公开 fixture，以及完整 `repository/buggy/`（保留原目录，含公开 smoke test）。C3/C4 导出题面和 `starter/`；F1–F4 导出公开题面和故障页面，F1/F2 另含固定数据；R3/R4 导出策略接口与公开模型/观测。R1/R2 也可单独导出题面与 input。所有导出均排除参考解、oracle、judge 内部和期望结果，并附 EXPORT_README.md 区分本地起步命令与主办方验收命令。
+默认extreme导出由各赛道生成，包含当前PROMPT、协议、输入/生成材料及故障起点，具体入口以包内README为准。`--profile legacy` 才使用以下旧布局：C1/C2包含题面、事故记录、核心契约、无期待输出的公开fixture和完整 `repository/buggy/`。C3/C4 导出题面和 `starter/`；F1–F4 导出公开题面和故障页面，F1/F2 另含固定数据；R3/R4 导出策略接口与公开模型/观测。R1/R2 也可单独导出题面与 input。所有导出均排除参考解、oracle、judge 内部和期望结果，并附 EXPORT_README.md 区分本地起步命令与主办方验收命令。
 
 导入**只复制文件并记录 SHA-256、来源名称与时间，不执行提交中的脚本**。目录/ZIP 成员拒绝绝对路径、`..`、反斜线、符号链接、设备文件、重复 ZIP 成员及加密 ZIP；限制 2,000 文件、单文件 16 MiB、总计 64 MiB，并拒绝异常压缩比。目标不允许符号链接、不允许覆盖已存在的提交，校验后先写临时目录再重命名。导入代码仍是不可信代码，路径检查不等于执行隔离。
 
 复杂仓库任务需要外部 agent 的读文件、编辑、运行和反馈循环。此 CLI **不会把一次聊天调用包装成代码/前端已完成**，也不接受会在宿主执行的任意 shell 字符串。对接自己的 agent 时，以导出的独立工作区作为输入；在自己配置的容器/虚拟机里运行工具循环，输出目录后再显式 `import-submission`。真实 Docker 沙箱与外部 agent 进程协议尚未实现。
 
-已有裁判 JSON 可统一成 `task_id/alias/valid/raw_score/machine_score/human_visual_score/metrics/source_result`：
+已有裁判 JSON 可统一成 `task_id/model/alias/valid/raw_score/machine_score/human_visual_score/metrics/source_result`：
 
 ```sh
 python3 integrations/cli.py normalize-result --task C1 --alias external-agent-v1 --source existing-result.json --output normalized-result.json
@@ -55,3 +55,7 @@ python3 -m unittest discover -s integrations -p 'test_*.py' -v
 ```
 
 测试使用本机 loopback mock HTTP，覆盖无密钥不调用、Authorization格式、完整R2题面/input发送、严格JSON解析、实际本地judge衔接、密钥不落产物、凭证回显拒绝、路径穿越/符号链接/压缩炸弹拒绝、惰性导入和解题数据不导出。它不使用真实 API key，不联系真实模型供应商。真实供应商兼容性、R1模型质量、完整外部agent工具循环及Docker执行隔离未验证。
+
+## 性能记录与多轮统计
+
+见 [PERFORMANCE.md](PERFORMANCE.md)。流式记录器是可选宿主工具；主流程不强制API。内部思考耗时未观测时保持null，总输出token不等于可见字数。质量/效率扣分见 ../experiments/EFFICIENCY.md，封存来源标签不会自动取得信任。

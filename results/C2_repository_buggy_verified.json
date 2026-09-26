@@ -1,7 +1,7 @@
 {
   "benchmark": "C2-repository",
   "version": "0.2.0",
-  "measured_at_utc": "2026-09-26T02:35:38.265921+00:00",
+  "measured_at_utc": "2026-09-26T04:49:04.036084+00:00",
   "suite_sha256": "ac0a276c1609eb66b76adf4e03a44c5c76cb3dba41258b4133c89994c708c70c",
   "submission_sha256": "51b1391444c0f9e74175243a3103fcdc546ab95c2c8b7adad28ed2439f82beca",
   "environment": {
@@ -26,70 +26,70 @@
     {
       "name": "default_business_flow",
       "passed": true,
-      "seconds": 0.2641
+      "seconds": 0.2672
     },
     {
       "name": "configured_base_path",
       "passed": false,
-      "seconds": 0.1136,
+      "seconds": 0.1144,
       "error": "AssertionError: ('/health', 404, {'error': 'route not found'})"
     },
     {
       "name": "different_process_workdirs",
       "passed": false,
-      "seconds": 2.9085,
-      "error": "AssertionError: job did not reach ['cancelled', 'done', 'failed']: {'id': 'acbbd8a812a64eb3b2220b1e15573a52', 'project_id': 'A', 'target': 'main', 'status': 'pending', 'result': None, 'error': None}"
+      "seconds": 2.9181,
+      "error": "AssertionError: job did not reach ['cancelled', 'done', 'failed']: {'id': 'b6906cbe0eba4776a65b3a3be698fb78', 'project_id': 'A', 'target': 'main', 'status': 'pending', 'result': None, 'error': None}"
     },
     {
       "name": "unicode_data_directory",
       "passed": true,
-      "seconds": 0.2909
+      "seconds": 0.2615
     },
     {
       "name": "project_isolation",
       "passed": false,
-      "seconds": 0.3696,
-      "error": "AssertionError: {'id': '02b2029d2ea244b9b0e6a1fc1c9e579e', 'project_id': 'B', 'target': 'main', 'status': 'done', 'result': {'value': [3, 9]}, 'error': None}"
+      "seconds": 0.3756,
+      "error": "AssertionError: {'id': '56fb54e189c340418635b08699583ec4', 'project_id': 'B', 'target': 'main', 'status': 'done', 'result': {'value': [3, 9]}, 'error': None}"
     },
     {
       "name": "cancel_running_then_retry",
       "passed": false,
-      "seconds": 0.5086,
-      "error": "AssertionError: {'id': '5cc74ffcc06041e8898324bfcfa31ce9', 'project_id': 'A', 'target': 'main', 'status': 'done', 'result': {'value': [6, 12]}, 'error': None}"
+      "seconds": 0.5118,
+      "error": "AssertionError: {'id': '2288f944a8e7482496f96389e6e6cb35', 'project_id': 'A', 'target': 'main', 'status': 'done', 'result': {'value': [6, 12]}, 'error': None}"
     },
     {
       "name": "dependency_failure_then_repair",
       "passed": false,
-      "seconds": 0.4232,
-      "error": "AssertionError: {'id': '43e35059460e4f7d990d80f99406f048', 'project_id': 'A', 'target': 'main', 'status': 'done', 'result': {'value': []}, 'error': None}"
+      "seconds": 0.4145,
+      "error": "AssertionError: {'id': '875e4fd9bdb84c0eb36bd7f9721df8e3', 'project_id': 'A', 'target': 'main', 'status': 'done', 'result': {'value': []}, 'error': None}"
     },
     {
       "name": "enqueue_snapshot_isolation",
       "passed": false,
-      "seconds": 0.5367,
-      "error": "AssertionError: {'id': '0310feab036a4436b7900eb4ae151910', 'project_id': 'A', 'target': 'main', 'status': 'done', 'result': {'value': [27, 33]}, 'error': None}"
+      "seconds": 0.5,
+      "error": "AssertionError: {'id': '4822942314d34f329926851d60443d04', 'project_id': 'A', 'target': 'main', 'status': 'done', 'result': {'value': [27, 33]}, 'error': None}"
     },
     {
       "name": "server_restart_persistence",
       "passed": true,
-      "seconds": 0.5484
+      "seconds": 0.518
     },
     {
       "name": "worker_crash_recovery",
       "passed": false,
-      "seconds": 2.9969,
-      "error": "AssertionError: job did not reach ['cancelled', 'done', 'failed']: {'id': '5f205d6224f44222bc47aa100edb3cea', 'project_id': 'A', 'target': 'main', 'status': 'running', 'result': None, 'error': None}"
+      "seconds": 2.9952,
+      "error": "AssertionError: job did not reach ['cancelled', 'done', 'failed']: {'id': '6b4bafa4e42f44a39a6ed2cb082f216d', 'project_id': 'A', 'target': 'main', 'status': 'running', 'result': None, 'error': None}"
     },
     {
       "name": "legacy_schema_migration",
       "passed": false,
-      "seconds": 0.0689,
-      "error": "StartupFailure: subprocess readiness failed: {\"process\": \"serve\", \"reason\": \"process_exited\", \"returncode\": 1, \"elapsed_seconds\": 0.0594, \"startup_timeout_seconds\": 4.0, \"stdout\": \"\", \"stderr\": \"C2_STARTUP_TRACE_READY\\nTraceback (most recent call last):\\n  File \\\"<string>\\\", line 11, in <module>\\n    runpy.run_path(sys.argv[0],run_name='__main__')\\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"<frozen runpy>\\\", line 287, in run_path\\n  File \\\"<frozen runpy>\\\", line 98, in _run_module_code\\n  File \\\"<frozen runpy>\\\", line 88, in _run_code\\n  File \\\"/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/buggy/cli.py\\\", line 2, in <module>\\n    if __name__ == \\\"__main__\\\": main()\\n                               ~~~~^^\\n  File \\\"/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/buggy/app/cli.py\\\", line 10, in main\\n    (serve if a.command=='serve' else work)(config)\\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^\\n  File \\\"/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/buggy/app/api.py\\\", line 19, in serve\\n    initialize(config)\\n    ~~~~~~~~~~^^^^^^^^\\n  File \\\"/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/buggy/app/db.py\\\", line 27, in initialize\\n    c.execute('UPDATE jobs SET payload=(SELECT graph FROM projects WHERE id=jobs.project_id) WHERE payload IS NULL')\\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nsqlite3.OperationalError: no such column: payload\\n\", \"stack_probe\": \"not_needed\"}",
+      "seconds": 0.064,
+      "error": "StartupFailure: subprocess readiness failed: {\"process\": \"serve\", \"reason\": \"process_exited\", \"returncode\": 1, \"elapsed_seconds\": 0.0565, \"startup_timeout_seconds\": 4.0, \"stdout\": \"\", \"stderr\": \"C2_STARTUP_TRACE_READY\\nTraceback (most recent call last):\\n  File \\\"<string>\\\", line 11, in <module>\\n    runpy.run_path(sys.argv[0],run_name='__main__')\\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \\\"<frozen runpy>\\\", line 287, in run_path\\n  File \\\"<frozen runpy>\\\", line 98, in _run_module_code\\n  File \\\"<frozen runpy>\\\", line 88, in _run_code\\n  File \\\"/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/buggy/cli.py\\\", line 2, in <module>\\n    if __name__ == \\\"__main__\\\": main()\\n                               ~~~~^^\\n  File \\\"/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/buggy/app/cli.py\\\", line 10, in main\\n    (serve if a.command=='serve' else work)(config)\\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^\\n  File \\\"/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/buggy/app/api.py\\\", line 19, in serve\\n    initialize(config)\\n    ~~~~~~~~~~^^^^^^^^\\n  File \\\"/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/buggy/app/db.py\\\", line 27, in initialize\\n    c.execute('UPDATE jobs SET payload=(SELECT graph FROM projects WHERE id=jobs.project_id) WHERE payload IS NULL')\\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nsqlite3.OperationalError: no such column: payload\\n\", \"stack_probe\": \"not_needed\"}",
       "startup_diagnostics": {
         "process": "serve",
         "reason": "process_exited",
         "returncode": 1,
-        "elapsed_seconds": 0.0594,
+        "elapsed_seconds": 0.0565,
         "startup_timeout_seconds": 4.0,
         "stdout": "",
         "stderr": "C2_STARTUP_TRACE_READY\nTraceback (most recent call last):\n  File \"<string>\", line 11, in <module>\n    runpy.run_path(sys.argv[0],run_name='__main__')\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/buggy/cli.py\", line 2, in <module>\n    if __name__ == \"__main__\": main()\n                               ~~~~^^\n  File \"/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/buggy/app/cli.py\", line 10, in main\n    (serve if a.command=='serve' else work)(config)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^\n  File \"/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/buggy/app/api.py\", line 19, in serve\n    initialize(config)\n    ~~~~~~~~~~^^^^^^^^\n  File \"/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/buggy/app/db.py\", line 27, in initialize\n    c.execute('UPDATE jobs SET payload=(SELECT graph FROM projects WHERE id=jobs.project_id) WHERE payload IS NULL')\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsqlite3.OperationalError: no such column: payload\n",

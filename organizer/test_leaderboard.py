@@ -38,6 +38,31 @@ class LeaderboardTests(unittest.TestCase):
         self.assertEqual(row["tracks"]["reasoning"], 25)
         self.assertAlmostEqual(row["total"], 100 / 12)
 
+    def test_task_versions_and_efficiency_policies_cannot_mix(self):
+        a, b = rec("a"), rec("b")
+        b['task_profile'] = 'extreme'
+        with self.assertRaises(ValueError): build([a, b])
+        a.update(efficiency_score=40, efficiency_profile_id='budget-a')
+        b.update(task_profile='legacy', efficiency_score=50, efficiency_profile_id='budget-b')
+        with self.assertRaises(ValueError): build([a, b], metric='efficiency')
+        b['efficiency_profile_id'] = 'budget-a'
+        rows = build([a, b], metric='efficiency')['rows']
+        self.assertEqual({r['model']:r['relative_scores']['R1'] for r in rows}, {'a':80, 'b':100})
+
+    def test_semantic_only_frontend_does_not_become_complete_ui_score(self):
+        r=rec(task='F1',score=100)
+        r['final_ui_leaderboard_eligible']=False
+        self.assertIsNone(build([r])['rows'][0]['relative_scores']['F1'])
+        self.assertEqual(build([r],scope='automated')['rows'][0]['relative_scores']['F1'],100)
+
+    def test_smoke_full_and_different_case_sets_cannot_mix(self):
+        a,b=rec('a'),rec('b')
+        a.update(task_profile='extreme',scale='smoke',comparison_id='same')
+        b.update(task_profile='extreme',scale='full',comparison_id='same')
+        with self.assertRaises(ValueError): build([a,b])
+        b.update(scale='smoke',comparison_id='different')
+        with self.assertRaises(ValueError): build([a,b])
+
 
 if __name__ == "__main__":
     unittest.main()

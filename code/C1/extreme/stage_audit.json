@@ -1,0 +1,202 @@
+{
+  "contract": "stage-v2",
+  "required": true,
+  "candidate": {
+    "status": "capability_gap",
+    "valid": false,
+    "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C1/repository/baseline/extreme.py",
+    "reason": "required stage-v2 module extreme.py is absent",
+    "checks": []
+  },
+  "faulty_starter": {
+    "status": "behavior_failure",
+    "valid": false,
+    "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C1/extreme/starter.py",
+    "checks": [
+      {
+        "name": "lost_reply_only",
+        "index": 0,
+        "passed": true,
+        "evidence": {
+          "balance": 40,
+          "amount": 4,
+          "expected": {
+            "source": 36,
+            "target": 4
+          },
+          "receipt": {
+            "txid": "logical-1",
+            "amount": 4
+          },
+          "reopened": true
+        }
+      },
+      {
+        "name": "migration_only",
+        "index": 1,
+        "passed": true,
+        "evidence": {
+          "balance": 40,
+          "amount": 4,
+          "expected": {
+            "source": 36,
+            "target": 4
+          },
+          "receipt": {
+            "txid": "logical-1",
+            "amount": 4
+          },
+          "reopened": true
+        }
+      },
+      {
+        "name": "composition",
+        "index": 2,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 36, \"target\": 4}, \"actual\": {\"source\": 32, \"target\": 8}}"
+      }
+    ],
+    "controls_passed": true,
+    "composition_passed": false
+  },
+  "tiny_feasible_witness": {
+    "feasible": true,
+    "kind": "finite_trace_witness_not_complete_solver",
+    "execution": "independent finite-state arithmetic, not a complete I/O implementation",
+    "trace": {
+      "initial": {
+        "a": 100,
+        "b": 0
+      },
+      "after_transfer": {
+        "a": 90,
+        "b": 10
+      },
+      "after_migration_and_retry": {
+        "a": 90,
+        "b": 10
+      },
+      "legal_strategy": "receipt identity stays (logical source, request id) across physical epochs"
+    },
+    "negative_perturbation_rejected": true
+  },
+  "audit_passed": true,
+  "difficulty_evidence": "same runnable starter passes isolated controls but fails their composition; not an impossibility proof",
+  "expanded_faulty_starter": {
+    "status": "behavior_failure",
+    "valid": false,
+    "path": "code/C1/extreme/starter.py",
+    "checks": [
+      {
+        "name": "lost_reply_only",
+        "index": 0,
+        "passed": true,
+        "evidence": {
+          "balance": 40,
+          "amount": 4,
+          "expected": {
+            "source": 36,
+            "target": 4
+          },
+          "receipt": {
+            "txid": "logical-1",
+            "amount": 4
+          },
+          "reopened": true
+        }
+      },
+      {
+        "name": "migration_only",
+        "index": 1,
+        "passed": true,
+        "evidence": {
+          "balance": 40,
+          "amount": 4,
+          "expected": {
+            "source": 36,
+            "target": 4
+          },
+          "receipt": {
+            "txid": "logical-1",
+            "amount": 4
+          },
+          "reopened": true
+        }
+      },
+      {
+        "name": "composition",
+        "index": 2,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 36, \"target\": 4}, \"actual\": {\"source\": 32, \"target\": 8}}"
+      },
+      {
+        "name": "composition",
+        "index": 3,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 117, \"target\": 13}, \"actual\": {\"source\": 104, \"target\": 26}}"
+      },
+      {
+        "name": "composition",
+        "index": 4,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 144, \"target\": 16}, \"actual\": {\"source\": 128, \"target\": 32}}"
+      },
+      {
+        "name": "composition",
+        "index": 5,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 117, \"target\": 13}, \"actual\": {\"source\": 104, \"target\": 26}}"
+      },
+      {
+        "name": "composition",
+        "index": 6,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 27, \"target\": 3}, \"actual\": {\"source\": 24, \"target\": 6}}"
+      },
+      {
+        "name": "composition",
+        "index": 7,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 18, \"target\": 2}, \"actual\": {\"source\": 16, \"target\": 4}}"
+      },
+      {
+        "name": "composition",
+        "index": 8,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 261, \"target\": 29}, \"actual\": {\"source\": 232, \"target\": 58}}"
+      },
+      {
+        "name": "composition",
+        "index": 9,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 99, \"target\": 11}, \"actual\": {\"source\": 88, \"target\": 22}}"
+      },
+      {
+        "name": "composition",
+        "index": 10,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 234, \"target\": 26}, \"actual\": {\"source\": 208, \"target\": 52}}"
+      },
+      {
+        "name": "composition",
+        "index": 11,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 36, \"target\": 4}, \"actual\": {\"source\": 32, \"target\": 8}}"
+      },
+      {
+        "name": "composition",
+        "index": 12,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 180, \"target\": 20}, \"actual\": {\"source\": 160, \"target\": 40}}"
+      },
+      {
+        "name": "composition",
+        "index": 13,
+        "passed": false,
+        "error": "AssertionError: {\"reason\": \"logical request duplicated after physical epoch migration\", \"expected\": {\"source\": 45, \"target\": 5}, \"actual\": {\"source\": 40, \"target\": 10}}"
+      }
+    ],
+    "controls_passed": true,
+    "composition_passed": false
+  }
+}

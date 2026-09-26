@@ -1,0 +1,4845 @@
+{
+  "suite_version": "0.2.0",
+  "profile": "extreme",
+  "scale": "smoke",
+  "seed": 260926,
+  "seed_scope": "organizer report; do not distribute as a hidden evaluation secret",
+  "python": "3.14.4",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "wall_seconds": 6.2448,
+  "tasks": [
+    {
+      "task_id": "R1",
+      "report": "R1.json",
+      "sha256": "ab8171e16311c147db1f7e68a80ce8e4e5f83b1d96a4b345fe9f82598298a72b",
+      "audit_passed": true,
+      "dimensions": [
+        {
+          "name": "jobs_per_episode",
+          "legacy": 48,
+          "current": 48,
+          "ratio": 1.0,
+          "scope": "executed"
+        }
+      ],
+      "candidate": {
+        "valid": true,
+        "episodes": 2,
+        "valid_episodes": 2,
+        "mean_loss": 54.04302092320752,
+        "worst_decile_loss": 54.133445117680864,
+        "objective_loss": 54.07014818154953,
+        "raw_score": 48.04451696635946,
+        "loss_scale": 50,
+        "episodes_detail": [
+          {
+            "valid": true,
+            "loss": 54.133445117680864,
+            "error": null,
+            "completed": 39,
+            "jobs": 48,
+            "coverage": 0.5657649117273469,
+            "minimum_region_coverage": 0.30962179537084045,
+            "budget_spent": 298,
+            "investments": [
+              0,
+              0,
+              0
+            ],
+            "cancellations": 0,
+            "timeline_sha256": "e1c67d0a9adbb57ad088f18854b6ace17e522c9ca7940128d34213f755439902"
+          },
+          {
+            "valid": true,
+            "loss": 53.95259672873417,
+            "error": null,
+            "completed": 41,
+            "jobs": 48,
+            "coverage": 0.5657107416249677,
+            "minimum_region_coverage": 0.3320471429699499,
+            "budget_spent": 324,
+            "investments": [
+              0,
+              0,
+              0
+            ],
+            "cancellations": 0,
+            "timeline_sha256": "b3ea47af3957d4a9dc48cf0e2376aa2111b44c8d2ae5c032c09cc2489bbf64a0"
+          }
+        ],
+        "mean_completed": 40.0
+      }
+    },
+    {
+      "task_id": "R2",
+      "report": "R2.json",
+      "sha256": "db750107a012d0cb5fbdfe8b16f962f882e2d41d6ae9bbde952b50a43adf17fa",
+      "audit_passed": true,
+      "dimensions": [
+        {
+          "name": "evaluated_worlds",
+          "legacy": 180,
+          "current": 24,
+          "ratio": 0.13333333333333333,
+          "scope": "executed"
+        },
+        {
+          "name": "distinct_available_tests",
+          "legacy": 18,
+          "current": 180,
+          "ratio": 10.0,
+          "scope": "generated"
+        }
+      ],
+      "candidate": {
+        "valid": true,
+        "episodes": 24,
+        "valid_episodes": 24,
+        "mean_loss": 37.96666666666667,
+        "worst_decile_loss": 126.30000000000001,
+        "objective_loss": 64.46666666666667,
+        "raw_score": 43.6808386721025,
+        "loss_scale": 50,
+        "episodes_detail": [
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 0,
+            "queries": 9,
+            "terminal_action": 21,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 0,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 1,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 1,
+            "queries": 9,
+            "terminal_action": 22,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 1,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 1,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 0,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 2,
+            "queries": 9,
+            "terminal_action": 18,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 0,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 1,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 3,
+            "queries": 9,
+            "terminal_action": 28,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 1,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 1,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 0,
+            "queries": 9,
+            "terminal_action": 3,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 0,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 0,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 1,
+            "queries": 9,
+            "terminal_action": 24,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 1,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 1,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 2,
+            "queries": 9,
+            "terminal_action": 22,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 0,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 1,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 126.30000000000001,
+            "cohort": 3,
+            "queries": 9,
+            "terminal_action": 19,
+            "terminal_loss": 117,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 0,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 1,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": false
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 0,
+            "queries": 9,
+            "terminal_action": 26,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 1,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 1,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 126.30000000000001,
+            "cohort": 1,
+            "queries": 9,
+            "terminal_action": 15,
+            "terminal_loss": 117,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 1,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 0,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": false
+          },
+          {
+            "valid": true,
+            "loss": 126.30000000000001,
+            "cohort": 2,
+            "queries": 9,
+            "terminal_action": 2,
+            "terminal_loss": 117,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 1,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 0,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 1,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": false
+          },
+          {
+            "valid": true,
+            "loss": 83.30000000000001,
+            "cohort": 3,
+            "queries": 9,
+            "terminal_action": 26,
+            "terminal_loss": 74,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 0,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 1,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": false
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 0,
+            "queries": 9,
+            "terminal_action": 31,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 1,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 1,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 126.30000000000001,
+            "cohort": 1,
+            "queries": 9,
+            "terminal_action": 3,
+            "terminal_loss": 117,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 0,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 0,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": false
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 2,
+            "queries": 9,
+            "terminal_action": 13,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 1,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 0,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 3,
+            "queries": 9,
+            "terminal_action": 23,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 1,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 1,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 0,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 0,
+            "queries": 9,
+            "terminal_action": 29,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 1,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 1,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 1,
+            "queries": 9,
+            "terminal_action": 5,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 0,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 0,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 2,
+            "queries": 9,
+            "terminal_action": 4,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 1,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 0,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 83.30000000000001,
+            "cohort": 3,
+            "queries": 9,
+            "terminal_action": 31,
+            "terminal_loss": 74,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 1,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 0,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 0,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": false
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 0,
+            "queries": 9,
+            "terminal_action": 13,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 1,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 0,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 1,
+            "queries": 9,
+            "terminal_action": 15,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 1,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 0,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 2,
+            "queries": 9,
+            "terminal_action": 14,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 1,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 0,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 0,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          },
+          {
+            "valid": true,
+            "loss": 13.299999999999999,
+            "cohort": 3,
+            "queries": 9,
+            "terminal_action": 29,
+            "terminal_loss": 4,
+            "side_effect": 0.0,
+            "stress": 4,
+            "budget_spent": 13,
+            "history": [
+              {
+                "test": 5,
+                "result": 0,
+                "stress_before": 0
+              },
+              {
+                "test": 0,
+                "result": 0,
+                "stress_before": 1
+              },
+              {
+                "test": 6,
+                "result": 1,
+                "stress_before": 1
+              },
+              {
+                "test": 1,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 7,
+                "result": 0,
+                "stress_before": 2
+              },
+              {
+                "test": 2,
+                "result": 0,
+                "stress_before": 3
+              },
+              {
+                "test": 8,
+                "result": 1,
+                "stress_before": 3
+              },
+              {
+                "test": 3,
+                "result": 1,
+                "stress_before": 4
+              },
+              {
+                "test": 4,
+                "result": 1,
+                "stress_before": 4
+              }
+            ],
+            "exact_repair": true
+          }
+        ],
+        "exact_repair_rate": 0.75,
+        "cohort_mean_losses": [
+          13.299999999999999,
+          50.96666666666667,
+          32.13333333333333,
+          55.46666666666667
+        ]
+      }
+    },
+    {
+      "task_id": "R3",
+      "report": "R3.json",
+      "sha256": "9a2dea9620fee4727deb9479d5e5e35c169ac45d5b81ad9d915fefc950165fc1",
+      "audit_passed": true,
+      "dimensions": [
+        {
+          "name": "components",
+          "legacy": 10,
+          "current": 128,
+          "ratio": 12.8,
+          "scope": "generated"
+        },
+        {
+          "name": "episodes",
+          "legacy": 90,
+          "current": 16,
+          "ratio": 0.17777777777777778,
+          "scope": "executed"
+        }
+      ],
+      "candidate": {
+        "valid": true,
+        "episodes": 16,
+        "valid_episodes": 16,
+        "mean_loss": 119.375,
+        "worst_decile_loss": 231.5,
+        "objective_loss": 153.0125,
+        "raw_score": 24.629025306323502,
+        "loss_scale": 50,
+        "episodes_detail": [
+          {
+            "valid": true,
+            "loss": 93.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              2
+            ],
+            "group_repair": [],
+            "missed_faults": 1,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 1
+              },
+              {
+                "test": 6,
+                "result": 1
+              },
+              {
+                "test": 1,
+                "result": 0
+              },
+              {
+                "test": 7,
+                "result": 1
+              },
+              {
+                "test": 2,
+                "result": 0
+              },
+              {
+                "test": 8,
+                "result": 1
+              },
+              {
+                "test": 3,
+                "result": 1
+              },
+              {
+                "test": 9,
+                "result": 1
+              },
+              {
+                "test": 4,
+                "result": 0
+              },
+              {
+                "test": 10,
+                "result": 0
+              },
+              {
+                "test": 5,
+                "result": 0
+              },
+              {
+                "test": 11,
+                "result": 0
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 1
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 93.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              16
+            ],
+            "group_repair": [],
+            "missed_faults": 1,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 0
+              },
+              {
+                "test": 6,
+                "result": 0
+              },
+              {
+                "test": 1,
+                "result": 1
+              },
+              {
+                "test": 7,
+                "result": 0
+              },
+              {
+                "test": 2,
+                "result": 0
+              },
+              {
+                "test": 8,
+                "result": 0
+              },
+              {
+                "test": 3,
+                "result": 0
+              },
+              {
+                "test": 9,
+                "result": 1
+              },
+              {
+                "test": 4,
+                "result": 0
+              },
+              {
+                "test": 10,
+                "result": 1
+              },
+              {
+                "test": 5,
+                "result": 0
+              },
+              {
+                "test": 11,
+                "result": 0
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 1
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 1
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 93.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              23
+            ],
+            "group_repair": [],
+            "missed_faults": 1,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 0
+              },
+              {
+                "test": 6,
+                "result": 0
+              },
+              {
+                "test": 1,
+                "result": 1
+              },
+              {
+                "test": 7,
+                "result": 0
+              },
+              {
+                "test": 2,
+                "result": 0
+              },
+              {
+                "test": 8,
+                "result": 1
+              },
+              {
+                "test": 3,
+                "result": 1
+              },
+              {
+                "test": 9,
+                "result": 1
+              },
+              {
+                "test": 4,
+                "result": 0
+              },
+              {
+                "test": 10,
+                "result": 1
+              },
+              {
+                "test": 5,
+                "result": 1
+              },
+              {
+                "test": 11,
+                "result": 1
+              },
+              {
+                "test": 18,
+                "result": 1
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 93.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              15
+            ],
+            "group_repair": [],
+            "missed_faults": 1,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 1
+              },
+              {
+                "test": 6,
+                "result": 0
+              },
+              {
+                "test": 1,
+                "result": 0
+              },
+              {
+                "test": 7,
+                "result": 1
+              },
+              {
+                "test": 2,
+                "result": 0
+              },
+              {
+                "test": 8,
+                "result": 1
+              },
+              {
+                "test": 3,
+                "result": 0
+              },
+              {
+                "test": 9,
+                "result": 0
+              },
+              {
+                "test": 4,
+                "result": 1
+              },
+              {
+                "test": 10,
+                "result": 1
+              },
+              {
+                "test": 5,
+                "result": 1
+              },
+              {
+                "test": 11,
+                "result": 1
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 1
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 93.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              53
+            ],
+            "group_repair": [],
+            "missed_faults": 1,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 0
+              },
+              {
+                "test": 6,
+                "result": 1
+              },
+              {
+                "test": 1,
+                "result": 1
+              },
+              {
+                "test": 7,
+                "result": 0
+              },
+              {
+                "test": 2,
+                "result": 1
+              },
+              {
+                "test": 8,
+                "result": 0
+              },
+              {
+                "test": 3,
+                "result": 1
+              },
+              {
+                "test": 9,
+                "result": 1
+              },
+              {
+                "test": 4,
+                "result": 0
+              },
+              {
+                "test": 10,
+                "result": 1
+              },
+              {
+                "test": 5,
+                "result": 0
+              },
+              {
+                "test": 11,
+                "result": 1
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 1
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 93.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              51
+            ],
+            "group_repair": [],
+            "missed_faults": 1,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 1
+              },
+              {
+                "test": 6,
+                "result": 0
+              },
+              {
+                "test": 1,
+                "result": 0
+              },
+              {
+                "test": 7,
+                "result": 1
+              },
+              {
+                "test": 2,
+                "result": 0
+              },
+              {
+                "test": 8,
+                "result": 0
+              },
+              {
+                "test": 3,
+                "result": 1
+              },
+              {
+                "test": 9,
+                "result": 1
+              },
+              {
+                "test": 4,
+                "result": 1
+              },
+              {
+                "test": 10,
+                "result": 0
+              },
+              {
+                "test": 5,
+                "result": 0
+              },
+              {
+                "test": 11,
+                "result": 1
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 93.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              14
+            ],
+            "group_repair": [],
+            "missed_faults": 1,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 1
+              },
+              {
+                "test": 6,
+                "result": 1
+              },
+              {
+                "test": 1,
+                "result": 1
+              },
+              {
+                "test": 7,
+                "result": 0
+              },
+              {
+                "test": 2,
+                "result": 0
+              },
+              {
+                "test": 8,
+                "result": 1
+              },
+              {
+                "test": 3,
+                "result": 1
+              },
+              {
+                "test": 9,
+                "result": 0
+              },
+              {
+                "test": 4,
+                "result": 0
+              },
+              {
+                "test": 10,
+                "result": 0
+              },
+              {
+                "test": 5,
+                "result": 0
+              },
+              {
+                "test": 11,
+                "result": 0
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 93.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              7
+            ],
+            "group_repair": [],
+            "missed_faults": 1,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 0
+              },
+              {
+                "test": 6,
+                "result": 1
+              },
+              {
+                "test": 1,
+                "result": 0
+              },
+              {
+                "test": 7,
+                "result": 1
+              },
+              {
+                "test": 2,
+                "result": 1
+              },
+              {
+                "test": 8,
+                "result": 0
+              },
+              {
+                "test": 3,
+                "result": 1
+              },
+              {
+                "test": 9,
+                "result": 1
+              },
+              {
+                "test": 4,
+                "result": 1
+              },
+              {
+                "test": 10,
+                "result": 1
+              },
+              {
+                "test": 5,
+                "result": 0
+              },
+              {
+                "test": 11,
+                "result": 0
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 93.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              50
+            ],
+            "group_repair": [],
+            "missed_faults": 1,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 1
+              },
+              {
+                "test": 6,
+                "result": 1
+              },
+              {
+                "test": 1,
+                "result": 0
+              },
+              {
+                "test": 7,
+                "result": 1
+              },
+              {
+                "test": 2,
+                "result": 0
+              },
+              {
+                "test": 8,
+                "result": 1
+              },
+              {
+                "test": 3,
+                "result": 1
+              },
+              {
+                "test": 9,
+                "result": 1
+              },
+              {
+                "test": 4,
+                "result": 1
+              },
+              {
+                "test": 10,
+                "result": 0
+              },
+              {
+                "test": 5,
+                "result": 0
+              },
+              {
+                "test": 11,
+                "result": 1
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 1
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 231.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              29
+            ],
+            "group_repair": [],
+            "missed_faults": 2,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 0
+              },
+              {
+                "test": 6,
+                "result": 1
+              },
+              {
+                "test": 1,
+                "result": 0
+              },
+              {
+                "test": 7,
+                "result": 0
+              },
+              {
+                "test": 2,
+                "result": 1
+              },
+              {
+                "test": 8,
+                "result": 0
+              },
+              {
+                "test": 3,
+                "result": 0
+              },
+              {
+                "test": 9,
+                "result": 1
+              },
+              {
+                "test": 4,
+                "result": 0
+              },
+              {
+                "test": 10,
+                "result": 1
+              },
+              {
+                "test": 5,
+                "result": 1
+              },
+              {
+                "test": 11,
+                "result": 1
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 231.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              43
+            ],
+            "group_repair": [],
+            "missed_faults": 2,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 0
+              },
+              {
+                "test": 6,
+                "result": 1
+              },
+              {
+                "test": 1,
+                "result": 1
+              },
+              {
+                "test": 7,
+                "result": 0
+              },
+              {
+                "test": 2,
+                "result": 1
+              },
+              {
+                "test": 8,
+                "result": 1
+              },
+              {
+                "test": 3,
+                "result": 0
+              },
+              {
+                "test": 9,
+                "result": 1
+              },
+              {
+                "test": 4,
+                "result": 0
+              },
+              {
+                "test": 10,
+                "result": 0
+              },
+              {
+                "test": 5,
+                "result": 0
+              },
+              {
+                "test": 11,
+                "result": 1
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 93.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              30
+            ],
+            "group_repair": [],
+            "missed_faults": 1,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 1
+              },
+              {
+                "test": 6,
+                "result": 1
+              },
+              {
+                "test": 1,
+                "result": 0
+              },
+              {
+                "test": 7,
+                "result": 1
+              },
+              {
+                "test": 2,
+                "result": 0
+              },
+              {
+                "test": 8,
+                "result": 1
+              },
+              {
+                "test": 3,
+                "result": 1
+              },
+              {
+                "test": 9,
+                "result": 0
+              },
+              {
+                "test": 4,
+                "result": 0
+              },
+              {
+                "test": 10,
+                "result": 1
+              },
+              {
+                "test": 5,
+                "result": 1
+              },
+              {
+                "test": 11,
+                "result": 1
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 93.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              41
+            ],
+            "group_repair": [],
+            "missed_faults": 1,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 1
+              },
+              {
+                "test": 6,
+                "result": 0
+              },
+              {
+                "test": 1,
+                "result": 1
+              },
+              {
+                "test": 7,
+                "result": 1
+              },
+              {
+                "test": 2,
+                "result": 0
+              },
+              {
+                "test": 8,
+                "result": 0
+              },
+              {
+                "test": 3,
+                "result": 0
+              },
+              {
+                "test": 9,
+                "result": 1
+              },
+              {
+                "test": 4,
+                "result": 1
+              },
+              {
+                "test": 10,
+                "result": 1
+              },
+              {
+                "test": 5,
+                "result": 0
+              },
+              {
+                "test": 11,
+                "result": 1
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 93.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              1
+            ],
+            "group_repair": [],
+            "missed_faults": 1,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 0
+              },
+              {
+                "test": 6,
+                "result": 1
+              },
+              {
+                "test": 1,
+                "result": 1
+              },
+              {
+                "test": 7,
+                "result": 1
+              },
+              {
+                "test": 2,
+                "result": 1
+              },
+              {
+                "test": 8,
+                "result": 1
+              },
+              {
+                "test": 3,
+                "result": 1
+              },
+              {
+                "test": 9,
+                "result": 1
+              },
+              {
+                "test": 4,
+                "result": 0
+              },
+              {
+                "test": 10,
+                "result": 0
+              },
+              {
+                "test": 5,
+                "result": 1
+              },
+              {
+                "test": 11,
+                "result": 1
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 231.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              63
+            ],
+            "group_repair": [],
+            "missed_faults": 2,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 1
+              },
+              {
+                "test": 6,
+                "result": 0
+              },
+              {
+                "test": 1,
+                "result": 1
+              },
+              {
+                "test": 7,
+                "result": 0
+              },
+              {
+                "test": 2,
+                "result": 1
+              },
+              {
+                "test": 8,
+                "result": 0
+              },
+              {
+                "test": 3,
+                "result": 0
+              },
+              {
+                "test": 9,
+                "result": 1
+              },
+              {
+                "test": 4,
+                "result": 1
+              },
+              {
+                "test": 10,
+                "result": 0
+              },
+              {
+                "test": 5,
+                "result": 1
+              },
+              {
+                "test": 11,
+                "result": 0
+              },
+              {
+                "test": 18,
+                "result": 0
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 93.5,
+            "queries": 17,
+            "budget_spent": 19.5,
+            "repair": [
+              1
+            ],
+            "group_repair": [],
+            "missed_faults": 1,
+            "exact_both": false,
+            "history": [
+              {
+                "test": 0,
+                "result": 1
+              },
+              {
+                "test": 6,
+                "result": 1
+              },
+              {
+                "test": 1,
+                "result": 0
+              },
+              {
+                "test": 7,
+                "result": 0
+              },
+              {
+                "test": 2,
+                "result": 0
+              },
+              {
+                "test": 8,
+                "result": 0
+              },
+              {
+                "test": 3,
+                "result": 0
+              },
+              {
+                "test": 9,
+                "result": 0
+              },
+              {
+                "test": 4,
+                "result": 0
+              },
+              {
+                "test": 10,
+                "result": 0
+              },
+              {
+                "test": 5,
+                "result": 1
+              },
+              {
+                "test": 11,
+                "result": 1
+              },
+              {
+                "test": 18,
+                "result": 1
+              },
+              {
+                "test": 19,
+                "result": 0
+              },
+              {
+                "test": 20,
+                "result": 0
+              },
+              {
+                "test": 21,
+                "result": 0
+              },
+              {
+                "test": 22,
+                "result": 0
+              }
+            ]
+          }
+        ],
+        "both_faults_repaired_rate": 0.0,
+        "mean_missed_faults": 1.1875
+      }
+    },
+    {
+      "task_id": "R4",
+      "report": "R4.json",
+      "sha256": "421fb622059aea089c299e16468b22a961d5d148291c93fc4dc54a8359d8b363",
+      "audit_passed": true,
+      "dimensions": [
+        {
+          "name": "jobs_per_episode",
+          "legacy": 60,
+          "current": 60,
+          "ratio": 1.0,
+          "scope": "executed"
+        },
+        {
+          "name": "machines",
+          "legacy": 6,
+          "current": 6,
+          "ratio": 1.0,
+          "scope": "generated"
+        }
+      ],
+      "candidate": {
+        "valid": true,
+        "episodes": 2,
+        "valid_episodes": 2,
+        "mean_loss": 138.02298734177214,
+        "worst_decile_loss": 138.64853164556962,
+        "objective_loss": 138.21065063291138,
+        "raw_score": 41.97965109213463,
+        "loss_scale": 100,
+        "episodes_detail": [
+          {
+            "valid": true,
+            "loss": 137.39744303797468,
+            "error": null,
+            "jobs": 60,
+            "completed": 34,
+            "weighted_tardiness": 99.2,
+            "unfinished_weight_fraction": 0.43544303797468353,
+            "energy": 1021,
+            "starts": 41,
+            "interruptions": 4,
+            "maintenance": 5,
+            "consumed": [
+              22,
+              21,
+              26
+            ],
+            "remaining_inventory": [
+              22,
+              26,
+              18
+            ]
+          },
+          {
+            "valid": true,
+            "loss": 138.64853164556962,
+            "error": null,
+            "jobs": 60,
+            "completed": 33,
+            "weighted_tardiness": 100.36962025316456,
+            "unfinished_weight_fraction": 0.43291139240506327,
+            "energy": 1043,
+            "starts": 43,
+            "interruptions": 7,
+            "maintenance": 5,
+            "consumed": [
+              30,
+              23,
+              22
+            ],
+            "remaining_inventory": [
+              11,
+              22,
+              6
+            ]
+          }
+        ],
+        "mean_completed": 33.5
+      }
+    },
+    {
+      "task_id": "C1",
+      "report": "C1.json",
+      "sha256": "ab4ae640733c1f26b47153c5a58eefea532f7407e59c18d93ece27879eead3bb",
+      "audit_passed": true,
+      "dimensions": [
+        {
+          "name": "tenants",
+          "legacy": 2,
+          "current": 3,
+          "ratio": 1.5,
+          "scope": "executed",
+          "full_target": 20,
+          "full_target_ratio": 10.0,
+          "denominator_source": "C1/PROMPT.md: concurrent_isolation"
+        },
+        {
+          "name": "http_concurrency",
+          "legacy": 8,
+          "current": 8,
+          "ratio": 1.0,
+          "scope": "executed",
+          "full_target": 80,
+          "full_target_ratio": 10.0,
+          "denominator_source": "C1/PROMPT.md: concurrent_isolation"
+        },
+        {
+          "name": "workers",
+          "legacy": 2,
+          "current": 2,
+          "ratio": 1.0,
+          "scope": "executed",
+          "full_target": 20,
+          "full_target_ratio": 10.0,
+          "denominator_source": "C1/PROMPT.md: concurrent_isolation"
+        }
+      ],
+      "candidate": {
+        "valid": false,
+        "status": "incomplete",
+        "legacy_probe": {
+          "checks": [
+            {
+              "name": "concurrent_legacy_migration",
+              "passed": true,
+              "kind": "interaction",
+              "critical": true,
+              "seconds": 0.0666,
+              "evidence": {
+                "concurrent_migrators": 3,
+                "legacy_database": true
+              }
+            },
+            {
+              "name": "migration_lost_ack_lease_steal_late_conflict",
+              "passed": true,
+              "kind": "interaction",
+              "critical": true,
+              "seconds": 1.0583,
+              "evidence": {
+                "lost_response_replayed": true,
+                "lease_stolen": true,
+                "old_worker_resumed": true,
+                "late_conflict_and_reverse": [
+                  [
+                    "R",
+                    "p0",
+                    "CONFLICT"
+                  ],
+                  [
+                    "R",
+                    "p1",
+                    "REVERSED"
+                  ],
+                  [
+                    "R",
+                    "reverse-future",
+                    "APPLIED"
+                  ]
+                ],
+                "generation": 3
+              }
+            },
+            {
+              "name": "epoch_replay_isolation_projection_restart",
+              "passed": true,
+              "kind": "interaction",
+              "critical": true,
+              "seconds": 0.1717,
+              "evidence": {
+                "http_requests": 33,
+                "workers_started": 5,
+                "workers": 2,
+                "http_concurrency": 8,
+                "tenants": 3,
+                "batches": 9,
+                "events": 72
+              }
+            }
+          ],
+          "valid": true
+        },
+        "stage_v2": {
+          "status": "capability_gap",
+          "valid": false,
+          "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C1/repository/baseline/extreme.py",
+          "reason": "required stage-v2 module extreme.py is absent",
+          "checks": []
+        },
+        "checks_passed": 3,
+        "checks_total": 4,
+        "machine_pass_rate": 0.75,
+        "raw_score": null,
+        "checks": [
+          {
+            "name": "concurrent_legacy_migration",
+            "passed": true,
+            "kind": "interaction",
+            "critical": true,
+            "seconds": 0.0666,
+            "evidence": {
+              "concurrent_migrators": 3,
+              "legacy_database": true
+            }
+          },
+          {
+            "name": "migration_lost_ack_lease_steal_late_conflict",
+            "passed": true,
+            "kind": "interaction",
+            "critical": true,
+            "seconds": 1.0583,
+            "evidence": {
+              "lost_response_replayed": true,
+              "lease_stolen": true,
+              "old_worker_resumed": true,
+              "late_conflict_and_reverse": [
+                [
+                  "R",
+                  "p0",
+                  "CONFLICT"
+                ],
+                [
+                  "R",
+                  "p1",
+                  "REVERSED"
+                ],
+                [
+                  "R",
+                  "reverse-future",
+                  "APPLIED"
+                ]
+              ],
+              "generation": 3
+            }
+          },
+          {
+            "name": "epoch_replay_isolation_projection_restart",
+            "passed": true,
+            "kind": "interaction",
+            "critical": true,
+            "seconds": 0.1717,
+            "evidence": {
+              "http_requests": 33,
+              "workers_started": 5,
+              "workers": 2,
+              "http_concurrency": 8,
+              "tenants": 3,
+              "batches": 9,
+              "events": 72
+            }
+          },
+          {
+            "name": "stage_v2_capability",
+            "passed": false,
+            "kind": "capability_gap",
+            "critical": true,
+            "classification": "capability_gap",
+            "error": "required stage-v2 module extreme.py is absent"
+          }
+        ],
+        "score_status": "engineering gate only; performance and submitted-test audit not calibrated"
+      }
+    },
+    {
+      "task_id": "C2",
+      "report": "C2.json",
+      "sha256": "843b550c55104c2a6ce19bf8858d03ce715f720887fe117d835b4f812a750a07",
+      "audit_passed": true,
+      "dimensions": [
+        {
+          "name": "nodes",
+          "legacy": 500,
+          "current": 1200,
+          "ratio": 2.4,
+          "scope": "executed",
+          "full_target": 5000,
+          "full_target_ratio": 10.0,
+          "denominator_source": "C2/CORE_CONTRACT.md input limit"
+        },
+        {
+          "name": "depth",
+          "legacy": 200,
+          "current": 1100,
+          "ratio": 5.5,
+          "scope": "executed",
+          "full_target": 2000,
+          "full_target_ratio": 10.0,
+          "denominator_source": "C2/CORE_CONTRACT.md input limit"
+        }
+      ],
+      "candidate": {
+        "valid": false,
+        "status": "incomplete",
+        "legacy_probe": {
+          "checks": [
+            {
+              "name": "snapshot_alias_cancel_worker_loss_retry_restart",
+              "passed": true,
+              "kind": "interaction",
+              "critical": true,
+              "seconds": 1.0325,
+              "evidence": {
+                "queued_snapshots": 9,
+                "cancelled": 4,
+                "projects": 3,
+                "retries": 3,
+                "graph_updates": 18,
+                "restart": true,
+                "multiworker": true
+              }
+            },
+            {
+              "name": "deep_shared_dag_scale_boundary",
+              "passed": false,
+              "kind": "scale_boundary",
+              "critical": true,
+              "seconds": 0.1264,
+              "error": "AssertionError: {'actual': {'id': 'b8871c60ed6e48ea8f7d2f18ae414ac7', 'project_id': 'deep', 'target': 'main', 'status': 'failed', 'result': None, 'error': 'RecursionError: maximum recursion depth exceeded'}, 'expected': [300, 500]}",
+              "classification": "behavior_failure"
+            }
+          ],
+          "valid": false
+        },
+        "stage_v2": {
+          "status": "capability_gap",
+          "valid": false,
+          "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/baseline/extreme.py",
+          "reason": "required stage-v2 module extreme.py is absent",
+          "checks": []
+        },
+        "checks_passed": 1,
+        "checks_total": 3,
+        "machine_pass_rate": 0.3333333333333333,
+        "raw_score": null,
+        "checks": [
+          {
+            "name": "snapshot_alias_cancel_worker_loss_retry_restart",
+            "passed": true,
+            "kind": "interaction",
+            "critical": true,
+            "seconds": 1.0325,
+            "evidence": {
+              "queued_snapshots": 9,
+              "cancelled": 4,
+              "projects": 3,
+              "retries": 3,
+              "graph_updates": 18,
+              "restart": true,
+              "multiworker": true
+            }
+          },
+          {
+            "name": "deep_shared_dag_scale_boundary",
+            "passed": false,
+            "kind": "scale_boundary",
+            "critical": true,
+            "seconds": 0.1264,
+            "error": "AssertionError: {'actual': {'id': 'b8871c60ed6e48ea8f7d2f18ae414ac7', 'project_id': 'deep', 'target': 'main', 'status': 'failed', 'result': None, 'error': 'RecursionError: maximum recursion depth exceeded'}, 'expected': [300, 500]}",
+            "classification": "behavior_failure"
+          },
+          {
+            "name": "stage_v2_capability",
+            "passed": false,
+            "kind": "capability_gap",
+            "critical": true,
+            "classification": "capability_gap",
+            "error": "required stage-v2 module extreme.py is absent"
+          }
+        ],
+        "score_status": "engineering gate only; performance and submitted-test audit not calibrated"
+      }
+    },
+    {
+      "task_id": "C3",
+      "report": "C3.json",
+      "sha256": "413f35ad846f30f5cb04c1debcfa80bd7d7b7437cad071707ee71c32cc3007d2",
+      "audit_passed": true,
+      "dimensions": [
+        {
+          "name": "fault_histories",
+          "legacy": 4,
+          "current": 24,
+          "ratio": 6.0,
+          "scope": "executed",
+          "full_target": 288,
+          "full_target_ratio": 72.0,
+          "denominator_source": "C3/TASK.md: 4 kill windows; v0.2 = 12 histories x 6 cuts x 4 modes"
+        },
+        {
+          "name": "transactions",
+          "legacy": 200,
+          "current": 8,
+          "ratio": 0.04,
+          "scope": "executed",
+          "full_target": 1440,
+          "full_target_ratio": 7.2,
+          "denominator_source": "C3/TASK.md: 200 random transactions; this axis is 7.2x, not 10x"
+        }
+      ],
+      "candidate": {
+        "valid": false,
+        "status": "incomplete",
+        "legacy_probe": {
+          "checks": [
+            {
+              "name": "immutable_snapshot_compaction_idempotency_concurrent_readers",
+              "passed": true,
+              "kind": "interaction",
+              "critical": true,
+              "seconds": 0.1021,
+              "evidence": {
+                "keys": 32,
+                "transactions": 8,
+                "snapshot_readers": 2,
+                "snapshots_frozen": true,
+                "multiprocess_writer_exclusion": true,
+                "reopen_idempotency": true
+              }
+            },
+            {
+              "name": "fault_0_commit_write_before_eio",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0977,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "commit_write",
+                  "mode": "before_eio"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "absent",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_1_commit_write_after_eio",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0992,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "commit_write",
+                  "mode": "after_eio"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_2_commit_write_short_enospc",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0924,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "commit_write",
+                  "mode": "short_enospc"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "absent",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_3_commit_write_kill_after",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0866,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "commit_write",
+                  "mode": "kill_after"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_4_commit_fsync_before_eio",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0911,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "commit_fsync",
+                  "mode": "before_eio"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_5_commit_fsync_after_eio",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0934,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "commit_fsync",
+                  "mode": "after_eio"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_6_commit_fsync_short_enospc",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0933,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "commit_fsync",
+                  "mode": "short_enospc"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_7_commit_fsync_kill_after",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0884,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "commit_fsync",
+                  "mode": "kill_after"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_8_compact_write_before_eio",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0919,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "compact_write",
+                  "mode": "before_eio"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_9_compact_write_after_eio",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0943,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "compact_write",
+                  "mode": "after_eio"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_10_compact_write_short_enospc",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0924,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "compact_write",
+                  "mode": "short_enospc"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_11_compact_write_kill_after",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0875,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "compact_write",
+                  "mode": "kill_after"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_12_compact_fsync_before_eio",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0951,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "compact_fsync",
+                  "mode": "before_eio"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_13_compact_fsync_after_eio",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0918,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "compact_fsync",
+                  "mode": "after_eio"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_14_compact_fsync_short_enospc",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.091,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "compact_fsync",
+                  "mode": "short_enospc"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_15_compact_fsync_kill_after",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0873,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "compact_fsync",
+                  "mode": "kill_after"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_16_replace_before_eio",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0929,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "replace",
+                  "mode": "before_eio"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_17_replace_after_eio",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0898,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "replace",
+                  "mode": "after_eio"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_18_replace_short_enospc",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0916,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "replace",
+                  "mode": "short_enospc"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_19_replace_kill_after",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.1009,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "replace",
+                  "mode": "kill_after"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_20_dirsync_before_eio",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.093,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "dirsync",
+                  "mode": "before_eio"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_21_dirsync_after_eio",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0955,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "dirsync",
+                  "mode": "after_eio"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_22_dirsync_short_enospc",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0948,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "dirsync",
+                  "mode": "short_enospc"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            },
+            {
+              "name": "fault_23_dirsync_kill_after",
+              "passed": true,
+              "kind": "fault_interaction",
+              "critical": true,
+              "seconds": 0.0883,
+              "evidence": {
+                "intercepted": true,
+                "cut": {
+                  "history": 0,
+                  "cut": "dirsync",
+                  "mode": "kill_after"
+                },
+                "recovery": {
+                  "durable_prefix": true,
+                  "uncertain_transaction": "whole",
+                  "retry_version": 2,
+                  "conflict_preserved": true
+                }
+              }
+            }
+          ],
+          "valid": true
+        },
+        "stage_v2": {
+          "status": "capability_gap",
+          "valid": false,
+          "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C3/extreme.py",
+          "reason": "required stage-v2 module extreme.py is absent",
+          "checks": []
+        },
+        "checks_passed": 25,
+        "checks_total": 26,
+        "machine_pass_rate": 0.9615384615384616,
+        "raw_score": null,
+        "checks": [
+          {
+            "name": "immutable_snapshot_compaction_idempotency_concurrent_readers",
+            "passed": true,
+            "kind": "interaction",
+            "critical": true,
+            "seconds": 0.1021,
+            "evidence": {
+              "keys": 32,
+              "transactions": 8,
+              "snapshot_readers": 2,
+              "snapshots_frozen": true,
+              "multiprocess_writer_exclusion": true,
+              "reopen_idempotency": true
+            }
+          },
+          {
+            "name": "fault_0_commit_write_before_eio",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0977,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "commit_write",
+                "mode": "before_eio"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "absent",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_1_commit_write_after_eio",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0992,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "commit_write",
+                "mode": "after_eio"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_2_commit_write_short_enospc",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0924,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "commit_write",
+                "mode": "short_enospc"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "absent",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_3_commit_write_kill_after",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0866,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "commit_write",
+                "mode": "kill_after"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_4_commit_fsync_before_eio",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0911,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "commit_fsync",
+                "mode": "before_eio"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_5_commit_fsync_after_eio",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0934,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "commit_fsync",
+                "mode": "after_eio"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_6_commit_fsync_short_enospc",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0933,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "commit_fsync",
+                "mode": "short_enospc"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_7_commit_fsync_kill_after",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0884,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "commit_fsync",
+                "mode": "kill_after"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_8_compact_write_before_eio",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0919,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "compact_write",
+                "mode": "before_eio"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_9_compact_write_after_eio",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0943,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "compact_write",
+                "mode": "after_eio"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_10_compact_write_short_enospc",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0924,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "compact_write",
+                "mode": "short_enospc"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_11_compact_write_kill_after",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0875,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "compact_write",
+                "mode": "kill_after"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_12_compact_fsync_before_eio",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0951,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "compact_fsync",
+                "mode": "before_eio"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_13_compact_fsync_after_eio",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0918,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "compact_fsync",
+                "mode": "after_eio"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_14_compact_fsync_short_enospc",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.091,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "compact_fsync",
+                "mode": "short_enospc"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_15_compact_fsync_kill_after",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0873,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "compact_fsync",
+                "mode": "kill_after"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_16_replace_before_eio",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0929,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "replace",
+                "mode": "before_eio"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_17_replace_after_eio",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0898,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "replace",
+                "mode": "after_eio"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_18_replace_short_enospc",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0916,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "replace",
+                "mode": "short_enospc"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_19_replace_kill_after",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.1009,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "replace",
+                "mode": "kill_after"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_20_dirsync_before_eio",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.093,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "dirsync",
+                "mode": "before_eio"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_21_dirsync_after_eio",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0955,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "dirsync",
+                "mode": "after_eio"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_22_dirsync_short_enospc",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0948,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "dirsync",
+                "mode": "short_enospc"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "fault_23_dirsync_kill_after",
+            "passed": true,
+            "kind": "fault_interaction",
+            "critical": true,
+            "seconds": 0.0883,
+            "evidence": {
+              "intercepted": true,
+              "cut": {
+                "history": 0,
+                "cut": "dirsync",
+                "mode": "kill_after"
+              },
+              "recovery": {
+                "durable_prefix": true,
+                "uncertain_transaction": "whole",
+                "retry_version": 2,
+                "conflict_preserved": true
+              }
+            }
+          },
+          {
+            "name": "stage_v2_capability",
+            "passed": false,
+            "kind": "capability_gap",
+            "critical": true,
+            "classification": "capability_gap",
+            "error": "required stage-v2 module extreme.py is absent"
+          }
+        ],
+        "score_status": "engineering gate only; performance and submitted-test audit not calibrated"
+      }
+    },
+    {
+      "task_id": "C4",
+      "report": "C4.json",
+      "sha256": "1c0311179bc2a0ce66a059f231a660dd5018f9f802f4d88fb62b631e692f39da",
+      "audit_passed": true,
+      "dimensions": [
+        {
+          "name": "roots",
+          "legacy": 2,
+          "current": 2,
+          "ratio": 1.0,
+          "scope": "executed",
+          "full_target": 20,
+          "full_target_ratio": 10.0,
+          "denominator_source": "C4/TASK.md: cache shared by two roots"
+        },
+        {
+          "name": "mutations",
+          "legacy": 100,
+          "current": 8,
+          "ratio": 0.08,
+          "scope": "executed",
+          "full_target": 1000,
+          "full_target_ratio": 10.0,
+          "denominator_source": "C4/TASK.md: 100 random changes"
+        }
+      ],
+      "candidate": {
+        "valid": false,
+        "status": "incomplete",
+        "legacy_probe": {
+          "checks": [
+            {
+              "name": "cross_root_epoch_change_delete_repair_order_history",
+              "passed": true,
+              "kind": "interaction",
+              "critical": true,
+              "seconds": 0.016,
+              "evidence": {
+                "mutations": 8,
+                "roots": 2,
+                "distinct_outputs": 8,
+                "same_mtime": true,
+                "dependency_order_changes": true,
+                "failed_build_retried": true
+              }
+            },
+            {
+              "name": "concurrent_publish_then_new_epoch",
+              "passed": true,
+              "kind": "interaction",
+              "critical": true,
+              "seconds": 0.0566,
+              "evidence": {
+                "processes": 3,
+                "distinct_outputs": 3,
+                "after_publication_epoch_verified": true
+              }
+            },
+            {
+              "name": "deep_shared_dag_scale_boundary",
+              "passed": false,
+              "kind": "scale_boundary",
+              "critical": true,
+              "seconds": 0.0016,
+              "error": "RecursionError: maximum recursion depth exceeded",
+              "classification": "behavior_failure"
+            }
+          ],
+          "valid": false
+        },
+        "stage_v2": {
+          "status": "capability_gap",
+          "valid": false,
+          "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C4/extreme.py",
+          "reason": "required stage-v2 module extreme.py is absent",
+          "checks": []
+        },
+        "checks_passed": 2,
+        "checks_total": 4,
+        "machine_pass_rate": 0.5,
+        "raw_score": null,
+        "checks": [
+          {
+            "name": "cross_root_epoch_change_delete_repair_order_history",
+            "passed": true,
+            "kind": "interaction",
+            "critical": true,
+            "seconds": 0.016,
+            "evidence": {
+              "mutations": 8,
+              "roots": 2,
+              "distinct_outputs": 8,
+              "same_mtime": true,
+              "dependency_order_changes": true,
+              "failed_build_retried": true
+            }
+          },
+          {
+            "name": "concurrent_publish_then_new_epoch",
+            "passed": true,
+            "kind": "interaction",
+            "critical": true,
+            "seconds": 0.0566,
+            "evidence": {
+              "processes": 3,
+              "distinct_outputs": 3,
+              "after_publication_epoch_verified": true
+            }
+          },
+          {
+            "name": "deep_shared_dag_scale_boundary",
+            "passed": false,
+            "kind": "scale_boundary",
+            "critical": true,
+            "seconds": 0.0016,
+            "error": "RecursionError: maximum recursion depth exceeded",
+            "classification": "behavior_failure"
+          },
+          {
+            "name": "stage_v2_capability",
+            "passed": false,
+            "kind": "capability_gap",
+            "critical": true,
+            "classification": "capability_gap",
+            "error": "required stage-v2 module extreme.py is absent"
+          }
+        ],
+        "score_status": "engineering gate only; performance and submitted-test audit not calibrated"
+      }
+    },
+    {
+      "task_id": "F1",
+      "report": "F1.json",
+      "sha256": "167bd32870fe49f5bf6c42dd3a98f2752b49bab87dea5ec19f1dd932c35946d3",
+      "audit_passed": true,
+      "dimensions": [
+        {
+          "name": "initial_records",
+          "legacy": 10000,
+          "current": 1000,
+          "ratio": 0.1,
+          "scope": "generated"
+        },
+        {
+          "name": "initial_records_acknowledged_by_adapter",
+          "legacy": 10000,
+          "current": 1000,
+          "ratio": 0.1,
+          "scope": "executed"
+        }
+      ],
+      "candidate": {
+        "valid": false,
+        "passed": 3,
+        "total": 8,
+        "semantic_score": 37.5,
+        "quality_score": null,
+        "human_visual_score": null,
+        "checks": [
+          {
+            "name": "full initial population is available",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "undoing one acknowledgement preserves an unseen concurrent acknowledgement",
+            "passed": false,
+            "detail": "response.acked: expected ['E0000000'], received []"
+          },
+          {
+            "name": "alias chain rewrites selection focus and acknowledgement identity",
+            "passed": false,
+            "detail": "response.selection: expected Z-canonical, received E0000000"
+          },
+          {
+            "name": "late source alias cannot split identity or replace a newer canonical version",
+            "passed": false,
+            "detail": "response.count: expected 1000, received 1001"
+          },
+          {
+            "name": "back navigation re-resolves old URL identity against the alias chain",
+            "passed": false,
+            "detail": "response.selection: expected Z-canonical, received E0000000"
+          },
+          {
+            "name": "forward navigation preserves the complete filter and target",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "stale retry cannot revive a deleted incident",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "complete export retains every unaffected incident",
+            "passed": false,
+            "detail": "export: expected 999 rows, received 1000"
+          }
+        ],
+        "failure": null,
+        "stderr_tail": "",
+        "implementation": "new weak semantic adapter; legacy HTML was not executed",
+        "scope": "JSONL semantic adapter only, not arbitrary HTML end-to-end certification"
+      }
+    },
+    {
+      "task_id": "F2",
+      "report": "F2.json",
+      "sha256": "9ac039ca352874cb44d3da169a37a1724407e71f9fc62a477cca76844516239b",
+      "audit_passed": true,
+      "dimensions": [
+        {
+          "name": "initial_records",
+          "legacy": 12,
+          "current": 36,
+          "ratio": 3.0,
+          "scope": "generated"
+        },
+        {
+          "name": "initial_records_acknowledged_by_adapter",
+          "legacy": 12,
+          "current": 36,
+          "ratio": 3.0,
+          "scope": "executed"
+        }
+      ],
+      "candidate": {
+        "valid": false,
+        "passed": 5,
+        "total": 13,
+        "semantic_score": 38.4615,
+        "quality_score": null,
+        "human_visual_score": null,
+        "checks": [
+          {
+            "name": "all initial tasks are present",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "two locally valid changes create dependency and resource conflicts after merge",
+            "passed": false,
+            "detail": "response.issues: expected ['dependency:T00000:T00012', 'overlap:T00000:T00012'], received []"
+          },
+          {
+            "name": "same-field concurrent changes remain visible for resolution",
+            "passed": false,
+            "detail": "response.conflicts: expected ['T00001:title'], received []"
+          },
+          {
+            "name": "old local undo cannot overwrite a causally later resolution",
+            "passed": false,
+            "detail": "response.records.T00001.title: expected resolved intent, received task 1 seed 260926"
+          },
+          {
+            "name": "schema-1 recovery converts duration into end without changing the schedule",
+            "passed": false,
+            "detail": "response.schema: expected 2, received 1"
+          },
+          {
+            "name": "failed persistence leaves current intent visible and does not claim saved",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "refresh after successful persistence recovers both offline edits",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "causal replay converges for replica R00 regardless of arrival order",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "causal replay converges for replica R01 regardless of arrival order",
+            "passed": false,
+            "detail": "response.records.T00024.title: expected round-4-task-24, received round-0-task-24"
+          },
+          {
+            "name": "causal replay converges for replica R02 regardless of arrival order",
+            "passed": false,
+            "detail": "response.records.T00024.title: expected round-4-task-24, received round-3-task-24"
+          },
+          {
+            "name": "complete actor R00 export covers the entire converged document",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "complete actor R01 export covers the entire converged document",
+            "passed": false,
+            "detail": "export: independently computed full-row SHA-256 differs"
+          },
+          {
+            "name": "complete actor R02 export covers the entire converged document",
+            "passed": false,
+            "detail": "export: independently computed full-row SHA-256 differs"
+          }
+        ],
+        "failure": null,
+        "stderr_tail": "",
+        "implementation": "new weak semantic adapter; legacy HTML was not executed",
+        "scope": "JSONL semantic adapter only, not arbitrary HTML end-to-end certification"
+      }
+    },
+    {
+      "task_id": "F3",
+      "report": "F3.json",
+      "sha256": "cd40d53cce80e9780c41e62b4746f53ab109649678d6a9d34c8a7ec6ba8ead03",
+      "audit_passed": true,
+      "dimensions": [
+        {
+          "name": "initial_records",
+          "legacy": 50000,
+          "current": 5000,
+          "ratio": 0.1,
+          "scope": "generated"
+        },
+        {
+          "name": "initial_records_acknowledged_by_adapter",
+          "legacy": 50000,
+          "current": 5000,
+          "ratio": 0.1,
+          "scope": "executed"
+        }
+      ],
+      "candidate": {
+        "valid": false,
+        "passed": 4,
+        "total": 8,
+        "semantic_score": 50.0,
+        "quality_score": null,
+        "human_visual_score": null,
+        "checks": [
+          {
+            "name": "full initial population is available",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "a paused view stays on one coherent historical snapshot",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "an unpaused second view observes newest versions",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "paused full export uses its frozen cut, not live rows",
+            "passed": false,
+            "detail": "export: independently computed full-row SHA-256 differs"
+          },
+          {
+            "name": "resume preserves the maximum revision across shuffled batches",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "lagging actor prevents premature resurrection after compaction",
+            "passed": false,
+            "detail": "response.records.E0000000: expected None, received {'generation': 0, 'id': 'E0000000', 'rev': 4, 'service': 'svc-0', 'severity': 0, 'status': 'open', 'title': 'incident 0 seed 260926'}"
+          },
+          {
+            "name": "committed epoch floor rejects old-session replay even after safe GC",
+            "passed": false,
+            "detail": "response.records.E0000499: expected None, received {'generation': 0, 'id': 'E0000499', 'rev': 9, 'service': 'svc-18', 'severity': 3, 'status': 'open', 'title': 'incident 499 seed 260926'}"
+          },
+          {
+            "name": "all-record export matches resumed cut after deletion and GC",
+            "passed": false,
+            "detail": "export: expected 4998 rows, received 5000"
+          }
+        ],
+        "failure": null,
+        "stderr_tail": "",
+        "implementation": "new weak semantic adapter; legacy HTML was not executed",
+        "scope": "JSONL semantic adapter only, not arbitrary HTML end-to-end certification"
+      }
+    },
+    {
+      "task_id": "F4",
+      "report": "F4.json",
+      "sha256": "d3b6b6080f9436cdc8b11203c0810a90a6360893578ac366688f8dd3f32ed42a",
+      "audit_passed": true,
+      "dimensions": [
+        {
+          "name": "initial_records",
+          "legacy": 12,
+          "current": 36,
+          "ratio": 3.0,
+          "scope": "generated"
+        },
+        {
+          "name": "initial_records_acknowledged_by_adapter",
+          "legacy": 12,
+          "current": 36,
+          "ratio": 3.0,
+          "scope": "executed"
+        }
+      ],
+      "candidate": {
+        "valid": false,
+        "passed": 5,
+        "total": 15,
+        "semantic_score": 33.3333,
+        "quality_score": null,
+        "human_visual_score": null,
+        "checks": [
+          {
+            "name": "all initial tasks are present",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "sequential remote editing is not classified as concurrent conflict",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "conditional undo preserves a later remote field value",
+            "passed": false,
+            "detail": "response.records.T00000.title: expected observed successor, received task 0 seed 260926"
+          },
+          {
+            "name": "merged independent fields preserve intent and expose invalid range",
+            "passed": false,
+            "detail": "response.issues: expected ['range:T00001'], received []"
+          },
+          {
+            "name": "concurrent field contenders use deterministic display order and retain conflict",
+            "passed": false,
+            "detail": "response.conflicts: expected ['T00002:title'], received []"
+          },
+          {
+            "name": "explicit restore starts a new generation immune to old high-counter edits",
+            "passed": false,
+            "detail": "response.records.T00003.title: expected explicitly restored, received stale prior generation"
+          },
+          {
+            "name": "same-ID different-content import rejects the entire batch",
+            "passed": false,
+            "detail": "response.ok: expected False, received True"
+          },
+          {
+            "name": "an invalid import cannot leak its valid prefix",
+            "passed": false,
+            "detail": "response.records.T00004.notes: expected original event, received same ID, altered payload"
+          },
+          {
+            "name": "identical event replay is idempotent",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "causal replay converges for replica R00 regardless of arrival order",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "causal replay converges for replica R01 regardless of arrival order",
+            "passed": false,
+            "detail": "response.records.T00024.title: expected round-4-task-24, received round-0-task-24"
+          },
+          {
+            "name": "causal replay converges for replica R02 regardless of arrival order",
+            "passed": false,
+            "detail": "response.records.T00024.title: expected round-4-task-24, received round-3-task-24"
+          },
+          {
+            "name": "complete actor R00 export covers the entire converged document",
+            "passed": true,
+            "detail": null
+          },
+          {
+            "name": "complete actor R01 export covers the entire converged document",
+            "passed": false,
+            "detail": "export: independently computed full-row SHA-256 differs"
+          },
+          {
+            "name": "complete actor R02 export covers the entire converged document",
+            "passed": false,
+            "detail": "export: independently computed full-row SHA-256 differs"
+          }
+        ],
+        "failure": null,
+        "stderr_tail": "",
+        "implementation": "new weak semantic adapter; legacy HTML was not executed",
+        "scope": "JSONL semantic adapter only, not arbitrary HTML end-to-end certification"
+      }
+    }
+  ],
+  "interpretation": "Workload ratios are measured proxies; they do not establish a 10x increase in cognitive difficulty or any model's inability to solve the tasks."
+}

@@ -75,8 +75,8 @@
         "pass": true
       }
     ],
-    "cold_ms": 0.5063340067863464,
-    "warm_mean_ms_100": 0.11217500024940819,
+    "cold_ms": 0.4917919868603349,
+    "warm_mean_ms_100": 0.11562959000002593,
     "timing_note": "tiny pilot DAG; not the 5000-node tournament workload"
   },
   "note": "Behavior checks verified. Formal performance workload and quality weights are not calibrated; full raw quality remains pending.",

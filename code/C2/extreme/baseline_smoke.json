@@ -1,0 +1,305 @@
+{
+  "task_id": "C2",
+  "profile": "extreme",
+  "version": "0.2",
+  "scale": "smoke",
+  "seed": 260926,
+  "dimensions": [
+    {
+      "name": "nodes",
+      "legacy": 500,
+      "current": 1200,
+      "ratio": 2.4,
+      "scope": "executed",
+      "full_target": 5000,
+      "full_target_ratio": 10.0,
+      "denominator_source": "C2/CORE_CONTRACT.md input limit"
+    },
+    {
+      "name": "depth",
+      "legacy": 200,
+      "current": 1100,
+      "ratio": 5.5,
+      "scope": "executed",
+      "full_target": 2000,
+      "full_target_ratio": 10.0,
+      "denominator_source": "C2/CORE_CONTRACT.md input limit"
+    }
+  ],
+  "mechanisms": [
+    "required stage-v2: cancelled prepared artifact + new immutable graph generation + reopened retry",
+    "queued immutable graph + alias revision + cancellation",
+    "multiple workers + abrupt worker loss + retry + service restart",
+    "shared DAG depth and size extension; scale boundary, not reasoning proof"
+  ],
+  "candidate_result": {
+    "valid": false,
+    "status": "incomplete",
+    "legacy_probe": {
+      "checks": [
+        {
+          "name": "snapshot_alias_cancel_worker_loss_retry_restart",
+          "passed": true,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 1.0655,
+          "evidence": {
+            "queued_snapshots": 9,
+            "cancelled": 4,
+            "projects": 3,
+            "retries": 3,
+            "graph_updates": 18,
+            "restart": true,
+            "multiworker": true
+          }
+        },
+        {
+          "name": "deep_shared_dag_scale_boundary",
+          "passed": false,
+          "kind": "scale_boundary",
+          "critical": true,
+          "seconds": 0.1309,
+          "error": "AssertionError: {'actual': {'id': 'd2cc13ba1ac54417a3703164a5dab39a', 'project_id': 'deep', 'target': 'main', 'status': 'failed', 'result': None, 'error': 'RecursionError: maximum recursion depth exceeded'}, 'expected': [300, 500]}",
+          "classification": "behavior_failure"
+        }
+      ],
+      "valid": false
+    },
+    "stage_v2": {
+      "status": "capability_gap",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/baseline/extreme.py",
+      "reason": "required stage-v2 module extreme.py is absent",
+      "checks": []
+    },
+    "checks_passed": 1,
+    "checks_total": 3,
+    "machine_pass_rate": 0.3333333333333333,
+    "raw_score": 0,
+    "quality_score": 0,
+    "checks": [
+      {
+        "name": "snapshot_alias_cancel_worker_loss_retry_restart",
+        "passed": true,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 1.0655,
+        "evidence": {
+          "queued_snapshots": 9,
+          "cancelled": 4,
+          "projects": 3,
+          "retries": 3,
+          "graph_updates": 18,
+          "restart": true,
+          "multiworker": true
+        }
+      },
+      {
+        "name": "deep_shared_dag_scale_boundary",
+        "passed": false,
+        "kind": "scale_boundary",
+        "critical": true,
+        "seconds": 0.1309,
+        "error": "AssertionError: {'actual': {'id': 'd2cc13ba1ac54417a3703164a5dab39a', 'project_id': 'deep', 'target': 'main', 'status': 'failed', 'result': None, 'error': 'RecursionError: maximum recursion depth exceeded'}, 'expected': [300, 500]}",
+        "classification": "behavior_failure"
+      },
+      {
+        "name": "stage_v2_capability",
+        "passed": false,
+        "kind": "capability_gap",
+        "critical": true,
+        "classification": "capability_gap",
+        "error": "required stage-v2 module extreme.py is absent"
+      }
+    ],
+    "score_status": "binary machine contract quality; independent host scores agent elapsed time and tokens"
+  },
+  "verification": {
+    "executed": true,
+    "constructed": {
+      "nodes": 1200,
+      "depth": 1100,
+      "projects": 3,
+      "queued_snapshots": 9
+    },
+    "observed": {
+      "queued_snapshots": 9,
+      "cancelled": 4,
+      "projects": 3,
+      "retries": 3,
+      "nodes": 1200,
+      "depth": 1100
+    },
+    "tiny_feasible_witness": {
+      "vector_sum": [
+        12,
+        20
+      ],
+      "byte_env_duplicate": "!z11",
+      "independent": true
+    },
+    "negative_control_expected": "C2/C4 old recursive baselines may fail depth; evaluated behavior is never hardcoded"
+  },
+  "stage_v2": {
+    "contract": "stage-v2",
+    "required": true,
+    "candidate": {
+      "status": "capability_gap",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/baseline/extreme.py",
+      "reason": "required stage-v2 module extreme.py is absent",
+      "checks": []
+    },
+    "faulty_starter": {
+      "status": "behavior_failure",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/extreme/starter.py",
+      "checks": [
+        {
+          "name": "cancel_only",
+          "index": 0,
+          "passed": true,
+          "evidence": {
+            "old_value": 58,
+            "expected": 58,
+            "retry": {
+              "status": "done",
+              "value": 58,
+              "revision": 0
+            }
+          }
+        },
+        {
+          "name": "revision_only",
+          "index": 1,
+          "passed": true,
+          "evidence": {
+            "old_value": 58,
+            "expected": 147,
+            "retry": {
+              "status": "done",
+              "value": 147,
+              "revision": 1
+            }
+          }
+        },
+        {
+          "name": "composition",
+          "index": 2,
+          "passed": false,
+          "error": "AssertionError: {\"reason\": \"cancelled prior generation artifact poisoned new graph\", \"expected\": 147, \"actual\": 58}"
+        }
+      ],
+      "controls_passed": true,
+      "composition_passed": false
+    },
+    "tiny_feasible_witness": {
+      "feasible": true,
+      "kind": "finite_trace_witness_not_complete_solver",
+      "execution": "independent finite-state arithmetic, not a complete I/O implementation",
+      "trace": {
+        "old_graph_value": 10,
+        "new_graph_value": 75,
+        "cancelled_value": null,
+        "legal_strategy": "recovery artifact includes immutable graph revision; discard or recompute mismatches"
+      },
+      "negative_perturbation_rejected": true
+    },
+    "audit_passed": true,
+    "difficulty_evidence": "same runnable starter passes isolated controls but fails their composition; not an impossibility proof"
+  },
+  "audit_passed": true,
+  "limitations": [
+    "public seeded workloads; not hidden evaluation",
+    "local trusted-code runner, not a security sandbox",
+    "judge execution time is diagnostic runtime, not model thinking time; agent elapsed time/tokens come from the independent host",
+    "passing interaction chains is reported honestly; no claim that the author cannot solve a problem",
+    "C3 intercepts Python os I/O calls; native/buffered I/O adapters require separate instrumentation; process kill is not power loss"
+  ],
+  "elapsed_seconds": 1.4103,
+  "budget_seconds": 28,
+  "candidate_path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/baseline",
+  "process_exit_code": 0,
+  "baseline_result": {
+    "valid": false,
+    "status": "incomplete",
+    "legacy_probe": {
+      "checks": [
+        {
+          "name": "snapshot_alias_cancel_worker_loss_retry_restart",
+          "passed": true,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 1.0655,
+          "evidence": {
+            "queued_snapshots": 9,
+            "cancelled": 4,
+            "projects": 3,
+            "retries": 3,
+            "graph_updates": 18,
+            "restart": true,
+            "multiworker": true
+          }
+        },
+        {
+          "name": "deep_shared_dag_scale_boundary",
+          "passed": false,
+          "kind": "scale_boundary",
+          "critical": true,
+          "seconds": 0.1309,
+          "error": "AssertionError: {'actual': {'id': 'd2cc13ba1ac54417a3703164a5dab39a', 'project_id': 'deep', 'target': 'main', 'status': 'failed', 'result': None, 'error': 'RecursionError: maximum recursion depth exceeded'}, 'expected': [300, 500]}",
+          "classification": "behavior_failure"
+        }
+      ],
+      "valid": false
+    },
+    "stage_v2": {
+      "status": "capability_gap",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C2/repository/baseline/extreme.py",
+      "reason": "required stage-v2 module extreme.py is absent",
+      "checks": []
+    },
+    "checks_passed": 1,
+    "checks_total": 3,
+    "machine_pass_rate": 0.3333333333333333,
+    "raw_score": 0,
+    "quality_score": 0,
+    "checks": [
+      {
+        "name": "snapshot_alias_cancel_worker_loss_retry_restart",
+        "passed": true,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 1.0655,
+        "evidence": {
+          "queued_snapshots": 9,
+          "cancelled": 4,
+          "projects": 3,
+          "retries": 3,
+          "graph_updates": 18,
+          "restart": true,
+          "multiworker": true
+        }
+      },
+      {
+        "name": "deep_shared_dag_scale_boundary",
+        "passed": false,
+        "kind": "scale_boundary",
+        "critical": true,
+        "seconds": 0.1309,
+        "error": "AssertionError: {'actual': {'id': 'd2cc13ba1ac54417a3703164a5dab39a', 'project_id': 'deep', 'target': 'main', 'status': 'failed', 'result': None, 'error': 'RecursionError: maximum recursion depth exceeded'}, 'expected': [300, 500]}",
+        "classification": "behavior_failure"
+      },
+      {
+        "name": "stage_v2_capability",
+        "passed": false,
+        "kind": "capability_gap",
+        "critical": true,
+        "classification": "capability_gap",
+        "error": "required stage-v2 module extreme.py is absent"
+      }
+    ],
+    "score_status": "binary machine contract quality; independent host scores agent elapsed time and tokens"
+  }
+}

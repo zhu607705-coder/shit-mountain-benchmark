@@ -1,0 +1,111 @@
+{
+  "task_id": "R4",
+  "profile": "extreme",
+  "scale": "smoke",
+  "seed": 260926,
+  "dimensions": [
+    {
+      "name": "jobs_per_episode",
+      "legacy": 60,
+      "current": 60,
+      "ratio": 1.0,
+      "scope": "executed"
+    },
+    {
+      "name": "machines",
+      "legacy": 6,
+      "current": 6,
+      "ratio": 1.0,
+      "scope": "generated"
+    }
+  ],
+  "mechanisms": [
+    "Wear-dependent failures restart jobs and destroy already-issued consumables; preventive maintenance competes for time and spares.",
+    "Low-value precursor jobs manufacture consumables required by valuable jobs, coupling dispatch with inventory control.",
+    "Changing power capacity causes brownout interrupts; setup changes and specialized machines create opportunity costs.",
+    "Future arrivals, failure draws, shipments and realized durations are hidden; decisions use a finite observation window."
+  ],
+  "baseline_result": {
+    "valid": true,
+    "episodes": 2,
+    "valid_episodes": 2,
+    "mean_loss": 138.02298734177214,
+    "worst_decile_loss": 138.64853164556962,
+    "objective_loss": 138.21065063291138,
+    "raw_score": 41.97965109213463,
+    "loss_scale": 100,
+    "episodes_detail": [
+      {
+        "valid": true,
+        "loss": 137.39744303797468,
+        "error": null,
+        "jobs": 60,
+        "completed": 34,
+        "weighted_tardiness": 99.2,
+        "unfinished_weight_fraction": 0.43544303797468353,
+        "energy": 1021,
+        "starts": 41,
+        "interruptions": 4,
+        "maintenance": 5,
+        "consumed": [
+          22,
+          21,
+          26
+        ],
+        "remaining_inventory": [
+          22,
+          26,
+          18
+        ]
+      },
+      {
+        "valid": true,
+        "loss": 138.64853164556962,
+        "error": null,
+        "jobs": 60,
+        "completed": 33,
+        "weighted_tardiness": 100.36962025316456,
+        "unfinished_weight_fraction": 0.43291139240506327,
+        "energy": 1043,
+        "starts": 43,
+        "interruptions": 7,
+        "maintenance": 5,
+        "consumed": [
+          30,
+          23,
+          22
+        ],
+        "remaining_inventory": [
+          11,
+          22,
+          6
+        ]
+      }
+    ],
+    "mean_completed": 33.5
+  },
+  "verification": {
+    "independent_tiny_witness": {
+      "tiny_jobs": 3,
+      "legal_schedules_enumerated": 4,
+      "completed": 2,
+      "producer_first_loss": 117.91,
+      "high_weight_first_loss": 143.608,
+      "both_choices_legal": true,
+      "independent_formula_matches_judge": true
+    },
+    "reproducible_seed": true,
+    "private_future_in_observations": false,
+    "selftest_command": "python3 reasoning/extreme_selftest.py",
+    "formal_hidden_evaluation": false,
+    "multiple_model_calibration": null
+  },
+  "policy_runtime": {
+    "calls": 240,
+    "decision_seconds": 0.034989119856618345,
+    "total_decision_budget_seconds": 120.0,
+    "per_action_timeout_seconds": 2.0
+  },
+  "audit_passed": true,
+  "wall_seconds": 0.04011974998866208
+}

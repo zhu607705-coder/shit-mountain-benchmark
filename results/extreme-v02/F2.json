@@ -1,0 +1,323 @@
+{
+  "task_id": "F2",
+  "profile": "extreme",
+  "scale": "full",
+  "seed": 260926,
+  "dimensions": [
+    {
+      "name": "initial_records",
+      "legacy": 12,
+      "current": 1200,
+      "ratio": 100.0,
+      "scope": "generated"
+    },
+    {
+      "name": "initial_records_acknowledged_by_adapter",
+      "legacy": 12,
+      "current": 1200,
+      "ratio": 100.0,
+      "scope": "executed"
+    }
+  ],
+  "mechanisms": [
+    "causal field merge creates new global resource/dependency conflicts",
+    "conditional undo after causally newer remote edits",
+    "reverse causal replay and multi-actor convergence",
+    "offline write failure, refresh and schema migration"
+  ],
+  "baseline_result": {
+    "valid": false,
+    "passed": 5,
+    "total": 47,
+    "semantic_score": 10.6383,
+    "quality_score": null,
+    "human_visual_score": null,
+    "checks": [
+      {
+        "name": "all initial tasks are present",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "two locally valid changes create dependency and resource conflicts after merge",
+        "passed": false,
+        "detail": "response.issues: expected ['dependency:T00000:T00012', 'overlap:T00000:T00012'], received []"
+      },
+      {
+        "name": "same-field concurrent changes remain visible for resolution",
+        "passed": false,
+        "detail": "response.conflicts: expected ['T00001:title'], received []"
+      },
+      {
+        "name": "old local undo cannot overwrite a causally later resolution",
+        "passed": false,
+        "detail": "response.records.T00001.title: expected resolved intent, received task 1 seed 260926"
+      },
+      {
+        "name": "schema-1 recovery converts duration into end without changing the schedule",
+        "passed": false,
+        "detail": "response.schema: expected 2, received 1"
+      },
+      {
+        "name": "failed persistence leaves current intent visible and does not claim saved",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "refresh after successful persistence recovers both offline edits",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "causal replay converges for replica R00 regardless of arrival order",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "causal replay converges for replica R01 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-0-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R02 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-0-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R03 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-1-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R04 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T01199.title: expected round-4-task-1199, received round-1-task-1199"
+      },
+      {
+        "name": "causal replay converges for replica R05 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T01199.title: expected round-4-task-1199, received round-2-task-1199"
+      },
+      {
+        "name": "causal replay converges for replica R06 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-2-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R07 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T01199.title: expected round-4-task-1199, received round-1-task-1199"
+      },
+      {
+        "name": "causal replay converges for replica R08 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-2-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R09 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T01199.title: expected round-4-task-1199, received round-0-task-1199"
+      },
+      {
+        "name": "causal replay converges for replica R10 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-1-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R11 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-3-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R12 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T01199.title: expected round-4-task-1199, received round-3-task-1199"
+      },
+      {
+        "name": "causal replay converges for replica R13 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-3-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R14 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-2-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R15 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-2-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R16 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-1-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R17 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-2-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R18 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-3-task-24"
+      },
+      {
+        "name": "causal replay converges for replica R19 regardless of arrival order",
+        "passed": false,
+        "detail": "response.records.T00024.title: expected round-4-task-24, received round-0-task-24"
+      },
+      {
+        "name": "complete actor R00 export covers the entire converged document",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "name": "complete actor R01 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R02 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R03 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R04 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R05 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R06 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R07 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R08 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R09 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R10 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R11 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R12 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R13 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R14 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R15 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R16 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R17 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R18 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      },
+      {
+        "name": "complete actor R19 export covers the entire converged document",
+        "passed": false,
+        "detail": "export: independently computed full-row SHA-256 differs"
+      }
+    ],
+    "failure": null,
+    "stderr_tail": "",
+    "implementation": "new weak semantic adapter; legacy HTML was not executed",
+    "scope": "JSONL semantic adapter only, not arbitrary HTML end-to-end certification"
+  },
+  "verification": {
+    "commands_generated": 179,
+    "responses_observed": 179,
+    "initial_records_generated": 1200,
+    "event_deliveries_generated": 117607,
+    "adapter_acknowledged": {
+      "records_loaded": 1200,
+      "event_deliveries": 117607,
+      "protocol_errors": 0
+    },
+    "command_counts": {
+      "config": 1,
+      "load": 1,
+      "observe": 27,
+      "deliver": 125,
+      "undo": 1,
+      "restore_document": 1,
+      "storage": 2,
+      "refresh": 1,
+      "export": 20
+    },
+    "elapsed_seconds": 1.536,
+    "witnesses": {
+      "passed": true,
+      "checks": {
+        "observed_remove_preserves_unseen_add_under_all_six_orders": true,
+        "merge_creates_new_global_conflict_from_locally_valid_edits": true,
+        "noncommuting_transport_has_convergent_causal_result": true,
+        "true_concurrency_retains_two_candidates": true,
+        "causal_resolution_wins_all_twenty_four_permutations": true,
+        "atomic_rejection_rolls_back_valid_prefix": true,
+        "identical_event_union_is_idempotent": true,
+        "restoration_generation_blocks_old_patches_in_both_orders": true
+      },
+      "scope": "bounded exhaustive witnesses (at most 8 events); not a full task implementation or optimum"
+    },
+    "full_browser_load_executed": false,
+    "pending": [
+      "native multi-window browser persistence and recovery",
+      "real download and resource usage",
+      "keyboard, IME, narrow viewport and assistive-technology workflows",
+      "independent visual and usability review"
+    ],
+    "trace_sha256": "ff3c29dfeb66ea33d3a373ff74f11bb535c41e862ecb10bd635d55eb6704763a"
+  },
+  "audit_passed": true
+}

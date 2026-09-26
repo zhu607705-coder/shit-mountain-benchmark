@@ -2,7 +2,7 @@
   "benchmark": "C2",
   "version": "0.1.0",
   "seed": 2026092602,
-  "measured_at_utc": "2026-09-26T02:35:15.261701+00:00",
+  "measured_at_utc": "2026-09-26T04:48:32.636075+00:00",
   "suite_sha256": "7663baa5c254890edd6389fd779c7aa36db0116b1c0eeddcf1e2dafd53a9144d",
   "valid": true,
   "critical_case_names": [
@@ -17,21 +17,21 @@
   ],
   "submission": "repository/baseline",
   "submission_sha256": "ac1c3398dd34e290a229b9e3ec490f0ad8004917fc13cfa0d8c0338d34e153b6",
-  "raw_score": 93.397465,
+  "raw_score": 93.325908,
   "correctness": {
     "passed": 57,
     "total": 57,
     "rate": 1.0
   },
   "performance": {
-    "median_seconds": 0.01973075108253397,
+    "median_seconds": 0.020303668919950724,
     "samples_seconds": [
-      0.01997078792192042,
-      0.01973075108253397,
-      0.019637290883110836
+      0.02038516604807228,
+      0.020303668919950724,
+      0.02013658403302543
     ],
     "peak_traced_bytes": 3282632,
-    "speed_utility": 0.5033884196765712,
+    "speed_utility": 0.4962327385063397,
     "memory_utility": 0.8363580820751981,
     "within_budget": true,
     "resource_bonus_eligible": true

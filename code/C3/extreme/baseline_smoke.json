@@ -1,0 +1,2293 @@
+{
+  "task_id": "C3",
+  "profile": "extreme",
+  "version": "0.2",
+  "scale": "smoke",
+  "seed": 260926,
+  "dimensions": [
+    {
+      "name": "fault_histories",
+      "legacy": 4,
+      "current": 24,
+      "ratio": 6.0,
+      "scope": "executed",
+      "full_target": 288,
+      "full_target_ratio": 72.0,
+      "denominator_source": "C3/TASK.md: 4 kill windows; v0.2 = 12 histories x 6 cuts x 4 modes"
+    },
+    {
+      "name": "transactions",
+      "legacy": 200,
+      "current": 8,
+      "ratio": 0.04,
+      "scope": "executed",
+      "full_target": 1440,
+      "full_target_ratio": 7.2,
+      "denominator_source": "C3/TASK.md: 200 random transactions; this axis is 7.2x, not 10x"
+    }
+  ],
+  "mechanisms": [
+    "required stage-v2: old prepared compaction + writer generation migration + new ACK/tombstone + late publication",
+    "acknowledged durable prefix + partial I/O + reopen",
+    "compaction publication + directory sync failure + transaction identity",
+    "immutable old snapshots + concurrent readers + post-failure retry"
+  ],
+  "candidate_result": {
+    "valid": false,
+    "status": "incomplete",
+    "legacy_probe": {
+      "checks": [
+        {
+          "name": "immutable_snapshot_compaction_idempotency_concurrent_readers",
+          "passed": true,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 0.1507,
+          "evidence": {
+            "keys": 32,
+            "transactions": 8,
+            "snapshot_readers": 2,
+            "snapshots_frozen": true,
+            "multiprocess_writer_exclusion": true,
+            "reopen_idempotency": true
+          }
+        },
+        {
+          "name": "fault_0_commit_write_before_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.1021,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_write",
+              "mode": "before_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "absent",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_1_commit_write_after_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0933,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_write",
+              "mode": "after_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_2_commit_write_short_enospc",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0893,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_write",
+              "mode": "short_enospc"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "absent",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_3_commit_write_kill_after",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0853,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_write",
+              "mode": "kill_after"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_4_commit_fsync_before_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0891,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_fsync",
+              "mode": "before_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_5_commit_fsync_after_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0883,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_fsync",
+              "mode": "after_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_6_commit_fsync_short_enospc",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.087,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_fsync",
+              "mode": "short_enospc"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_7_commit_fsync_kill_after",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0836,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_fsync",
+              "mode": "kill_after"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_8_compact_write_before_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.089,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_write",
+              "mode": "before_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_9_compact_write_after_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0875,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_write",
+              "mode": "after_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_10_compact_write_short_enospc",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0892,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_write",
+              "mode": "short_enospc"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_11_compact_write_kill_after",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.087,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_write",
+              "mode": "kill_after"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_12_compact_fsync_before_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0928,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_fsync",
+              "mode": "before_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_13_compact_fsync_after_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.1153,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_fsync",
+              "mode": "after_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_14_compact_fsync_short_enospc",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0957,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_fsync",
+              "mode": "short_enospc"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_15_compact_fsync_kill_after",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0896,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_fsync",
+              "mode": "kill_after"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_16_replace_before_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0859,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "replace",
+              "mode": "before_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_17_replace_after_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0838,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "replace",
+              "mode": "after_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_18_replace_short_enospc",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0843,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "replace",
+              "mode": "short_enospc"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_19_replace_kill_after",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0795,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "replace",
+              "mode": "kill_after"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_20_dirsync_before_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.083,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "dirsync",
+              "mode": "before_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_21_dirsync_after_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.084,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "dirsync",
+              "mode": "after_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_22_dirsync_short_enospc",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0829,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "dirsync",
+              "mode": "short_enospc"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_23_dirsync_kill_after",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0786,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "dirsync",
+              "mode": "kill_after"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        }
+      ],
+      "valid": true
+    },
+    "stage_v2": {
+      "status": "capability_gap",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C3/extreme.py",
+      "reason": "required stage-v2 module extreme.py is absent",
+      "checks": []
+    },
+    "checks_passed": 25,
+    "checks_total": 26,
+    "machine_pass_rate": 0.9615384615384616,
+    "raw_score": 0,
+    "quality_score": 0,
+    "checks": [
+      {
+        "name": "immutable_snapshot_compaction_idempotency_concurrent_readers",
+        "passed": true,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 0.1507,
+        "evidence": {
+          "keys": 32,
+          "transactions": 8,
+          "snapshot_readers": 2,
+          "snapshots_frozen": true,
+          "multiprocess_writer_exclusion": true,
+          "reopen_idempotency": true
+        }
+      },
+      {
+        "name": "fault_0_commit_write_before_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.1021,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_write",
+            "mode": "before_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "absent",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_1_commit_write_after_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0933,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_write",
+            "mode": "after_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_2_commit_write_short_enospc",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0893,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_write",
+            "mode": "short_enospc"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "absent",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_3_commit_write_kill_after",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0853,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_write",
+            "mode": "kill_after"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_4_commit_fsync_before_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0891,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_fsync",
+            "mode": "before_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_5_commit_fsync_after_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0883,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_fsync",
+            "mode": "after_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_6_commit_fsync_short_enospc",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.087,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_fsync",
+            "mode": "short_enospc"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_7_commit_fsync_kill_after",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0836,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_fsync",
+            "mode": "kill_after"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_8_compact_write_before_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.089,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_write",
+            "mode": "before_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_9_compact_write_after_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0875,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_write",
+            "mode": "after_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_10_compact_write_short_enospc",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0892,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_write",
+            "mode": "short_enospc"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_11_compact_write_kill_after",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.087,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_write",
+            "mode": "kill_after"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_12_compact_fsync_before_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0928,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_fsync",
+            "mode": "before_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_13_compact_fsync_after_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.1153,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_fsync",
+            "mode": "after_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_14_compact_fsync_short_enospc",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0957,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_fsync",
+            "mode": "short_enospc"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_15_compact_fsync_kill_after",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0896,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_fsync",
+            "mode": "kill_after"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_16_replace_before_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0859,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "replace",
+            "mode": "before_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_17_replace_after_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0838,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "replace",
+            "mode": "after_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_18_replace_short_enospc",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0843,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "replace",
+            "mode": "short_enospc"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_19_replace_kill_after",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0795,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "replace",
+            "mode": "kill_after"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_20_dirsync_before_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.083,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "dirsync",
+            "mode": "before_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_21_dirsync_after_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.084,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "dirsync",
+            "mode": "after_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_22_dirsync_short_enospc",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0829,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "dirsync",
+            "mode": "short_enospc"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_23_dirsync_kill_after",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0786,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "dirsync",
+            "mode": "kill_after"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "stage_v2_capability",
+        "passed": false,
+        "kind": "capability_gap",
+        "critical": true,
+        "classification": "capability_gap",
+        "error": "required stage-v2 module extreme.py is absent"
+      }
+    ],
+    "score_status": "binary machine contract quality; independent host scores agent elapsed time and tokens"
+  },
+  "verification": {
+    "executed": true,
+    "constructed": {
+      "keys": 32,
+      "fault_histories": 24,
+      "transactions": 8,
+      "snapshot_readers": 2
+    },
+    "observed": {
+      "injected": 24,
+      "not_intercepted": 0,
+      "keys": 32,
+      "transactions": 8,
+      "snapshot_readers": 2,
+      "snapshots_frozen": true,
+      "multiprocess_writer_exclusion": true,
+      "reopen_idempotency": true,
+      "fault_histories": 24
+    },
+    "tiny_feasible_witness": {
+      "vector_sum": [
+        12,
+        20
+      ],
+      "byte_env_duplicate": "!z11",
+      "independent": true
+    },
+    "negative_control_expected": "C2/C4 old recursive baselines may fail depth; evaluated behavior is never hardcoded"
+  },
+  "stage_v2": {
+    "contract": "stage-v2",
+    "required": true,
+    "candidate": {
+      "status": "capability_gap",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C3/extreme.py",
+      "reason": "required stage-v2 module extreme.py is absent",
+      "checks": []
+    },
+    "faulty_starter": {
+      "status": "behavior_failure",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C3/extreme/starter.py",
+      "checks": [
+        {
+          "name": "compaction_only",
+          "index": 0,
+          "passed": true,
+          "evidence": {
+            "expected": {
+              "stable": "260926",
+              "deleted": "old"
+            },
+            "first_version": 1,
+            "second_version": null,
+            "snapshot_frozen": true
+          }
+        },
+        {
+          "name": "migration_only",
+          "index": 1,
+          "passed": true,
+          "evidence": {
+            "expected": {
+              "stable": "260926",
+              "new": "260926-new"
+            },
+            "first_version": 1,
+            "second_version": 2,
+            "snapshot_frozen": true
+          }
+        },
+        {
+          "name": "composition",
+          "index": 2,
+          "passed": false,
+          "error": "AssertionError: {\"reason\": \"old-generation compaction erased a new-generation ACK or resurrected a tombstone\", \"expected\": {\"stable\": \"260926\", \"new\": \"260926-new\"}, \"actual\": {\"stable\": \"260926\", \"deleted\": \"old\"}}"
+        }
+      ],
+      "controls_passed": true,
+      "composition_passed": false
+    },
+    "tiny_feasible_witness": {
+      "feasible": true,
+      "kind": "finite_trace_witness_not_complete_solver",
+      "execution": "independent finite-state arithmetic, not a complete I/O implementation",
+      "trace": {
+        "old_snapshot": {
+          "a": 1,
+          "deleted": 3
+        },
+        "new_acknowledged": {
+          "a": 1,
+          "b": 2
+        },
+        "after_old_publish": {
+          "a": 1,
+          "b": 2
+        },
+        "legal_strategy": "compare captured writer epoch and content version before publishing; reject obsolete token"
+      },
+      "negative_perturbation_rejected": true
+    },
+    "audit_passed": true,
+    "difficulty_evidence": "same runnable starter passes isolated controls but fails their composition; not an impossibility proof"
+  },
+  "audit_passed": true,
+  "limitations": [
+    "public seeded workloads; not hidden evaluation",
+    "local trusted-code runner, not a security sandbox",
+    "judge execution time is diagnostic runtime, not model thinking time; agent elapsed time/tokens come from the independent host",
+    "passing interaction chains is reported honestly; no claim that the author cannot solve a problem",
+    "C3 intercepts Python os I/O calls; native/buffered I/O adapters require separate instrumentation; process kill is not power loss"
+  ],
+  "elapsed_seconds": 2.3642,
+  "budget_seconds": 28,
+  "candidate_path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C3/baseline.py",
+  "process_exit_code": 0,
+  "baseline_result": {
+    "valid": false,
+    "status": "incomplete",
+    "legacy_probe": {
+      "checks": [
+        {
+          "name": "immutable_snapshot_compaction_idempotency_concurrent_readers",
+          "passed": true,
+          "kind": "interaction",
+          "critical": true,
+          "seconds": 0.1507,
+          "evidence": {
+            "keys": 32,
+            "transactions": 8,
+            "snapshot_readers": 2,
+            "snapshots_frozen": true,
+            "multiprocess_writer_exclusion": true,
+            "reopen_idempotency": true
+          }
+        },
+        {
+          "name": "fault_0_commit_write_before_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.1021,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_write",
+              "mode": "before_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "absent",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_1_commit_write_after_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0933,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_write",
+              "mode": "after_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_2_commit_write_short_enospc",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0893,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_write",
+              "mode": "short_enospc"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "absent",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_3_commit_write_kill_after",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0853,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_write",
+              "mode": "kill_after"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_4_commit_fsync_before_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0891,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_fsync",
+              "mode": "before_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_5_commit_fsync_after_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0883,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_fsync",
+              "mode": "after_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_6_commit_fsync_short_enospc",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.087,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_fsync",
+              "mode": "short_enospc"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_7_commit_fsync_kill_after",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0836,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "commit_fsync",
+              "mode": "kill_after"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_8_compact_write_before_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.089,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_write",
+              "mode": "before_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_9_compact_write_after_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0875,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_write",
+              "mode": "after_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_10_compact_write_short_enospc",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0892,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_write",
+              "mode": "short_enospc"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_11_compact_write_kill_after",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.087,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_write",
+              "mode": "kill_after"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_12_compact_fsync_before_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0928,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_fsync",
+              "mode": "before_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_13_compact_fsync_after_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.1153,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_fsync",
+              "mode": "after_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_14_compact_fsync_short_enospc",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0957,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_fsync",
+              "mode": "short_enospc"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_15_compact_fsync_kill_after",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0896,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "compact_fsync",
+              "mode": "kill_after"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_16_replace_before_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0859,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "replace",
+              "mode": "before_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_17_replace_after_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0838,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "replace",
+              "mode": "after_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_18_replace_short_enospc",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0843,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "replace",
+              "mode": "short_enospc"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_19_replace_kill_after",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0795,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "replace",
+              "mode": "kill_after"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_20_dirsync_before_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.083,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "dirsync",
+              "mode": "before_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_21_dirsync_after_eio",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.084,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "dirsync",
+              "mode": "after_eio"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_22_dirsync_short_enospc",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0829,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "dirsync",
+              "mode": "short_enospc"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        },
+        {
+          "name": "fault_23_dirsync_kill_after",
+          "passed": true,
+          "kind": "fault_interaction",
+          "critical": true,
+          "seconds": 0.0786,
+          "evidence": {
+            "intercepted": true,
+            "cut": {
+              "history": 0,
+              "cut": "dirsync",
+              "mode": "kill_after"
+            },
+            "recovery": {
+              "durable_prefix": true,
+              "uncertain_transaction": "whole",
+              "retry_version": 2,
+              "conflict_preserved": true
+            }
+          }
+        }
+      ],
+      "valid": true
+    },
+    "stage_v2": {
+      "status": "capability_gap",
+      "valid": false,
+      "path": "/Users/zhuhangcheng/Downloads/科研/shit-mountain-benchmark-v0.1/code/C3/extreme.py",
+      "reason": "required stage-v2 module extreme.py is absent",
+      "checks": []
+    },
+    "checks_passed": 25,
+    "checks_total": 26,
+    "machine_pass_rate": 0.9615384615384616,
+    "raw_score": 0,
+    "quality_score": 0,
+    "checks": [
+      {
+        "name": "immutable_snapshot_compaction_idempotency_concurrent_readers",
+        "passed": true,
+        "kind": "interaction",
+        "critical": true,
+        "seconds": 0.1507,
+        "evidence": {
+          "keys": 32,
+          "transactions": 8,
+          "snapshot_readers": 2,
+          "snapshots_frozen": true,
+          "multiprocess_writer_exclusion": true,
+          "reopen_idempotency": true
+        }
+      },
+      {
+        "name": "fault_0_commit_write_before_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.1021,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_write",
+            "mode": "before_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "absent",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_1_commit_write_after_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0933,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_write",
+            "mode": "after_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_2_commit_write_short_enospc",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0893,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_write",
+            "mode": "short_enospc"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "absent",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_3_commit_write_kill_after",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0853,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_write",
+            "mode": "kill_after"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_4_commit_fsync_before_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0891,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_fsync",
+            "mode": "before_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_5_commit_fsync_after_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0883,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_fsync",
+            "mode": "after_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_6_commit_fsync_short_enospc",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.087,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_fsync",
+            "mode": "short_enospc"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_7_commit_fsync_kill_after",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0836,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "commit_fsync",
+            "mode": "kill_after"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_8_compact_write_before_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.089,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_write",
+            "mode": "before_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_9_compact_write_after_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0875,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_write",
+            "mode": "after_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_10_compact_write_short_enospc",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0892,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_write",
+            "mode": "short_enospc"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_11_compact_write_kill_after",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.087,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_write",
+            "mode": "kill_after"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_12_compact_fsync_before_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0928,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_fsync",
+            "mode": "before_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_13_compact_fsync_after_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.1153,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_fsync",
+            "mode": "after_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_14_compact_fsync_short_enospc",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0957,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_fsync",
+            "mode": "short_enospc"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_15_compact_fsync_kill_after",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0896,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "compact_fsync",
+            "mode": "kill_after"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_16_replace_before_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0859,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "replace",
+            "mode": "before_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_17_replace_after_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0838,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "replace",
+            "mode": "after_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_18_replace_short_enospc",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0843,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "replace",
+            "mode": "short_enospc"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_19_replace_kill_after",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0795,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "replace",
+            "mode": "kill_after"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_20_dirsync_before_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.083,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "dirsync",
+            "mode": "before_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_21_dirsync_after_eio",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.084,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "dirsync",
+            "mode": "after_eio"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_22_dirsync_short_enospc",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0829,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "dirsync",
+            "mode": "short_enospc"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "fault_23_dirsync_kill_after",
+        "passed": true,
+        "kind": "fault_interaction",
+        "critical": true,
+        "seconds": 0.0786,
+        "evidence": {
+          "intercepted": true,
+          "cut": {
+            "history": 0,
+            "cut": "dirsync",
+            "mode": "kill_after"
+          },
+          "recovery": {
+            "durable_prefix": true,
+            "uncertain_transaction": "whole",
+            "retry_version": 2,
+            "conflict_preserved": true
+          }
+        }
+      },
+      {
+        "name": "stage_v2_capability",
+        "passed": false,
+        "kind": "capability_gap",
+        "critical": true,
+        "classification": "capability_gap",
+        "error": "required stage-v2 module extreme.py is absent"
+      }
+    ],
+    "score_status": "binary machine contract quality; independent host scores agent elapsed time and tokens"
+  }
+}
